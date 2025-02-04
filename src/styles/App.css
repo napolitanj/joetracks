@@ -1,0 +1,6 @@
+body {
+  display: flex;
+  align-items: flex-start;
+  background-color: white;
+  height: 1500px;
+}
