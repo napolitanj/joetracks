@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/src/assets/fonts/ProximaNova-Regular.woff2") format("woff2"),
+    url("/src/assets/fonts/ProximaNova-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  .banner-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .banner-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .banner-text {
+    position: absolute;
+    bottom: 15em;
+    right: 1em;
+    font-size: 1.5rem;
+    line-height: 0em;
+    font-weight: bold;
+    text-align: right;
+    color: black;
+    transition: transform 1s ease-out;
+
+    .subheader {
+      display: flex;
+      justify-content: right;
+      gap: 1em;
+
+      .mouse {
+        width: 50px;
+        height: 90px;
+        border: 3px solid #333;
+        border-radius: 60px;
+        position: relative;
+        &::before {
+          content: "";
+          width: 12px;
+          height: 12px;
+          position: absolute;
+          top: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: #333;
+          border-radius: 50%;
+          opacity: 1;
+          animation: wheel 2s infinite;
+          -webkit-animation: wheel 2s infinite;
+        }
+      }
+    }
+  }
+}
+
+@keyframes wheel {
+  to {
+    opacity: 0;
+    top: 60px;
+  }
+}
+
+@-webkit-keyframes wheel {
+  to {
+    opacity: 0;
+    top: 60px;
+  }
+}
