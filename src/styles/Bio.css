@@ -1,0 +1,13 @@
+.bio-container {
+  color: black;
+  position: relative;
+  margin: 2em;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+
+  .bio-pic {
+    width: 25%;
+    height: 25%;
+  }
+}
