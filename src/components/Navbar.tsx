@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
@@ -6,16 +6,16 @@ const Navbar = () => {
     <nav className="Navbar">
       <ul>
         <li>
-          <a href="#home">Bio</a>
+          <Link to="/">Bio</Link>
         </li>
         <li>
-          <a href="#about">Portfolio</a>
+          <Link to="/Portfolio">Portfolio</Link>
         </li>
         <li>
-          <a href="#portfolio">Blog</a>
+          <Link to="/Blog">Blog</Link>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <Link to="/Contact">Contact</Link>
         </li>
       </ul>
     </nav>

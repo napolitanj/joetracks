@@ -1,0 +1,8 @@
+.contact-container {
+  color: black;
+  position: relative;
+  margin: 2em;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
