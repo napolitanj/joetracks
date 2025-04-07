@@ -1,6 +1,11 @@
 body {
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
   background-color: white;
-  height: 1500px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
 }

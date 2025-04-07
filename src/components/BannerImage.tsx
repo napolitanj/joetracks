@@ -6,7 +6,7 @@ const BannerImage = () => {
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setOffset(window.scrollY * 0.5);
+    const handleScroll = () => setOffset(window.scrollY * 0.4);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -22,7 +22,6 @@ const BannerImage = () => {
         >
           <h1>Joe Napolitan</h1>
           <div className="subheader">
-            <div className="mouse"></div>
             <div>
               <p>Information Technology</p>
               <p>Front-End Engineering</p>
