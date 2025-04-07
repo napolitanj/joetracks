@@ -18,7 +18,7 @@
   }
 
   .banner-image {
-    position: absolute;
+    position: relative;
     inset: 0;
     width: 100%;
     background-size: cover;
@@ -34,13 +34,17 @@
     font-weight: bold;
     text-align: right;
     color: black;
-    transition: transform 1s ease-out;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 2s ease-out forwards;
+    animation-delay: 1s;
 
     .subheader {
       display: flex;
       justify-content: right;
       gap: 1em;
 
+      /* Unused mouse animation */
       .mouse {
         width: 50px;
         height: 90px;
@@ -77,5 +81,11 @@
   to {
     opacity: 0;
     top: 60px;
+  }
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
