@@ -30,12 +30,11 @@
   animation: fadeInUp 2s ease-out forwards;
   animation-delay: 1s;
   margin-top: 20vw;
-  padding-left: 0.5em;
   right: 2em;
 }
 
 .banner-text h1 {
-  padding-left: 1em;
+  padding-left: 1.2em;
 }
 
 .banner-text .subheader {
@@ -91,14 +90,17 @@
   }
 }
 
-@media (max-width: 605px) {
+@media (max-width: 608px) {
   .banner-text {
     margin-top: 1em;
+    right: 0;
+    padding-left: 0;
   }
 
   .banner-text h1,
   .banner-text p {
-    padding-left: 0.5em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
     text-align: center;
   }
 }
