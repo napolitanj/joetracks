@@ -12,12 +12,14 @@ function App() {
     <Router>
       <BannerImage></BannerImage>
       <Navbar></Navbar>
-      <Routes>
-        <Route path="/" element={<Bio />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <main className="route-content-wrapper">
+        <Routes>
+          <Route path="/" element={<Bio />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
     </Router>
   );
 }

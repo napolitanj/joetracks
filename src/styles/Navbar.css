@@ -1,50 +1,57 @@
 .Navbar {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
   position: relative;
-  overflow: hidden;
+}
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    width: 0;
-    height: 1px;
-    background-color: black;
-    transform: translateX(-50%);
-    animation: expandBorder 2.75s ease-out forwards;
-    animation-delay: 1.75s;
-  }
+.Navbar::before,
+.Navbar::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: black;
+  transform: translateX(-50%);
+  animation: expandBorder 2s ease-out forwards;
+  animation-delay: 1.75s;
+}
 
-  &::before {
-    top: 0;
-  }
+.Navbar::before {
+  top: 0;
+}
 
-  &::after {
-    bottom: 0;
-  }
+.Navbar::after {
+  bottom: 0;
+}
 
-  ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    list-style: none;
-    padding: 0;
-    margin: 1em;
+.Navbar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  height: 3em;
+}
 
-    li {
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeInUp 1s ease-out forwards;
-      animation-delay: 4s;
+.Navbar li {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 3.5s;
+}
 
-      a {
-        color: black;
-        text-decoration: none;
-      }
-    }
-  }
+.Navbar a {
+  font-size: 1.2em;
+  color: black;
+  text-decoration: none;
+  display: inline-block; /* Important for transform to behave as expected */
+  transition: transform 1s ease, color 0.5s ease;
+  padding: 0.75em;
+}
+
+.Navbar a:hover {
+  transform: scale(1.5); /* Subtle growth effect */
+  color: black;
 }
 
 @keyframes expandBorder {
