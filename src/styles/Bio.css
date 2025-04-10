@@ -1,15 +1,35 @@
 .bio-container {
-  color: black;
-  position: relative;
   display: flex;
   flex-direction: row;
   gap: 2em;
-  padding: 2em;
+  padding: 3em;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #333;
+  align-items: center;
+  width: 90%;
+  max-width: 90%;
+  margin: 2em auto;
+  transition: transform 0.3s ease-in-out;
+}
 
-  .bio-pic {
-    width: 35%;
-    height: 35%;
-  }
+.bio-pic {
+  width: 35%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bio-container div {
+  flex: 1;
+}
+
+.bio-container p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.5em;
 }
 
 @media (max-width: 800px) {
@@ -17,10 +37,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
 
-    .bio-pic {
-      width: 50%;
-      height: 50%;
-    }
+  .bio-pic {
+    width: 50%;
+    height: auto;
+  }
+
+  .bio-container p {
+    text-align: center;
   }
 }
