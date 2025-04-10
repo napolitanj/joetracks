@@ -1,4 +1,3 @@
-import headerPhoto from "/src/assets/images/header-photo.jpg";
 import "../styles/BannerImage.css";
 import { useEffect, useState } from "react";
 
@@ -15,11 +14,7 @@ const BannerImage = () => {
     <>
       <div className="banner">
         <div className="banner-container">
-          <img
-            src={headerPhoto}
-            className="banner-image"
-            alt="man skiing"
-          ></img>
+          <div className="banner-image"></div>
           <div
             className="banner-text"
             style={{ transform: `translateY(${offset}px)` }}

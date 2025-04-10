@@ -1,0 +1,28 @@
+.feature-container {
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  padding: 2em;
+  gap: 1em;
+
+  .feature-title {
+    text-align: center;
+  }
+
+  .feature-image {
+    max-width: 90%;
+  }
+
+  .feature-description {
+    max-width: 90%;
+    white-space: break-spaces;
+  }
+}
+
+@media (max-width: 800px) {
+  .feature-container {
+    max-width: 95%;
+  }
+}
