@@ -4,9 +4,23 @@
   display: flex;
   flex-direction: row;
   gap: 2em;
+  padding: 2em;
 
   .bio-pic {
-    width: 25%;
-    height: 25%;
+    width: 35%;
+    height: 35%;
+  }
+}
+
+@media (max-width: 800px) {
+  .bio-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .bio-pic {
+      width: 50%;
+      height: 50%;
+    }
   }
 }

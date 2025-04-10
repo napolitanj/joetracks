@@ -1,5 +1,4 @@
 .Navbar {
-  margin-top: 2em;
   margin-bottom: 2em;
   position: relative;
 }
@@ -46,7 +45,7 @@
   text-decoration: none;
   display: inline-block; /* Important for transform to behave as expected */
   transition: transform 1s ease, color 0.5s ease;
-  padding: 0.75em;
+  padding: 0.65em;
 }
 
 .Navbar a:hover {
