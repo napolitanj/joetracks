@@ -7,6 +7,8 @@ import Portfolio from "./components/pages/Portfolio";
 import Blog from "./components/pages/Blog";
 import BlogPost from "./components/pages/BlogPost";
 import Contact from "./components/pages/Contact";
+import EditorPage from "./components/pages/Editor";
+import AccessDenied from "./components/pages/AccessDenied";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/editor" element={<EditorPage />} />
+          <Route path="/access-denied" element={<AccessDenied />} />
         </Routes>
       </main>
     </Router>
