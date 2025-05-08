@@ -12,6 +12,10 @@ body div {
   flex-direction: column;
 }
 
+a {
+  color: #3f51b5;
+}
+
 .route-content-wrapper {
   min-height: 100vh;
   max-width: 100%;

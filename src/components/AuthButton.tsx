@@ -4,7 +4,6 @@ import { User } from "@supabase/supabase-js";
 
 const AuthButton = () => {
   const [user, setUser] = useState<User | null>(null);
-  const [status, setStatus] = useState("");
 
   const allowedEmail = "napolitanjoe@gmail.com";
 
@@ -46,7 +45,6 @@ const AuthButton = () => {
   const handleLogout = async () => {
     await supabase.auth.signOut();
     setUser(null);
-    setStatus("");
   };
 
   return (

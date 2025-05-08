@@ -32,7 +32,7 @@ const BlogPost = () => {
 
   return (
     <>
-      <Link to="/blog">Back to Blog Dashboard</Link>
+      <Link to="/blog">⇦ Back to Blog Dashboard</Link>
       <article className="blog-container">
         <div className="post-contents">
           <h1>{post.title}</h1>
