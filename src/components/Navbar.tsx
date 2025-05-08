@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import AuthButton from "./AuthButton";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
@@ -36,6 +37,9 @@ const Navbar = () => {
           >
             Contact
           </NavLink>
+        </li>
+        <li>
+          <AuthButton />
         </li>
       </ul>
     </nav>

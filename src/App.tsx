@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Bio from "./components/pages/Bio";
 import Portfolio from "./components/pages/Portfolio";
 import Blog from "./components/pages/Blog";
+import BlogPost from "./components/pages/BlogPost";
 import Contact from "./components/pages/Contact";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Bio />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>

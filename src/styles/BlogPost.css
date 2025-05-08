@@ -1,10 +1,17 @@
-.contact-container {
+.blog-container {
   color: black;
   position: relative;
   display: flex;
   flex-direction: row;
   gap: 2em;
   padding: 2em;
+}
+
+.post-contents {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
 }
