@@ -7,4 +7,12 @@
   padding: 2em;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.contact-container.show {
+  opacity: 1;
+  transform: translateY(0);
 }

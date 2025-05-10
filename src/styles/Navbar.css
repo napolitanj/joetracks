@@ -79,6 +79,15 @@
   width: 100%;
 }
 
+.Navbar button {
+  padding: 0.2em 1.2em;
+}
+
+.Navbar button:hover {
+  background-color: white;
+  color: black;
+}
+
 @keyframes expandBorder {
   0% {
     width: 0;

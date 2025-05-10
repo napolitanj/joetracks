@@ -1,9 +1,16 @@
 import "../styles/PortfolioFeature.css";
+import { useEffect, useState } from "react";
 
 const PortfolioFeature = () => {
+  const [fadeIn, setFadeIn] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setFadeIn(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
-      <div className="feature-container">
+      <div className={`feature-container ${fadeIn ? "show" : ""}`}>
         <h2 className="feature-title">Portfolio Feature</h2>
         <img
           src="src/assets/images/howtousecaltopo.png"

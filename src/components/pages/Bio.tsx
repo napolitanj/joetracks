@@ -1,9 +1,15 @@
 import "../../styles/Bio.css";
+import { useEffect, useState } from "react";
 
 const Bio = () => {
+  const [fadeIn, setFadeIn] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setFadeIn(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
-      <div className="bio-container">
+      <div className={`bio-container ${fadeIn ? "show" : ""}`}>
         <img className="bio-pic" src="src\assets\images\bio-pic.jpg"></img>
         <div>
           <p>
