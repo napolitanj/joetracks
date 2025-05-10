@@ -49,15 +49,20 @@ const Blog = () => {
           </Link>
         </div>
       )}
-      {posts.length === 0 ? (
-        <p>Loading blog posts...</p>
-      ) : (
-        posts.map((post) => (
-          <Link to={`/blog/${post.slug}`} key={post.id}>
-            <h2 className="text-xl font-bold hover:underline">{post.title}</h2>
-          </Link>
-        ))
-      )}
+      <div className={`blog-list ${posts.length > 0 ? "show" : ""}`}>
+        {posts.map((post) => (
+          <div className="post-feature">
+            <h2>{post.title}</h2>
+            <p className="post-brief">
+              {post.content.slice(0, 200)}
+              {post.content.length > 200 && "..."}
+            </p>
+            <Link to={`/blog/${post.slug}`} key={post.id}>
+              <p>Read more...</p>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

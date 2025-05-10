@@ -12,6 +12,14 @@
   max-width: 90%;
   margin: 2em auto;
   transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.bio-container.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .bio-pic {

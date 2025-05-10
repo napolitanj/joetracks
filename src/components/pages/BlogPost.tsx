@@ -13,6 +13,12 @@ type Post = {
 const BlogPost = () => {
   const { slug } = useParams();
   const [post, setPost] = useState<Post | null>(null);
+  const [fadeIn, setFadeIn] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setFadeIn(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     async function fetchPost() {
@@ -34,7 +40,7 @@ const BlogPost = () => {
     <>
       <Link to="/blog">⇦ Back to Blog Dashboard</Link>
       <article className="blog-container">
-        <div className="post-contents">
+        <div className={`post-contents ${fadeIn ? "show" : ""}`}>
           <h1>{post.title}</h1>
           <p>{new Date(post.created_at).toLocaleDateString()}</p>
           <div>{post.content}</div>

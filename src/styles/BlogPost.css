@@ -6,3 +6,25 @@
   padding-left: 2em;
   padding-right: 2em;
 }
+
+.post-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  margin: 1.5em 0;
+  width: 90%;
+  max-width: 60em;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.post-contents.show {
+  opacity: 1;
+  transform: translateY(0);
+}

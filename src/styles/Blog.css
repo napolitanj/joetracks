@@ -4,6 +4,43 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.blog-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 2em;
   padding: 2em;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.blog-list.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.post-feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  margin: 1.5em 0;
+  width: 90%;
+  max-width: 600px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.post-brief {
+  text-align: left;
 }
