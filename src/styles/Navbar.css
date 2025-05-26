@@ -88,6 +88,56 @@
   color: black;
 }
 
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin: 0 auto;  
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .Navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+    height: auto;
+  }
+
+  .Navbar ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    animation: slideDown 0.3s ease-out forwards;
+    transform-origin: top;
+  }
+
+  .Navbar ul.open {
+    display: flex;
+        border:none;
+  }
+
+  .Navbar li {
+    padding: 0.5em 0;
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .open {
+    align-items:center;
+  }
+}
+
 @keyframes expandBorder {
   0% {
     width: 0;
@@ -101,5 +151,17 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
   }
 }
