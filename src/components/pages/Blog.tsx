@@ -31,7 +31,10 @@ const Blog = () => {
         data: { user },
       } = await supabase.auth.getUser();
 
-      if (user?.email === "napolitanjoe@gmail.com") {
+
+      const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
+
+      if (user?.email === adminEmail) {
         setIsAuthorized(true);
       }
     };
