@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "../../utils/supabaseClient";
 import BlogEditor from "../BlogEditor";
-import { useNavigate } from "react-router-dom";
 
 const EditorPage = () => {
-  const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [isAuthorized, setIsAuthorized] = useState(false);
   const navigate = useNavigate();
+  const { slug } = useParams();
 
   useEffect(() => {
     const checkUser = async () => {
       const {
         data: { user },
       } = await supabase.auth.getUser();
-      if (user?.email === "napolitanjoe@gmail.com") {
-        setUserEmail(user.email);
+      const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
+
+      if (user?.email === adminEmail) {
+        setIsAuthorized(true);
       } else {
         navigate("/access-denied");
       }
@@ -22,7 +25,7 @@ const EditorPage = () => {
     checkUser();
   }, [navigate]);
 
-  return userEmail ? <BlogEditor /> : <p>Loading...</p>;
+  return isAuthorized ? <BlogEditor slug={slug} /> : <p>Loading...</p>;
 };
 
 export default EditorPage;
