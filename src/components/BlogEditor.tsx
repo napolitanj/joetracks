@@ -1,34 +1,85 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { supabase } from "../utils/supabaseClient";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "/src/styles/Editor.css";
 
-const BlogEditor = () => {
+type BlogEditorProps = {
+  slug?: string;
+};
+
+const BlogEditor = ({ slug }: BlogEditorProps) => {
   const [title, setTitle] = useState("");
-  const [slug, setSlug] = useState("");
+  const [slugInput, setSlugInput] = useState("");
+  const [postId, setPostId] = useState<string | null>(null);
   const [content, setContent] = useState("");
   const [published, setPublished] = useState(false);
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!slug) return;
+
+    const fetchPost = async () => {
+      const { data, error } = await supabase
+        .from("posts")
+        .select("id, title, slug, content, published")
+        .eq("slug", slug)
+        .single();
+
+      if (error) {
+        setMessage(`Post not found for slug: ${slug}`);
+        console.error("Fetch error:", error);
+      } else {
+        setPostId(data.id);
+        setTitle(data.title);
+        setSlugInput(data.slug);
+        setContent(data.content);
+        setPublished(data.published);
+      }
+    };
+
+    fetchPost();
+  }, [slug]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { error } = await supabase.from("posts").insert([
-      {
-        title,
-        slug,
-        content,
-        published,
-      },
-    ]);
 
-    if (error) {
-      setMessage(`Error: ${error.message}`);
+    if (postId) {
+      const { error } = await supabase
+        .from("posts")
+        .update({
+          title,
+          slug: slugInput,
+          content,
+          published,
+        })
+        .eq("id", postId);
+
+      if (error) {
+        setMessage(`Error updating post: ${error.message}`);
+      } else {
+        setMessage("Post updated!");
+        navigate("/blog/" + slugInput);
+      }
     } else {
-      setMessage("Post submitted!");
-      setTitle("");
-      setSlug("");
-      setContent("");
-      setPublished(false);
+      const { error } = await supabase.from("posts").insert([
+        {
+          title,
+          slug: slugInput,
+          content,
+          published,
+        },
+      ]);
+
+      if (error) {
+        setMessage(`Error creating post: ${error.message}`);
+      } else {
+        setMessage("Post created!");
+        setTitle("");
+        setSlugInput("");
+        setContent("");
+        setPublished(false);
+      }
     }
   };
 
@@ -37,7 +88,7 @@ const BlogEditor = () => {
       <div className="editor-container">
         <Link to="/blog">⇦ Back to Blog Dashboard</Link>
         <form onSubmit={handleSubmit} className="editor-form">
-          <h2>Create a Blog Post</h2>
+          <h2>{slug ? "Edit Blog Post" : "Create a Blog Post"}</h2>
           <input
             className="full-width-field"
             type="text"
@@ -50,8 +101,8 @@ const BlogEditor = () => {
             className="full-width-field"
             type="text"
             placeholder="Slug (e.g. my-first-post)"
-            value={slug}
-            onChange={(e) => setSlug(e.target.value)}
+            value={slugInput}
+            onChange={(e) => setSlugInput(e.target.value)}
             required
           />
           <textarea
@@ -71,7 +122,7 @@ const BlogEditor = () => {
             />
             <p>Check here to publish upon submitting.</p>
           </label>
-          <button type="submit">Submit Post</button>
+          <button type="submit">{slug ? "Update Post" : "Submit Post"}</button>
           {message && <p>{message}</p>}
         </form>
       </div>

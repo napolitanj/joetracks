@@ -14,6 +14,7 @@ const BlogPost = () => {
   const { slug } = useParams();
   const [post, setPost] = useState<Post | null>(null);
   const [fadeIn, setFadeIn] = useState(false);
+  const [isAuthorized, setIsAuthorized] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setFadeIn(true), 100);
@@ -31,7 +32,21 @@ const BlogPost = () => {
 
       if (data) setPost(data);
     }
+
+    const checkAuth = async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
+
+      if (user?.email === adminEmail) {
+        setIsAuthorized(true);
+      }
+    };
+
     fetchPost();
+    checkAuth();
   }, [slug]);
 
   if (!post) return <div>Loading...</div>;
@@ -46,6 +61,13 @@ const BlogPost = () => {
           <div>{post.content}</div>
         </div>
       </article>
+      {isAuthorized && (
+        <div className="edit-button">
+          <Link to={`/editor/${slug}`} className="">
+            ✏️
+          </Link>
+        </div>
+      )}
     </>
   );
 };

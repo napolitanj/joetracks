@@ -21,6 +21,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/editor/:slug" element={<EditorPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/editor" element={<EditorPage />} />
           <Route path="/access-denied" element={<AccessDenied />} />
