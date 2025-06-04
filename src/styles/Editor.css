@@ -36,33 +36,43 @@ label {
   gap: 1em;
 }
 
-.checkbox {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 1.5em;
-  height: 1.5em;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  cursor: pointer;
-  position: relative;
+.editor-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.checkbox:checked {
-  background-color: #1d2024;
-  border-color: #333;
+.editor-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
-.checkbox:checked::after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 5px;
-  width: 4px;
-  height: 8px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+
+.editor-buttons button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 }
+
+.confirmation-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.warning-text {
+  color: red;
+  font-weight: bold;
+}
+
+.confirm-delete {
+  background-color: #e53935;
+  color: white;
+}
+
 @media (max-width: 800px) {
   .editor-container {
     flex-direction: column;
