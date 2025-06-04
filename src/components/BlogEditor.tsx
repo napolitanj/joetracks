@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../utils/supabaseClient";
 import { Link, useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import "/src/styles/Editor.css";
 
 type BlogEditorProps = {
@@ -12,8 +13,8 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
   const [slugInput, setSlugInput] = useState("");
   const [postId, setPostId] = useState<string | null>(null);
   const [content, setContent] = useState("");
-  const [published, setPublished] = useState(false);
   const [message, setMessage] = useState("");
+  const [showConfirmDelete, setShowConfirmDelete] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -34,7 +35,6 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
         setTitle(data.title);
         setSlugInput(data.slug);
         setContent(data.content);
-        setPublished(data.published);
       }
     };
 
@@ -51,7 +51,7 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
           title,
           slug: slugInput,
           content,
-          published,
+          published: true,
         })
         .eq("id", postId);
 
@@ -67,7 +67,7 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
           title,
           slug: slugInput,
           content,
-          published,
+          published: true,
         },
       ]);
 
@@ -78,8 +78,20 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
         setTitle("");
         setSlugInput("");
         setContent("");
-        setPublished(false);
       }
+    }
+  };
+
+  const handleDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    const { error } = await supabase.from("posts").delete().eq("id", postId);
+
+    if (error) {
+      setMessage(`Error deleting post: ${error.message}`);
+    } else {
+      setMessage("Post deleted!");
+      navigate("/blog");
     }
   };
 
@@ -113,17 +125,41 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
             rows={10}
             required
           />
-          <label>
-            <input
-              className="checkbox"
-              type="checkbox"
-              checked={published}
-              onChange={(e) => setPublished(e.target.checked)}
-            />
-            <p>Check here to publish upon submitting.</p>
-          </label>
-          <button type="submit">{slug ? "Update Post" : "Submit Post"}</button>
-          {message && <p>{message}</p>}
+          <div className="editor-button-container">
+            {slug ? (
+              showConfirmDelete ? (
+                <>
+                  <p className="warning-text">
+                    Are you sure you want to delete this post? This cannot be
+                    reversed.
+                  </p>
+                  <div className="editor-buttons">
+                    <button className="confirm-delete" onClick={handleDelete}>
+                      Yes, Delete
+                    </button>
+                    <button onClick={() => setShowConfirmDelete(false)}>
+                      Cancel
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="editor-buttons">
+                    <button type="submit">Update Post</button>
+                    <button
+                      type="button"
+                      onClick={() => setShowConfirmDelete(true)}
+                    >
+                      Delete Post
+                    </button>
+                  </div>
+                </>
+              )
+            ) : (
+              <button type="submit">Submit Post</button>
+            )}
+            {message && <p>{message}</p>}
+          </div>
         </form>
       </div>
     </>
