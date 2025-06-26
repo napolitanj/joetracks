@@ -1,11 +1,23 @@
 .portfolio-container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  gap: 2em;
+}
+
+.create-feature {
+  padding: 2em;
+}
+
+.features-list {
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   color: black;
   position: relative;
-  gap: 2em;
-  padding: 2em;
+  gap: 1em;
 }

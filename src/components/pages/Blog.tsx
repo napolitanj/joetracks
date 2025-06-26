@@ -31,7 +31,6 @@ const Blog = () => {
         data: { user },
       } = await supabase.auth.getUser();
 
-
       const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
 
       if (user?.email === adminEmail) {
@@ -44,29 +43,31 @@ const Blog = () => {
   }, []);
 
   return (
-    <div className="blog-container">
-      {isAuthorized && (
-        <div style={{ marginBottom: "1rem" }}>
-          <Link to="/editor" className="">
-            + Create New Post
-          </Link>
-        </div>
-      )}
-      <div className={`blog-list ${posts.length > 0 ? "show" : ""}`}>
-        {posts.map((post) => (
-          <div className="post-feature">
-            <h2>{post.title}</h2>
-            <p className="post-brief">
-              {post.content.slice(0, 200)}
-              {post.content.length > 200 && "..."}
-            </p>
-            <Link to={`/blog/${post.slug}`} key={post.id}>
-              <p>Read more...</p>
+    <>
+      <div className="blog-container">
+        {isAuthorized && (
+          <div>
+            <Link to="/editor" className="">
+              + Create New Post
             </Link>
           </div>
-        ))}
+        )}
+        <div className={`blog-list ${posts.length > 0 ? "show" : ""}`}>
+          {posts.map((post) => (
+            <div key={post.id} className="post-feature">
+              <h2>{post.title}</h2>
+              <p className="post-brief">
+                {post.content.slice(0, 200)}
+                {post.content.length > 200 && "..."}
+              </p>
+              <Link to={`/blog/${post.slug}`} key={post.id}>
+                <p>Read more...</p>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

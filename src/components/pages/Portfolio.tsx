@@ -49,14 +49,12 @@ const Portfolio = () => {
     <>
       <div className="portfolio-container">
         {isAuthorized && (
-          <div style={{ marginBottom: "1rem" }}>
-            <Link to="/portfolioeditor" className="">
-              + Create New Feature
-            </Link>
+          <div className="create-feature">
+            <Link to="/portfolioeditor">+ Create New Feature</Link>
           </div>
         )}
-        {features.map((feature) => (
-          <div key={feature.id} className="feature-with-edit">
+        <div className="features-list">
+          {features.map((feature) => (
             <PortfolioFeature
               key={feature.id}
               id={feature.id}
@@ -67,8 +65,8 @@ const Portfolio = () => {
               linkText={feature.link_text}
               isAuthorized={isAuthorized}
             />
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );

@@ -1,5 +1,4 @@
 .Navbar {
-  margin-bottom: 2em;
   position: relative;
   height: 5em;
   display: flex;
@@ -16,8 +15,8 @@
   height: 1px;
   background-color: black;
   transform: translateX(-50%);
-  animation: expandBorder 1.5s ease-out forwards;
-  animation-delay: 0.75s;
+  animation: expandBorder 1s ease-out forwards;
+  animation-delay: 0.25s;
 }
 
 .Navbar::before {
@@ -34,7 +33,7 @@
   justify-content: space-around;
   list-style: none;
   width: 100%;
-
+  align-items: center;
   margin: 0;
   padding: 0;
 }
@@ -43,7 +42,7 @@
   opacity: 0;
   transform: translateY(10px);
   animation: fadeInUp 1s ease-out forwards;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 .Navbar a {
@@ -84,7 +83,7 @@
 }
 
 .Navbar button:hover {
-  background-color: white;
+  border: 0.1em solid black;
   color: black;
 }
 
@@ -95,8 +94,12 @@
   border: none;
   cursor: pointer;
   position: relative;
-  margin: 0 auto;  
+  margin: 0 auto;
   z-index: 10;
+  background-color: white;
+  color: black;
+  box-sizing: border-box;
+  border: 0.1em solid transparent;
 }
 
 @media (max-width: 768px) {
@@ -105,26 +108,35 @@
     align-items: flex-start;
     padding: 1em;
     height: auto;
+    position: relative;
   }
 
   .Navbar ul {
-    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
     flex-direction: column;
     width: 100%;
-    background: white;
-    border: 1px solid #ccc;
-    animation: slideDown 0.3s ease-out forwards;
-    transform-origin: top;
+    border-top: 1px solid #ccc;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    z-index: 5;
+    padding-bottom: 1em;
   }
 
   .Navbar ul.open {
-    display: flex;
-        border:none;
+    max-height: 150em;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .Navbar li {
-    padding: 0.5em 0;
-    animation: none;
+    padding: 0.75em 1em;
     opacity: 1;
     transform: none;
   }
@@ -134,7 +146,6 @@
   }
 
   .open {
-    align-items:center;
   }
 }
 
@@ -153,7 +164,6 @@
     transform: translateY(0);
   }
 }
-
 
 @keyframes slideDown {
   from {
