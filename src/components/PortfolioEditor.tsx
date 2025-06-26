@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useSession } from "@supabase/auth-helpers-react";
 import { supabase } from "../utils/supabaseClient";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "../styles/Editor.css";
@@ -7,7 +6,6 @@ import "../styles/Editor.css";
 const PortfolioEditor = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const session = useSession();
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -246,7 +244,7 @@ const PortfolioEditor = () => {
               <p className="warning-text">
                 Are you sure? This cannot be undone.
               </p>
-              <div className="confirm-buttons">
+              <div className="editor-buttons">
                 <button className="confirm-delete" onClick={handleDelete}>
                   Confirm Deletion
                 </button>

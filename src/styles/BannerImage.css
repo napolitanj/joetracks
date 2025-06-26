@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: flex-start;
   height: 30em;
+  margin-top: -2em;
 }
 
 .banner-container {
@@ -38,8 +39,8 @@
   color: black;
   opacity: 0;
   transform: translateY(10px);
-  animation: fadeInUp 2s ease-out forwards;
-  animation-delay: 1s;
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: 0.5s;
   margin-top: 0;
   right: 2em;
   top: 5em;
@@ -66,7 +67,7 @@
   }
 }
 
-@media (max-width: 608px) {
+@media (max-width: 589px) {
   .banner-text {
     top: 10%;
     right: 0;
