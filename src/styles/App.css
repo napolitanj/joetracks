@@ -2,8 +2,14 @@ body {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--bg-color, white);
+  color: var(--text-color, black);
   width: 100%;
+  transition: background-color 0.3s, color 0.3s;
+  --bg-color: white;
+  --text-color: black;
+  --link-color: #3f51b5;
+  --border-color: #ccc;
 }
 
 body div {
@@ -13,7 +19,7 @@ body div {
 }
 
 a {
-  color: #3f51b5;
+  color: var(--link-color, #3f51b5);
 }
 
 .route-content-wrapper {
@@ -22,4 +28,11 @@ a {
   flex-direction: column;
   justify-content: flex-start;
   padding-top: 2em;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --link-color: #90caf9;
+  --border-color: #444;
 }
