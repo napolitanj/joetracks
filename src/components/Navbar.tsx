@@ -1,10 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import AuthButton from "./AuthButton";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
   return (
     <>
@@ -55,6 +69,11 @@ const Navbar = () => {
           </li>
           <li>
             <AuthButton />
+          </li>
+          <li>
+            <button onClick={() => setDarkMode((prev) => !prev)}>
+              {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+            </button>
           </li>
         </ul>
       </nav>
