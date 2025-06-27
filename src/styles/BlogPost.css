@@ -53,3 +53,10 @@
   background-color: #0056b3;
   transform: scale(1.1);
 }
+
+body.dark .post-contents {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ccc;
+}
