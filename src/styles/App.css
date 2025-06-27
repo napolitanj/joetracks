@@ -10,6 +10,7 @@ body {
   --text-color: black;
   --link-color: #3f51b5;
   --border-color: #ccc;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 body div {
