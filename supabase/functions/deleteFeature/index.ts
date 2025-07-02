@@ -17,8 +17,32 @@ serve(async (req) => {
   }
 
   try {
-    const { id } = await req.json();
+    const body = await req.json();
+    const { oldImagePath, id } = body;
 
+    // If only deleting image
+    if (oldImagePath) {
+      const { error: removeError } = await supabase.storage
+        .from("portfolio-images")
+        .remove([oldImagePath]);
+
+      if (removeError) {
+        return new Response(
+          JSON.stringify({
+            error: "Failed to delete image",
+            details: removeError,
+          }),
+          { status: 500, headers: corsHeaders }
+        );
+      }
+
+      return new Response(
+        JSON.stringify({ message: "Old image deleted successfully" }),
+        { status: 200, headers: corsHeaders }
+      );
+    }
+
+    // Otherwise, delete the feature + its image (legacy)
     if (!id) {
       return new Response(JSON.stringify({ error: "Missing feature ID" }), {
         status: 400,
@@ -48,7 +72,19 @@ serve(async (req) => {
         "/storage/v1/object/public/portfolio-images/"
       )[1];
       if (path) {
-        await supabase.storage.from("portfolio-images").remove([path]);
+        const { error: removeError } = await supabase.storage
+          .from("portfolio-images")
+          .remove([path]);
+
+        if (removeError) {
+          return new Response(
+            JSON.stringify({
+              error: "Failed to delete image",
+              details: removeError,
+            }),
+            { status: 500, headers: corsHeaders }
+          );
+        }
       }
     }
 

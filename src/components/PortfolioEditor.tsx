@@ -14,6 +14,7 @@ const PortfolioEditor = () => {
   const [linkText, setLinkText] = useState("");
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [message, setMessage] = useState("");
+  const [originalImageUrl, setOriginalImageUrl] = useState("");
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
 
   useEffect(() => {
@@ -33,6 +34,7 @@ const PortfolioEditor = () => {
         setTitle(data.title);
         setDescription(data.description);
         setImageUrl(data.image_url);
+        setOriginalImageUrl(data.image_url);
         setLink(data.link);
         setLinkText(data.link_text);
       }
@@ -79,6 +81,8 @@ const PortfolioEditor = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    console.log("Submitted imageFile:", imageFile);
+
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -88,8 +92,44 @@ const PortfolioEditor = () => {
       return;
     }
 
-    const uploadedUrl = await uploadImage();
-    const finalImageUrl = uploadedUrl || imageUrl;
+    let finalImageUrl = imageUrl;
+
+    if (imageFile) {
+      const oldImagePath = originalImageUrl?.split(
+        "/storage/v1/object/public/portfolio-images/"
+      )[1];
+
+      console.log("Old image path to delete:", oldImagePath);
+
+      const uploadedUrl = await uploadImage();
+
+      if (uploadedUrl) {
+        finalImageUrl = uploadedUrl;
+
+        if (oldImagePath) {
+          const { data: sessionData } = await supabase.auth.getSession();
+
+          if (!sessionData.session) {
+            console.error("User not authenticated — cannot delete old image.");
+          } else {
+            const response = await fetch(
+              "https://vtcezvtqcbaymehpedtp.supabase.co/functions/v1/deleteFeature",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${sessionData.session.access_token}`,
+                },
+                body: JSON.stringify({ oldImagePath }),
+              }
+            );
+
+            const result = await response.json();
+            console.log("Edge Function delete response:", result);
+          }
+        }
+      }
+    }
 
     if (id) {
       const { error } = await supabase
