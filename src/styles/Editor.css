@@ -73,6 +73,32 @@ label {
   color: white;
 }
 
+input::selection,
+textarea::selection {
+  background: rgb(190, 190, 199);
+}
+
+body.dark .editor-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ccc;
+}
+
+body.dark .editor-container p,
+body.dark .editor-container h2 {
+  color: #ccc;
+}
+
+body.dark .editor-container button {
+  background-color: grey;
+}
+
+body.dark .editor-container input,
+body.dark .editor-container textarea {
+  background-color: #ccc;
+}
+
 @media (max-width: 800px) {
   .editor-container {
     flex-direction: column;

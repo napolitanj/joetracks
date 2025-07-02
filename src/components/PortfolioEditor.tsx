@@ -29,7 +29,6 @@ const PortfolioEditor = () => {
 
       if (error) {
         setMessage("Error loading feature.");
-        console.error(error);
       } else {
         setTitle(data.title);
         setDescription(data.description);
@@ -50,10 +49,7 @@ const PortfolioEditor = () => {
       data: { user },
     } = await supabase.auth.getUser();
 
-    if (!user) {
-      console.error("User not authenticated.");
-      return null;
-    }
+    if (!user) return null;
 
     const cleanFileName = imageFile.name.replace(/[^\w.\-]/g, "_");
     const filePath = `portfolio/${user.id}/${Date.now()}_${cleanFileName}`;
@@ -66,22 +62,16 @@ const PortfolioEditor = () => {
         contentType: imageFile.type,
       });
 
-    if (uploadError) {
-      console.error("Upload error:", uploadError);
-      return null;
-    }
+    if (uploadError) return null;
 
     const { data } = supabase.storage
       .from("portfolio-images")
       .getPublicUrl(filePath);
-
     return data.publicUrl;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    console.log("Submitted imageFile:", imageFile);
 
     const {
       data: { user },
@@ -99,8 +89,6 @@ const PortfolioEditor = () => {
         "/storage/v1/object/public/portfolio-images/"
       )[1];
 
-      console.log("Old image path to delete:", oldImagePath);
-
       const uploadedUrl = await uploadImage();
 
       if (uploadedUrl) {
@@ -109,10 +97,8 @@ const PortfolioEditor = () => {
         if (oldImagePath) {
           const { data: sessionData } = await supabase.auth.getSession();
 
-          if (!sessionData.session) {
-            console.error("User not authenticated — cannot delete old image.");
-          } else {
-            const response = await fetch(
+          if (sessionData.session) {
+            await fetch(
               "https://vtcezvtqcbaymehpedtp.supabase.co/functions/v1/deleteFeature",
               {
                 method: "POST",
@@ -123,9 +109,6 @@ const PortfolioEditor = () => {
                 body: JSON.stringify({ oldImagePath }),
               }
             );
-
-            const result = await response.json();
-            console.log("Edge Function delete response:", result);
           }
         }
       }
@@ -204,7 +187,6 @@ const PortfolioEditor = () => {
       setMessage("Feature and image deleted.");
       navigate("/portfolio");
     } catch (error) {
-      console.error("Delete error:", error);
       setMessage("Error deleting feature.");
     }
   };
