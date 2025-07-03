@@ -9,12 +9,16 @@ const Login: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const { error } = await supabase.auth.signInWithOtp({
+    const payload = {
       email,
       options: {
         emailRedirectTo: "https://napolitanj.github.io/joe-napolitan.com/",
       },
-    });
+    };
+
+    console.log("Login payload:", payload);
+
+    const { error } = await supabase.auth.signInWithOtp(payload);
 
     if (error) {
       setError(error.message);
