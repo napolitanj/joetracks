@@ -12,7 +12,7 @@ const Login: React.FC = () => {
     const payload = {
       email,
       options: {
-        redirectTo: "https://napolitanj.github.io/joe-napolitan.com/",
+        emailRedirectTo: "https://napolitanj.github.io/joe-napolitan.com/",
       },
     };
 
