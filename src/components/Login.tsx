@@ -1,25 +1,38 @@
 import React, { useState } from "react";
-import { supabase } from "../utils/supabaseClient.tsx";
+import { supabase } from "../utils/supabaseClient";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-  const { error } = await supabase.auth.signInWithOtp({
-    email: email,
-    options: {
-      emailRedirectTo: "https://napolitanj.github.io/joe-napolitan.com/",
-    },
-  } as any); 
+    const payload = {
+      email,
+      options: {
+        redirectTo: "https://napolitanj.github.io/joe-napolitan.com/",
+      },
+    };
 
+    console.log("Sending signInWithOtp payload:", payload);
+
+    const { error } = await supabase.auth.signInWithOtp(payload);
+
+    if (error) {
+      console.error("Error during signInWithOtp:", error);
+      setError(error.message);
+      setMessage("");
+    } else {
+      setMessage("Check your email for a magic login link.");
+      setError("");
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Login.</h2>
+      <h2>Login</h2>
       {error && <p style={{ color: "red" }}>{error}</p>}
       {message && <p style={{ color: "green" }}>{message}</p>}
       <div>
