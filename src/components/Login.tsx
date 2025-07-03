@@ -3,29 +3,33 @@ import { supabase } from "../utils/supabaseClient.tsx";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await supabase.auth.signInWithOtp({
       email,
-      password,
+      options: {
+        emailRedirectTo: "https://napolitanj.github.io/joe-napolitan.com/",
+      },
     });
 
     if (error) {
       setError(error.message);
+      setMessage("");
     } else {
-      // Redirect to the blog or wherever you want
-      console.log("Logged in successfully");
+      setMessage("Check your email for a magic login link.");
+      setError("");
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <h2>Login</h2>
-      {error && <p>{error}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      {message && <p style={{ color: "green" }}>{message}</p>}
       <div>
         <label>Email:</label>
         <input
@@ -35,16 +39,7 @@ const Login: React.FC = () => {
           required
         />
       </div>
-      <div>
-        <label>Password:</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </div>
-      <button type="submit">Log In</button>
+      <button type="submit">Send Magic Link</button>
     </form>
   );
 };

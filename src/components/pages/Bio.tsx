@@ -1,6 +1,7 @@
 import "../../styles/Bio.css";
 import { useEffect, useState } from "react";
 import BannerImage from "../BannerImage";
+import headerPhoto from "/src/assets/images/bio-pic.jpg";
 
 const Bio = () => {
   const [fadeIn, setFadeIn] = useState(false);
@@ -12,7 +13,7 @@ const Bio = () => {
     <>
       <BannerImage></BannerImage>
       <div className={`bio-container ${fadeIn ? "show" : ""}`}>
-        <img className="bio-pic" src="src\assets\images\bio-pic.jpg"></img>
+        <img className="bio-pic" src={headerPhoto}></img>
         <div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

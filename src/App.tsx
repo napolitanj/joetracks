@@ -9,10 +9,11 @@ import Contact from "./components/pages/Contact";
 import EditorPage from "./components/pages/Editor";
 import AccessDenied from "./components/pages/AccessDenied";
 import PortfolioEditor from "./components/PortfolioEditor";
+import Login from "./components/Login";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/joe-napolitan.com">
       <Navbar></Navbar>
       <main className="route-content-wrapper">
         <Routes>
@@ -26,6 +27,7 @@ function App() {
           <Route path="/access-denied" element={<AccessDenied />} />
           <Route path="/portfolioeditor" element={<PortfolioEditor />} />
           <Route path="/portfolioeditor/:id" element={<PortfolioEditor />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
     </Router>
