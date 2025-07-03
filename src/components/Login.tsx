@@ -6,28 +6,16 @@ const Login: React.FC = () => {
   const [error, setError] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    const payload = {
-      email,
-      options: {
-        emailRedirectTo: "https://napolitanj.github.io/joe-napolitan.com/",
-      },
-    };
+  const { error } = await supabase.auth.signInWithOtp({
+    email: email,
+    options: {
+      emailRedirectTo: "https://napolitanj.github.io/joe-napolitan.com/",
+    },
+  } as any); 
 
-    console.log("Login payload:", payload);
-
-    const { error } = await supabase.auth.signInWithOtp(payload);
-
-    if (error) {
-      setError(error.message);
-      setMessage("");
-    } else {
-      setMessage("Check your email for a magic login link.");
-      setError("");
-    }
-  };
 
   return (
     <form onSubmit={handleSubmit}>
