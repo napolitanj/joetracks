@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabase } from "../../utils/supabaseClient.tsx";
+import blogPosts from "../../data/blogPosts.json";
 import { Link } from "react-router-dom";
 import "../../styles/Blog.css";
 
@@ -16,30 +16,20 @@ const Blog = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      const { data, error } = await supabase
-        .from("posts")
-        .select("*")
-        .order("created_at", { ascending: false });
+    // Fetch posts from JSON
+    const visiblePosts = blogPosts
+      .filter((post) => post.published)
+      .sort(
+        (a, b) =>
+          new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+      );
 
-      if (error) console.error("Error fetching posts:", error);
-      else setPosts(data);
-    };
+    setPosts(visiblePosts);
 
-    const checkAuth = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-
-      const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
-
-      if (user?.email === adminEmail) {
-        setIsAuthorized(true);
-      }
-    };
-
-    fetchPosts();
-    checkAuth();
+    // Local-only auth logic
+    const isLocalhost = window.location.hostname === "localhost";
+    const loggedIn = localStorage.getItem("isAuthorized") === "true";
+    setIsAuthorized(isLocalhost && loggedIn);
   }, []);
 
   return (
