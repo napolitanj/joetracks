@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { supabase } from "../../utils/supabaseClient";
+import blogPosts from "../../data/blogPosts.json";
 import { Link } from "react-router-dom";
 import "../../styles/BlogPost.css";
 
@@ -23,30 +23,17 @@ const BlogPost = () => {
 
   useEffect(() => {
     async function fetchPost() {
-      const { data } = await supabase
-        .from("posts")
-        .select("title, content, created_at")
-        .eq("slug", slug)
-        .eq("published", true)
-        .single();
-
-      if (data) setPost(data);
+      const postData = blogPosts.find(
+        (p) => p.slug === slug && p.published === true
+      );
+      setPost(postData || null);
     }
 
-    const checkAuth = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-
-      const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
-
-      if (user?.email === adminEmail) {
-        setIsAuthorized(true);
-      }
-    };
-
     fetchPost();
-    checkAuth();
+
+    const isLocalhost = window.location.hostname === "localhost";
+    const isAuthorized = localStorage.getItem("isAuthorized") === "true";
+    setIsAuthorized(isLocalhost && isAuthorized);
   }, [slug]);
 
   if (!post) return <div>Loading...</div>;

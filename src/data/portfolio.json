@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "My Cool Project",
+    "description": "A React app using local JSON instead of Supabase.",
+    "image_url": "/images/project1.jpg",
+    "link": "https://github.com/joe/my-cool-project",
+    "link_text": "View on GitHub",
+    "position": 1
+  },
+  {
+    "id": 2,
+    "title": "Another Portfolio Item",
+    "description": "A design I built using Tailwind and Vite.",
+    "image_url": "/images/project2.jpg",
+    "link": "https://example.com/project2",
+    "link_text": "Live Demo",
+    "position": 2
+  }
+]

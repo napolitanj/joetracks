@@ -1,46 +1,38 @@
 import React, { useState } from "react";
-import { supabase } from "../utils/supabaseClient.tsx";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+    const isLocal = window.location.hostname === "localhost";
+    const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
 
-    if (error) {
-      setError(error.message);
+    if (!isLocal) {
+      setError("Login failed: not available in this environment.");
+      return;
+    }
+
+    if (email === adminEmail) {
+      localStorage.setItem("isAuthorized", "true");
+      window.location.href = "/";
     } else {
-      // Redirect to the blog or wherever you want
-      console.log("Logged in successfully");
+      setError("Login failed: unauthorized email.");
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <h2>Login</h2>
-      {error && <p>{error}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
       <div>
         <label>Email:</label>
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
           required
         />
       </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabase } from "../../utils/supabaseClient.tsx";
+import portfolioData from "../../data/portfolio.json";
 import { Link } from "react-router-dom";
 import PortfolioFeature from "../PortfolioFeature";
 import "../../styles/Portfolio.css";
@@ -19,30 +19,11 @@ const Portfolio = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      const { data, error } = await supabase
-        .from("features")
-        .select("*")
-        .order("created_at", { ascending: false });
+    const isLocalhost = window.location.hostname === "localhost";
+    const loggedIn = localStorage.getItem("isAuthorized") === "true";
+    setIsAuthorized(isLocalhost && loggedIn);
 
-      if (error) console.error("Error fetching posts:", error);
-      else setFeatures(data);
-    };
-
-    const checkAuth = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-
-      const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
-
-      if (user?.email === adminEmail) {
-        setIsAuthorized(true);
-      }
-    };
-
-    fetchPosts();
-    checkAuth();
+    setFeatures(portfolioData.sort((a, b) => b.position - a.position));
   }, []);
 
   return (

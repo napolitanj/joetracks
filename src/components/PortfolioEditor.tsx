@@ -1,194 +1,111 @@
 import { useEffect, useState } from "react";
-import { supabase } from "../utils/supabaseClient";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import portfolioData from "../data/portfolio.json";
 import "../styles/Editor.css";
+
+type Feature = {
+  id: number;
+  title: string;
+  description: string;
+  image_url: string;
+  link: string;
+  link_text: string;
+  position: number;
+};
 
 const PortfolioEditor = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const [features, setFeatures] = useState<Feature[]>([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [link, setLink] = useState("");
   const [linkText, setLinkText] = useState("");
+  const [position, setPosition] = useState<number>(0);
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [message, setMessage] = useState("");
-  const [originalImageUrl, setOriginalImageUrl] = useState("");
+  const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
 
   useEffect(() => {
-    if (!id) return;
-
-    const fetchFeature = async () => {
-      const { data, error } = await supabase
-        .from("features")
-        .select("*")
-        .eq("id", id)
-        .single();
-
-      if (error) {
-        setMessage("Error loading feature.");
-      } else {
-        setTitle(data.title);
-        setDescription(data.description);
-        setImageUrl(data.image_url);
-        setOriginalImageUrl(data.image_url);
-        setLink(data.link);
-        setLinkText(data.link_text);
-      }
-    };
-
-    fetchFeature();
-  }, [id]);
-
-  const uploadImage = async (): Promise<string | null> => {
-    if (!imageFile) return null;
-
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
-    if (!user) return null;
-
-    const cleanFileName = imageFile.name.replace(/[^\w.\-]/g, "_");
-    const filePath = `portfolio/${user.id}/${Date.now()}_${cleanFileName}`;
-
-    const { error: uploadError } = await supabase.storage
-      .from("portfolio-images")
-      .upload(filePath, imageFile, {
-        upsert: false,
-        cacheControl: "3600",
-        contentType: imageFile.type,
-      });
-
-    if (uploadError) return null;
-
-    const { data } = supabase.storage
-      .from("portfolio-images")
-      .getPublicUrl(filePath);
-    return data.publicUrl;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
-    if (!user) {
-      setMessage("User not authenticated.");
-      return;
-    }
-
-    let finalImageUrl = imageUrl;
-
-    if (imageFile) {
-      const oldImagePath = originalImageUrl?.split(
-        "/storage/v1/object/public/portfolio-images/"
-      )[1];
-
-      const uploadedUrl = await uploadImage();
-
-      if (uploadedUrl) {
-        finalImageUrl = uploadedUrl;
-
-        if (oldImagePath) {
-          const { data: sessionData } = await supabase.auth.getSession();
-
-          if (sessionData.session) {
-            await fetch(
-              "https://vtcezvtqcbaymehpedtp.supabase.co/functions/v1/deleteFeature",
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                  Authorization: `Bearer ${sessionData.session.access_token}`,
-                },
-                body: JSON.stringify({ oldImagePath }),
-              }
-            );
-          }
-        }
-      }
-    }
+    setFeatures(portfolioData);
 
     if (id) {
-      const { error } = await supabase
-        .from("features")
-        .update({
-          title,
-          description,
-          image_url: finalImageUrl,
-          link,
-          link_text: linkText,
-        })
-        .eq("id", id);
-
-      if (error) {
-        setMessage("Error updating feature.");
-        return;
+      const numericId = parseInt(id, 10);
+      const index = portfolioData.findIndex((f) => f.id === numericId);
+      if (index !== -1) {
+        const feature = portfolioData[index];
+        setEditingIndex(index);
+        setTitle(feature.title);
+        setDescription(feature.description);
+        setImageUrl(feature.image_url);
+        setLink(feature.link);
+        setLinkText(feature.link_text);
+        setPosition(feature.position);
+      } else {
+        setMessage("Feature not found.");
       }
+    }
+  }, [id]);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const newImageUrl =
+      imageFile && imageUrl.startsWith("blob:") ? imageUrl : imageUrl;
+
+    const newFeature: Feature = {
+      id: editingIndex !== null ? features[editingIndex].id : Date.now(),
+      title,
+      description,
+      image_url: newImageUrl,
+      link,
+      link_text: linkText,
+      position,
+    };
+
+    let updatedFeatures = [...features];
+
+    if (editingIndex !== null) {
+      updatedFeatures[editingIndex] = newFeature;
       setMessage("Feature updated!");
     } else {
-      const { error } = await supabase.from("features").insert([
-        {
-          title,
-          description,
-          image_url: finalImageUrl,
-          link,
-          link_text: linkText,
-          user_id: user.id,
-        },
-      ]);
-
-      if (error) {
-        setMessage("Error creating feature.");
-        return;
-      }
-
+      updatedFeatures = [newFeature, ...updatedFeatures];
       setMessage("Feature created!");
       navigate("/portfolio");
     }
+
+    setFeatures(updatedFeatures);
+    setTitle("");
+    setDescription("");
+    setImageUrl("");
+    setLink("");
+    setLinkText("");
+    setPosition(0);
+    setImageFile(null);
+    setEditingIndex(null);
   };
 
-  const handleDelete = async () => {
-    if (!id) return;
+  const handleDelete = () => {
+    if (editingIndex === null) return;
 
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
+    const updatedFeatures = features.filter((_, i) => i !== editingIndex);
+    setFeatures(updatedFeatures);
+    setMessage("Feature deleted.");
+    navigate("/portfolio");
+  };
 
-    if (!session?.access_token) {
-      setMessage("User not authenticated.");
-      return;
-    }
-
-    try {
-      const response = await fetch(
-        "https://vtcezvtqcbaymehpedtp.supabase.co/functions/v1/deleteFeature",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${session.access_token}`,
-          },
-          body: JSON.stringify({ id }),
-        }
-      );
-
-      if (!response.ok) {
-        const error = await response.json();
-        throw new Error(JSON.stringify(error));
-      }
-
-      setMessage("Feature and image deleted.");
-      navigate("/portfolio");
-    } catch (error) {
-      setMessage("Error deleting feature.");
-    }
+  const handleExport = () => {
+    const json = JSON.stringify(features, null, 2);
+    const blob = new Blob([json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "portfolio.json";
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -230,6 +147,14 @@ const PortfolioEditor = () => {
             required
           />
           <input
+            className="full-width-field"
+            type="number"
+            placeholder="Position (lower = more recent)"
+            value={position}
+            onChange={(e) => setPosition(parseInt(e.target.value, 10))}
+            required
+          />
+          <input
             type="file"
             accept="image/*"
             onChange={(e) => {
@@ -267,10 +192,17 @@ const PortfolioEditor = () => {
                 Are you sure? This cannot be undone.
               </p>
               <div className="editor-buttons">
-                <button className="confirm-delete" onClick={handleDelete}>
+                <button
+                  className="confirm-delete"
+                  type="button"
+                  onClick={handleDelete}
+                >
                   Confirm Deletion
                 </button>
-                <button onClick={() => setShowConfirmDelete(false)}>
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmDelete(false)}
+                >
                   Cancel
                 </button>
               </div>
@@ -279,6 +211,9 @@ const PortfolioEditor = () => {
 
           {message && <p>{message}</p>}
         </form>
+        <div className="export-container">
+          <button onClick={handleExport}>Export Updated JSON</button>
+        </div>
       </div>
     </>
   );
