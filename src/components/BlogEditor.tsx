@@ -43,6 +43,17 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
     }
   }, [slug]);
 
+  const exportUpdatedJSON = (updatedPosts: Post[]) => {
+    const json = JSON.stringify(updatedPosts, null, 2);
+    const blob = new Blob([json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "blogPosts.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const now = new Date().toISOString();
@@ -67,6 +78,8 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
     }
 
     setPosts(newPosts);
+    exportUpdatedJSON(newPosts);
+
     setTitle("");
     setSlugInput("");
     setContent("");
@@ -77,19 +90,9 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
     if (editingIndex === null) return;
     const newPosts = posts.filter((_, i) => i !== editingIndex);
     setPosts(newPosts);
+    exportUpdatedJSON(newPosts);
     setMessage("Post deleted!");
     navigate("/blog");
-  };
-
-  const handleExport = () => {
-    const json = JSON.stringify(posts, null, 2);
-    const blob = new Blob([json], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "blogPosts.json";
-    a.click();
-    URL.revokeObjectURL(url);
   };
 
   return (
@@ -156,9 +159,6 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
           {message && <p>{message}</p>}
         </div>
       </form>
-      <div className="export-container">
-        <button onClick={handleExport}>Export Updated JSON</button>
-      </div>
     </div>
   );
 };
