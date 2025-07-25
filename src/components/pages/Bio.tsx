@@ -16,22 +16,25 @@ const Bio = () => {
         <img className="bio-pic" src={headerPhoto}></img>
         <div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            I'm Joe Napolitan, a Michigan-based IT specialist, web developer,
+            and former wilderness educator & ski patrol. Over the past decade,
+            I’ve led backcountry expeditions in Alaska, worked various roles in
+            the technology industry, taught outdoor skills to underserved youth,
+            and later pivoted into tech through self-teaching and
+            certifications. Today I work full-time in IT at a creative arts
+            school, where I support staff and students while building tools to
+            automate workflows, manage data, and improve systems. I bring a mix
+            of technical skill, hands-on grit, and people-first problem-solving
+            to everything I do.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            What ties it all together is my drive to build things that are
+            useful and real, whether its an itinerary for an awesome backpacking
+            trip, a better process, or a meaningful life outside the status
+            race. I’m always exploring ways to work smarter, live simpler, and
+            help others do the same. This site showcases some of my personal
+            projects and creative experiments across tech, content, and the
+            outdoors.
           </p>
         </div>
       </div>

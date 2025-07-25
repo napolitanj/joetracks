@@ -1,194 +1,129 @@
 import { useEffect, useState } from "react";
-import { supabase } from "../utils/supabaseClient";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import portfolioData from "../data/portfolio.json";
 import "../styles/Editor.css";
+
+type Feature = {
+  id: number;
+  title: string;
+  description: string;
+  image_url: string;
+  link: string;
+  link_text: string;
+  position: number;
+};
 
 const PortfolioEditor = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const [features, setFeatures] = useState<Feature[]>([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [link, setLink] = useState("");
   const [linkText, setLinkText] = useState("");
+  const [position, setPosition] = useState<number>(0);
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [message, setMessage] = useState("");
-  const [originalImageUrl, setOriginalImageUrl] = useState("");
+  const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
 
+  const rawImageMap = import.meta.glob("../assets/images/*", {
+    eager: true,
+  });
+
+  const imageOptions = Object.entries(rawImageMap).map(([path, mod]) => ({
+    label: path.split("/").pop() || path,
+    value: (mod as { default: string }).default,
+  }));
+
   useEffect(() => {
-    if (!id) return;
-
-    const fetchFeature = async () => {
-      const { data, error } = await supabase
-        .from("features")
-        .select("*")
-        .eq("id", id)
-        .single();
-
-      if (error) {
-        setMessage("Error loading feature.");
-      } else {
-        setTitle(data.title);
-        setDescription(data.description);
-        setImageUrl(data.image_url);
-        setOriginalImageUrl(data.image_url);
-        setLink(data.link);
-        setLinkText(data.link_text);
-      }
-    };
-
-    fetchFeature();
-  }, [id]);
-
-  const uploadImage = async (): Promise<string | null> => {
-    if (!imageFile) return null;
-
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
-    if (!user) return null;
-
-    const cleanFileName = imageFile.name.replace(/[^\w.\-]/g, "_");
-    const filePath = `portfolio/${user.id}/${Date.now()}_${cleanFileName}`;
-
-    const { error: uploadError } = await supabase.storage
-      .from("portfolio-images")
-      .upload(filePath, imageFile, {
-        upsert: false,
-        cacheControl: "3600",
-        contentType: imageFile.type,
-      });
-
-    if (uploadError) return null;
-
-    const { data } = supabase.storage
-      .from("portfolio-images")
-      .getPublicUrl(filePath);
-    return data.publicUrl;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
-    if (!user) {
-      setMessage("User not authenticated.");
-      return;
-    }
-
-    let finalImageUrl = imageUrl;
-
-    if (imageFile) {
-      const oldImagePath = originalImageUrl?.split(
-        "/storage/v1/object/public/portfolio-images/"
-      )[1];
-
-      const uploadedUrl = await uploadImage();
-
-      if (uploadedUrl) {
-        finalImageUrl = uploadedUrl;
-
-        if (oldImagePath) {
-          const { data: sessionData } = await supabase.auth.getSession();
-
-          if (sessionData.session) {
-            await fetch(
-              "https://vtcezvtqcbaymehpedtp.supabase.co/functions/v1/deleteFeature",
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                  Authorization: `Bearer ${sessionData.session.access_token}`,
-                },
-                body: JSON.stringify({ oldImagePath }),
-              }
-            );
-          }
-        }
-      }
-    }
+    setFeatures(portfolioData);
 
     if (id) {
-      const { error } = await supabase
-        .from("features")
-        .update({
-          title,
-          description,
-          image_url: finalImageUrl,
-          link,
-          link_text: linkText,
-        })
-        .eq("id", id);
-
-      if (error) {
-        setMessage("Error updating feature.");
-        return;
+      const numericId = parseInt(id, 10);
+      const index = portfolioData.findIndex((f) => f.id === numericId);
+      if (index !== -1) {
+        const feature = portfolioData[index];
+        setEditingIndex(index);
+        setTitle(feature.title);
+        setDescription(feature.description);
+        setImageUrl(feature.image_url);
+        setLink(feature.link);
+        setLinkText(feature.link_text);
+        setPosition(feature.position);
+      } else {
+        setMessage("Feature not found.");
       }
+    }
+  }, [id]);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const newImageUrl =
+      imageFile && imageUrl.startsWith("blob:") ? imageUrl : imageUrl;
+
+    const newFeature: Feature = {
+      id: editingIndex !== null ? features[editingIndex].id : Date.now(),
+      title,
+      description,
+      image_url: newImageUrl,
+      link,
+      link_text: linkText,
+      position,
+    };
+
+    let updatedFeatures = [...features];
+
+    if (editingIndex !== null) {
+      updatedFeatures[editingIndex] = newFeature;
       setMessage("Feature updated!");
     } else {
-      const { error } = await supabase.from("features").insert([
-        {
-          title,
-          description,
-          image_url: finalImageUrl,
-          link,
-          link_text: linkText,
-          user_id: user.id,
-        },
-      ]);
-
-      if (error) {
-        setMessage("Error creating feature.");
-        return;
-      }
-
+      updatedFeatures = [newFeature, ...updatedFeatures];
       setMessage("Feature created!");
       navigate("/portfolio");
     }
+
+    setFeatures(updatedFeatures);
+
+    setTitle("");
+    setDescription("");
+    setImageUrl("");
+    setLink("");
+    setLinkText("");
+    setPosition(0);
+    setImageFile(null);
+    setEditingIndex(null);
+
+    const json = JSON.stringify(updatedFeatures, null, 2);
+    const blob = new Blob([json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "portfolio.json";
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
-  const handleDelete = async () => {
-    if (!id) return;
+  const handleDelete = () => {
+    if (editingIndex === null) return;
 
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
+    const updatedFeatures = features.filter((_, i) => i !== editingIndex);
+    setFeatures(updatedFeatures);
+    setMessage("Feature deleted.");
+    navigate("/portfolio");
 
-    if (!session?.access_token) {
-      setMessage("User not authenticated.");
-      return;
-    }
-
-    try {
-      const response = await fetch(
-        "https://vtcezvtqcbaymehpedtp.supabase.co/functions/v1/deleteFeature",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${session.access_token}`,
-          },
-          body: JSON.stringify({ id }),
-        }
-      );
-
-      if (!response.ok) {
-        const error = await response.json();
-        throw new Error(JSON.stringify(error));
-      }
-
-      setMessage("Feature and image deleted.");
-      navigate("/portfolio");
-    } catch (error) {
-      setMessage("Error deleting feature.");
-    }
+    // Export the updated JSON
+    const json = JSON.stringify(updatedFeatures, null, 2);
+    const blob = new Blob([json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "portfolio.json";
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -197,56 +132,87 @@ const PortfolioEditor = () => {
       <div className="editor-container">
         <h2>{id ? "Edit Feature" : "Add New Feature"}</h2>
         <form onSubmit={handleSubmit} className="editor-form">
-          <input
-            className="full-width-field"
-            type="text"
-            placeholder="Feature Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
-          <textarea
-            className="full-width-field"
-            placeholder="Feature Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            rows={6}
-            required
-          />
-          <input
-            className="full-width-field"
-            type="text"
-            placeholder="Feature Link URL (use 'https://www')"
-            value={link}
-            onChange={(e) => setLink(e.target.value)}
-            required
-          />
-          <input
-            className="full-width-field"
-            type="text"
-            placeholder="Link Text"
-            value={linkText}
-            onChange={(e) => setLinkText(e.target.value)}
-            required
-          />
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => {
-              const file = e.target.files?.[0] || null;
-              setImageFile(file);
-              if (file) {
-                setImageUrl(URL.createObjectURL(file));
-              }
-            }}
-          />
+          <label>
+            Feature Title:
+            <input
+              className="full-width-field"
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              required
+            />
+          </label>
+
+          <label>
+            Feature Description:
+            <textarea
+              className="full-width-field"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              rows={6}
+              required
+            />
+          </label>
+
+          <label>
+            Feature Link URL:
+            <input
+              className="full-width-field"
+              type="text"
+              placeholder="https://www.example.com"
+              value={link}
+              onChange={(e) => setLink(e.target.value)}
+              required
+            />
+          </label>
+
+          <label>
+            Link Text:
+            <input
+              className="full-width-field"
+              type="text"
+              value={linkText}
+              onChange={(e) => setLinkText(e.target.value)}
+              required
+            />
+          </label>
+
+          <label>
+            Position (lower = more recent):
+            <input
+              className="full-width-field"
+              type="number"
+              value={position}
+              onChange={(e) => setPosition(parseInt(e.target.value, 10))}
+              required
+            />
+          </label>
+
+          <label>
+            Select Image:
+            <select
+              className="full-width-field"
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+            >
+              <option value="">Choose an image</option>
+              {imageOptions.map((img) => (
+                <option key={img.value} value={img.value}>
+                  {img.label}
+                </option>
+              ))}
+            </select>
+          </label>
+
           {imageUrl && (
             <img
               src={imageUrl}
               alt="Feature Preview"
               className="preview-image"
+              onError={() => setImageUrl("")}
             />
           )}
+
           <button type="submit">
             {id ? "Update Feature" : "Create Feature"}
           </button>
@@ -267,10 +233,17 @@ const PortfolioEditor = () => {
                 Are you sure? This cannot be undone.
               </p>
               <div className="editor-buttons">
-                <button className="confirm-delete" onClick={handleDelete}>
+                <button
+                  className="confirm-delete"
+                  type="button"
+                  onClick={handleDelete}
+                >
                   Confirm Deletion
                 </button>
-                <button onClick={() => setShowConfirmDelete(false)}>
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmDelete(false)}
+                >
                   Cancel
                 </button>
               </div>
