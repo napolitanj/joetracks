@@ -29,6 +29,15 @@ const PortfolioEditor = () => {
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
 
+  const rawImageMap = import.meta.glob("../assets/images/*", {
+    eager: true,
+  });
+
+  const imageOptions = Object.entries(rawImageMap).map(([path, mod]) => ({
+    label: path.split("/").pop() || path,
+    value: (mod as { default: string }).default,
+  }));
+
   useEffect(() => {
     setFeatures(portfolioData);
 
@@ -78,6 +87,7 @@ const PortfolioEditor = () => {
     }
 
     setFeatures(updatedFeatures);
+
     setTitle("");
     setDescription("");
     setImageUrl("");
@@ -86,6 +96,15 @@ const PortfolioEditor = () => {
     setPosition(0);
     setImageFile(null);
     setEditingIndex(null);
+
+    const json = JSON.stringify(updatedFeatures, null, 2);
+    const blob = new Blob([json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "portfolio.json";
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   const handleDelete = () => {
@@ -95,10 +114,9 @@ const PortfolioEditor = () => {
     setFeatures(updatedFeatures);
     setMessage("Feature deleted.");
     navigate("/portfolio");
-  };
 
-  const handleExport = () => {
-    const json = JSON.stringify(features, null, 2);
+    // Export the updated JSON
+    const json = JSON.stringify(updatedFeatures, null, 2);
     const blob = new Blob([json], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -114,64 +132,87 @@ const PortfolioEditor = () => {
       <div className="editor-container">
         <h2>{id ? "Edit Feature" : "Add New Feature"}</h2>
         <form onSubmit={handleSubmit} className="editor-form">
-          <input
-            className="full-width-field"
-            type="text"
-            placeholder="Feature Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
-          <textarea
-            className="full-width-field"
-            placeholder="Feature Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            rows={6}
-            required
-          />
-          <input
-            className="full-width-field"
-            type="text"
-            placeholder="Feature Link URL (use 'https://www')"
-            value={link}
-            onChange={(e) => setLink(e.target.value)}
-            required
-          />
-          <input
-            className="full-width-field"
-            type="text"
-            placeholder="Link Text"
-            value={linkText}
-            onChange={(e) => setLinkText(e.target.value)}
-            required
-          />
-          <input
-            className="full-width-field"
-            type="number"
-            placeholder="Position (lower = more recent)"
-            value={position}
-            onChange={(e) => setPosition(parseInt(e.target.value, 10))}
-            required
-          />
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => {
-              const file = e.target.files?.[0] || null;
-              setImageFile(file);
-              if (file) {
-                setImageUrl(URL.createObjectURL(file));
-              }
-            }}
-          />
+          <label>
+            Feature Title:
+            <input
+              className="full-width-field"
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              required
+            />
+          </label>
+
+          <label>
+            Feature Description:
+            <textarea
+              className="full-width-field"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              rows={6}
+              required
+            />
+          </label>
+
+          <label>
+            Feature Link URL:
+            <input
+              className="full-width-field"
+              type="text"
+              placeholder="https://www.example.com"
+              value={link}
+              onChange={(e) => setLink(e.target.value)}
+              required
+            />
+          </label>
+
+          <label>
+            Link Text:
+            <input
+              className="full-width-field"
+              type="text"
+              value={linkText}
+              onChange={(e) => setLinkText(e.target.value)}
+              required
+            />
+          </label>
+
+          <label>
+            Position (lower = more recent):
+            <input
+              className="full-width-field"
+              type="number"
+              value={position}
+              onChange={(e) => setPosition(parseInt(e.target.value, 10))}
+              required
+            />
+          </label>
+
+          <label>
+            Select Image:
+            <select
+              className="full-width-field"
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+            >
+              <option value="">Choose an image</option>
+              {imageOptions.map((img) => (
+                <option key={img.value} value={img.value}>
+                  {img.label}
+                </option>
+              ))}
+            </select>
+          </label>
+
           {imageUrl && (
             <img
               src={imageUrl}
               alt="Feature Preview"
               className="preview-image"
+              onError={() => setImageUrl("")}
             />
           )}
+
           <button type="submit">
             {id ? "Update Feature" : "Create Feature"}
           </button>
@@ -211,9 +252,6 @@ const PortfolioEditor = () => {
 
           {message && <p>{message}</p>}
         </form>
-        <div className="export-container">
-          <button onClick={handleExport}>Export Updated JSON</button>
-        </div>
       </div>
     </>
   );

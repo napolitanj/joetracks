@@ -1,5 +1,14 @@
 [
   {
+    "id": 1753460061463,
+    "title": "This is a test feature",
+    "description": "Lets see how this feature works",
+    "image_url": "/src/assets/images/howtousecaltopo.png",
+    "link": "https://www.google.com",
+    "link_text": "Go to google",
+    "position": 1
+  },
+  {
     "id": 1,
     "title": "My Cool Project",
     "description": "A React app using local JSON instead of Supabase.",
@@ -7,14 +16,5 @@
     "link": "https://github.com/joe/my-cool-project",
     "link_text": "View on GitHub",
     "position": 1
-  },
-  {
-    "id": 2,
-    "title": "Another Portfolio Item",
-    "description": "A design I built using Tailwind and Vite.",
-    "image_url": "/images/project2.jpg",
-    "link": "https://example.com/project2",
-    "link_text": "Live Demo",
-    "position": 2
   }
 ]
