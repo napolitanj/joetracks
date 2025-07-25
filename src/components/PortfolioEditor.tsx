@@ -13,6 +13,11 @@ type Feature = {
   position: number;
 };
 
+type Option = {
+  label: string;
+  value: string;
+};
+
 const PortfolioEditor = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -24,22 +29,23 @@ const PortfolioEditor = () => {
   const [link, setLink] = useState("");
   const [linkText, setLinkText] = useState("");
   const [position, setPosition] = useState<number>(0);
-  const [imageFile, setImageFile] = useState<File | null>(null);
   const [message, setMessage] = useState("");
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
+  const [imageOptions, setImageOptions] = useState<Option[]>([]);
 
-  const rawImageMap = import.meta.glob("../assets/images/*", {
-    eager: true,
-  });
-
-  const imageOptions = Object.entries(rawImageMap).map(([path, mod]) => {
-    const filename = path.split("/").pop();
-    return {
-      label: filename || path,
-      value: `/src/assets/images/${filename}`, // <- relative path
-    };
-  });
+  useEffect(() => {
+    fetch("/joe-napolitan.com/imageList.json")
+      .then((res) => res.json())
+      .then((filenames: string[]) => {
+        const options = filenames.map((filename) => ({
+          label: filename,
+          value: `./images/${filename}`,
+        }));
+        setImageOptions(options);
+      })
+      .catch((err) => console.error("Failed to load image list", err));
+  }, []);
 
   useEffect(() => {
     setFeatures(portfolioData);
@@ -65,14 +71,13 @@ const PortfolioEditor = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const newImageUrl =
-      imageFile && imageUrl.startsWith("blob:") ? imageUrl : imageUrl;
-
     const newFeature: Feature = {
       id: editingIndex !== null ? features[editingIndex].id : Date.now(),
       title,
       description,
-      image_url: newImageUrl,
+      image_url: imageUrl.startsWith("/images/")
+        ? imageUrl
+        : `/images/${imageUrl.replace(/^\.?\/?images\/?/, "")}`,
       link,
       link_text: linkText,
       position,
@@ -97,7 +102,6 @@ const PortfolioEditor = () => {
     setLink("");
     setLinkText("");
     setPosition(0);
-    setImageFile(null);
     setEditingIndex(null);
 
     const json = JSON.stringify(updatedFeatures, null, 2);
@@ -108,6 +112,7 @@ const PortfolioEditor = () => {
     a.download = "portfolio.json";
     a.click();
     URL.revokeObjectURL(url);
+    console.log("Saving image URL to JSON:", imageUrl);
   };
 
   const handleDelete = () => {
@@ -118,7 +123,6 @@ const PortfolioEditor = () => {
     setMessage("Feature deleted.");
     navigate("/portfolio");
 
-    // Export the updated JSON
     const json = JSON.stringify(updatedFeatures, null, 2);
     const blob = new Blob([json], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -196,7 +200,11 @@ const PortfolioEditor = () => {
             <select
               className="full-width-field"
               value={imageUrl}
-              onChange={(e) => setImageUrl(e.target.value)}
+              onChange={(e) => {
+                const selectedValue = e.target.value;
+                console.log("Selected image URL:", selectedValue);
+                setImageUrl(selectedValue);
+              }}
             >
               <option value="">Choose an image</option>
               {imageOptions.map((img) => (
@@ -212,7 +220,6 @@ const PortfolioEditor = () => {
               src={imageUrl}
               alt="Feature Preview"
               className="preview-image"
-              onError={() => setImageUrl("")}
             />
           )}
 

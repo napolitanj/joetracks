@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import blogPosts from "../../data/blogPosts.json";
 import { Link } from "react-router-dom";
 import "../../styles/Blog.css";
+import { getTrimmedContent } from "../../utils/trimParagraphs";
 
 type Post = {
   id: string;
@@ -46,10 +47,10 @@ const Blog = () => {
           {posts.map((post) => (
             <div key={post.id} className="post-feature">
               <h2>{post.title}</h2>
-              <p className="post-brief">
-                {post.content.slice(0, 200)}
-                {post.content.length > 200 && "..."}
-              </p>
+              <div className="post-brief">
+                {getTrimmedContent(post.content, 250)}
+              </div>
+
               <Link to={`/blog/${post.slug}`} key={post.id}>
                 <p>Read more...</p>
               </Link>

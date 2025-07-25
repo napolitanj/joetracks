@@ -11,7 +11,7 @@
   padding: 2em;
 }
 
-.features-list {
+.portfolio-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
