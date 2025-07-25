@@ -1,0 +1,10 @@
+[
+  {
+    "id": "1",
+    "title": "My First Post",
+    "slug": "my-first-post",
+    "content": "This is my first blog post.",
+    "created_at": "2025-07-20T12:00:00Z",
+    "published": true
+  }
+]

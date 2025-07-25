@@ -1,59 +1,39 @@
 import { useEffect, useState } from "react";
-import { supabase } from "../utils/supabaseClient";
-import { User } from "@supabase/supabase-js";
 import "../styles/Navbar.css";
 
 const AuthButton = () => {
-  const [user, setUser] = useState<User | null>(null);
-
-  const allowedEmail = "napolitanjoe@gmail.com";
+  const [isAuthorized, setIsAuthorized] = useState(false);
 
   useEffect(() => {
-    const checkUser = async () => {
-      const { data } = await supabase.auth.getUser();
-      if (data?.user?.email === allowedEmail) {
-        setUser(data.user);
-      } else if (data?.user) {
-        await supabase.auth.signOut();
-        alert("Access denied: unauthorized email");
-      }
-    };
-
-    checkUser();
+    const isLocalhost = window.location.hostname === "localhost";
+    const loggedIn = localStorage.getItem("isAuthorized") === "true";
+    setIsAuthorized(isLocalhost && loggedIn);
   }, []);
 
-  const handleLogin = async () => {
+  const handleLogin = () => {
     const inputEmail = window.prompt("Enter your email:");
 
     if (!inputEmail) return;
 
-    if (inputEmail.trim().toLowerCase() !== allowedEmail) {
-      alert("Access denied: unauthorized email");
-      return;
-    }
+    const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
 
-    const { error } = await supabase.auth.signInWithOtp({
-      email: inputEmail,
-    });
-
-    if (error) {
-      alert("Error sending magic link");
+    if (inputEmail.trim().toLowerCase() === adminEmail.toLowerCase()) {
+      localStorage.setItem("isAuthorized", "true");
+      window.location.reload(); // Refresh UI
     } else {
-      alert("Magic link sent! Check your email.");
+      alert("Access denied: unauthorized email");
     }
   };
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    setUser(null);
+  const handleLogout = () => {
+    localStorage.removeItem("isAuthorized");
+    window.location.reload(); // Refresh UI
   };
 
   return (
     <div>
-      {user ? (
-        <>
-          <button onClick={handleLogout}>Sign out</button>
-        </>
+      {isAuthorized ? (
+        <button onClick={handleLogout}>Sign out</button>
       ) : (
         <button onClick={handleLogin}>Login</button>
       )}

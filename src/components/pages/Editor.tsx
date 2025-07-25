@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { supabase } from "../../utils/supabaseClient";
 import BlogEditor from "../BlogEditor";
 
 const EditorPage = () => {
@@ -9,20 +8,14 @@ const EditorPage = () => {
   const { slug } = useParams();
 
   useEffect(() => {
-    const checkUser = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
+    const isLocalhost = window.location.hostname === "localhost";
+    const loggedIn = localStorage.getItem("isAuthorized") === "true";
 
-      if (user?.email === adminEmail) {
-        setIsAuthorized(true);
-      } else {
-        navigate("/access-denied");
-      }
-    };
-
-    checkUser();
+    if (isLocalhost && loggedIn) {
+      setIsAuthorized(true);
+    } else {
+      navigate("/access-denied");
+    }
   }, [navigate]);
 
   return isAuthorized ? <BlogEditor slug={slug} /> : <p>Loading...</p>;

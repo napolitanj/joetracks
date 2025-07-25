@@ -1,32 +1,25 @@
 import React, { useState } from "react";
-import { supabase } from "../utils/supabaseClient";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const payload = {
-      email,
-      options: {
-        emailRedirectTo: "https://napolitanj.github.io/joe-napolitan.com/",
-      },
-    };
+    const isLocal = window.location.hostname === "localhost";
+    const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
 
-    console.log("Sending signInWithOtp payload:", payload);
+    if (!isLocal) {
+      setError("Login failed: not available in this environment.");
+      return;
+    }
 
-    const { error } = await supabase.auth.signInWithOtp(payload);
-
-    if (error) {
-      console.error("Error during signInWithOtp:", error);
-      setError(error.message);
-      setMessage("");
+    if (email === adminEmail) {
+      localStorage.setItem("isAuthorized", "true");
+      window.location.href = "/";
     } else {
-      setMessage("Check your email for a magic login link.");
-      setError("");
+      setError("Login failed: unauthorized email.");
     }
   };
 
@@ -34,7 +27,6 @@ const Login: React.FC = () => {
     <form onSubmit={handleSubmit}>
       <h2>Login</h2>
       {error && <p style={{ color: "red" }}>{error}</p>}
-      {message && <p style={{ color: "green" }}>{message}</p>}
       <div>
         <label>Email:</label>
         <input
@@ -44,7 +36,7 @@ const Login: React.FC = () => {
           required
         />
       </div>
-      <button type="submit">Send Magic Link</button>
+      <button type="submit">Log In</button>
     </form>
   );
 };
