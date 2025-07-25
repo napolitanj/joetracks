@@ -34,7 +34,7 @@
       rgba(255, 255, 255, 0) 60%,
       rgba(255, 255, 255, 1) 90%
     ),
-    url("/src/assets/images/header-photo.jpg");
+    url("/images/header-photo.jpg");
   background-size: cover;
   background-position: top left;
   background-repeat: no-repeat;
@@ -49,7 +49,7 @@ body.dark .banner-image::before {
       rgba(18, 18, 18, 0) 60%,
       rgba(18, 18, 18, 1) 90%
     ),
-    url("/src/assets/images/header-photo-3.jpeg");
+    url("/images/header-photo-3.jpeg");
 }
 
 .banner-text {

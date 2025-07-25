@@ -33,10 +33,13 @@ const PortfolioEditor = () => {
     eager: true,
   });
 
-  const imageOptions = Object.entries(rawImageMap).map(([path, mod]) => ({
-    label: path.split("/").pop() || path,
-    value: (mod as { default: string }).default,
-  }));
+  const imageOptions = Object.entries(rawImageMap).map(([path, mod]) => {
+    const filename = path.split("/").pop();
+    return {
+      label: filename || path,
+      value: `/src/assets/images/${filename}`, // <- relative path
+    };
+  });
 
   useEffect(() => {
     setFeatures(portfolioData);
