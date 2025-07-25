@@ -45,7 +45,11 @@ const BlogPost = () => {
         <div className={`post-contents ${fadeIn ? "show" : ""}`}>
           <h1>{post.title}</h1>
           <p>{new Date(post.created_at).toLocaleDateString()}</p>
-          <div>{post.content}</div>
+          <div>
+            {post.content.split(/\n{2,}/).map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
+          </div>
         </div>
       </article>
       {isAuthorized && (

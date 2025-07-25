@@ -36,7 +36,11 @@ const PortfolioFeature = ({
         </Link>
       )}
       <h2 className="feature-title">{title}</h2>
-      <img src={imageUrl} className="feature-image" />
+      {imageUrl && imageUrl.startsWith("./images/") ? (
+        <img src={imageUrl} className="feature-image" alt="Feature" />
+      ) : (
+        <div className="image-placeholder">No Image</div>
+      )}
       <p className="feature-description">{description}</p>
       <a href={link} target="_blank" rel="noopener noreferrer">
         {linkText}

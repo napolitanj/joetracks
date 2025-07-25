@@ -23,7 +23,10 @@ const Portfolio = () => {
     const loggedIn = localStorage.getItem("isAuthorized") === "true";
     setIsAuthorized(isLocalhost && loggedIn);
 
-    setFeatures(portfolioData.sort((a, b) => b.position - a.position));
+    const cleaned = portfolioData.filter(
+      (f) => f.image_url && f.image_url.startsWith("./images/")
+    );
+    setFeatures(cleaned.sort((a, b) => b.position - a.position));
   }, []);
 
   return (
@@ -34,7 +37,7 @@ const Portfolio = () => {
             <Link to="/portfolioeditor">+ Create New Feature</Link>
           </div>
         )}
-        <div className="features-list">
+        <div className={`portfolio-list ${features.length > 0 ? "show" : ""}`}>
           {features.map((feature) => (
             <PortfolioFeature
               key={feature.id}
