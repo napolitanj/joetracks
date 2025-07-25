@@ -1,7 +1,7 @@
 import "../../styles/Bio.css";
 import { useEffect, useState } from "react";
 import BannerImage from "../BannerImage";
-import headerPhoto from "/src/assets/images/bio-pic.jpg";
+import headerPhoto from "/images/bio-pic.jpg";
 
 const Bio = () => {
   const [fadeIn, setFadeIn] = useState(false);
