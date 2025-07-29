@@ -1,0 +1,46 @@
+.writing-portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.writing-portfolio-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  margin: 1.5em 0;
+  width: 90%;
+  gap: 1em;
+}
+
+.writing-info {
+}
+
+.writing-samples {
+}
+
+.writing-title {
+  color: black;
+}
+
+body.dark .writing-portfolio-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ccc;
+}
+
+body.dark .writing-portfolio-container p {
+  color: #ccc;
+}
+
+body.dark .writing-title {
+  color: #ccc;
+}
