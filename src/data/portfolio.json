@@ -1,11 +1,11 @@
 [
   {
     "id": 1753466622840,
-    "title": "Another Test feature",
+    "title": "Writing Portfolio",
     "description": "Another Test featureAnother Test featureAnother Test featureAnother Test featureAnother Test featureAnother Test feature Another Test feature",
     "image_url": "./images/howtousecaltopo.png",
-    "link": "https://www.google.com",
-    "link_text": "go to goolge",
+    "link": "/joe-napolitan.com/writing",
+    "link_text": "See Portfolio",
     "position": 1
   },
   {
