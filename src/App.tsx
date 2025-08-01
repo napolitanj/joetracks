@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "/src/styles/App.css";
 import Navbar from "./components/Navbar";
 import Bio from "./components/pages/Bio";
@@ -14,8 +14,8 @@ import Login from "./components/Login";
 
 function App() {
   return (
-    <Router basename="/joe-napolitan.com">
-      <Navbar></Navbar>
+    <>
+      <Navbar />
       <main className="route-content-wrapper">
         <Routes>
           <Route path="/" element={<Bio />} />
@@ -32,7 +32,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
       </main>
-    </Router>
+    </>
   );
 }
 
