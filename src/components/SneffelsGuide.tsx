@@ -108,13 +108,12 @@ const SneffelsGuide = () => {
               <div className="section-half">
                 <div className="layout grid-12 columns-12">
                   <figure className="block-image-figure intrinsic">
-                    <div className="image-shape-container-element has-aspect-ratio">
-                      <img
-                        alt="Two slings around large rocks on the southwest side of a mountain"
-                        className="loaded"
-                        src="./public/images/sneffels/mount-sneffels-rappel-anchor.webp"
-                      />
-                    </div>
+                    <img
+                      alt="Two slings around large rocks on the southwest side of a mountain"
+                      className="loaded"
+                      src="./public/images/sneffels/mount-sneffels-rappel-anchor.webp"
+                    />
+
                     <figcaption className="image-caption-wrapper">
                       <div className="image-caption">
                         <p className="sqsrte-small preFade">
