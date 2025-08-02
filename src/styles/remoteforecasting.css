@@ -1,3 +1,15 @@
 .remote-bg {
   background-image: url("./public/images/remote-forecasting/skintrack.webp");
 }
+
+@media (max-width: 1024px) {
+  .dis-row {
+    flex-direction: column;
+  }
+  .hero-text h1 {
+    font-size: 3.5rem;
+  }
+  .section-half {
+    width: 100%;
+  }
+}
