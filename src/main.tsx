@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App.tsx";
 import SneffelsGuide from "./components/SneffelsGuide.tsx";
 import NorthManitouGuide from "./components/NorthManitouGuide.tsx";
+import CalTopo from "./components/CalTopo.tsx";
 import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
@@ -13,6 +14,7 @@ createRoot(document.getElementById("root")!).render(
         {/* Standalone route — no shared layout */}
         <Route path="/sneffels-guide" element={<SneffelsGuide />} />
         <Route path="/north-manitou-guide" element={<NorthManitouGuide />} />
+        <Route path="/learn-caltopo" element={<CalTopo />} />
         {/* Catch-all SPA routes (must go last) */}
         <Route path="/*" element={<App />} />
       </Routes>

@@ -1,0 +1,26 @@
+.image-swap-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-swap-container img {
+  display: block;
+  width: 100%; /* or set a fixed width/height */
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.image-swap-container:hover .img-hover {
+  opacity: 1;
+}
+
+.image-swap-container:hover .img-default {
+  opacity: 0;
+}
