@@ -1,0 +1,9 @@
+.manitou-bg {
+  background-image: url("./public/images/north-manitou/manitou-header.webp");
+}
+
+h2 {
+  white-space: pre-wrap;
+  font-size: 3rem;
+  font-weight: 400;
+}

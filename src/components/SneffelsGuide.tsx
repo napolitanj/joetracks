@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "/src/styles/sneffels-guide.css";
+import "/src/styles/shared.css";
 
 const SneffelsGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -10,11 +11,11 @@ const SneffelsGuide = () => {
   }, []);
 
   return (
-    <div className="sneffels-guide">
+    <div className="guide">
       <main className="container" id="page" role="main">
         <article className="sections">
-          <section className="sneffels-hero">
-            <div className="sneffels-hero-text">
+          <section className="hero sneffels-bg">
+            <div className="hero-text">
               <h1 className={animate ? "animate" : ""}>
                 A Detailed Guide for Skiing Mount Sneffels’ Snake Couloir
               </h1>
@@ -82,7 +83,7 @@ const SneffelsGuide = () => {
               information as possible to educate readers. Adequate&nbsp;
               <a href="https://www.14ers.com/safety.php">preparation</a>,
               conditioning, and&nbsp;
-              <a href="https://kbyg.org/#moreinfo">education</a>
+              <a href="https://avtraining.org/recprogram/">education</a>
               &nbsp;are essential to engage in this activity safely.&nbsp;
               <a href="http://www.klingmountainguides.com/">Hire a guide</a>
               &nbsp;if you wish to embark on this adventurer and are unsure of
@@ -120,7 +121,7 @@ const SneffelsGuide = () => {
                     </figcaption>
                   </figure>
                 </div>
-                <div className="block html-block block-html">
+                <div id="gear-list" className="block html-block block-html">
                   <h4 className="preFade">
                     <strong>Gear</strong>
                   </h4>
@@ -194,7 +195,7 @@ const SneffelsGuide = () => {
               <div className="section-half">
                 <div className="block html-block block-html">
                   <div className="block-content">
-                    <div className="dis-col">
+                    <div id="beta" className="dis-col">
                       <h4 className="preFade">
                         <strong>Beta</strong>
                       </h4>
@@ -283,7 +284,6 @@ const SneffelsGuide = () => {
                     alt="Overview map."
                     src="./public/images/sneffels/mount-sneffels-snake-couloir-map.webp"
                   />
-
                   <div className="image-caption">
                     <p className="sqsrte-small preFade">Overview map.</p>
                   </div>
@@ -316,7 +316,7 @@ const SneffelsGuide = () => {
             </div>
             <hr className="section-divider" />
           </section>
-          <section className="page-section layout-engine-section background-width--full-bleed section-height--small content-width--wide horizontal-alignment--center vertical-alignment--middle">
+          <section id="trip-report" className="page-section">
             <div className="section-border">
               <div className="section-background"></div>
             </div>
@@ -525,7 +525,7 @@ const SneffelsGuide = () => {
                                 exposure to a high-consequence tumble down the
                                 southeast face of the mountain. Judging from the
                                 appearance of their tracks, the snow on this
-                                variation was probably pretty firm.
+                                variation was sun-baked and firm.
                               </p>
                               <p className="preFade">
                                 I made my way to the top of the scramble while
@@ -605,7 +605,8 @@ const SneffelsGuide = () => {
                           <figcaption className="image-caption-wrapper">
                             <div className="image-caption">
                               <p className="sqsrte-small preFade">
-                                Evan navigates the outcropping.
+                                Evan navigates the outcropping to avoid the
+                                cornice on the adjacent side of the ridge.
                               </p>
                             </div>
                           </figcaption>
@@ -639,7 +640,9 @@ const SneffelsGuide = () => {
                               <p className="sqsrte-small preFade">
                                 The 100-foot rappel could be done with a 60m
                                 rope, but you’ll have a bit of steep down
-                                climbing to do.
+                                climbing to do. I have heard rumors of skiers
+                                downclimbing the entire pitch, but do not
+                                recommend it.
                               </p>
                             </div>
                           </figcaption>
@@ -723,22 +726,23 @@ const SneffelsGuide = () => {
                         <p className="preFade">
                           Celebration ensued before a rapid transition. We were
                           eight hours into our day and still far from the end on
-                          account of our decision not to traverse. We were
-                          feeling the burn right away as we began skinning back
-                          towards Sneffels. Making our way looker’s left, we
-                          eventually arrived at the base of the slope that would
-                          return us to the lower saddle.
+                          account of our decision to ski far into the basin
+                          rather than traverse. We were feeling the burn right
+                          away as we began skinning back towards Sneffels.
+                          Making our way looker’s left, we eventually arrived at
+                          the base of the slope that would return us to the
+                          lower saddle.
                         </p>
                         <p className="preFade">
-                          We were feeling pretty exhausted by the time we
-                          started our switchbacks towards the lower saddle. As
-                          we alternated breaking trail, I found myself counting
-                          out 40 steps between minute-long breaks to manage my
-                          exhaustion. It took 3 hours total for us to return to
-                          the saddle from where we transitioned below. We
-                          proceeded down wind-affected crud on the south apron
-                          from the top of the saddle and traversed left and high
-                          through Yankee Boy Basin back to the pit toilets.
+                          Exhaustion kicked in by the time we started our
+                          switchbacks towards the lower saddle. As we alternated
+                          breaking trail, I found myself counting out 40 steps
+                          between minute-long breaks. It took 3 hours total for
+                          us to return to the saddle from where we transitioned
+                          below. We proceeded down wind-affected crud on the
+                          south apron from the top of the saddle and traversed
+                          left and high through Yankee Boy Basin back to the pit
+                          toilets.
                         </p>
                       </div>
                       <div className="section-half">
@@ -778,9 +782,10 @@ const SneffelsGuide = () => {
                           short video of footage I gathered along the way.
                         </p>
                         <p className="preFade">
-                          Thanks for taking the time to read. Please share this
-                          guide with anyone you feel would value the
-                          information. Be safe out there!
+                          Thanks for taking the time to read. Enjoy the video
+                          below if you're looking for more visual detail from
+                          our trip. Please share this guide with anyone you feel
+                          would value the information. Be safe out there!
                         </p>
                       </div>
                       <div className="section-half">
