@@ -1,3 +1,15 @@
+html {
+  scroll-behavior: smooth;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 700;
+}
+
 h1,
 h2,
 h3,
@@ -79,6 +91,10 @@ figcaption {
   transition-timing-function: ease;
   transition-duration: 0.45s;
   transition-delay: 0.259615s;
+}
+
+.big-txt {
+  font-size: 1.35em;
 }
 
 .button {

@@ -1,3 +1,7 @@
+.caltopo-bg {
+  background-image: url("./public/images/caltopo/pictured+rocks.webp");
+}
+
 .image-swap-container {
   position: relative;
   display: inline-block;
@@ -5,7 +9,7 @@
 
 .image-swap-container img {
   display: block;
-  width: 100%; /* or set a fixed width/height */
+  width: 100%;
   height: auto;
   transition: opacity 0.3s ease;
 }
