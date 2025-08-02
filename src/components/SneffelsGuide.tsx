@@ -81,11 +81,17 @@ const SneffelsGuide = () => {
               various hazards beyond their control that may result in death.
               This post is designed to tell a story and provide as much
               information as possible to educate readers. Adequate&nbsp;
-              <a href="https://www.14ers.com/safety.php">preparation</a>,
-              conditioning, and&nbsp;
-              <a href="https://avtraining.org/recprogram/">education</a>
+              <a href="https://www.14ers.com/safety.php" target="_blank">
+                preparation
+              </a>
+              , conditioning, and&nbsp;
+              <a href="https://avtraining.org/recprogram/" target="_blank">
+                education
+              </a>
               &nbsp;are essential to engage in this activity safely.&nbsp;
-              <a href="http://www.klingmountainguides.com/">Hire a guide</a>
+              <a href="http://www.klingmountainguides.com/" target="_blank">
+                Hire a guide
+              </a>
               &nbsp;if you wish to embark on this adventurer and are unsure of
               your capabilities.
             </p>
@@ -129,7 +135,10 @@ const SneffelsGuide = () => {
                     <li>
                       <p className="preFade">
                         skis, boots, skins, pole, and&nbsp;
-                        <a href="https://www.rei.com/product/885298/black-diamond-whippet-backcountry-ski-pole-single">
+                        <a
+                          href="https://www.rei.com/product/885298/black-diamond-whippet-backcountry-ski-pole-single"
+                          target="_blank"
+                        >
                           whippet
                         </a>
                         &nbsp;(wasn’t necessary)
@@ -183,7 +192,9 @@ const SneffelsGuide = () => {
                     <li>
                       <p className="preFade">
                         smartphone with maps downloaded on&nbsp;
-                        <a href="https://www.gaiagps.com/hike/">GAIA GPS</a>
+                        <a href="https://www.gaiagps.com/hike/" target="_blank">
+                          GAIA GPS
+                        </a>
                       </p>
                     </li>
                     <li>
@@ -220,16 +231,25 @@ const SneffelsGuide = () => {
                       </p>
                       <p className="preFade">
                         Contact&nbsp;
-                        <a href="https://www.ouraymountainsports.com/">
+                        <a
+                          href="https://www.ouraymountainsports.com/"
+                          target="_blank"
+                        >
                           Ouray Mountain Sports
                         </a>
                         &nbsp;or&nbsp;
-                        <a href="http://www.ci.ouray.co.us/city_offices/public_works/index.php">
+                        <a
+                          href="http://www.ci.ouray.co.us/city_offices/public_works/index.php"
+                          target="_blank"
+                        >
                           Ouray Public Works Department
                         </a>
                         &nbsp;for information about country road 361. You
                         can&nbsp;
-                        <a href="https://goo.gl/maps/ZH35mnpxiZBMqg8f7">
+                        <a
+                          href="https://goo.gl/maps/ZH35mnpxiZBMqg8f7"
+                          target="_blank"
+                        >
                           access the road from US Highway 550, just south of
                           Ouray after the first switchback
                         </a>
@@ -584,7 +604,10 @@ const SneffelsGuide = () => {
                         <p className="preFade">
                           Eager to get out of the wind, we spent little time at
                           the summit. Evan&nbsp;
-                          <a href="https://www.youtube.com/watch?v=7U6tdEevJgs">
+                          <a
+                            href="https://www.youtube.com/watch?v=7U6tdEevJgs"
+                            target="_blank"
+                          >
                             rigged himself into the system
                           </a>
                           &nbsp;and proceeded first down the 100-foot rappel.
@@ -652,7 +675,10 @@ const SneffelsGuide = () => {
                         <p className="preFade">My lucky day - I go first!</p>
                         <p className="preFade">
                           I made two&nbsp;
-                          <a href="https://avalanche.org/avalanche-encyclopedia/ski-or-slope-cut/">
+                          <a
+                            href="https://avalanche.org/avalanche-encyclopedia/ski-or-slope-cut/"
+                            target="_blank"
+                          >
                             ski cuts
                           </a>
                           &nbsp;before dropping into the skier’s right side of
@@ -662,7 +688,10 @@ const SneffelsGuide = () => {
                           me. Here the route steepens to what I estimate is at
                           least 50 degrees and proceeds into a narrow choke. I
                           took my time, minding any buried rocks and&nbsp;
-                          <a href="https://avalanche.org/avalanche-encyclopedia/loose-snow-avalanche/">
+                          <a
+                            href="https://avalanche.org/avalanche-encyclopedia/loose-snow-avalanche/"
+                            target="_blank"
+                          >
                             sluff
                           </a>
                           &nbsp;I knocked loose as I moved through this section

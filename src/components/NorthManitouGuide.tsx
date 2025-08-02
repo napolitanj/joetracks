@@ -161,7 +161,10 @@ const NorthManitouGuide = () => {
                         <li>
                           <p>
                             A complete understanding of&nbsp;
-                            <a href="https://lnt.org/why/7-principles/">
+                            <a
+                              href="https://lnt.org/why/7-principles/"
+                              target="_blank"
+                            >
                               Leave No Trace (LNT
                             </a>
                             ).
@@ -174,7 +177,10 @@ const NorthManitouGuide = () => {
                         </li>
                         <li>
                           <p>
-                            <a href="https://backcountrynorth.com/">
+                            <a
+                              href="https://backcountrynorth.com/"
+                              target="_blank"
+                            >
                               The gear to do it<em>.</em>
                             </a>
                           </p>
@@ -512,7 +518,7 @@ const NorthManitouGuide = () => {
                   <h3>Book Passage on the North Manitou Island Ferry</h3>
                   <p>
                     Before making any other plans, make sure you can book&nbsp;
-                    <a href="https://manitoutransit.com/">
+                    <a href="https://manitoutransit.com/" target="_blank">
                       Manitou Island Transit
                     </a>
                     &nbsp; tickets to and from the island on the days you wish
@@ -535,7 +541,10 @@ const NorthManitouGuide = () => {
                     daily.
                   </p>
                   <p>
-                    <a href="https://manitoutransit.com/rates-schedule/">
+                    <a
+                      href="https://manitoutransit.com/rates-schedule/"
+                      target="_blank"
+                    >
                       Click here to see the ferry schedule and book tickets.
                     </a>
                   </p>
@@ -549,7 +558,10 @@ const NorthManitouGuide = () => {
                     You will pay for your permits and entrance fee upon arriving
                     at the Manitou Island Transit Ticket Office. If you possess
                     an&nbsp;
-                    <a href="https://www.nps.gov/planyourvisit/passes.htm">
+                    <a
+                      href="https://www.nps.gov/planyourvisit/passes.htm"
+                      target="_blank"
+                    >
                       NPS America the Beautiful Annual Pass
                     </a>
                     , you do not have to pay an entrance fee.
@@ -591,7 +603,10 @@ const NorthManitouGuide = () => {
                       <p>
                         Fishtown is located on the west side of Leland, between
                         M-22 and Lake Michigan.&nbsp;
-                        <a href="https://www.villagecheeseshanty.com/">
+                        <a
+                          href="https://www.villagecheeseshanty.com/"
+                          target="_blank"
+                        >
                           The Village Cheese Shanty
                         </a>
                         &nbsp; is a Leelanau Peninsula novelty and well worth a
@@ -605,7 +620,10 @@ const NorthManitouGuide = () => {
                   <div>
                     <h3>Getting to the Manitou Island Transit in Leland</h3>
                     <p>
-                      <a href="https://maps.app.goo.gl/X9UEGV8wREY3KEBdA">
+                      <a
+                        href="https://maps.app.goo.gl/X9UEGV8wREY3KEBdA"
+                        target="_blank"
+                      >
                         Here is a Google Maps pin for the location of the
                         Manitou Island Transit office.
                       </a>
@@ -622,7 +640,10 @@ const NorthManitouGuide = () => {
                       in Fishtown before going to park your vehicle several
                       blocks away between Cedar Street and Grand Avenue, near
                       the{" "}
-                      <a href="https://maps.app.goo.gl/vKevyf4rwznDyMEw6">
+                      <a
+                        href="https://maps.app.goo.gl/vKevyf4rwznDyMEw6"
+                        target="_blank"
+                      >
                         Leland Fire Department
                       </a>
                     </p>
@@ -707,7 +728,10 @@ const NorthManitouGuide = () => {
                     new window where you can save it to your smartphone or
                     computer. The National Park Service has also created a map
                     that includes notable landmarks that you can find {""}
-                    <a href="https://www.nps.gov/slbe/planyourvisit/north-manitou-island-map.htm">
+                    <a
+                      href="https://www.nps.gov/slbe/planyourvisit/north-manitou-island-map.htm"
+                      target="_blank"
+                    >
                       here
                     </a>
                     .
@@ -749,9 +773,12 @@ const NorthManitouGuide = () => {
                 For me, the journey home is as much a part of every trip to
                 Manitou as the Island itself. If time allows (it is only open 7
                 a.m. - 3 p.m.), {""}
-                <a href="https://www.9beanrows.com/">9 Bean Rows</a> on the way
-                to Sutton's Bar serves incredible wood-fired Pizza. {""}
-                <a href="https://hoplotbrewing.com/">
+                <a href="https://www.9beanrows.com/" target="_blank">
+                  9 Bean Rows
+                </a>{" "}
+                on the way to Sutton's Bar serves incredible wood-fired Pizza.{" "}
+                {""}
+                <a href="https://hoplotbrewing.com/" target="_blank">
                   Hop Lot Brewing Company
                 </a>{" "}
                 in Sutton's Bay offers craft beer, barbeque, and the best beer
