@@ -26,7 +26,7 @@ const SneffelsGuide = () => {
               <div className="intro-image-wrapper section-half">
                 <img
                   src="./public/images/sneffels/yankee-boy-teakettle-skiing.webp"
-                  alt="Yankee Boy Basin offers a plethora of couloirs, steep faces, and massive bowls."
+                  alt="A skier in Yankee Boy Basin"
                   className="intro-image"
                 />
                 <p className="image-caption">
@@ -110,7 +110,7 @@ const SneffelsGuide = () => {
                   <figure className="block-image-figure intrinsic">
                     <div className="image-shape-container-element has-aspect-ratio">
                       <img
-                        alt="Two slings around large rocks on the southwest side of the summit, backed up by 1” tubular webbing we brought. There is a taped carabiner attached to the cords."
+                        alt="Two slings around large rocks on the southwest side of a mountain"
                         className="loaded"
                         src="./public/images/sneffels/mount-sneffels-rappel-anchor.webp"
                       />
@@ -301,7 +301,7 @@ const SneffelsGuide = () => {
               <div className="section-half">
                 <figure className="block-image-figure intrinsic">
                   <img
-                    alt="Overview map."
+                    alt="Overview map of a sneffels trip"
                     src="./public/images/sneffels/mount-sneffels-snake-couloir-map.webp"
                   />
                   <div className="image-caption">
@@ -312,7 +312,7 @@ const SneffelsGuide = () => {
               <div className="section-half">
                 <figure className="block-image-figure intrinsic">
                   <img
-                    alt="A view of Sneffels’ north face. Conditions permitting, follow the red line to save yourself some vert for the traverse. Alternatively, descend skiers left around the cliffs and traverse high above the lower group of turns in the photograph."
+                    alt="A view of Sneffels’ north face."
                     src="./public/images/sneffels/mount-sneffels-snake-couloir-exit.webp"
                   />
                   <figcaption className="image-caption-wrapper">
@@ -375,7 +375,7 @@ const SneffelsGuide = () => {
                         </div>
                         <figure className="section-half">
                           <img
-                            alt="mount-sneffels-snake-couloir-approach"
+                            alt="approach to mount sneffels snake couloir"
                             src="./public/images/sneffels/mount-sneffels-snake-couloir-approach.webp"
                           />
                         </figure>
@@ -464,7 +464,7 @@ const SneffelsGuide = () => {
                     <div className="dis-row g-2">
                       <figure className="section-half">
                         <img
-                          alt="The “Birthday Chutes” descend Sneffels’s southeast face.  The party ahead is seen skinning to the lower saddle where the Lavender Couloir begins."
+                          alt="The “Birthday Chutes” descend Sneffels’s southeast face."
                           src="./public/images/sneffels/Mount-sneffels-birthday-chutes.webp"
                         />
                         <figcaption className="image-caption-wrapper">
@@ -622,7 +622,7 @@ const SneffelsGuide = () => {
                       <div className="col section-half">
                         <figure className="block-image-figure intrinsic">
                           <img
-                            alt="Evan navigates the outcropping."
+                            alt="Evan navigating the outcropping."
                             src="./public/images/sneffels/mount-sneffels-summit-ridge-skiing.webp"
                           />
                           <figcaption className="image-caption-wrapper">
@@ -638,7 +638,7 @@ const SneffelsGuide = () => {
                           <div className="image-block-wrapper preSlide">
                             <div className="image-shape-container-element has-aspect-ratio">
                               <img
-                                alt="mount-sneffels-snake-couloir-rappelling"
+                                alt="a climber rappeling off mount sneffels"
                                 src="./public/images/sneffels/mount-sneffels-snake-couloir-rappelling.webp"
                               />
                             </div>
@@ -653,7 +653,7 @@ const SneffelsGuide = () => {
                           <div className="image-block-wrapper preSlide">
                             <div className="image-shape-container-element has-aspect-ratio">
                               <img
-                                alt="The 100-foot rappel could be done with a 60m rope, but you’ll have a bit of steep down climbing to do."
+                                alt="An image of the 100-foot rappel"
                                 src="./public/images/sneffels/mount-sneffels-snake-couloir-rappel.webp"
                               />
                             </div>
@@ -716,7 +716,7 @@ const SneffelsGuide = () => {
                         <figure className="block-image-figure intrinsic">
                           <div className="image-shape-container-element has-aspect-ratio">
                             <img
-                              alt="mount-sneffels-snake-couloir"
+                              alt="an image of the snake couloir"
                               src="./public/images/sneffels/mount-sneffels-snake-couloir.webp"
                             />
                           </div>
@@ -724,7 +724,7 @@ const SneffelsGuide = () => {
                         <div className="vrt-spc"></div>
                         <figure className="block-image-figure intrinsic">
                           <img
-                            alt="mount-sneffels-snake-couloir-bottom"
+                            alt="an image from the bottom of the snake couloir"
                             src="./public/images/sneffels/mount-sneffels-snake-couloir-bottom.webp"
                           />
                         </figure>
@@ -735,7 +735,7 @@ const SneffelsGuide = () => {
                       <div className="image-block-wrapper preSlide">
                         <div className="image-shape-container-element has-aspect-ratio">
                           <img
-                            alt="Evan gazing back at the route. We totaled 3000 vertical feet of skiing from the top of the couloir to this point."
+                            alt="Evan gazing back at the route mountain"
                             src="./public/images/sneffels/ski-mount-sneffels-snake-couloir.webp"
                           />
                         </div>
@@ -779,7 +779,7 @@ const SneffelsGuide = () => {
                           <div className="image-block-wrapper preSlide">
                             <div className="image-shape-container-element has-aspect-ratio">
                               <img
-                                alt="The route to the lower saddle is to the right, behind the ridge just beyond Evan."
+                                alt="an image of the route to the lower saddle is to the right"
                                 src="./public/images/sneffels/mount-sneffels-snake-couloir-skinning.webp"
                               />
                             </div>
@@ -822,7 +822,7 @@ const SneffelsGuide = () => {
                           <div className="image-block-wrapper preSlide">
                             <div className="image-shape-container-element has-aspect-ratio">
                               <img
-                                alt="Ascending to the lower saddle."
+                                alt="Skiers Ascending to the lower saddle"
                                 src="./public/images/sneffels/mount-sneffels-lower-saddle-ascent.webp"
                               />
                             </div>

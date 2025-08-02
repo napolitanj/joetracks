@@ -511,7 +511,7 @@ const NorthManitouGuide = () => {
                 <figure className="section-half cnt">
                   <img
                     src="./public/images/north-manitou/north-manitou-island-transit.webp"
-                    alt="North Manitou Island Transit"
+                    alt="North Manitou Island Transit Docks"
                   />
                 </figure>
                 <div className="section-half">
@@ -587,7 +587,7 @@ const NorthManitouGuide = () => {
                 <figure className="section-half cnt">
                   <img
                     src="./public/images/north-manitou/leelanau-penninsula-google-earth-graphic.webp"
-                    alt="North Manitou Island Transit Map"
+                    alt="A photo showing the route of north manitou island transit"
                   />
                 </figure>
               </div>
@@ -596,7 +596,7 @@ const NorthManitouGuide = () => {
                 <figure className="section-half">
                   <img
                     src="./public/images/north-manitou/leland-fishtown-cheese-shanty.webp"
-                    alt="Leland Fishtown"
+                    alt="A picture of Leland Fishtown"
                   />
                   <figcaption>
                     <div>
@@ -755,7 +755,7 @@ const NorthManitouGuide = () => {
                   <a id="yui_3_17_2_1_1753204324355_186">
                     <img
                       src="./public/images/north-manitou/North-manitou-island-topo-map.webp"
-                      alt="North Manitou Island Map"
+                      alt="North Manitou Island topographic map"
                     />
                   </a>
                 </figure>

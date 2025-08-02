@@ -54,6 +54,7 @@ const CalTopo = () => {
                 <img
                   className="loaded"
                   src="public/images/caltopo/caltopo.webp"
+                  alt="Image of a waterfall flowing into a lake"
                 />
                 <figcaption className="image-caption-wrapper">
                   <div className="image-caption">
@@ -166,10 +167,12 @@ const CalTopo = () => {
                 <img
                   className="img-default"
                   src="./public/images/caltopo/caltopobasic.png"
+                  alt="Image of a topographic map"
                 />
                 <img
                   className="img-hover"
                   src="./public/images/caltopo/caltopoguide.png"
+                  alt="Image of topographic map with features overlayed"
                 />
               </div>
             </section>
@@ -257,6 +260,7 @@ const CalTopo = () => {
                     <img
                       className="loaded"
                       src="./public/images/caltopo/Caltopo-interface-settings-menu.webp"
+                      alt="Image of caltopo's basic interface menu"
                     />
                   </figure>
                 </div>
@@ -311,6 +315,7 @@ const CalTopo = () => {
                 <img
                   className="loaded"
                   src="./public/images/caltopo/Caltopo-interface-measure-menu.webp"
+                  alt="Image of caltopo's measure menu"
                 />
               </figure>
             </section>
@@ -367,7 +372,10 @@ const CalTopo = () => {
             <section className="dis-row g-2 cnt">
               <figure className="section-half">
                 <div>
-                  <img src="./public/images/caltopo/Caltopo-interface-measure-profile.webp" />
+                  <img
+                    src="./public/images/caltopo/Caltopo-interface-measure-profile.webp"
+                    alt="Image of a line tool on a map"
+                  />
                 </div>
                 <figcaption className="image-caption-wrapper">
                   <div className="image-caption">
@@ -424,7 +432,10 @@ const CalTopo = () => {
                     <figure>
                       <div>
                         <div>
-                          <img src="./public/images/caltopo/Caltopo-interface-profile.webp" />
+                          <img
+                            src="./public/images/caltopo/Caltopo-interface-profile.webp"
+                            alt="Image of an elevation profile tool"
+                          />
                         </div>
                       </div>
                       <figcaption className="image-caption-wrapper">
@@ -462,7 +473,10 @@ const CalTopo = () => {
             <div className="vrt-spc"></div>
             <section className="dis-row g-2 cnt">
               <figure className="section-half">
-                <img src="./public/images/caltopo/Caltopo-interface-add-object.webp" />
+                <img
+                  src="./public/images/caltopo/Caltopo-interface-add-object.webp"
+                  alt="Image of caltopo's add object menu"
+                />
               </figure>
               <div id="add-object" className="section-half">
                 <div>
@@ -479,7 +493,10 @@ const CalTopo = () => {
                 <figure>
                   <div>
                     <div className="sqs-image-shape-container-element has-aspect-ratio">
-                      <img src="./public/images/caltopo/Caltopo-interface-map-with-objects.webp" />
+                      <img
+                        src="./public/images/caltopo/Caltopo-interface-map-with-objects.webp"
+                        alt="Image of a caltopo map with objects on it"
+                      />
                     </div>
                   </div>
                   <figcaption className="image-caption-wrapper">
@@ -526,10 +543,12 @@ const CalTopo = () => {
                     <img
                       className="img-default"
                       src="./public/images/caltopo/caltopo-snap-osm.png"
+                      alt="Image of caltopo with osm overlay"
                     />
                     <img
                       className="img-hover"
                       src="./public/images/caltopo/caltopo-snap-hydro.png"
+                      alt="Image of caltopo with hydro snap overlay"
                     />
                   </div>
                 </div>
@@ -574,7 +593,10 @@ const CalTopo = () => {
               <div className="dis-row g-2">
                 <div>
                   <figure>
-                    <img src="./public/images/caltopo/Caltopo-mapbuilder-overlay.webp" />
+                    <img
+                      src="./public/images/caltopo/Caltopo-mapbuilder-overlay.webp"
+                      alt="Image of Caltopo's mapbuilder overlay"
+                    />
                   </figure>
 
                   <p className="cnt">
@@ -590,7 +612,10 @@ const CalTopo = () => {
 
                 <div>
                   <figure>
-                    <img src="./public/images/caltopo/Caltopo-scanned-topos-overlay.webp" />
+                    <img
+                      src="./public/images/caltopo/Caltopo-scanned-topos-overlay.webp"
+                      alt="Image of Caltopo's scanned topo overlay"
+                    />
                   </figure>
 
                   <div>
@@ -610,7 +635,10 @@ const CalTopo = () => {
               <div className="dis-row g-2">
                 <div>
                   <figure>
-                    <img src="./public/images/caltopo/Caltopo-forest-service-overlay.webp" />
+                    <img
+                      src="./public/images/caltopo/Caltopo-forest-service-overlay.webp"
+                      alt="Image of Caltopo's forest service overlay"
+                    />
                   </figure>
 
                   <div>
@@ -631,7 +659,10 @@ const CalTopo = () => {
                   <figure>
                     <div>
                       <div className="sqs-image-shape-container-element has-aspect-ratio">
-                        <img src="./public/images/caltopo/Caltopo-shaded-relief-overlay.webp" />
+                        <img
+                          src="./public/images/caltopo/Caltopo-shaded-relief-overlay.webp"
+                          alt="Image of Caltopo's shaded relief overlay"
+                        />
                       </div>
                     </div>
                   </figure>
@@ -711,10 +742,12 @@ const CalTopo = () => {
                 <img
                   className="img-default"
                   src="./public/images/caltopo/Caltopo-Mount-hood-stacked-layers.png"
+                  alt="Image of Caltopo's basic topo overlay"
                 />
                 <img
                   className="img-hover"
                   src="./public/images/caltopo/Caltopo-Mount-hood-stacked-layers2.png"
+                  alt="Image of Caltopo's basic overlayer with terrain shading added"
                 />
               </div>
             </section>
@@ -737,10 +770,12 @@ const CalTopo = () => {
                   <img
                     className="img-default"
                     src="./public/images/caltopo/Caltopo-overlay-base.png"
+                    alt="Image of Caltopo's base overlay"
                   />
                   <img
                     className="img-hover"
                     src="./public/images/caltopo/Caltopo-overlay-mapbuilder.png"
+                    alt="Image of Caltopo's base overlay with mapbuilder features added"
                   />
                 </div>
                 <div className="section-half">
@@ -761,10 +796,12 @@ const CalTopo = () => {
                   <img
                     className="img-default"
                     src="./public/images/caltopo/Caltopo-overlay-base.png"
+                    alt="Image of Caltopo's basic overlay"
                   />
                   <img
                     className="img-hover"
                     src="./public/images/caltopo/caltopo-overlay-slopeangle.png"
+                    alt="Image of Caltopo's basic overaly with slope angle shading added"
                   />
                 </div>
                 <div className="section-half">
@@ -784,10 +821,12 @@ const CalTopo = () => {
                   <img
                     className="img-default"
                     src="./public/images/caltopo/Caltopo-overlay-base.png"
+                    alt="Image of Caltopo's basic overlay"
                   />
                   <img
                     className="img-hover"
                     src="./public/images/caltopo/caltopo-overlay-public-lands.png"
+                    alt="Image of Caltopo's basic overlay with public land shading added"
                   />
                 </div>
 
@@ -834,13 +873,19 @@ const CalTopo = () => {
                   <p></p>
                 </div>
                 <figure className="section-half">
-                  <img src="./public/images/caltopo/caltopo-print-export.webp" />
+                  <img
+                    src="./public/images/caltopo/caltopo-print-export.webp"
+                    alt="Image of Caltopo's interface indicating the print tool"
+                  />
                 </figure>
               </div>
               <div className="dis-row g-2 cnt">
                 <div className="section-half">
                   <figure>
-                    <img src="./public/images/caltopo/caltopo-print.webp" />
+                    <img
+                      src="./public/images/caltopo/caltopo-print.webp"
+                      alt="Image of Caltopo's overlay indicating the print interface"
+                    />
                   </figure>
                 </div>
                 <div className="section-half">
@@ -919,7 +964,10 @@ const CalTopo = () => {
                     </p>
                   </div>
                   <figure>
-                    <img src="./public/images/caltopo/google-earth-import-sample.webp" />
+                    <img
+                      src="./public/images/caltopo/google-earth-import-sample.webp"
+                      alt="Image of Caltopo's track exported to Google earth"
+                    />
                   </figure>
                 </div>
                 <div>
@@ -929,7 +977,10 @@ const CalTopo = () => {
                         <figure>
                           <div>
                             <div className="sqs-image-shape-container-element has-aspect-ratio">
-                              <img src="./public/images/caltopo/caltopo-export.webp" />
+                              <img
+                                src="./public/images/caltopo/caltopo-export.webp"
+                                alt="Image of Caltopo's export selection tool"
+                              />
                             </div>
                           </div>
                         </figure>
