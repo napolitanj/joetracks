@@ -77,7 +77,7 @@ const OriginExpeditions = () => {
           <ul>
             <li>
               <a
-                href="https://joetracks.com/north-manitou-guide"
+                href="https://joetracks.com/north-manitou-island-guide"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -86,7 +86,7 @@ const OriginExpeditions = () => {
             </li>
             <li>
               <a
-                href="https://joetracks.com/sneffels-guide"
+                href="https://joetracks.com/ski-mount-sneffels"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -95,7 +95,7 @@ const OriginExpeditions = () => {
             </li>
             <li>
               <a
-                href="https://joetracks.com/learn-caltopo"
+                href="https://joetracks.com/caltopo-guide"
                 target="_blank"
                 rel="noopener noreferrer"
               >
