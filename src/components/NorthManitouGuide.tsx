@@ -47,7 +47,7 @@ const NorthManitouGuide = () => {
               <div className="section-half">
                 <figure>
                   <img
-                    src="./public/images/north-manitou/north-manitou-island.webp"
+                    src="${import.meta.env.BASE_URL}images/north-manitou/north-manitou-island.webp"
                     alt="North Manitou Island West Shore"
                     className="intro-image"
                   />
@@ -67,7 +67,7 @@ const NorthManitouGuide = () => {
               <div className="section-half">
                 <figure className="cnt">
                   <img
-                    src="./public/images/north-manitou/manitou-sunset.webp"
+                    src="${import.meta.env.BASE_URL}images/north-manitou/manitou-sunset.webp"
                     alt="North Manitou Island Sunset"
                   />
                 </figure>
@@ -134,7 +134,7 @@ const NorthManitouGuide = () => {
               <div className="dis-row g-2">
                 <figure className="section-half">
                   <img
-                    src="./public/images/north-manitou/north-manitou-island-backpacking.webp"
+                    src="${import.meta.env.BASE_URL}images/north-manitou/north-manitou-island-backpacking.webp"
                     alt="North Manitou Island Backpackers"
                   />
                 </figure>
@@ -308,7 +308,7 @@ const NorthManitouGuide = () => {
                   <div id="block-yui_3_17_2_1_1628111893930_47804">
                     <figure id="yui_3_17_2_1_1753204324355_131">
                       <img
-                        src="./public/images/north-manitou/north-manitou-island-camping.webp"
+                        src="${import.meta.env.BASE_URL}images/north-manitou/north-manitou-island-camping.webp"
                         alt="North Manitou Island Hammocks"
                       />
                       <figcaption>
@@ -510,7 +510,7 @@ const NorthManitouGuide = () => {
               <div className="dis-row g-2">
                 <figure className="section-half cnt">
                   <img
-                    src="./public/images/north-manitou/north-manitou-island-transit.webp"
+                    src="${import.meta.env.BASE_URL}images/north-manitou/north-manitou-island-transit.webp"
                     alt="North Manitou Island Transit Docks"
                   />
                 </figure>
@@ -586,7 +586,7 @@ const NorthManitouGuide = () => {
                 </div>
                 <figure className="section-half cnt">
                   <img
-                    src="./public/images/north-manitou/leelanau-penninsula-google-earth-graphic.webp"
+                    src="${import.meta.env.BASE_URL}images/north-manitou/leelanau-penninsula-google-earth-graphic.webp"
                     alt="A photo showing the route of north manitou island transit"
                   />
                 </figure>
@@ -595,7 +595,7 @@ const NorthManitouGuide = () => {
               <div className="dis-row g-2">
                 <figure className="section-half">
                   <img
-                    src="./public/images/north-manitou/leland-fishtown-cheese-shanty.webp"
+                    src="${import.meta.env.BASE_URL}images/north-manitou/leland-fishtown-cheese-shanty.webp"
                     alt="A picture of Leland Fishtown"
                   />
                   <figcaption>
@@ -674,7 +674,7 @@ const NorthManitouGuide = () => {
                 </div>
                 <figure className="section-half">
                   <img
-                    src="./public/images/north-manitou/Leland-Manitou-Island-Transit.webp"
+                    src="${import.meta.env.BASE_URL}images/north-manitou/Leland-Manitou-Island-Transit.webp"
                     alt="North Manitou Island Transit Map"
                   />
                   <figcaption>
@@ -754,7 +754,7 @@ const NorthManitouGuide = () => {
                   {/* Need hyperlinking to big map */}
                   <a id="yui_3_17_2_1_1753204324355_186">
                     <img
-                      src="./public/images/north-manitou/North-manitou-island-topo-map.webp"
+                      src="${import.meta.env.BASE_URL}images/north-manitou/North-manitou-island-topo-map.webp"
                       alt="North Manitou Island topographic map"
                     />
                   </a>
