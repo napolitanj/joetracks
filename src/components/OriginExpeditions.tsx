@@ -2,8 +2,6 @@ import "/src/styles/shared.css";
 import "/src/styles/origin.css";
 import { Link } from "react-router-dom";
 
-import { useEffect, useState } from "react";
-
 const OriginExpeditions = () => {
   return (
     <div
