@@ -1,5 +1,5 @@
 .remote-bg {
-  background-image: url("./public/images/remote-forecasting/skintrack.webp");
+  background-image: url("/images/remote-forecasting/skintrack.webp");
 }
 
 @media (max-width: 1024px) {

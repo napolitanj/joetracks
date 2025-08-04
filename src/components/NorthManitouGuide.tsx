@@ -49,8 +49,8 @@ const NorthManitouGuide = () => {
                   <img
                     src={`${
                       import.meta.env.BASE_URL
-                    }images/north-manitou/north-manitou-island.webp"
-                    alt="North Manitou Island West Shore`}
+                    }images/north-manitou/north-manitou-island.webp`}
+                    alt="North Manitou Island West Shore"
                     className="intro-image"
                   />
                   <figcaption>
@@ -609,8 +609,8 @@ const NorthManitouGuide = () => {
                   <img
                     src={`${
                       import.meta.env.BASE_URL
-                    }images/north-manitou/leland-fishtown-cheese-shanty.webp"
-                    alt="A picture of Leland Fishtown`}
+                    }images/north-manitou/leland-fishtown-cheese-shanty.webp`}
+                    alt="A picture of Leland Fishtown"
                   />
                   <figcaption>
                     <div>
@@ -690,8 +690,8 @@ const NorthManitouGuide = () => {
                   <img
                     src={`${
                       import.meta.env.BASE_URL
-                    }images/north-manitou/Leland-Manitou-Island-Transit.webp"
-                    alt="North Manitou Island Transit Map`}
+                    }images/north-manitou/Leland-Manitou-Island-Transit.webp`}
+                    alt="North Manitou Island Transit Map"
                   />
                   <figcaption>
                     <div>
