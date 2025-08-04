@@ -25,7 +25,9 @@ const SneffelsGuide = () => {
             <div className="dis-row sneffels-intro">
               <div className="intro-image-wrapper section-half">
                 <img
-                  src="./public/images/sneffels/yankee-boy-teakettle-skiing.webp"
+                  src={`${
+                    import.meta.env.BASE_URL
+                  }images/sneffels/yankee-boy-teakettle-skiing.webp`}
                   alt="A skier in Yankee Boy Basin"
                   className="intro-image"
                 />
@@ -111,7 +113,9 @@ const SneffelsGuide = () => {
                     <img
                       alt="Two slings around large rocks on the southwest side of a mountain"
                       className="loaded"
-                      src="./public/images/sneffels/mount-sneffels-rappel-anchor.webp"
+                      src={`${
+                        import.meta.env.BASE_URL
+                      }images/sneffels/mount-sneffels-rappel-anchor.webp`}
                     />
 
                     <figcaption className="image-caption-wrapper">
@@ -301,7 +305,9 @@ const SneffelsGuide = () => {
                 <figure className="block-image-figure intrinsic">
                   <img
                     alt="Overview map of a sneffels trip"
-                    src="./public/images/sneffels/mount-sneffels-snake-couloir-map.webp"
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }images/sneffels/mount-sneffels-snake-couloir-map.webp`}
                   />
                   <div className="image-caption">
                     <p className="sqsrte-small preFade">Overview map.</p>
@@ -312,7 +318,9 @@ const SneffelsGuide = () => {
                 <figure className="block-image-figure intrinsic">
                   <img
                     alt="A view of Sneffels’ north face."
-                    src="./public/images/sneffels/mount-sneffels-snake-couloir-exit.webp"
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }images/sneffels/mount-sneffels-snake-couloir-exit.webp`}
                   />
                   <figcaption className="image-caption-wrapper">
                     <div className="image-caption">
@@ -375,7 +383,9 @@ const SneffelsGuide = () => {
                         <figure className="section-half">
                           <img
                             alt="approach to mount sneffels snake couloir"
-                            src="./public/images/sneffels/mount-sneffels-snake-couloir-approach.webp"
+                            src={`${
+                              import.meta.env.BASE_URL
+                            }images/sneffels/mount-sneffels-snake-couloir-approach.webp`}
                           />
                         </figure>
                       </div>
@@ -422,7 +432,9 @@ const SneffelsGuide = () => {
                           <div className="image-shape-container-element has-aspect-ratio">
                             <img
                               alt="Gazing west in Yankee Boy Basin. Kismet Peak to the right blocks Mount Sneffels from view."
-                              src="./public/images/sneffels/yankee-boy-basin-winter.webp"
+                              src={`${
+                                import.meta.env.BASE_URL
+                              }images/sneffels/yankee-boy-basin-winter.webp`}
                             />
                           </div>
                         </div>
@@ -464,7 +476,9 @@ const SneffelsGuide = () => {
                       <figure className="section-half">
                         <img
                           alt="The “Birthday Chutes” descend Sneffels’s southeast face."
-                          src="./public/images/sneffels/Mount-sneffels-birthday-chutes.webp"
+                          src={`${
+                            import.meta.env.BASE_URL
+                          }images/sneffels/Mount-sneffels-birthday-chutes.webp`}
                         />
                         <figcaption className="image-caption-wrapper">
                           <div className="image-caption">
@@ -479,7 +493,9 @@ const SneffelsGuide = () => {
                       <figure className="section-half">
                         <img
                           alt="A view of the Lavender Couloir from the upper saddle looking towards the lower saddle."
-                          src="./public/images/sneffels/mount-sneffels-lavender-couloir.webp"
+                          src={`${
+                            import.meta.env.BASE_URL
+                          }images/sneffels/mount-sneffels-lavender-couloir.webp`}
                         />
 
                         <figcaption className="image-caption-wrapper">
@@ -498,7 +514,9 @@ const SneffelsGuide = () => {
                           <div className="image-shape-container-element has-aspect-ratio">
                             <img
                               alt="The 30-foot scramble from the upper saddle."
-                              src="./public/images/sneffels/Mount-sneffels-lavender-couloir-scramble.webp"
+                              src={`${
+                                import.meta.env.BASE_URL
+                              }images/sneffels/Mount-sneffels-lavender-couloir-scramble.webp`}
                             />
                           </div>
                         </div>
@@ -567,7 +585,9 @@ const SneffelsGuide = () => {
                                   <div className="image-shape-container-element has-aspect-ratio">
                                     <img
                                       alt="A view of the summit looking west from the top of the scramble."
-                                      src="./public/images/sneffels/mount-sneffels-summit-ridge.webp"
+                                      src={`${
+                                        import.meta.env.BASE_URL
+                                      }images/sneffels/mount-sneffels-summit-ridge.webp`}
                                     />
                                   </div>
                                 </div>
@@ -622,7 +642,9 @@ const SneffelsGuide = () => {
                         <figure className="block-image-figure intrinsic">
                           <img
                             alt="Evan navigating the outcropping."
-                            src="./public/images/sneffels/mount-sneffels-summit-ridge-skiing.webp"
+                            src={`${
+                              import.meta.env.BASE_URL
+                            }images/sneffels/mount-sneffels-summit-ridge-skiing.webp`}
                           />
                           <figcaption className="image-caption-wrapper">
                             <div className="image-caption">
@@ -638,7 +660,9 @@ const SneffelsGuide = () => {
                             <div className="image-shape-container-element has-aspect-ratio">
                               <img
                                 alt="a climber rappeling off mount sneffels"
-                                src="./public/images/sneffels/mount-sneffels-snake-couloir-rappelling.webp"
+                                src={`${
+                                  import.meta.env.BASE_URL
+                                }images/sneffels/mount-sneffels-snake-couloir-rappelling.webp`}
                               />
                             </div>
                           </div>
@@ -653,7 +677,9 @@ const SneffelsGuide = () => {
                             <div className="image-shape-container-element has-aspect-ratio">
                               <img
                                 alt="An image of the 100-foot rappel"
-                                src="./public/images/sneffels/mount-sneffels-snake-couloir-rappel.webp"
+                                src={`${
+                                  import.meta.env.BASE_URL
+                                }images/sneffels/mount-sneffels-snake-couloir-rappel.webp`}
                               />
                             </div>
                           </div>
@@ -716,7 +742,9 @@ const SneffelsGuide = () => {
                           <div className="image-shape-container-element has-aspect-ratio">
                             <img
                               alt="an image of the snake couloir"
-                              src="./public/images/sneffels/mount-sneffels-snake-couloir.webp"
+                              src={`${
+                                import.meta.env.BASE_URL
+                              }images/sneffels/mount-sneffels-snake-couloir.webp`}
                             />
                           </div>
                         </figure>
@@ -724,7 +752,9 @@ const SneffelsGuide = () => {
                         <figure className="block-image-figure intrinsic">
                           <img
                             alt="an image from the bottom of the snake couloir"
-                            src="./public/images/sneffels/mount-sneffels-snake-couloir-bottom.webp"
+                            src={`${
+                              import.meta.env.BASE_URL
+                            }images/sneffels/mount-sneffels-snake-couloir-bottom.webp`}
                           />
                         </figure>
                       </div>
@@ -735,7 +765,9 @@ const SneffelsGuide = () => {
                         <div className="image-shape-container-element has-aspect-ratio">
                           <img
                             alt="Evan gazing back at the route mountain"
-                            src="./public/images/sneffels/ski-mount-sneffels-snake-couloir.webp"
+                            src={`${
+                              import.meta.env.BASE_URL
+                            }images/sneffels/ski-mount-sneffels-snake-couloir.webp`}
                           />
                         </div>
                       </div>
@@ -779,7 +811,9 @@ const SneffelsGuide = () => {
                             <div className="image-shape-container-element has-aspect-ratio">
                               <img
                                 alt="an image of the route to the lower saddle is to the right"
-                                src="./public/images/sneffels/mount-sneffels-snake-couloir-skinning.webp"
+                                src={`${
+                                  import.meta.env.BASE_URL
+                                }images/sneffels/mount-sneffels-snake-couloir-skinning.webp`}
                               />
                             </div>
                           </div>
@@ -822,7 +856,9 @@ const SneffelsGuide = () => {
                             <div className="image-shape-container-element has-aspect-ratio">
                               <img
                                 alt="Skiers Ascending to the lower saddle"
-                                src="./public/images/sneffels/mount-sneffels-lower-saddle-ascent.webp"
+                                src={`${
+                                  import.meta.env.BASE_URL
+                                }images/sneffels/mount-sneffels-lower-saddle-ascent.webp`}
                               />
                             </div>
                           </div>

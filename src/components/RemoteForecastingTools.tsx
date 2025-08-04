@@ -26,7 +26,9 @@ const RemoteForecastingTools = () => {
               <div className="dis-row g-2">
                 <figure className="section-half">
                   <img
-                    src="./public/images/remote-forecasting/whitney-approach.png"
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }images/remote-forecasting/whitney-approach.png`}
                     alt="skiers hiking to a ridge"
                   />
                 </figure>
@@ -77,7 +79,9 @@ const RemoteForecastingTools = () => {
                       <figure className="section-half">
                         <img
                           alt="A map of snow climates in the western USA"
-                          src="./public/images/remote-forecasting/snow-climate-classification-map.webp"
+                          src={`${
+                            import.meta.env.BASE_URL
+                          }images/remote-forecasting/snow-climate-classification-map.webp`}
                         />
                         <figcaption className="image-caption-wrapper">
                           <p>
@@ -172,7 +176,9 @@ const RemoteForecastingTools = () => {
                       <figure className="section-half">
                         <img
                           alt="An image showing snow metamorphosis"
-                          src="./public/images/remote-forecasting/snow-climate-classification-map.webp"
+                          src={`${
+                            import.meta.env.BASE_URL
+                          }images/remote-forecasting/snow-climate-classification-map.webp`}
                         />
                         <figcaption className="image-caption-wrapper">
                           <div className="image-caption">
@@ -195,7 +201,9 @@ const RemoteForecastingTools = () => {
                 <figure className="section-half">
                   <img
                     alt="An image of a very large frost crystal"
-                    src="./public/images/remote-forecasting/surface+hoar.webp"
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }images/remote-forecasting/surface+hoar.webp`}
                   />
                   <figcaption className="image-caption-wrapper">
                     <p>
@@ -267,7 +275,9 @@ const RemoteForecastingTools = () => {
                 <figure>
                   <img
                     alt="An image of Mount Shasta"
-                    src="./public/images/remote-forecasting/mount-shasta.webp"
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }images/remote-forecasting/mount-shasta.webp`}
                   />
                   <figcaption className="image-caption-wrapper">
                     <div className="image-caption">
@@ -288,7 +298,9 @@ const RemoteForecastingTools = () => {
                 <figure>
                   <img
                     alt="An image of a snow data report"
-                    src="./public/images/remote-forecasting/snotel-station-data-popup.webp"
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }images/remote-forecasting/snotel-station-data-popup.webp`}
                   />
                 </figure>
 
@@ -376,7 +388,9 @@ const RemoteForecastingTools = () => {
                   <figure>
                     <img
                       alt="An image of a NOHRSC map with descriptive elements"
-                      src="./public/images/remote-forecasting/nohrsc-map-graphic.webp"
+                      src={`${
+                        import.meta.env.BASE_URL
+                      }images/remote-forecasting/nohrsc-map-graphic.webp`}
                     />
                   </figure>
                 </div>
@@ -385,7 +399,9 @@ const RemoteForecastingTools = () => {
                 <figure className="section-half cnt">
                   <img
                     alt="An image of a snow data report"
-                    src="./public/images/remote-forecasting/google-snow-depth-overlay.webp"
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }images/remote-forecasting/google-snow-depth-overlay.webp`}
                   />
                 </figure>
                 <div className="section-half">
@@ -454,7 +470,9 @@ const RemoteForecastingTools = () => {
                   <figure>
                     <img
                       alt="An image of glacier gorge in Rocky Mountain National Park"
-                      src="./public/images/remote-forecasting/rmnp.webp"
+                      src={`${
+                        import.meta.env.BASE_URL
+                      }images/remote-forecasting/rmnp.webp`}
                     />
                     <figcaption className="image-caption-wrapper">
                       <p>
@@ -504,7 +522,9 @@ const RemoteForecastingTools = () => {
                 <figure>
                   <img
                     alt="An image of a snow kitchen"
-                    src="./public/images/remote-forecasting/winter-cooking.webp"
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }images/remote-forecasting/winter-cooking.webp`}
                   />
                 </figure>
               </div>
