@@ -53,8 +53,8 @@ const CalTopo = () => {
               <figure className="section-half dis-col g-2 cnt">
                 <img
                   className="loaded"
-                  src={`${import.meta.env.BASE_URL}images/caltopo/caltopo.webp"
-                  alt="Image of a waterfall flowing into a lake`}
+                  src={`${import.meta.env.BASE_URL}images/caltopo/caltopo.webp`}
+                  alt="A screenshot of CalTopo’s interface"
                 />
                 <figcaption className="image-caption-wrapper">
                   <div className="image-caption">
@@ -766,7 +766,7 @@ const CalTopo = () => {
                 </p>
               </div>
 
-              <div className=" code-block -code">
+              <div className="image-swap-container">
                 <img
                   className="img-default"
                   src={`${

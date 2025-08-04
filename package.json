@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "postbuild": "cp dist/index.html dist/404.html",
-    "deploy": "npm run build && npm run postbuild && rm -rf docs && cp -r dist docs && git add docs && git commit -m 'Deploy site' && git push",
+    "deploy": "npm run build && cp docs/index.html docs/404.html && git add docs && git commit -m 'Deploy' && git push",
     "lint": "eslint .",
     "preview": "vite preview",
     "generate:images": "node generateImageList.cjs"
