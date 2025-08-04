@@ -13,7 +13,7 @@ import "./index.css";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <HelmetProvider>
-      <BrowserRouter basename="/joetracks">
+      <BrowserRouter>
         <Routes>
           {/* Standalone route — no shared layout */}
           <Route path="/ski-mount-sneffels" element={<SneffelsGuide />} />
