@@ -6,6 +6,7 @@ import SneffelsGuide from "./components/SneffelsGuide.tsx";
 import NorthManitouGuide from "./components/NorthManitouGuide.tsx";
 import CalTopo from "./components/CalTopo.tsx";
 import RemoteForecastingTools from "./components/RemoteForecastingTools.tsx";
+import OriginExpeditions from "./components/OriginExpeditions.tsx";
 import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
@@ -16,6 +17,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/sneffels-guide" element={<SneffelsGuide />} />
         <Route path="/north-manitou-guide" element={<NorthManitouGuide />} />
         <Route path="/learn-caltopo" element={<CalTopo />} />
+        <Route path="/origin-expeditions" element={<OriginExpeditions />} />
         <Route
           path="/remote-forecasting-tools"
           element={<RemoteForecastingTools />}
