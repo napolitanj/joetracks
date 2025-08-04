@@ -1,0 +1,56 @@
+.origin-landing {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.origin-landing h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.origin-landing h2 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #444;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.25rem;
+}
+
+.origin-landing p {
+  margin-bottom: 1rem;
+}
+
+.origin-landing ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+.origin-landing a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.origin-landing a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .origin-landing {
+    padding: 1.25rem;
+  }
+
+  .origin-landing h1 {
+    font-size: 1.5rem;
+  }
+
+  .origin-landing h2 {
+    font-size: 1.1rem;
+  }
+}
