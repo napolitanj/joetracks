@@ -55,7 +55,7 @@ body.dark .banner-image::before {
 .banner-text {
   position: absolute;
   font-size: 1.5rem;
-  line-height: 0em;
+
   font-weight: bold;
   text-align: right;
   color: black;

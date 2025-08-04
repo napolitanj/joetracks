@@ -1,25 +1,9 @@
 [
   {
-    "id": "103f2d89-d36a-4acd-ba99-9e99d8f876ac",
-    "title": "Blog With Paragraphs",
-    "slug": "para-blog",
-    "content": "Just testing writing a blog post with paragraphs.\n\nI hope this works out!",
-    "created_at": "2025-07-25T17:11:48.425Z",
-    "published": true
-  },
-  {
-    "id": "f8673dc7-e3c6-435d-82c6-4cad8ac46b2a",
-    "title": "Just testing another blog post",
-    "slug": "test-blog-post-again",
-    "content": "How good is this blog post? Do you like the content? How good is this blog post? Do you like the content? How good is this blog post? Do you like the content? How good is this blog post? Do you like the content? How good is this blog post? Do you like the content? How good is this blog post? Do you like the content? How good is this blog post? Do you like the content? How good is this blog post? Do you like the content? How good is this blog post? Do you like the content? How good is this blog post? Do you like the content? How good is this blog post? Do you like the content? ",
-    "created_at": "2025-07-25T16:53:46.514Z",
-    "published": true
-  },
-  {
     "id": "1",
-    "title": "My First Post",
+    "title": "This is just a placeholder post",
     "slug": "my-first-post",
-    "content": "This is my first blog post.",
+    "content": "This is my first blog post. I'll write one later, don't worry",
     "created_at": "2025-07-20T12:00:00Z",
     "published": true
   }
