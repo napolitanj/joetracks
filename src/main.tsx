@@ -10,7 +10,7 @@ import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter basename="/joe-napolitan.com">
+    <BrowserRouter basename="/joetracks">
       <Routes>
         {/* Standalone route — no shared layout */}
         <Route path="/sneffels-guide" element={<SneffelsGuide />} />
