@@ -73,3 +73,47 @@ body.dark .feature-container p {
 body.dark .feature-title {
   color: #ccc;
 }
+
+.feature-button {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #1a202c; /* Dark gray */
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.feature-button:hover,
+.feature-button:focus {
+  background-color: #2d3748;
+  transform: translateY(-1px);
+}
+
+.feature-button:active {
+  transform: translateY(0);
+  background-color: #4a5568;
+}
+
+@media (max-width: 500px) {
+  .feature-button {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+  }
+}
+
+/* Dark mode override */
+body.dark .feature-button {
+  background-color: #edf2f7;
+  color: #1a202c;
+}
+
+body.dark .feature-button:hover,
+body.dark .feature-button:focus {
+  background-color: #e2e8f0;
+}
