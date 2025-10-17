@@ -7,8 +7,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "cp dist/index.html dist/404.html",
-    "deploy": "npm run build && cp docs/index.html docs/404.html && git add docs && git commit -m 'Deploy' && git push",
     "lint": "eslint .",
     "preview": "vite preview",
     "generate:images": "node generateImageList.cjs"
