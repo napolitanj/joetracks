@@ -70,9 +70,8 @@ const OriginExpeditions = () => {
         <section>
           <h2>What Lives On</h2>
           <p>
-            Several of the digital field guides we created are still available
-            for public use. These were designed to help outdoor enthusiasts
-            trips.
+            Several of the digital guides we created are still available for
+            public use. These were designed to help outdoor enthusiasts trips.
           </p>
           <ul>
             <li>
