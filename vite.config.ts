@@ -5,9 +5,11 @@ export default defineConfig({
   base: "/",
   build: {
     outDir: "docs",
-  },
-  plugins: [react()],
-  server: {
-    port: 5173,
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+        fallback: path.resolve(__dirname, "404.html"),
+      },
+    },
   },
 });
