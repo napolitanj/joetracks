@@ -16,12 +16,12 @@ const Bio = () => {
         <img className="bio-pic" src={headerPhoto}></img>
         <div>
           <p>
-            I'm Joe Napolitan, a Michigan-based IT specialist, web developer,
-            and former wilderness educator & ski patrol. Over the past decade,
-            I’ve led backcountry expeditions in Alaska, worked various roles in
-            the technology industry, taught outdoor skills to underserved youth,
-            and later pivoted into tech through self-teaching and
-            certifications. Today I work full-time in IT at a creative arts
+            I'm Joe Napolitan, a Michigan-based Technical Support Specialist,
+            web developer, and former wilderness educator & ski patroller. Over
+            the past decade, I’ve led backcountry expeditions in Alaska, worked
+            various roles in the technology industry, taught outdoor skills to
+            underserved youth, and later pivoted into tech through self-teaching
+            and certifications. Today I work full-time in IT at a creative arts
             school, where I support staff and students while building tools to
             automate workflows, manage data, and improve systems. I bring a mix
             of technical skill, hands-on grit, and people-first problem-solving
