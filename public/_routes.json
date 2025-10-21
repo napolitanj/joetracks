@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [],
+  "rules": [{ "path": "/*", "serve": "/index.html", "status": 200 }]
+}
