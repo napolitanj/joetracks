@@ -1,44 +1,41 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { login } from "../api";
 
-const Login: React.FC = () => {
-  const [email, setEmail] = useState<string>("");
-  const [error, setError] = useState<string>("");
+export default function Login() {
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setError("");
 
-    const isLocal = window.location.hostname === "localhost";
-    const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
+    try {
+      await login(password);
 
-    if (!isLocal) {
-      setError("Login failed: not available in this environment.");
-      return;
+      window.dispatchEvent(new Event("auth-change"));
+
+      navigate("/");
+    } catch (err) {
+      setError("Incorrect password.");
     }
-
-    if (email === adminEmail) {
-      localStorage.setItem("isAuthorized", "true");
-      window.location.href = "/";
-    } else {
-      setError("Login failed: unauthorized email.");
-    }
-  };
+  }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <div>
-        <label>Email:</label>
+    <div style={{ padding: "2rem", maxWidth: 400 }}>
+      <h2>Owner Login</h2>
+      <form onSubmit={handleSubmit}>
         <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
+          type="password"
+          placeholder="Enter password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
         />
-      </div>
-      <button type="submit">Log In</button>
-    </form>
+        <button type="submit">Login</button>
+      </form>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+    </div>
   );
-};
-
-export default Login;
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { checkAuth } from "../../utils/checkAuth";
 import blogPosts from "../../data/blogPosts.json";
 import { Link } from "react-router-dom";
 import "../../styles/Blog.css";
@@ -17,20 +18,18 @@ const Blog = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
 
   useEffect(() => {
-    // Fetch posts from JSON
     const visiblePosts = blogPosts
       .filter((post) => post.published)
       .sort(
         (a, b) =>
           new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
       );
-
     setPosts(visiblePosts);
 
-    // Local-only auth logic
-    const isLocalhost = window.location.hostname === "localhost";
-    const loggedIn = localStorage.getItem("isAuthorized") === "true";
-    setIsAuthorized(isLocalhost && loggedIn);
+    (async () => {
+      const authorized = await checkAuth();
+      setIsAuthorized(authorized);
+    })();
   }, []);
 
   return (
