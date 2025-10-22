@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import blogPosts from "../../data/blogPosts.json";
 import { Link } from "react-router-dom";
+import { checkAuth } from "../../utils/checkAuth";
 import "../../styles/BlogPost.css";
 
 type Post = {
@@ -27,13 +28,12 @@ const BlogPost = () => {
         (p) => p.slug === slug && p.published === true
       );
       setPost(postData || null);
+
+      const authorized = await checkAuth();
+      setIsAuthorized(authorized);
     }
 
     fetchPost();
-
-    const isLocalhost = window.location.hostname === "localhost";
-    const isAuthorized = localStorage.getItem("isAuthorized") === "true";
-    setIsAuthorized(isLocalhost && isAuthorized);
   }, [slug]);
 
   if (!post) return <div>Loading...</div>;

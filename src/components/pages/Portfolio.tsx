@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import portfolioData from "../../data/portfolio.json";
+import { checkAuth } from "../../utils/checkAuth";
 import { Link } from "react-router-dom";
 import PortfolioFeature from "../PortfolioFeature";
 import "../../styles/Portfolio.css";
@@ -19,14 +20,17 @@ const Portfolio = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
 
   useEffect(() => {
-    const isLocalhost = window.location.hostname === "localhost";
-    const loggedIn = localStorage.getItem("isAuthorized") === "true";
-    setIsAuthorized(isLocalhost && loggedIn);
+    async function verify() {
+      const authorized = await checkAuth();
+      setIsAuthorized(authorized);
+    }
 
     const cleaned = portfolioData.filter(
       (f) => f.image_url && f.image_url.startsWith("./images/")
     );
     setFeatures(cleaned.sort((a, b) => b.position - a.position));
+
+    verify();
   }, []);
 
   return (
