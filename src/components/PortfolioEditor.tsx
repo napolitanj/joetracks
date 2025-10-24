@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import portfolioData from "../data/portfolio.json";
 import "../styles/Editor.css";
 
 type Feature = {
   id: number;
   title: string;
   description: string;
-  image_url: string;
+  imageUrl: string;
   link: string;
-  link_text: string;
-  position: number;
+  linkText: string;
 };
 
 type Option = {
@@ -28,12 +26,11 @@ const PortfolioEditor = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [link, setLink] = useState("");
   const [linkText, setLinkText] = useState("");
-  const [position, setPosition] = useState<number>(0);
   const [message, setMessage] = useState("");
-  const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
   const [imageOptions, setImageOptions] = useState<Option[]>([]);
 
+  // Load image list options
   useEffect(() => {
     fetch("/joe-napolitan.com/imageList.json")
       .then((res) => res.json())
@@ -47,90 +44,78 @@ const PortfolioEditor = () => {
       .catch((err) => console.error("Failed to load image list", err));
   }, []);
 
+  // Load all features
   useEffect(() => {
-    setFeatures(portfolioData);
-
-    if (id) {
-      const numericId = parseInt(id, 10);
-      const index = portfolioData.findIndex((f) => f.id === numericId);
-      if (index !== -1) {
-        const feature = portfolioData[index];
-        setEditingIndex(index);
-        setTitle(feature.title);
-        setDescription(feature.description);
-        setImageUrl(feature.image_url);
-        setLink(feature.link);
-        setLinkText(feature.link_text);
-        setPosition(feature.position);
-      } else {
-        setMessage("Feature not found.");
-      }
-    }
+    fetch("https://api.joetracks.com/api/portfolio")
+      .then((res) => res.json())
+      .then((data) => {
+        setFeatures(data);
+        if (id) {
+          const numericId = parseInt(id, 10);
+          const feature = data.find((f: Feature) => f.id === numericId);
+          if (feature) {
+            setTitle(feature.title);
+            setDescription(feature.description);
+            setImageUrl(feature.imageUrl);
+            setLink(feature.link);
+            setLinkText(feature.linkText);
+          } else {
+            setMessage("Feature not found.");
+          }
+        }
+      })
+      .catch((err) => console.error("Failed to load portfolio", err));
   }, [id]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Save (create or update)
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const newFeature: Feature = {
-      id: editingIndex !== null ? features[editingIndex].id : Date.now(),
-      title,
-      description,
-      image_url: imageUrl.startsWith("/images/")
-        ? imageUrl
-        : `/images/${imageUrl.replace(/^\.?\/?images\/?/, "")}`,
-      link,
-      link_text: linkText,
-      position,
-    };
+    const token = localStorage.getItem("authToken");
+    const method = id ? "PUT" : "POST";
+    const url = id
+      ? `https://api.joetracks.com/api/portfolio/${id}`
+      : "https://api.joetracks.com/api/portfolio";
 
-    let updatedFeatures = [...features];
+    const res = await fetch(url, {
+      method,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        title,
+        description,
+        imageUrl,
+        link,
+        linkText,
+      }),
+    });
 
-    if (editingIndex !== null) {
-      updatedFeatures[editingIndex] = newFeature;
-      setMessage("Feature updated!");
-    } else {
-      updatedFeatures = [newFeature, ...updatedFeatures];
-      setMessage("Feature created!");
+    if (res.ok) {
+      setMessage(id ? "Feature updated!" : "Feature created!");
       navigate("/portfolio");
+    } else {
+      setMessage("Error saving feature.");
     }
-
-    setFeatures(updatedFeatures);
-
-    setTitle("");
-    setDescription("");
-    setImageUrl("");
-    setLink("");
-    setLinkText("");
-    setPosition(0);
-    setEditingIndex(null);
-
-    const json = JSON.stringify(updatedFeatures, null, 2);
-    const blob = new Blob([json], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "portfolio.json";
-    a.click();
-    URL.revokeObjectURL(url);
-    console.log("Saving image URL to JSON:", imageUrl);
   };
 
-  const handleDelete = () => {
-    if (editingIndex === null) return;
+  // Delete feature
+  const handleDelete = async () => {
+    if (!id) return;
+    const token = localStorage.getItem("authToken");
 
-    const updatedFeatures = features.filter((_, i) => i !== editingIndex);
-    setFeatures(updatedFeatures);
-    setMessage("Feature deleted.");
-    navigate("/portfolio");
+    const res = await fetch(`https://api.joetracks.com/api/portfolio/${id}`, {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${token}` },
+    });
 
-    const json = JSON.stringify(updatedFeatures, null, 2);
-    const blob = new Blob([json], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "portfolio.json";
-    a.click();
-    URL.revokeObjectURL(url);
+    if (res.ok) {
+      setMessage("Feature deleted.");
+      navigate("/portfolio");
+    } else {
+      setMessage("Error deleting feature.");
+    }
   };
 
   return (
@@ -185,26 +170,11 @@ const PortfolioEditor = () => {
           </label>
 
           <label>
-            Position (lower = more recent):
-            <input
-              className="full-width-field"
-              type="number"
-              value={position}
-              onChange={(e) => setPosition(parseInt(e.target.value, 10))}
-              required
-            />
-          </label>
-
-          <label>
             Select Image:
             <select
               className="full-width-field"
               value={imageUrl}
-              onChange={(e) => {
-                const selectedValue = e.target.value;
-                console.log("Selected image URL:", selectedValue);
-                setImageUrl(selectedValue);
-              }}
+              onChange={(e) => setImageUrl(e.target.value)}
             >
               <option value="">Choose an image</option>
               {imageOptions.map((img) => (
