@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import portfolioData from "../../data/portfolio.json";
 import { checkAuth } from "../../utils/checkAuth";
 import { Link } from "react-router-dom";
 import PortfolioFeature from "../PortfolioFeature";
@@ -25,11 +24,13 @@ const Portfolio = () => {
       setIsAuthorized(authorized);
     }
 
-    const cleaned = portfolioData.filter(
-      (f) => f.image_url && f.image_url.startsWith("./images/")
-    );
-    setFeatures(cleaned.sort((a, b) => b.position - a.position));
+    async function loadPortfolio() {
+      const res = await fetch("https://api.joetracks.com/api/portfolio");
+      const data = await res.json();
+      setFeatures(data.sort((a: Post, b: Post) => b.position - a.position));
+    }
 
+    loadPortfolio();
     verify();
   }, []);
 
