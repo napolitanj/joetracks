@@ -8,10 +8,10 @@ type Post = {
   id: number;
   title: string;
   description: string;
-  image_url: string;
+  imageUrl: string;
   link: string;
   position: number;
-  link_text: string;
+  linkText: string;
 };
 
 const Portfolio = () => {
@@ -49,9 +49,9 @@ const Portfolio = () => {
               id={feature.id}
               title={feature.title}
               description={feature.description}
-              imageUrl={feature.image_url}
+              imageUrl={feature.imageUrl}
               link={feature.link}
-              linkText={feature.link_text}
+              linkText={feature.linkText}
               isAuthorized={isAuthorized}
             />
           ))}
