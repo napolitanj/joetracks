@@ -37,10 +37,22 @@ const PortfolioFeature = ({
       )}
       <h2 className="feature-title">{title}</h2>
       {imageUrl ? (
-        <img src={imageUrl} className="feature-image" alt="Feature" />
+        <img
+          src={
+            imageUrl.startsWith("http")
+              ? imageUrl
+              : `https://pub-59c9aabb45a74ed489e0eaea1802c581.r2.dev/${imageUrl.replace(
+                  /^\.?\/?images\/?/,
+                  ""
+                )}`
+          }
+          className="feature-image"
+          alt="Feature"
+        />
       ) : (
         <div className="image-placeholder">No Image</div>
       )}
+
       <p className="feature-description">{description}</p>
       <a
         href={link}
