@@ -11,11 +11,6 @@ type Feature = {
   linkText: string;
 };
 
-type Option = {
-  label: string;
-  value: string;
-};
-
 const PortfolioEditor = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -28,23 +23,7 @@ const PortfolioEditor = () => {
   const [linkText, setLinkText] = useState("");
   const [message, setMessage] = useState("");
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
-  const [imageOptions, setImageOptions] = useState<Option[]>([]);
 
-  // Load image list options
-  useEffect(() => {
-    fetch("/joe-napolitan.com/imageList.json")
-      .then((res) => res.json())
-      .then((filenames: string[]) => {
-        const options = filenames.map((filename) => ({
-          label: filename,
-          value: `./images/${filename}`,
-        }));
-        setImageOptions(options);
-      })
-      .catch((err) => console.error("Failed to load image list", err));
-  }, []);
-
-  // Load all features
   useEffect(() => {
     fetch("https://api.joetracks.com/api/portfolio")
       .then((res) => res.json())
@@ -67,11 +46,46 @@ const PortfolioEditor = () => {
       .catch((err) => console.error("Failed to load portfolio", err));
   }, [id]);
 
-  // Save (create or update)
+  const handleFileUpload = async (
+    e: React.ChangeEvent<HTMLInputElement>
+  ): Promise<void> => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const token = localStorage.getItem("authToken");
+    if (!token) {
+      alert("You must be logged in.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const res = await fetch("https://api.joetracks.com/api/upload", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}` },
+      body: formData,
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+      setImageUrl(data.url);
+      setMessage("Image uploaded!");
+    } else {
+      console.error("Upload failed:", data.error);
+      setMessage("Image upload failed.");
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const token = localStorage.getItem("authToken");
+    if (!token) {
+      alert("You must be logged in.");
+      return;
+    }
+
     const method = id ? "PUT" : "POST";
     const url = id
       ? `https://api.joetracks.com/api/portfolio/${id}`
@@ -100,7 +114,6 @@ const PortfolioEditor = () => {
     }
   };
 
-  // Delete feature
   const handleDelete = async () => {
     if (!id) return;
     const token = localStorage.getItem("authToken");
@@ -170,16 +183,25 @@ const PortfolioEditor = () => {
           </label>
 
           <label>
-            Select Image:
-            <input type="file" accept="image/*" onChange={handleImageUpload} />
+            Feature Image:
+            <input type="file" accept="image/*" onChange={handleFileUpload} />
           </label>
 
           {imageUrl && (
-            <img
-              src={imageUrl}
-              alt="Feature Preview"
-              className="preview-image"
-            />
+            <div className="image-preview">
+              <img
+                src={imageUrl}
+                alt="Feature Preview"
+                className="preview-image"
+              />
+              <button
+                type="button"
+                className="delete-button"
+                onClick={() => setImageUrl("")}
+              >
+                Remove Image
+              </button>
+            </div>
           )}
 
           <button type="submit">
