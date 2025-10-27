@@ -36,7 +36,7 @@ const PortfolioFeature = ({
         </Link>
       )}
       <h2 className="feature-title">{title}</h2>
-      {imageUrl && imageUrl.startsWith("./images/") ? (
+      {imageUrl ? (
         <img src={imageUrl} className="feature-image" alt="Feature" />
       ) : (
         <div className="image-placeholder">No Image</div>
