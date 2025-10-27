@@ -171,18 +171,7 @@ const PortfolioEditor = () => {
 
           <label>
             Select Image:
-            <select
-              className="full-width-field"
-              value={imageUrl}
-              onChange={(e) => setImageUrl(e.target.value)}
-            >
-              <option value="">Choose an image</option>
-              {imageOptions.map((img) => (
-                <option key={img.value} value={img.value}>
-                  {img.label}
-                </option>
-              ))}
-            </select>
+            <input type="file" accept="image/*" onChange={handleImageUpload} />
           </label>
 
           {imageUrl && (
