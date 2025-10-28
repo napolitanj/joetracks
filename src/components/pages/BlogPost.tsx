@@ -1,14 +1,17 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import blogPosts from "../../data/blogPosts.json";
 import { Link } from "react-router-dom";
 import { checkAuth } from "../../utils/checkAuth";
 import "../../styles/BlogPost.css";
 
 type Post = {
+  id: string;
   title: string;
+  slug: string;
   content: string;
-  created_at: string;
+  created_at: number;
+  imageUrl?: string;
+  published: number;
 };
 
 const BlogPost = () => {
@@ -24,10 +27,15 @@ const BlogPost = () => {
 
   useEffect(() => {
     async function fetchPost() {
-      const postData = blogPosts.find(
-        (p) => p.slug === slug && p.published === true
-      );
-      setPost(postData || null);
+      try {
+        const res = await fetch(`/api/blog/${slug}`);
+        if (!res.ok) throw new Error("Failed to load post");
+        const data = await res.json();
+        setPost(data);
+      } catch (err) {
+        console.error(err);
+        setPost(null);
+      }
 
       const authorized = await checkAuth();
       setIsAuthorized(authorized);
@@ -44,7 +52,10 @@ const BlogPost = () => {
       <article className="blog-container">
         <div className={`post-contents ${fadeIn ? "show" : ""}`}>
           <h1>{post.title}</h1>
-          <p>{new Date(post.created_at).toLocaleDateString()}</p>
+          {post.imageUrl && (
+            <img src={post.imageUrl} alt={post.title} className="post-image" />
+          )}
+          <p>{new Date(post.created_at * 1000).toLocaleDateString()}</p>
           <div>
             {post.content.split(/\n{2,}/).map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
