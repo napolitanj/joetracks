@@ -24,6 +24,7 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
   const [message, setMessage] = useState("");
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
+  const [form, setForm] = useState({ title: "", content: "", imageUrl: "" });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -124,6 +125,39 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
           rows={10}
           required
         />
+        <input
+          type="file"
+          accept="image/*"
+          onChange={async (e) => {
+            const file = e.target.files?.[0];
+            if (!file) return;
+
+            const formData = new FormData();
+            formData.append("file", file);
+
+            try {
+              const token = localStorage.getItem("token");
+              const res = await fetch("/api/upload", {
+                method: "POST",
+                headers: { Authorization: `Bearer ${token}` },
+                body: formData,
+              });
+              if (!res.ok) throw new Error("Upload failed");
+              const data = await res.json();
+              setForm({ ...form, imageUrl: data.url });
+            } catch (err) {
+              console.error("Upload error", err);
+              setMessage("Image upload failed");
+            }
+          }}
+        />
+        {form.imageUrl && (
+          <img
+            src={form.imageUrl}
+            alt="Preview"
+            style={{ maxWidth: "10em", marginTop: "1em" }}
+          />
+        )}
         <div className="editor-button-container">
           <div className="editor-buttons">
             <button type="submit">{slug ? "Update" : "Create"} Post</button>
