@@ -90,6 +90,7 @@ const PortfolioEditor = () => {
     const url = id
       ? `https://api.joetracks.com/api/portfolio/${id}`
       : "https://api.joetracks.com/api/portfolio";
+    console.log("Submitting feature with imageUrl:", imageUrl);
 
     const res = await fetch(url, {
       method,
