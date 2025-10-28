@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login } from "../api";
 
 export default function Login() {
   const [password, setPassword] = useState("");
@@ -12,8 +11,22 @@ export default function Login() {
     setError("");
 
     try {
-      await login(password);
+      const res = await fetch("https://api.joetracks.com/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
 
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Login failed");
+      }
+
+      // Save the token for authenticated routes
+      localStorage.setItem("authToken", data.token);
+
+      // Notify other components that auth state changed
       window.dispatchEvent(new Event("auth-change"));
 
       navigate("/");
