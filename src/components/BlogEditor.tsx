@@ -22,6 +22,7 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
   const [slugInput, setSlugInput] = useState("");
   const [content, setContent] = useState("");
   const [message, setMessage] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
   const [form, setForm] = useState({ title: "", content: "", imageUrl: "" });
@@ -44,42 +45,43 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
     }
   }, [slug]);
 
-  const exportUpdatedJSON = (updatedPosts: Post[]) => {
-    const json = JSON.stringify(updatedPosts, null, 2);
-    const blob = new Blob([json], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "blogPosts.json";
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const now = new Date().toISOString();
-
-    const updatedPost: Post = {
-      id: editingIndex !== null ? posts[editingIndex].id : crypto.randomUUID(),
+    const token = localStorage.getItem("token");
+    const postData = {
       title,
       slug: slugInput,
       content,
-      created_at: editingIndex !== null ? posts[editingIndex].created_at : now,
+      imageUrl,
       published: true,
     };
 
-    let newPosts = [...posts];
+    const method = editingIndex !== null ? "PUT" : "POST";
+    const url =
+      editingIndex !== null
+        ? `/api/blog/${posts[editingIndex].id}`
+        : "/api/blog";
 
-    if (editingIndex !== null) {
-      newPosts[editingIndex] = updatedPost;
-      setMessage("Post updated!");
-    } else {
-      newPosts = [updatedPost, ...newPosts];
-      setMessage("Post created!");
+    try {
+      const res = await fetch(url, {
+        method,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(postData),
+      });
+
+      if (!res.ok) throw new Error("Failed to save post");
+
+      setMessage(editingIndex !== null ? "Post updated!" : "Post created!");
+
+      const refreshed = await fetch("/api/blog");
+      setPosts(await refreshed.json());
+    } catch (err) {
+      console.error(err);
+      setMessage("Error saving post");
     }
-
-    setPosts(newPosts);
-    exportUpdatedJSON(newPosts);
 
     setTitle("");
     setSlugInput("");
@@ -91,7 +93,6 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
     if (editingIndex === null) return;
     const newPosts = posts.filter((_, i) => i !== editingIndex);
     setPosts(newPosts);
-    exportUpdatedJSON(newPosts);
     setMessage("Post deleted!");
     navigate("/blog");
   };
@@ -144,18 +145,20 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
               });
               if (!res.ok) throw new Error("Upload failed");
               const data = await res.json();
-              setForm({ ...form, imageUrl: data.url });
+              setImageUrl(data.url);
+              setMessage("Image uploaded!");
             } catch (err) {
               console.error("Upload error", err);
               setMessage("Image upload failed");
             }
           }}
         />
-        {form.imageUrl && (
+
+        {imageUrl && (
           <img
-            src={form.imageUrl}
+            src={imageUrl}
             alt="Preview"
-            style={{ maxWidth: "10em", marginTop: "1em" }}
+            style={{ maxWidth: "200px", marginTop: "8px" }}
           />
         )}
         <div className="editor-button-container">
