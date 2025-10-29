@@ -24,14 +24,13 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
   const [imageUrl, setImageUrl] = useState("");
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
-  const API_BASE = "https://api.joetracks.com";
   const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const res = await fetch(`${API_BASE}/api/blog`);
-        const data: Post[] = await res.json(); // ✅ Explicitly typed
+        const res = await fetch("https://api.joetracks.com/api/blog");
+        const data: Post[] = await res.json();
         setPosts(data);
 
         if (slug) {
@@ -55,7 +54,7 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("authToken");
     const postData = {
       title,
       slug: slugInput,
@@ -67,8 +66,8 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
     const method = editingIndex !== null ? "PUT" : "POST";
     const url =
       editingIndex !== null
-        ? `${API_BASE}/api/blog/${posts[editingIndex].id}`
-        : `${API_BASE}/api/blog`;
+        ? `https://api.joetracks.com/api/blog/${posts[editingIndex].id}`
+        : "https://api.joetracks.com/api/blog";
 
     try {
       const res = await fetch(url, {
@@ -81,10 +80,9 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
       });
 
       if (!res.ok) throw new Error("Failed to save post");
-
       setMessage(editingIndex !== null ? "Post updated!" : "Post created!");
 
-      const refreshed = await fetch(`${API_BASE}/api/blog`);
+      const refreshed = await fetch("https://api.joetracks.com/api/blog");
       setPosts(await refreshed.json());
     } catch (err) {
       console.error(err);
@@ -110,6 +108,7 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
       <Link to="/blog">⇦ Back to Blog Dashboard</Link>
       <form onSubmit={handleSubmit} className="editor-form">
         <h2>{slug ? "Edit Blog Post" : "Create a Blog Post"}</h2>
+
         <input
           className="full-width-field"
           type="text"
@@ -118,6 +117,7 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
           onChange={(e) => setTitle(e.target.value)}
           required
         />
+
         <input
           className="full-width-field"
           type="text"
@@ -126,6 +126,7 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
           onChange={(e) => setSlugInput(e.target.value)}
           required
         />
+
         <textarea
           className="full-width-field"
           placeholder="Write your post here..."
@@ -134,6 +135,7 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
           rows={10}
           required
         />
+
         <input
           type="file"
           accept="image/*"
@@ -145,12 +147,13 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
             formData.append("file", file);
 
             try {
-              const token = localStorage.getItem("token");
-              const res = await fetch(`${API_BASE}/api/upload`, {
+              const token = localStorage.getItem("authToken");
+              const res = await fetch("https://api.joetracks.com/api/upload", {
                 method: "POST",
                 headers: { Authorization: `Bearer ${token}` },
                 body: formData,
               });
+
               if (!res.ok) throw new Error("Upload failed");
               const data = await res.json();
               setImageUrl(data.url);
@@ -169,6 +172,7 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
             style={{ maxWidth: "200px", marginTop: "8px" }}
           />
         )}
+
         <div className="editor-button-container">
           <div className="editor-buttons">
             <button type="submit">{slug ? "Update" : "Create"} Post</button>
@@ -178,6 +182,7 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
               </button>
             )}
           </div>
+
           {showConfirmDelete && (
             <>
               <p className="warning-text">
@@ -201,6 +206,7 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
               </div>
             </>
           )}
+
           {message && <p>{message}</p>}
         </div>
       </form>
