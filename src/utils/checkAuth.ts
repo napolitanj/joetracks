@@ -3,7 +3,7 @@ export async function checkAuth(): Promise<boolean> {
   if (!token) return false;
 
   try {
-    const res = await fetch("/api/pages?siteId=site_demo&path=/", {
+    const res = await fetch("/api/verify", {
       headers: { Authorization: `Bearer ${token}` },
     });
     return res.ok;
