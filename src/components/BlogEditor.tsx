@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import blogPosts from "../data/blogPosts.json";
 import "/src/styles/Editor.css";
 
 type BlogEditorProps = {
@@ -25,24 +24,33 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
   const [imageUrl, setImageUrl] = useState("");
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
-  const [form, setForm] = useState({ title: "", content: "", imageUrl: "" });
+  const API_BASE = "https://api.joetracks.com";
   const navigate = useNavigate();
 
   useEffect(() => {
-    setPosts(blogPosts);
+    async function fetchPosts() {
+      try {
+        const res = await fetch(`${API_BASE}/api/blog`);
+        const data: Post[] = await res.json(); // ✅ Explicitly typed
+        setPosts(data);
 
-    if (slug) {
-      const index = blogPosts.findIndex((p) => p.slug === slug);
-      if (index !== -1) {
-        const post = blogPosts[index];
-        setEditingIndex(index);
-        setTitle(post.title);
-        setSlugInput(post.slug);
-        setContent(post.content);
-      } else {
-        setMessage(`Post not found for slug: ${slug}`);
+        if (slug) {
+          const index = data.findIndex((p) => p.slug === slug);
+          if (index !== -1) {
+            const post = data[index];
+            setEditingIndex(index);
+            setTitle(post.title);
+            setSlugInput(post.slug);
+            setContent(post.content);
+          } else {
+            setMessage(`Post not found for slug: ${slug}`);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to fetch posts", err);
       }
     }
+    fetchPosts();
   }, [slug]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -59,8 +67,8 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
     const method = editingIndex !== null ? "PUT" : "POST";
     const url =
       editingIndex !== null
-        ? `/api/blog/${posts[editingIndex].id}`
-        : "/api/blog";
+        ? `${API_BASE}/api/blog/${posts[editingIndex].id}`
+        : `${API_BASE}/api/blog`;
 
     try {
       const res = await fetch(url, {
@@ -76,7 +84,7 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
 
       setMessage(editingIndex !== null ? "Post updated!" : "Post created!");
 
-      const refreshed = await fetch("/api/blog");
+      const refreshed = await fetch(`${API_BASE}/api/blog`);
       setPosts(await refreshed.json());
     } catch (err) {
       console.error(err);
@@ -138,7 +146,7 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
 
             try {
               const token = localStorage.getItem("token");
-              const res = await fetch("/api/upload", {
+              const res = await fetch(`${API_BASE}/api/upload`, {
                 method: "POST",
                 headers: { Authorization: `Bearer ${token}` },
                 body: formData,
