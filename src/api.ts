@@ -14,17 +14,17 @@ export async function login(password: string) {
   }
 
   const data = await res.json();
-  localStorage.setItem("authToken", data.token);
 
+  // ✅ single consistent key
   if (data.token) {
-    localStorage.setItem("auth_token", data.token);
+    localStorage.setItem("authToken", data.token);
   }
 
   return data;
 }
 
 export async function verifyToken() {
-  const token = localStorage.getItem("auth_token");
+  const token = localStorage.getItem("authToken");
   if (!token) return false;
 
   const res = await fetch(`${API_URL}/api/verify`, {
@@ -40,7 +40,7 @@ export async function getPage(siteId: string, path: string) {
 }
 
 export async function savePage(siteId: string, path: string, data: object) {
-  const token = localStorage.getItem("auth_token");
+  const token = localStorage.getItem("authToken");
 
   const res = await fetch(`${API_URL}/api/pages`, {
     method: "PUT",
