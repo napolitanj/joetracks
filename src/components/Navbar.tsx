@@ -23,7 +23,7 @@ const Navbar = () => {
 
   useEffect(() => {
     function syncAuth() {
-      const token = localStorage.getItem("auth_token");
+      const token = localStorage.getItem("authToken");
       const valid = isTokenValid(token);
 
       setIsLoggedIn(valid);
@@ -81,7 +81,7 @@ const Navbar = () => {
           <button
             onClick={() => {
               if (isLoggedIn) {
-                localStorage.removeItem("auth_token");
+                localStorage.removeItem("authToken");
                 localStorage.removeItem("isAuthorized");
                 window.dispatchEvent(new Event("auth-change"));
                 setIsLoggedIn(false);
