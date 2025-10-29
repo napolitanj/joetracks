@@ -17,7 +17,7 @@ export function isTokenValid(token: string | null): boolean {
 }
 
 export function logout() {
-  localStorage.removeItem("auth_token");
+  localStorage.removeItem("authToken");
   localStorage.removeItem("isAuthorized");
   window.dispatchEvent(new Event("auth-change"));
   window.location.href = "/login";
