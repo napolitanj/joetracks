@@ -1,5 +1,5 @@
 export async function checkAuth(): Promise<boolean> {
-  const token = localStorage.getItem("auth_token");
+  const token = localStorage.getItem("authToken");
   if (!token) return false;
 
   try {
