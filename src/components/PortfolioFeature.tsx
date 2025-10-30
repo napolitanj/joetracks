@@ -1,5 +1,5 @@
+import { useScrollReveal } from "../hooks/useScrollReveal";
 import "../styles/PortfolioFeature.css";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 type PortfolioFeatureProps = {
@@ -21,21 +21,18 @@ const PortfolioFeature = ({
   linkText,
   isAuthorized,
 }: PortfolioFeatureProps) => {
-  const [fadeIn, setFadeIn] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setFadeIn(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
+  const { ref, visible } = useScrollReveal(); // 👈 handles scroll-based reveal
 
   return (
-    <div className={`feature-container ${fadeIn ? "show" : ""}`}>
+    <div ref={ref} className={`feature-container ${visible ? "visible" : ""}`}>
       {isAuthorized && (
         <Link to={`/portfolioeditor/${id}`} className="edit-link">
           ✏️ Edit Feature
         </Link>
       )}
+
       <h2 className="feature-title">{title}</h2>
+
       {imageUrl ? (
         <img
           src={
@@ -54,6 +51,7 @@ const PortfolioFeature = ({
       )}
 
       <p className="feature-description">{description}</p>
+
       <a
         href={link}
         target="_blank"

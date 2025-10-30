@@ -1,5 +1,7 @@
 .Navbar {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   height: 5em;
   display: flex;
   align-items: center;
@@ -106,11 +108,14 @@
 
 @media (max-width: 768px) {
   .Navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     flex-direction: column;
     align-items: flex-start;
     padding: 1em;
     height: auto;
-    position: relative;
+    background: var(--bg-color);
   }
 
   .Navbar ul {
