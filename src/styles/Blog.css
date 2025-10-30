@@ -1,23 +1,24 @@
 .blog-container {
-  color: black;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: 2em;
-  padding: 2em;
+  padding: 2em 1em 4em;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Blog list layout */
 .blog-list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 2em;
-  padding: 2em;
-  text-align: center;
+  width: 100%;
+  max-width: 60rem;
   opacity: 0;
-  transform: translateY(5px);
+  transform: translateY(8px);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -26,28 +27,105 @@
   transform: translateY(0);
 }
 
+/* Individual post preview card */
 .post-feature {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: white;
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 2em;
-  margin: 1.5em 0;
-  width: 90%;
+  overflow: hidden;
+  width: 100%;
   max-width: 600px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-feature:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Thumbnail image */
+.post-thumbnail {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Post content area */
+.post-content {
+  padding: 1.5em 2em;
+  text-align: left;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  word-break: break-word;
+}
+
+.post-date {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.8em;
 }
 
 .post-brief {
   text-align: left;
+  color: #333;
+  line-height: 1.6;
+  font-size: 1rem;
+  white-space: pre-line;
 }
 
+.post-brief p {
+  margin-bottom: 1.2rem;
+}
+
+.read-more {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.read-more:hover {
+  color: #004c99;
+}
+
+/* Dark mode styles */
 body.dark .post-feature {
   background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ccc;
+  color: #ddd;
+}
+
+body.dark .post-date {
+  color: #aaa;
+}
+
+body.dark .read-more {
+  color: #66aaff;
+}
+
+body.dark .read-more:hover {
+  color: #99cfff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .post-content {
+    padding: 1.2em 1.5em;
+  }
+
+  .post-title {
+    font-size: 1.3rem;
+  }
+
+  .post-thumbnail {
+    height: 180px;
+  }
 }
