@@ -19,6 +19,7 @@ const BlogPost = () => {
   const [post, setPost] = useState<Post | null>(null);
   const [fadeIn, setFadeIn] = useState(false);
   const [isAuthorized, setIsAuthorized] = useState(false);
+  const API_BASE = "https://api.joetracks.com";
 
   useEffect(() => {
     const timer = setTimeout(() => setFadeIn(true), 100);
@@ -28,12 +29,12 @@ const BlogPost = () => {
   useEffect(() => {
     async function fetchPost() {
       try {
-        const res = await fetch(`/api/blog/${slug}`);
+        const res = await fetch(`${API_BASE}/api/blog/${slug}`);
         if (!res.ok) throw new Error("Failed to load post");
         const data = await res.json();
         setPost(data);
       } catch (err) {
-        console.error(err);
+        console.error("Error loading post:", err);
         setPost(null);
       }
 
