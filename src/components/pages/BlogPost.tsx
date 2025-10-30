@@ -50,7 +50,7 @@ const BlogPost = () => {
   return (
     <>
       <Link to="/blog">⇦ Back to Blog Dashboard</Link>
-      <article className="blog-container">
+      <article className="single-post-container">
         <div className={`post-contents ${fadeIn ? "show" : ""}`}>
           <h1>{post.title}</h1>
           {post.imageUrl && (
