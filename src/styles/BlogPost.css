@@ -1,32 +1,70 @@
-.post-contents {
+.blog-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding-left: 2em;
-  padding-right: 2em;
+  width: 100%;
+  padding: 2em 1em;
 }
 
 .post-contents {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 2em;
-  margin: 1.5em 0;
-  width: 90%;
-  max-width: 60em;
+  padding: 3em 2em;
+  margin: 2em 0;
+  width: 100%;
+  max-width: 44rem;
+  max-height: 25rem;
   opacity: 0;
-  transform: translateY(5px);
+  transform: translateY(8px);
   transition: opacity 0.4s ease, transform 0.4s ease;
+  line-height: 1.6;
 }
 
 .post-contents.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+.post-contents h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  text-align: left;
+  width: 100%;
+}
+
+.post-image {
+  width: 100%;
+  max-width: 700px;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0 auto 1.5em auto;
+  display: block;
+}
+
+.post-contents p {
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.post-contents p:first-of-type {
+  margin-top: 0.5em;
+}
+
+.post-contents p:last-of-type {
+  margin-bottom: 0;
+}
+
+.post-contents time {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.5em;
 }
 
 .edit-button {
@@ -56,7 +94,15 @@
 
 body.dark .post-contents {
   background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #ccc;
+}
+
+body.dark .post-contents p {
+  color: #ddd;
+}
+
+body.dark .post-contents time {
+  color: #aaa;
 }

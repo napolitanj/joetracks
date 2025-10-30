@@ -56,7 +56,11 @@ const BlogPost = () => {
           {post.imageUrl && (
             <img src={post.imageUrl} alt={post.title} className="post-image" />
           )}
-          <p>{new Date(post.created_at * 1000).toLocaleDateString()}</p>
+          <p>
+            <time dateTime={new Date(post.created_at * 1000).toISOString()}>
+              {new Date(post.created_at * 1000).toLocaleDateString()}
+            </time>
+          </p>
           <div>
             {post.content.split(/\n{2,}/).map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
