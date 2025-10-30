@@ -10,19 +10,15 @@
   margin: 1.5em 0;
   width: 90%;
   max-width: 600px;
-  transition: transform 0.3s ease-in-out;
   opacity: 0;
-  transform: translateY(5px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
 }
 
-.feature-container.show {
+.feature-container.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.feature-container:hover {
-  transform: translateY(-5px);
 }
 
 .feature-title {
