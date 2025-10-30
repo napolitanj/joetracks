@@ -95,12 +95,26 @@ const BlogEditor = ({ slug }: BlogEditorProps) => {
     setEditingIndex(null);
   };
 
-  const handleDelete = () => {
+  const handleDelete = async () => {
     if (editingIndex === null) return;
-    const newPosts = posts.filter((_, i) => i !== editingIndex);
-    setPosts(newPosts);
-    setMessage("Post deleted!");
-    navigate("/blog");
+    const token = localStorage.getItem("authToken");
+    const id = posts[editingIndex].id;
+
+    try {
+      const res = await fetch(`https://api.joetracks.com/api/blog/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      if (!res.ok) throw new Error("Failed to delete post");
+
+      setPosts(posts.filter((_, i) => i !== editingIndex));
+      setMessage("Post deleted!");
+      navigate("/blog");
+    } catch (err) {
+      console.error("Delete failed:", err);
+      setMessage("Error deleting post.");
+    }
   };
 
   return (
