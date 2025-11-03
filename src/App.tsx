@@ -9,8 +9,8 @@ import Contact from "./components/pages/Contact";
 import EditorPage from "./components/pages/Editor";
 import AccessDenied from "./components/pages/AccessDenied";
 import PortfolioEditor from "./components/PortfolioEditor";
-import WritingPortfolio from "./components/pages/WritingPortfolio";
 import Login from "./components/Login";
+import PortfolioCategory from "./components/PortfolioCategory";
 
 function App() {
   return (
@@ -28,8 +28,8 @@ function App() {
           <Route path="/access-denied" element={<AccessDenied />} />
           <Route path="/portfolioeditor" element={<PortfolioEditor />} />
           <Route path="/portfolioeditor/:id" element={<PortfolioEditor />} />
-          <Route path="/writing" element={<WritingPortfolio />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/portfolio/:category" element={<PortfolioCategory />} />
         </Routes>
       </main>
     </>
