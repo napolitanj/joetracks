@@ -22,7 +22,7 @@ const BannerImage = () => {
             <h1>Joe Napolitan</h1>
             <div className="subheader">
               <p>Information Technology</p>
-              <p>Full-Stack Web Engineering</p>
+              <p>Full-Stack Engineering</p>
               <p>Outdoor Recreation</p>
             </div>
           </div>
