@@ -9,6 +9,8 @@ type Feature = {
   imageUrl: string;
   link: string;
   linkText: string;
+  category: string;
+  type: string;
 };
 
 const PortfolioEditor = () => {
@@ -21,6 +23,8 @@ const PortfolioEditor = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [link, setLink] = useState("");
   const [linkText, setLinkText] = useState("");
+  const [category, setCategory] = useState("general");
+  const [type, setType] = useState("project");
   const [message, setMessage] = useState("");
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
 
@@ -38,6 +42,8 @@ const PortfolioEditor = () => {
             setImageUrl(feature.imageUrl);
             setLink(feature.link);
             setLinkText(feature.linkText);
+            setCategory(feature.category || "general");
+            setType(feature.type || "project");
           } else {
             setMessage("Feature not found.");
           }
@@ -46,9 +52,7 @@ const PortfolioEditor = () => {
       .catch((err) => console.error("Failed to load portfolio", err));
   }, [id]);
 
-  const handleFileUpload = async (
-    e: React.ChangeEvent<HTMLInputElement>
-  ): Promise<void> => {
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -90,7 +94,6 @@ const PortfolioEditor = () => {
     const url = id
       ? `https://api.joetracks.com/api/portfolio/${id}`
       : "https://api.joetracks.com/api/portfolio";
-    console.log("Submitting feature with imageUrl:", imageUrl);
 
     const res = await fetch(url, {
       method,
@@ -104,6 +107,8 @@ const PortfolioEditor = () => {
         imageUrl,
         link,
         linkText,
+        category,
+        type,
       }),
     });
 
@@ -161,6 +166,34 @@ const PortfolioEditor = () => {
           </label>
 
           <label>
+            Category:
+            <select
+              className="full-width-field"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="software">Software & Tech</option>
+              <option value="outdoor">Outdoor Leadership</option>
+              <option value="nonprofit">Nonprofit</option>
+              <option value="marketing">Marketing & Web Strategy</option>
+              <option value="writing">Writing</option>
+              <option value="general">General</option>
+            </select>
+          </label>
+
+          <label>
+            Type:
+            <select
+              className="full-width-field"
+              value={type}
+              onChange={(e) => setType(e.target.value)}
+            >
+              <option value="category">Category</option>
+              <option value="project">Project</option>
+            </select>
+          </label>
+
+          <label>
             Feature Link URL:
             <input
               className="full-width-field"
@@ -168,7 +201,6 @@ const PortfolioEditor = () => {
               placeholder="https://www.example.com"
               value={link}
               onChange={(e) => setLink(e.target.value)}
-              required
             />
           </label>
 
@@ -179,7 +211,6 @@ const PortfolioEditor = () => {
               type="text"
               value={linkText}
               onChange={(e) => setLinkText(e.target.value)}
-              required
             />
           </label>
 
