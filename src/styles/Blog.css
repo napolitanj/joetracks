@@ -9,6 +9,10 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.create-post {
+  margin: 2em;
+}
+
 /* Blog list layout */
 .blog-list {
   display: flex;
@@ -107,7 +111,15 @@ body.dark .post-date {
   color: #aaa;
 }
 
+body.dark .post-brief {
+  color: #aaa;
+}
+
 body.dark .read-more {
+  color: #66aaff;
+}
+
+body.dark a {
   color: #66aaff;
 }
 
