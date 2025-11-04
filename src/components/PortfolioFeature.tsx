@@ -52,12 +52,7 @@ const PortfolioFeature = ({
 
       <p className="feature-description">{description}</p>
 
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="feature-button"
-      >
+      <a href={link} rel="noopener noreferrer" className="feature-button">
         {linkText}
       </a>
     </div>
