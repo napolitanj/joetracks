@@ -17,7 +17,6 @@ const PortfolioEditor = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const [features, setFeatures] = useState<Feature[]>([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -29,27 +28,27 @@ const PortfolioEditor = () => {
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
 
   useEffect(() => {
-    fetch("https://api.joetracks.com/api/portfolio")
+    if (!id) return;
+
+    fetch(`https://api.joetracks.com/api/portfolio/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        setFeatures(data);
-        if (id) {
-          const numericId = parseInt(id, 10);
-          const feature = data.find((f: Feature) => f.id === numericId);
-          if (feature) {
-            setTitle(feature.title);
-            setDescription(feature.description);
-            setImageUrl(feature.imageUrl);
-            setLink(feature.link);
-            setLinkText(feature.linkText);
-            setCategory(feature.category || "general");
-            setType(feature.type || "project");
-          } else {
-            setMessage("Feature not found.");
-          }
+        if (data.error) {
+          setMessage("Feature not found.");
+          return;
         }
+        setTitle(data.title || "");
+        setDescription(data.description || "");
+        setImageUrl(data.imageUrl || "");
+        setLink(data.link || "");
+        setLinkText(data.link_text || data.linkText || "");
+        setCategory(data.category || "general");
+        setType(data.type || "project");
       })
-      .catch((err) => console.error("Failed to load portfolio", err));
+      .catch((err) => {
+        console.error("Failed to load feature", err);
+        setMessage("Error loading feature.");
+      });
   }, [id]);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -188,7 +187,7 @@ const PortfolioEditor = () => {
               value={type}
               onChange={(e) => setType(e.target.value)}
             >
-              <option value="category">Category</option>
+              <option value="category">Category for Projects</option>
               <option value="project">Project</option>
             </select>
           </label>
