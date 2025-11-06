@@ -2,17 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "../styles/Editor.css";
 
-type Feature = {
-  id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
-  link: string;
-  linkText: string;
-  category: string;
-  type: string;
-};
-
 const PortfolioEditor = () => {
   const { id } = useParams();
   const navigate = useNavigate();
