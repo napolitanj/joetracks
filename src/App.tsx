@@ -11,6 +11,7 @@ import AccessDenied from "./components/pages/AccessDenied";
 import PortfolioEditor from "./components/PortfolioEditor";
 import Login from "./components/Login";
 import PortfolioCategory from "./components/PortfolioCategory";
+import Marketing from "./components/Marketing";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/portfolioeditor/:id" element={<PortfolioEditor />} />
           <Route path="/login" element={<Login />} />
           <Route path="/portfolio/:category" element={<PortfolioCategory />} />
+          <Route path="/marketing" element={<Marketing />} />
         </Routes>
       </main>
     </>
