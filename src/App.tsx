@@ -13,6 +13,11 @@ import Login from "./components/Login";
 import PortfolioCategory from "./components/PortfolioCategory";
 import Marketing from "./components/Marketing";
 import Writing from "./components/Writing";
+import SneffelsGuide from "./components/SneffelsGuide";
+import NorthManitouGuide from "./components/NorthManitouGuide";
+import CalTopo from "./components/CalTopo";
+import RemoteForecastingTools from "./components/RemoteForecastingTools";
+import OriginExpeditions from "./components/OriginExpeditions";
 
 function App() {
   return (
@@ -34,6 +39,17 @@ function App() {
           <Route path="/portfolio/:category" element={<PortfolioCategory />} />
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/writing" element={<Writing />} />
+          <Route path="/ski-mount-sneffels" element={<SneffelsGuide />} />
+          <Route
+            path="/north-manitou-island-guide"
+            element={<NorthManitouGuide />}
+          />
+          <Route path="/caltopo-guide" element={<CalTopo />} />
+          <Route
+            path="/remote-forecasting-tools"
+            element={<RemoteForecastingTools />}
+          />
+          <Route path="/origin-expeditions" element={<OriginExpeditions />} />
         </Routes>
       </main>
     </>
