@@ -76,7 +76,7 @@ const Writing = () => {
             <li>
               <strong>Sample:</strong>{" "}
               <a
-                href="/pdfs/ps-dog-rescue-feature.pdf"
+                href="/pdfs/it-google-site-documentation.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
