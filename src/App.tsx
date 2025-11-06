@@ -18,11 +18,13 @@ import NorthManitouGuide from "./components/NorthManitouGuide";
 import CalTopo from "./components/CalTopo";
 import RemoteForecastingTools from "./components/RemoteForecastingTools";
 import OriginExpeditions from "./components/OriginExpeditions";
+import ScrollToTop from "./components/tools/ScrollToTop";
 
 function App() {
   return (
     <>
       <Navbar />
+      <ScrollToTop />
       <main className="route-content-wrapper">
         <Routes>
           <Route path="/" element={<Bio />} />
