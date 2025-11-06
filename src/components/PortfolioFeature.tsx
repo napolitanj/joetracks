@@ -52,16 +52,22 @@ const PortfolioFeature = ({
 
       <p className="feature-description">{description}</p>
 
-      {linkText && linkText.trim() !== "" && (
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="feature-button"
-        >
-          {linkText}
-        </a>
-      )}
+      {linkText &&
+        linkText.trim() !== "" &&
+        (link.startsWith("http") ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="feature-button"
+          >
+            {linkText}
+          </a>
+        ) : (
+          <Link to={link} className="feature-button">
+            {linkText}
+          </Link>
+        ))}
     </div>
   );
 };
