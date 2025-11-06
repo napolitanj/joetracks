@@ -30,7 +30,7 @@ const Marketing = () => {
     <>
       <Link to="/portfolio">⇦ Back to Portfolio Page</Link>
       <div className={`marketing-container ${fadeIn ? "show" : ""}`}>
-        <h1>Marketing & Web Strategy</h1>
+        <h1>Content-Driven Growth & Web Strategy</h1>
 
         <p className="intro">
           Between 2020 and 2025, I led web strategy and SEO for a small

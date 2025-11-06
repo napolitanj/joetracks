@@ -12,6 +12,7 @@ import PortfolioEditor from "./components/PortfolioEditor";
 import Login from "./components/Login";
 import PortfolioCategory from "./components/PortfolioCategory";
 import Marketing from "./components/Marketing";
+import Writing from "./components/Writing";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/portfolio/:category" element={<PortfolioCategory />} />
           <Route path="/marketing" element={<Marketing />} />
+          <Route path="/writing" element={<Writing />} />
         </Routes>
       </main>
     </>
