@@ -19,6 +19,7 @@ import CalTopo from "./components/CalTopo";
 import RemoteForecastingTools from "./components/RemoteForecastingTools";
 import OriginExpeditions from "./components/OriginExpeditions";
 import ScrollToTop from "./components/tools/ScrollToTop";
+import ProgramManagement from "./components/ProgramManagement";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/portfolio/:category" element={<PortfolioCategory />} />
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/writing" element={<Writing />} />
+          <Route path="/programmanagement" element={<ProgramManagement />} />
           <Route path="/ski-mount-sneffels" element={<SneffelsGuide />} />
           <Route
             path="/north-manitou-island-guide"
