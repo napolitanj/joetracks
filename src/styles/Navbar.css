@@ -140,6 +140,7 @@
     max-height: 150em;
     opacity: 1;
     pointer-events: auto;
+    padding: 0em;
   }
 
   .Navbar li {

@@ -25,6 +25,7 @@ const BannerImage = () => {
               <p>Full-Stack Engineering</p>
               <p>Outdoor Recreation</p>
             </div>
+            <p className="tech-stack">Built with React • Vite • Cloudflare</p>
           </div>
         </div>
       </div>
