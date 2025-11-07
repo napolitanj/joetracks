@@ -167,4 +167,8 @@ body.dark .writing-section a:hover {
   .writing-section h3 {
     font-size: 1.2rem;
   }
+
+  .writing-section a {
+    text-align: left;
+  }
 }
