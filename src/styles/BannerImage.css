@@ -43,6 +43,13 @@
   z-index: 1;
 }
 
+.tech-stack {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 0.5rem;
+  letter-spacing: 0.3px;
+}
+
 body.dark .banner-image::before {
   background-image: linear-gradient(
       to bottom,
@@ -97,6 +104,9 @@ body.dark .banner-text {
 
 @media (max-width: 589px) {
   .banner-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 10%;
     right: 0;
     padding-left: 0;
@@ -107,5 +117,9 @@ body.dark .banner-text {
     padding-left: 0.6em;
     padding-right: 0.6em;
     text-align: center;
+  }
+
+  .banner {
+    height: 25em;
   }
 }

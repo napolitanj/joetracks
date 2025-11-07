@@ -19,13 +19,12 @@ const Bio = () => {
             I'm Joe Napolitan, a Michigan-based Technical Support Specialist,
             software engineer, and former wilderness educator & ski patroller.
             Over the past decade, I’ve led backcountry expeditions in Alaska,
-            worked various roles in the technology industry, taught outdoor
-            skills to underserved youth, and later pivoted into tech through
-            self-teaching and certifications. Today I work full-time in IT at a
-            creative arts school, where I support staff and students while
+            worked various roles in the technology industry, led wilderness
+            therapy programs for at-risk youth. Today I work full-time in IT at
+            a creative arts school, where I support staff and students while
             building tools to automate workflows, manage data, and improve
-            systems. I bring a mix of technical skill, hands-on grit, and
-            people-first problem-solving to everything I do.
+            systems & documentation. I bring a mix of technical skill, hands-on
+            grit, and people-first problem-solving to everything I do.
           </p>
           <p>
             What ties it all together is my drive to build things that are
