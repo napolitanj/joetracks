@@ -28,7 +28,7 @@ const Portfolio = () => {
     async function loadPortfolio() {
       const res = await fetch("https://api.joetracks.com/api/portfolio");
       const data = await res.json();
-      setFeatures(data.sort((a: Post, b: Post) => b.sort_order - a.sort_order));
+      setFeatures(data.sort((a: Post, b: Post) => a.sort_order - b.sort_order));
     }
 
     loadPortfolio();
