@@ -20,6 +20,7 @@ import RemoteForecastingTools from "./components/RemoteForecastingTools";
 import OriginExpeditions from "./components/OriginExpeditions";
 import ScrollToTop from "./components/tools/ScrollToTop";
 import ProgramManagement from "./components/ProgramManagement";
+import SoftwareTechSupport from "./components/SoftwareTechSupport";
 
 function App() {
   return (
@@ -44,6 +45,10 @@ function App() {
           <Route path="/writing" element={<Writing />} />
           <Route path="/programmanagement" element={<ProgramManagement />} />
           <Route path="/ski-mount-sneffels" element={<SneffelsGuide />} />
+          <Route
+            path="/softwaretechsupport"
+            element={<SoftwareTechSupport />}
+          />
           <Route
             path="/north-manitou-island-guide"
             element={<NorthManitouGuide />}

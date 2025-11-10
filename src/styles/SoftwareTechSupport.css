@@ -1,0 +1,179 @@
+.software-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+/* Hero */
+.software-hero h1 {
+  text-align: center;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.software-hero p {
+  text-align: center;
+  color: #444;
+  max-width: 55em;
+  margin-bottom: 3rem;
+}
+
+/* Section Titles */
+.software-section {
+  margin-top: 3rem;
+}
+
+.software-section h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.software-section p {
+  text-align: center;
+  color: #555;
+  max-width: 55em;
+  margin-bottom: 3rem;
+}
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.project-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+}
+
+.project-card h3 {
+  margin: 0.25rem 0;
+  font-size: 1.1rem;
+}
+
+.project-card p {
+  text-align: left;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Automation Section */
+.automation-list {
+  padding-left: 1.25rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.automation-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* CTA */
+.software-cta {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.software-cta p {
+  margin: 0;
+  color: #333;
+  max-width: 60ch;
+}
+
+.btn {
+  background: #111827;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.tech-stack {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.tech-stack img {
+  width: 5em;
+  height: 5em;
+  transition: transform 0.2s ease;
+}
+
+.tech-stack img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Dark Mode */
+body.dark .software-hero p,
+body.dark .software-section p,
+body.dark .automation-list,
+body.dark .software-cta p {
+  color: #ccc;
+}
+
+body.dark .project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark .project-card h3 {
+  color: #fff;
+}
+
+body.dark .btn {
+  background: #1a73e8;
+  color: #fff;
+}
+
+body.dark .software-cta {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .software-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -23,9 +23,11 @@ const BannerImage = () => {
             <div className="subheader">
               <p>Information Technology</p>
               <p>Full-Stack Engineering</p>
-              <p>Outdoor Recreation</p>
+              <p>Outdoor Leadership</p>
             </div>
-            <p className="tech-stack">Built with React • Vite • Cloudflare</p>
+            <p className="tech-stack">
+              Built with React • Typescript • Cloudflare
+            </p>
           </div>
         </div>
       </div>
