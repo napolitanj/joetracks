@@ -12,6 +12,7 @@ type Post = {
   link: string;
   position: number;
   linkText: string;
+  sort_order: number;
 };
 
 const Portfolio = () => {
@@ -27,7 +28,7 @@ const Portfolio = () => {
     async function loadPortfolio() {
       const res = await fetch("https://api.joetracks.com/api/portfolio");
       const data = await res.json();
-      setFeatures(data.sort((a: Post, b: Post) => b.position - a.position));
+      setFeatures(data.sort((a: Post, b: Post) => b.sort_order - a.sort_order));
     }
 
     loadPortfolio();
