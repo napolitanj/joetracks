@@ -21,6 +21,7 @@ import OriginExpeditions from "./components/OriginExpeditions";
 import ScrollToTop from "./components/tools/ScrollToTop";
 import ProgramManagement from "./components/ProgramManagement";
 import SoftwareTechSupport from "./components/SoftwareTechSupport";
+import OutdoorLeadership from "./components/OutdoorLeadership";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/writing" element={<Writing />} />
           <Route path="/programmanagement" element={<ProgramManagement />} />
+          <Route path="/outdoorleadership" element={<OutdoorLeadership />} />
           <Route path="/ski-mount-sneffels" element={<SneffelsGuide />} />
           <Route
             path="/softwaretechsupport"
