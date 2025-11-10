@@ -16,24 +16,24 @@ const Bio = () => {
         <img className="bio-pic" src={headerPhoto}></img>
         <div>
           <p>
-            I'm Joe Napolitan, a Michigan-based Technical Support Specialist,
-            software engineer, and former wilderness educator & ski patroller.
-            Over the past decade, I’ve led backcountry expeditions in Alaska,
-            worked various roles in the technology industry, led wilderness
-            therapy programs for at-risk youth. Today I work full-time in IT at
-            a creative arts school, where I support staff and students while
-            building tools to automate workflows, manage data, and improve
-            systems & documentation. I bring a mix of technical skill, hands-on
-            grit, and people-first problem-solving to everything I do.
+            I'm Joe Napolitan — a Michigan-based software engineer, IT
+            specialist, and former wilderness educator. Over the past decade,
+            I’ve led high-stakes expeditions in Alaska, developed websites for
+            enterprise brands, and supported IT systems in education and
+            nonprofit settings. I currently work full-time in IT at a creative
+            arts school, where I build process documentation, manage data, and
+            simplify technical processes for staff and students. My background
+            combines hands-on problem-solving with a deep understanding of
+            people and systems — the same mindset I bring to full-stack
+            development.
           </p>
           <p>
-            What ties it all together is my drive to build things that are
-            useful and real, whether its an itinerary for an awesome backpacking
-            trip, a better process, or a meaningful life outside the status
-            race. I’m always exploring ways to work smarter, live simpler, and
-            help others do the same. This site showcases some of my personal
-            projects and creative experiments across tech, content, and the
-            outdoors.
+            Whether it's designing a clean user experience, writing efficient
+            backend logic, or connecting real-world operations with reliable
+            code, I like building things that actually make life easier. This
+            site highlights some of my projects across software, automation, and
+            outdoor program design — all rooted in the same goal: to create
+            practical, well-crafted systems that deliver great experiences.
           </p>
         </div>
       </div>

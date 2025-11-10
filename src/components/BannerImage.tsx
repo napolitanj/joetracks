@@ -25,7 +25,7 @@ const BannerImage = () => {
               <p>Full-Stack Engineering</p>
               <p>Outdoor Leadership</p>
             </div>
-            <p className="tech-stack">
+            <p className="banner-tech-stack">
               Built with React • Typescript • Cloudflare
             </p>
           </div>
