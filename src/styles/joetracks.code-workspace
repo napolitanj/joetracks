@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../cloudflare-backends/joetracks-backend"
+		}
+	],
+	"settings": {}
+}
