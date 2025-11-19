@@ -1,0 +1,90 @@
+:root {
+  --bg: #ffffff;
+  --bg-2: #f5f7fa;
+  --border: #e5e5e5;
+  --text: #1a1a1a;
+  --text-muted: #888888;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --bg: #1c1c1c;
+  --bg-2: #2a2a2a;
+  --border: #3a3a3a;
+  --text: #e6e6e6;
+  --text-muted: #999999;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+.ski-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  color: var(--text);
+}
+
+.ski-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--text);
+}
+
+.region-controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.region-controls select {
+  padding: 6px 12px;
+  margin-left: 8px;
+  font-size: 1rem;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+}
+
+.ski-table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  background: var(--bg);
+  box-shadow: 0 0 12px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+/* TABLE */
+.ski-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  color: var(--text);
+}
+
+.ski-table thead {
+  background: var(--bg-2);
+}
+
+.ski-table th,
+.ski-table td {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.ski-resort-name {
+  font-weight: 600;
+}
+
+.placeholder {
+  color: var(--text-muted);
+}
+
+.ski-table tbody tr:hover {
+  background: var(--bg-2);
+  cursor: pointer;
+  transition: background 0.15s;
+}

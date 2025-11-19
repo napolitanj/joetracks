@@ -22,6 +22,8 @@ import ScrollToTop from "./components/tools/ScrollToTop";
 import ProgramManagement from "./components/ProgramManagement";
 import SoftwareTechSupport from "./components/SoftwareTechSupport";
 import OutdoorLeadership from "./components/OutdoorLeadership";
+import MichiganSkiTracker from "./components/pages/MichiganSkiTracker";
+import CoordTool from "./dev/coords";
 
 function App() {
   return (
@@ -61,6 +63,11 @@ function App() {
             element={<RemoteForecastingTools />}
           />
           <Route path="/origin-expeditions" element={<OriginExpeditions />} />
+          <Route
+            path="/michigan-ski-tracker"
+            element={<MichiganSkiTracker />}
+          />
+          <Route path="/coord-tool" element={<CoordTool />} />
         </Routes>
       </main>
     </>

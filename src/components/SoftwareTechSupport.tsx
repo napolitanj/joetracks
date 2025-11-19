@@ -75,7 +75,7 @@ export default function SoftwareTechSupport() {
                 src="/images/software/resume-feature.png"
                 alt="Resume Builder"
               />
-              <h3>ResumeCraft</h3>
+              <h3>Resume Builder</h3>
               <p>
                 A resume builder built in React that generates printable,
                 customizable layouts using dynamic component rendering.
