@@ -58,6 +58,20 @@ export default function SoftwareTechSupport() {
 
             <div className="project-card">
               <img
+                src="/images/software/python-notes-api.png"
+                alt="Python Notes API"
+              />
+              <h3>Python Notes API</h3>
+              <p>
+                A FastAPI + SQLAlchemy backend with full CRUD, search, sorting,
+                pagination, and timestamps. Features error handling, Pytest
+                coverage, and a Dockerized setup built to demonstrate clean
+                backend architecture in Python.
+              </p>
+            </div>
+
+            <div className="project-card">
+              <img
                 src="/images/software/task-organizer.png"
                 alt="Task Manager App"
               />
@@ -81,50 +95,15 @@ export default function SoftwareTechSupport() {
                 customizable layouts using dynamic component rendering.
               </p>
             </div>
-
-            <div className="project-card">
-              <img src="/images/software/weather-app.png" alt="Weather App" />
-              <h3>Weather Dashboard</h3>
-              <p>
-                Lightweight API integration app built with vanilla JavaScript,
-                featuring async data fetching, live weather updates, and
-                responsive display.
-              </p>
-            </div>
           </div>
-        </section>
-
-        {/* Automations */}
-        <section className="software-section">
-          <h2>Automations & Workflow Tools</h2>
-          <p>
-            Small-scale but impactful automations written in JavaScript and
-            Microsoft Office Scripts to streamline work across teams and reduce
-            hours of manual effort.
-          </p>
-
-          <ul className="automation-list">
-            <li>
-              Automated spreadsheet formatting and data cleanup in Excel using
-              Office Scripts.
-            </li>
-            <li>
-              Created workflows for referral tracking and annual reports with
-              Typescript in Google Sheets.
-            </li>
-            <li>
-              Integrated form data with shared drives and reports for nonprofit
-              teams.
-            </li>
-          </ul>
         </section>
 
         {/* Closing CTA */}
         <section className="software-cta">
           <p>
-            Whether it’s a web app, automation script, or system integration, my
-            goal is the same — to build tools that make life simpler and work
-            more efficient.
+            If your team’s building things that actually help people and you
+            care about creativity, craft, and real growth, I’d love to hear from
+            you.”
           </p>
           <Link to="/contact" className="btn">
             Get in Touch
