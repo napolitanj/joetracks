@@ -14,32 +14,92 @@ const NorthManitouGuide = () => {
   return (
     <>
       <Helmet>
-        <title>How to Backpack North Manitou Island | JoeTracks</title>
+        {/* Primary */}
+        <title>North Manitou Island Backpacking Guide | JoeTracks</title>
         <meta
           name="description"
-          content="A complete self-guided backpacking guide to North Manitou Island — ferry info, routes, gear list, and safety tips for exploring this remote Great Lakes destination."
+          content="A complete backpacking guide to North Manitou Island — ferry info, routes, camping permits, hazards, gear list, maps, and real-world tips for exploring this remote Lake Michigan wilderness."
         />
         <link
           rel="canonical"
           href="https://joetracks.com/north-manitou-island-guide"
         />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="article" />
         <meta
           property="og:title"
           content="North Manitou Island Backpacking Guide"
         />
         <meta
           property="og:description"
-          content="Plan your own trip to North Manitou Island with this detailed backpacking guide — including ferry logistics, route ideas, and gear suggestions."
-        />
-        <meta
-          property="og:image"
-          content="https://joetracks.com/images/north-manitou/north-manitou-island-backpacking.webp"
+          content="Plan your backpacking trip to North Manitou Island with detailed info on routes, ferry logistics, camping permits, hazards, and gear recommendations."
         />
         <meta
           property="og:url"
           content="https://joetracks.com/north-manitou-island-guide"
         />
+        <meta
+          property="og:image"
+          content="https://joetracks.com/images/north-manitou/north-manitou-island-backpacking.webp"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="North Manitou Island Backpacking Guide"
+        />
+        <meta
+          name="twitter:description"
+          content="A full guide to backpacking North Manitou Island — ferry schedules, routes, maps, hazards, gear list, and safety essentials."
+        />
+        <meta
+          name="twitter:image"
+          content="https://joetracks.com/images/north-manitou/north-manitou-island-backpacking.webp"
+        />
+
+        {/* Preload Hero Image */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://joetracks.com/images/north-manitou/north-manitou-island-backpacking.webp"
+        />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {`
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "North Manitou Island Backpacking Guide",
+      "description": "A complete guide to backpacking North Manitou Island with ferry details, routes, gear lists, camping permits, maps, and safety tips.",
+      "author": {
+        "@type": "Person",
+        "name": "Joe Napolitan",
+        "url": "https://joetracks.com"
+      },
+      "image": "https://joetracks.com/images/north-manitou/north-manitou-island-backpacking.webp",
+      "url": "https://joetracks.com/north-manitou-island-guide",
+      "publisher": {
+        "@type": "Organization",
+        "name": "JoeTracks",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://joetracks.com/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://joetracks.com/north-manitou-island-guide"
+      }
+    }
+    `}
+        </script>
       </Helmet>
+
       <div className="guide">
         <main className="container" id="page" role="main">
           <article className="sections">

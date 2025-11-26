@@ -1,39 +1,51 @@
-# My Personal Portfolio Website
+# **Joetracks.com — Full-Stack Portfolio**
 
-This portfolio site showcases my work as a full-stack web developer, content creator, and IT professional. It’s designed as a clean, responsive single-page experience built for speed, maintainability, and modern deployment.
+A full-stack personal portfolio built with **React, TypeScript, and Cloudflare Workers**. This project serves as both my public site and a live demonstration of building a modern serverless application with custom APIs, authentication, content management, and media handling.
 
-🌐 Live Site: https://joetracks.com
+🌐 **Live Site:** https://joetracks.com
 
-## Key features
+---
 
-```
-- Built with React + Vite for fast, modular front-end performance.
-- Dynamic routes for pages, portfolio categories, and blog posts.
-- Fully mobile-responsive layout with a collapsible navigation menu.
-- Integrated Cloudflare backend (Workers + D1 + R2) for database, authentication, and media storage.
-- Admin authentication via JWT token for secure content editing.
-- Portfolio and Blog editors for adding, updating, and deleting posts directly from the front end.
-- Dark mode with persistent theme preference.
-```
+## **Overview**
 
-## Recent Updates
+This site showcases my work across software engineering, IT systems, and outdoor program design, with a custom-built backend powering secure content management. All blog posts, portfolio entries, images, and metadata are served from a fully serverless Cloudflare stack with fast global caching.
 
-```
-- Migrated from Supabase to Cloudflare Workers + D1 (SQLite-based) for a more lightweight, serverless backend.
-- Added content management for both blog posts and portfolio features.
-- Integrated secure R2 file uploads for hosting images.
-- Implemented category-based portfolio filtering and URL routing.
-- Added new reusable front-end components (carousel, editor, scroll reveal, etc.).
+---
 
-```
+### **Frontend**
 
-## Planned additions 
+- React + TypeScript with modular component architecture
+- Client-side routing for blog, portfolio, and project pages
+- Fully responsive layout with dark mode (theme preference saved)
+- Animated UI (scroll reveal, transitions, parallax header)
+- Protected admin UI for creating and editing content
 
-```
-- Media manager to prevent bloat from buckets
-- Application sampler
-- Front-end CSS editor
-- Super-secure login with 2-factor authentication and Google SSO
-- In-line content management for blog
+### **Backend**
 
+- Cloudflare Workers for custom API routes
+- D1 SQL database for blog posts, metadata, and portfolio content
+- R2 object storage for uploaded images
+- JWT-based authentication
+- Hidden admin access with gate code + password
+
+---
+
+## **Tech Stack**
+
+- **React, TypeScript, Vite**
+- **Cloudflare Workers (serverless runtime)**
+- **Cloudflare D1 (SQLite)**
+- **Cloudflare R2 (object storage)**
+- **React Router**
+- **JWT Auth**
+
+---
+
+## **Development**
+
+### **Frontend**
+
+```bash
+npm install
+npm run dev
 ```

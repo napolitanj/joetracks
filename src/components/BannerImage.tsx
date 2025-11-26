@@ -21,13 +21,10 @@ const BannerImage = () => {
           >
             <h1>Joe Napolitan</h1>
             <div className="subheader">
-              <p>Information Technology</p>
               <p>Full-Stack Engineering</p>
+              <p>Technology Support</p>
               <p>Outdoor Leadership</p>
             </div>
-            <p className="banner-tech-stack">
-              Built with React • Typescript • Cloudflare
-            </p>
           </div>
         </div>
       </div>

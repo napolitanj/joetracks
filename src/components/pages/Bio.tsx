@@ -2,6 +2,7 @@ import "../../styles/Bio.css";
 import { useEffect, useState } from "react";
 import BannerImage from "../BannerImage";
 import headerPhoto from "/images/bio-pic.jpg";
+import { Link } from "react-router-dom";
 
 const Bio = () => {
   const [fadeIn, setFadeIn] = useState(false);
@@ -37,6 +38,20 @@ const Bio = () => {
           </p>
         </div>
       </div>
+      <section className="featured-project">
+        <h2>Featured Project</h2>
+
+        <div className="featured-simple">
+          <h3>Michigan Ski Tracker</h3>
+          <p>
+            A live React application showing real-time NOAA snow and weather
+            data for every Michigan ski resort.
+          </p>
+          <Link to="/michigan-ski-tracker" className="featured-btn">
+            View App →
+          </Link>
+        </div>
+      </section>
     </>
   );
 };

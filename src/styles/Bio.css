@@ -51,6 +51,62 @@ body.dark .bio-container p {
   color: #ccc;
 }
 
+.featured-project {
+  margin: 4rem auto 2rem;
+  padding: 2.5rem 1.5rem;
+  max-width: 90%;
+  text-align: center;
+  background: #fafafa;
+  border-radius: 16px;
+  border: 1px solid #eee;
+}
+
+.featured-simple h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.featured-simple p {
+  color: #555;
+  margin: 0 auto 1rem;
+  max-width: 500px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.featured-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #111827;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.featured-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* Dark mode */
+body.dark .featured-project {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+body.dark .featured-simple p {
+  color: #ccc;
+}
+
+body.dark .featured-btn {
+  background: #1a73e8;
+}
+
+body.dark .featured-btn {
+  background: #1a73e8;
+  color: #ffffff !important;
+}
+
 @media (max-width: 800px) {
   .bio-container {
     flex-direction: column;
