@@ -14,34 +14,94 @@ const RemoteForecastingTools = () => {
   return (
     <>
       <Helmet>
+        {/* Primary */}
         <title>
           Remote Snow Forecasting Tools for Backcountry Travel | JoeTracks
         </title>
         <meta
           name="description"
-          content="This article provides tips and tools for effective trip planning whenever snow is a factor."
+          content="A practical guide to digital snow forecasting tools — NOHRSC, SNOTEL, SWE, satellite overlays, and remote assessments for safer planning in snowy mountain terrain."
         />
         <link
           rel="canonical"
           href="https://joetracks.com/remote-forecasting-tools"
         />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="article" />
         <meta
           property="og:title"
           content="Remote Forecasting Tools for Backcountry Snow Travel"
         />
         <meta
           property="og:description"
-          content="Plan smarter in remote terrain. This article provides tips and tools for effective trip planning whenever snow is a factor."
-        />
-        <meta
-          property="og:image"
-          content="https://joetracks.com/images/remote-forecasting/skintrack.webp"
+          content="Learn how to use snow forecasting tools like NOHRSC, SNOTEL, SWE graphs, and satellite overlays to plan safer winter and early-season mountain trips."
         />
         <meta
           property="og:url"
           content="https://joetracks.com/remote-forecasting-tools"
         />
+        <meta
+          property="og:image"
+          content="https://joetracks.com/images/remote-forecasting/skintrack.webp"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Remote Forecasting Tools for Backcountry Snow Travel"
+        />
+        <meta
+          name="twitter:description"
+          content="A clear, practical guide to using free digital tools (NOHRSC, SNOTEL, SWE, satellite overlays) to understand snow conditions from home."
+        />
+        <meta
+          name="twitter:image"
+          content="https://joetracks.com/images/remote-forecasting/skintrack.webp"
+        />
+
+        {/* Preload Hero Image */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://joetracks.com/images/remote-forecasting/skintrack.webp"
+        />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {`
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Remote Forecasting Tools for Backcountry Snow Travel",
+      "description": "A practical guide explaining how to use NOAA NOHRSC, SNOTEL, SWE data, and satellite overlays to remotely assess snow conditions for mountain travel.",
+      "author": {
+        "@type": "Person",
+        "name": "Joe Napolitan",
+        "url": "https://joetracks.com"
+      },
+      "image": "https://joetracks.com/images/remote-forecasting/skintrack.webp",
+      "url": "https://joetracks.com/remote-forecasting-tools",
+      "publisher": {
+        "@type": "Organization",
+        "name": "JoeTracks",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://joetracks.com/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://joetracks.com/remote-forecasting-tools"
+      }
+    }
+    `}
+        </script>
       </Helmet>
+
       <div className="guide">
         <main className="container" id="page" role="main">
           <article>

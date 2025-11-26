@@ -47,6 +47,16 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    function handleKey(e: KeyboardEvent) {
+      if (e.shiftKey && e.key === "L") {
+        navigate("/login");
+      }
+    }
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
+
   return (
     <nav className="Navbar">
       <button
@@ -64,7 +74,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink to="/portfolio" onClick={() => setMenuOpen(false)}>
-            Portfolio
+            Work
           </NavLink>
         </li>
         <li>
@@ -77,24 +87,7 @@ const Navbar = () => {
             Contact
           </NavLink>
         </li>
-        <li>
-          <button
-            onClick={() => {
-              if (isLoggedIn) {
-                localStorage.removeItem("authToken");
-                localStorage.removeItem("isAuthorized");
-                window.dispatchEvent(new Event("auth-change"));
-                setIsLoggedIn(false);
-                navigate("/login");
-              } else {
-                setMenuOpen(false);
-                navigate("/login");
-              }
-            }}
-          >
-            {isLoggedIn ? "Sign Out" : "Login"}
-          </button>
-        </li>
+
         <li>
           <button onClick={() => setDarkMode((prev) => !prev)}>
             {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}

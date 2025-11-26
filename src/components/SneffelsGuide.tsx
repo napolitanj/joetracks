@@ -14,29 +14,89 @@ const SneffelsGuide = () => {
   return (
     <>
       <Helmet>
-        <title>Skiing Mount Sneffels' Snake Couloir | JoeTracks</title>
+        {/* Primary */}
+        <title>Skiing Mount Sneffels: Snake Couloir Guide | JoeTracks</title>
         <meta
           name="description"
-          content="Our detailed guide for skiing the Snake Couloir that descends from the 14,157-foot summit of Mount Sneffels."
+          content="A detailed, real-world guide to skiing Mount Sneffels' Snake Couloir — gear, beta, rappel info, maps, hazards, and a full trip report based on an actual ascent and descent."
         />
         <link rel="canonical" href="https://joetracks.com/ski-mount-sneffels" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="article" />
         <meta
           property="og:title"
           content="Ski Mount Sneffels: Snake Couloir Guide"
         />
         <meta
           property="og:description"
-          content="Get detailed info on skiing the Snake Couloir on Mount Sneffels, including gear, beta, and a full trip report."
-        />
-        <meta
-          property="og:image"
-          content="https://joetracks.com/images/sneffels/Mount-sneffels-view.webp"
+          content="Learn how to ski the Snake Couloir on Mount Sneffels: rappel details, gear list, approach info, maps, hazards, and a full trip report."
         />
         <meta
           property="og:url"
           content="https://joetracks.com/ski-mount-sneffels"
         />
+        <meta
+          property="og:image"
+          content="https://joetracks.com/images/sneffels/Mount-sneffels-view.webp"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Skiing Mount Sneffels: Snake Couloir Guide"
+        />
+        <meta
+          name="twitter:description"
+          content="A complete skier's guide to the Snake Couloir on Mount Sneffels — beta, rappel info, maps, gear list, and trip report."
+        />
+        <meta
+          name="twitter:image"
+          content="https://joetracks.com/images/sneffels/Mount-sneffels-view.webp"
+        />
+
+        {/* Preload Hero Image */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://joetracks.com/images/sneffels/Mount-sneffels-view.webp"
+        />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {`
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Ski Mount Sneffels: Snake Couloir Guide",
+      "description": "A detailed guide to skiing the Snake Couloir on Mount Sneffels with rappel info, approach details, gear list, maps, and a full trip report.",
+      "author": {
+        "@type": "Person",
+        "name": "Joe Napolitan",
+        "url": "https://joetracks.com"
+      },
+      "image": "https://joetracks.com/images/sneffels/Mount-sneffels-view.webp",
+      "url": "https://joetracks.com/ski-mount-sneffels",
+      "publisher": {
+        "@type": "Organization",
+        "name": "JoeTracks",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://joetracks.com/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://joetracks.com/ski-mount-sneffels"
+      }
+    }
+    `}
+        </script>
       </Helmet>
+
       <div className="guide">
         <main className="container" id="page" role="main">
           <article className="sections">
