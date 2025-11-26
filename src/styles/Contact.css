@@ -31,6 +31,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 2em;
+  flex-direction: row;
 }
 
 .contact-icon {
@@ -45,7 +46,7 @@
   filter: brightness(1.2);
 }
 
-body.dark img.darkicon {
+body.dark .darkicon {
   filter: invert(1) brightness(2);
 }
 
@@ -54,8 +55,13 @@ body.dark img.darkicon {
     font-size: 1rem;
   }
 
-  .contact-icon {
-    width: 50px;
-    height: 50px;
+  .contact-icons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+  }
+
+  .contact-container {
+    padding: 3em 1em;
   }
 }

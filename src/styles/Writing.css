@@ -150,6 +150,15 @@ body.dark .writing-section a:hover {
   color: #99cfff;
 }
 
+body.dark .writing-container .intro,
+body.dark .writing-container .outro {
+  color: #ccc;
+}
+
+body.dark .writing-container h2 {
+  color: #eee;
+}
+
 /* Responsive */
 @media (max-width: 800px) {
   .writing-container {

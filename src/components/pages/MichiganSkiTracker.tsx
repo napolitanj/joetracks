@@ -31,15 +31,7 @@ export default function MichiganSkiTracker() {
     timestamps.length > 0
       ? new Date(Math.max(...timestamps)).toLocaleString()
       : null;
-  function getTrend(fc: any) {
-    if (!fc || fc.error) return null;
-    const { snow24h, snow72h } = fc;
 
-    if (snow72h > snow24h + 2) return "⬆️";
-    if (Math.abs(snow72h - snow24h) < 1) return "➡️";
-    if (snow24h > snow72h) return "⬇️";
-    return null;
-  }
   useEffect(() => {
     async function load() {
       setLoading(true);

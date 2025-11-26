@@ -1,8 +1,5 @@
 import "../../styles/Contact.css";
 import { useEffect, useState } from "react";
-import emailIcon from "/src/images/email-icon.png";
-import githubIcon from "/src/images/github-icon.png";
-import linkedinIcon from "/src/images/linkedin-icon.png";
 
 const Contact = () => {
   const [fadeIn, setFadeIn] = useState(false);
