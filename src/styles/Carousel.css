@@ -83,3 +83,9 @@
   background-color: #fff;
   opacity: 1;
 }
+
+@media (max-width: 800px) {
+  .carousel-image-wrapper {
+    height: auto;
+  }
+}

@@ -53,6 +53,37 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.project-card .tag {
+  display: inline-block;
+  background: #e5f0ff;
+  color: #1a4aff;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  margin-bottom: 0.4rem;
+}
+
+.tag {
+  display: inline-block;
+  background: #e5f0ff;
+  color: #1a4aff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.project-card a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.project-card a:hover {
+  text-decoration: none;
+}
+
 .project-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -60,10 +91,9 @@
 
 .project-card img {
   width: 100%;
-  height: 180px;
+  aspect-ratio: 16/9;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 0.75rem;
 }
 
 .project-card h3 {
@@ -76,6 +106,11 @@
   font-size: 0.95rem;
   color: #444;
   line-height: 1.5;
+}
+
+body.dark .tag {
+  background: rgba(26, 115, 232, 0.15);
+  color: #7ab4ff;
 }
 
 /* Automation Section */
@@ -175,5 +210,47 @@ body.dark .software-cta {
   .software-cta {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .tech-stack img {
+    width: 3rem;
+    height: 3rem;
+  }
+  .tech-stack {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .software-page {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .software-cta {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .software-hero {
+    margin-top: 0.5rem;
+  }
+
+  .software-hero p,
+  .software-section p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .project-grid {
+    gap: 1.75rem;
+  }
+  .project-card {
+    padding: 1.25rem;
   }
 }
