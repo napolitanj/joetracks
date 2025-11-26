@@ -23,6 +23,23 @@ export default function MichiganSkiTracker() {
       ? RESORTS
       : RESORTS.filter((r) => r.region === regionFilter);
 
+  const timestamps = Object.values(forecastById)
+    .map((f: any) => f?._lastUpdated)
+    .filter(Boolean);
+
+  const lastUpdated =
+    timestamps.length > 0
+      ? new Date(Math.max(...timestamps)).toLocaleString()
+      : null;
+  function getTrend(fc: any) {
+    if (!fc || fc.error) return null;
+    const { snow24h, snow72h } = fc;
+
+    if (snow72h > snow24h + 2) return "⬆️";
+    if (Math.abs(snow72h - snow24h) < 1) return "➡️";
+    if (snow24h > snow72h) return "⬇️";
+    return null;
+  }
   useEffect(() => {
     async function load() {
       setLoading(true);
@@ -42,7 +59,7 @@ export default function MichiganSkiTracker() {
       }
 
       setForecastById(map);
-      console.log("Fetched map:", map);
+      console.log("Fetched per-resort forecasts:", map);
 
       setLoading(false);
     }
@@ -55,7 +72,7 @@ export default function MichiganSkiTracker() {
   }
 
   return (
-    <div className="ski-container">
+    <div className="ski-wrapper">
       {/* ----- REGION FILTER UI ----- */}
       <div className="region-controls">
         <label>
@@ -70,52 +87,65 @@ export default function MichiganSkiTracker() {
           </select>
         </label>
       </div>
+      <div className="ski-note">
+        Tap any resort to view the detailed NOAA forecast.
+      </div>
+      {lastUpdated && (
+        <div className="last-updated">Last updated: {lastUpdated}</div>
+      )}
 
       {/* ----- SKI TABLE ----- */}
-      <table className="ski-table">
-        <thead>
-          <tr>
-            <th>Resort</th>
-            <th>24h Snow</th>
-            <th>72h Snow</th>
-            <th>Forecast</th>
-          </tr>
-        </thead>
+      <div className="ski-table-container">
+        <table className="ski-table">
+          <thead>
+            <tr>
+              <th>Resort</th>
+              <th>24h Snow</th>
+              <th>72h Snow</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          {filtered.map((resort) => {
-            const fc = forecastById[resort.id];
+          <tbody>
+            {filtered.map((resort) => {
+              const fc = forecastById[resort.id];
 
-            if (!fc || fc.error) {
+              if (!fc || fc.error) {
+                return (
+                  <tr key={resort.id}>
+                    <td className="resort-link disabled">{resort.name}</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                );
+              }
+
               return (
                 <tr key={resort.id}>
-                  <td>{resort.name}</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>Unavailable</td>
+                  <td>
+                    <a
+                      className="resort-link"
+                      href={fc.links?.nwsPage}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {resort.name}
+                    </a>
+                  </td>
+                  <td className={fc.snow24h >= 10 ? "snow-alert" : ""}>
+                    {fc.snow24h ?? "-"}{" "}
+                    {fc.snow24h > 0 && <span className="snow-icon">❄️</span>}
+                  </td>
+
+                  <td className={fc.snow72h >= 20 ? "snow-alert" : ""}>
+                    {fc.snow72h ?? "-"}{" "}
+                    {fc.snow72h > 0 && <span className="snow-icon">❄️</span>}
+                  </td>
                 </tr>
               );
-            }
-
-            return (
-              <tr key={resort.id}>
-                <td>{resort.name}</td>
-                <td>{fc.snow24h ?? "-"}</td>
-                <td>{fc.snow72h ?? "-"}</td>
-                <td>
-                  {fc?.links?.nwsPage ? (
-                    <a href={fc.links.nwsPage} target="_blank" rel="noreferrer">
-                      NOAA Forecast
-                    </a>
-                  ) : (
-                    "-"
-                  )}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
