@@ -93,7 +93,7 @@ export default function MichiganSkiTracker() {
             <tr>
               <th>Resort</th>
               <th>24h Snow</th>
-              <th>72h Snow</th>
+              <th>48h Snow</th>
             </tr>
           </thead>
 
@@ -128,9 +128,9 @@ export default function MichiganSkiTracker() {
                     {fc.snow24h > 0 && <span className="snow-icon">❄️</span>}
                   </td>
 
-                  <td className={fc.snow72h >= 20 ? "snow-alert" : ""}>
-                    {fc.snow72h ?? "-"}{" "}
-                    {fc.snow72h > 0 && <span className="snow-icon">❄️</span>}
+                  <td className={fc.snow48h >= 15 ? "snow-alert" : ""}>
+                    {fc.snow48h ?? "-"}{" "}
+                    {fc.snow48h > 0 && <span className="snow-icon">❄️</span>}
                   </td>
                 </tr>
               );
