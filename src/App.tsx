@@ -1,7 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import "/src/styles/App.css";
 import Navbar from "./components/Navbar";
-import Bio from "./components/pages/Bio";
+import StartHere from "./components/pages/StartHere";
+import GuidesIndex from "./components/pages/GuidesIndex";
+import ToolsIndex from "./components/pages/ToolsIndex";
 import Portfolio from "./components/pages/Portfolio";
 import Blog from "./components/pages/Blog";
 import BlogPost from "./components/pages/BlogPost";
@@ -32,7 +34,10 @@ function App() {
       <ScrollToTop />
       <main className="route-content-wrapper">
         <Routes>
-          <Route path="/" element={<Bio />} />
+          <Route path="/" element={<StartHere />} />
+          <Route path="/start-here" element={<StartHere />} />
+          <Route path="/guides" element={<GuidesIndex />} />
+          <Route path="/tools" element={<ToolsIndex />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />

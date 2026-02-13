@@ -68,13 +68,18 @@ const Navbar = () => {
       </button>
       <ul className={menuOpen ? "open" : ""}>
         <li>
-          <NavLink to="/" onClick={() => setMenuOpen(false)}>
-            Bio
+          <NavLink to="/start-here" onClick={() => setMenuOpen(false)}>
+            Start Here
           </NavLink>
         </li>
         <li>
-          <NavLink to="/portfolio" onClick={() => setMenuOpen(false)}>
-            Work
+          <NavLink to="/guides" onClick={() => setMenuOpen(false)}>
+            Guides
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/tools" onClick={() => setMenuOpen(false)}>
+            Tools
           </NavLink>
         </li>
         <li>
