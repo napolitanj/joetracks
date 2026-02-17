@@ -1,25 +1,12 @@
 import { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { isTokenValid, logout } from "../utils/auth";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.body.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
 
   useEffect(() => {
     function syncAuth() {
@@ -59,6 +46,18 @@ const Navbar = () => {
 
   return (
     <nav className="Navbar">
+      <Link
+        to="/"
+        className="navbar-brand"
+        onClick={() => setMenuOpen(false)}
+        aria-label="JoeTracks Home"
+      >
+        <img
+          src="/images/logo-lockup-teal.png"
+          alt="JoeTracks"
+          className="navbar-brand-image"
+        />
+      </Link>
       <button
         className="hamburger"
         onClick={() => setMenuOpen((prev) => !prev)}
@@ -69,29 +68,28 @@ const Navbar = () => {
       <ul className={menuOpen ? "open" : ""}>
         <li>
           <NavLink to="/" onClick={() => setMenuOpen(false)}>
-            Bio
+            Start Here
           </NavLink>
         </li>
         <li>
-          <NavLink to="/portfolio" onClick={() => setMenuOpen(false)}>
-            Work
+          <NavLink to="/guides" onClick={() => setMenuOpen(false)}>
+            Guides
           </NavLink>
         </li>
         <li>
-          <NavLink to="/blog" onClick={() => setMenuOpen(false)}>
-            Blog
+          <NavLink to="/tools" onClick={() => setMenuOpen(false)}>
+            Tools
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" onClick={() => setMenuOpen(false)}>
+            About
           </NavLink>
         </li>
         <li>
           <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
             Contact
           </NavLink>
-        </li>
-
-        <li>
-          <button onClick={() => setDarkMode((prev) => !prev)}>
-            {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
-          </button>
         </li>
       </ul>
     </nav>

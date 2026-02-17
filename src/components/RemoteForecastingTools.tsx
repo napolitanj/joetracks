@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import "/src/styles/shared.css";
 import "/src/styles/remoteforecasting.css";
+import Reveal from "./ui/Reveal";
 
 const RemoteForecastingTools = () => {
   const [animate, setAnimate] = useState(false);
@@ -105,15 +106,17 @@ const RemoteForecastingTools = () => {
       <div className="guide">
         <main className="container" id="page" role="main">
           <article>
-            <section className="hero remote-bg">
-              <div className="hero-text">
-                <h1 className={animate ? "animate" : ""}>
-                  Remote Forecasting Tools for Planning Trips in Snow
-                </h1>
-              </div>
-            </section>
+            <Reveal delay={0}>
+              <section className="hero remote-bg">
+                <div className="hero-text">
+                  <h1 className={animate ? "animate" : ""}>
+                    Remote Forecasting Tools for Planning Trips in Snow
+                  </h1>
+                </div>
+              </section>
+            </Reveal>
             <div className="content-wrapper">
-              <section>
+              <Reveal as="section" variant="up" delay={80}>
                 <div className="dis-row g-2">
                   <figure className="section-half">
                     <img
@@ -161,8 +164,8 @@ const RemoteForecastingTools = () => {
                     </ol>
                   </div>
                 </div>
-              </section>
-              <section>
+              </Reveal>
+              <Reveal as="section" variant="up" delay={140}>
                 <hr className="section-divider" />
                 <div className="content-wrapper">
                   <div className="content">
@@ -288,8 +291,13 @@ const RemoteForecastingTools = () => {
                     </div>
                   </div>
                 </div>
-              </section>
-              <section className="dis-col g-2">
+              </Reveal>
+              <Reveal
+                as="section"
+                className="dis-col g-2"
+                variant="up"
+                delay={220}
+              >
                 <div className="dis-row g-2">
                   <figure className="section-half">
                     <img
@@ -385,10 +393,15 @@ const RemoteForecastingTools = () => {
                     </figcaption>
                   </figure>
                 </div>
-              </section>
+              </Reveal>
               <div className="section-divider"></div>
               <div className="vrt-spc"></div>
-              <section className="dis-col g-2">
+              <Reveal
+                as="section"
+                className="dis-col g-2"
+                variant="up"
+                delay={300}
+              >
                 <div className="dis-row g-2">
                   <figure>
                     <img
@@ -581,10 +594,15 @@ const RemoteForecastingTools = () => {
                     </figure>
                   </div>
                 </div>
-              </section>
+              </Reveal>
               <div className="section-divider"></div>
               <div className="vrt-spc"></div>
-              <section className="dis-col g-2">
+              <Reveal
+                as="section"
+                className="dis-col g-2"
+                variant="up"
+                delay={380}
+              >
                 <div className="dis-row g-2">
                   <div>
                     <h2>Example Use Cases</h2>
@@ -625,10 +643,10 @@ const RemoteForecastingTools = () => {
                     />
                   </figure>
                 </div>
-              </section>
+              </Reveal>
               <div className="section-divider"></div>
               <div className="vrt-spc"></div>
-              <section className="row ">
+              <Reveal as="section" className="row " variant="up" delay={460}>
                 <div>
                   <p>
                     Whether you plan to ski, hike, backpack, or predict what
@@ -642,7 +660,7 @@ const RemoteForecastingTools = () => {
                     outcomes.
                   </p>
                 </div>
-              </section>
+              </Reveal>
               <div className="vrt-spc"></div>
             </div>
           </article>

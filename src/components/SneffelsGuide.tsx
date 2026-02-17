@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import "/src/styles/sneffels-guide.css";
 import "/src/styles/shared.css";
+import Reveal from "./ui/Reveal";
 
 const SneffelsGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -100,14 +101,17 @@ const SneffelsGuide = () => {
       <div className="guide">
         <main className="container" id="page" role="main">
           <article className="sections">
-            <section className="hero sneffels-bg">
-              <div className="hero-text">
-                <h1 className={animate ? "animate" : ""}>
-                  A Detailed Guide for Skiing Mount Sneffels’ Snake Couloir
-                </h1>
-              </div>
-            </section>
-            <section className="content-wrapper dis-col">
+            <Reveal delay={0}>
+              <section className="hero sneffels-bg">
+                <div className="hero-text">
+                  <h1 className={animate ? "animate" : ""}>
+                    A Detailed Guide for Skiing Mount Sneffels’ Snake Couloir
+                  </h1>
+                </div>
+              </section>
+            </Reveal>
+            <Reveal variant="up" delay={80}>
+              <section className="content-wrapper dis-col">
               <div className="dis-row sneffels-intro">
                 <div className="intro-image-wrapper section-half">
                   <img
@@ -163,8 +167,10 @@ const SneffelsGuide = () => {
                 </div>
               </div>
               <hr className="section-divider" />
-            </section>
-            <section className="content-wrapper">
+              </section>
+            </Reveal>
+            <Reveal variant="up" delay={140}>
+              <section className="content-wrapper">
               <p className="preFade">
                 Ski mountaineering is an inherently dangerous activity.
                 Individuals who choose to participate in this sport are exposed
@@ -192,8 +198,10 @@ const SneffelsGuide = () => {
                 </em>
               </p>
               <hr className="section-divider" />
-            </section>
-            <section className="content-wrapper">
+              </section>
+            </Reveal>
+            <Reveal variant="up" delay={200}>
+              <section className="content-wrapper">
               <div className="dis-row g-2">
                 <div className="section-half">
                   <div className="layout grid-12 columns-12">
@@ -435,8 +443,10 @@ const SneffelsGuide = () => {
                 </div>
               </div>
               <hr className="section-divider" />
-            </section>
-            <section id="trip-report" className="page-section">
+              </section>
+            </Reveal>
+            <Reveal variant="up" delay={260}>
+              <section id="trip-report" className="page-section">
               <div className="section-border">
                 <div className="section-background"></div>
               </div>
@@ -992,7 +1002,8 @@ const SneffelsGuide = () => {
                   </div>
                 </div>
               </div>
-            </section>
+              </section>
+            </Reveal>
             <div className="vrt-spc"></div>
           </article>
         </main>
