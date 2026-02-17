@@ -2,103 +2,95 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 5em;
-  display: flex;
+  min-height: 5em;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: center;
-  background-color: var(--bg-color);
+  gap: 1rem;
+  padding: 0 1rem;
+  background: rgba(248, 249, 245, 0.94);
   color: var(--text-color);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid var(--muted-color);
+  border-bottom: 1px solid var(--muted-color);
 }
 
-.Navbar::before,
-.Navbar::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 0;
-  height: 1px;
-  background-color: var(--text-color);
-  transform: translateX(-50%);
-  animation: expandBorder 1s ease-out forwards;
-  animation-delay: 0.25s;
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
 }
 
-.Navbar::before {
-  top: 0;
+.navbar-brand::after {
+  content: none;
 }
 
-.Navbar::after {
-  bottom: 0;
+.navbar-brand-image {
+  display: block;
+  height: 38px;
+  width: auto;
 }
 
 .Navbar ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-end;
+  gap: 1.1rem;
   list-style: none;
-  width: 100%;
+  width: auto;
   align-items: center;
   margin: 0;
+  padding: 0;
 }
 
 .Navbar li {
   opacity: 0;
   transform: translateY(10px);
-  animation: fadeInUp 1s ease-out forwards;
-  animation-delay: 1s;
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: 0.4s;
 }
 
 .Navbar a {
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: var(--text-color);
   text-decoration: none;
   display: inline-block;
   position: relative;
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
-.Navbar a::after {
+.Navbar ul a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -0.25rem;
   width: 0;
   height: 2px;
-  background-color: var(--text-color);
-  transition: width 0.3s ease;
+  background-color: var(--accent-color);
+  transition: width 0.25s ease;
 }
 
-.Navbar a:hover::after {
+.Navbar a:hover,
+.Navbar a:focus-visible {
+  color: var(--accent-color);
+}
+
+.Navbar ul a:hover::after,
+.Navbar ul a:focus-visible::after,
+.Navbar ul .active::after {
   width: 100%;
 }
 
-.Navbar a:hover {
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-.Navbar .active::after {
-  width: 100%;
-}
-
-.Navbar button {
-  padding: 0.2em 1.2em;
-  background-color: transparent;
-  color: var(--text-color);
-  border: none;
-  cursor: pointer;
-}
-
-.Navbar button:hover {
-  box-shadow: 1px 1px 1px 1px grey;
-  color: var(--text-color);
+.Navbar .active {
+  color: var(--accent-color);
 }
 
 .hamburger {
   display: none;
   font-size: 2rem;
-  background: var(--bg-color);
+  background: transparent;
   color: var(--text-color);
+  border: 0;
   cursor: pointer;
   position: relative;
   margin: 0 auto;
@@ -108,14 +100,10 @@
 
 @media (max-width: 768px) {
   .Navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    flex-direction: column;
-    align-items: flex-start;
+    grid-template-columns: 1fr auto;
     padding: 1em;
-    height: auto;
-    background: var(--bg-color);
+    min-height: auto;
+    background: rgba(248, 249, 245, 0.98);
   }
 
   .Navbar ul {
@@ -123,27 +111,30 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--bg-color);
+    background: rgba(248, 249, 245, 0.98);
     flex-direction: column;
     width: 100%;
-    border-top: 1px solid var(--border-color, #ccc);
+    border-top: 1px solid var(--muted-color);
+    border-bottom: 1px solid var(--muted-color);
     opacity: 0;
-    max-height: 150em;
+    max-height: 0;
     overflow: hidden;
     pointer-events: none;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
+    transition:
+      max-height 0.3s ease,
+      opacity 0.3s ease;
     z-index: 5;
-    padding: 0em;
+    padding: 0;
   }
 
   .Navbar ul.open {
-    max-height: 150em;
+    max-height: 24rem;
     opacity: 1;
     pointer-events: auto;
-    padding: 0em;
   }
 
   .Navbar li {
+    width: 100%;
     padding: 0.75em 1em;
     opacity: 1;
     transform: none;
@@ -151,19 +142,7 @@
 
   .hamburger {
     display: block;
-  }
-
-  .Navbar ul {
-    border-bottom: 1px solid grey;
-  }
-}
-
-@keyframes expandBorder {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
+    justify-self: end;
   }
 }
 
@@ -171,16 +150,5 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: scaleY(0);
-  }
-  to {
-    opacity: 1;
-    transform: scaleY(1);
   }
 }

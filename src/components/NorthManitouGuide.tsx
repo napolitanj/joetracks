@@ -2,6 +2,7 @@ import "/src/styles/shared.css";
 import "/src/styles/manitou-guide.css";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import Reveal from "./ui/Reveal";
 
 const NorthManitouGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -103,14 +104,17 @@ const NorthManitouGuide = () => {
       <div className="guide">
         <main className="container" id="page" role="main">
           <article className="sections">
-            <section className="hero manitou-bg">
-              <div className="hero-text">
-                <h1 className={animate ? "animate" : ""}>
-                  How to Plan a Backpacking Trip to North Manitou Island
-                </h1>
-              </div>
-            </section>
-            <section className="content-wrapper dis-col">
+            <Reveal delay={0}>
+              <section className="hero manitou-bg">
+                <div className="hero-text">
+                  <h1 className={animate ? "animate" : ""}>
+                    How to Plan a Backpacking Trip to North Manitou Island
+                  </h1>
+                </div>
+              </section>
+            </Reveal>
+            <Reveal variant="up" delay={80}>
+              <section className="content-wrapper dis-col">
               <div className="dis-row g-2">
                 <div className="section-half">
                   <h2>What is North Manitou Island?</h2>
@@ -152,7 +156,8 @@ const NorthManitouGuide = () => {
                 </div>
               </div>
               <hr className="section-divider" />
-            </section>
+              </section>
+            </Reveal>
             <div className="content-wrapper">
               <div className="dis-row g-2">
                 <div className="section-half">
@@ -218,7 +223,7 @@ const NorthManitouGuide = () => {
               <div>
                 <hr className="section-divider" />
               </div>
-              <section>
+              <Reveal as="section" variant="up" delay={140}>
                 <div id="dis-col">
                   <div className="section-header">
                     <h2>
@@ -295,8 +300,8 @@ const NorthManitouGuide = () => {
                     </ul>
                   </div>
                 </div>
-              </section>
-              <section>
+              </Reveal>
+              <Reveal as="section" variant="up" delay={220}>
                 <div className="dis-row g-2">
                   <div className="dis-col section-half">
                     <div>
@@ -607,11 +612,11 @@ const NorthManitouGuide = () => {
                     </div>
                   </div>
                 </div>
-              </section>
+              </Reveal>
               <div>
                 <hr className="section-divider" />
               </div>
-              <section>
+              <Reveal as="section" variant="up" delay={300}>
                 <div className="section-header">
                   <h2>How to Get to North Manitou Island</h2>
                 </div>
@@ -806,7 +811,7 @@ const NorthManitouGuide = () => {
                     </figcaption>
                   </figure>
                 </div>
-              </section>
+              </Reveal>
               <div>
                 <hr className="section-divider" />
               </div>

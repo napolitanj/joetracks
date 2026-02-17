@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import "/src/styles/shared.css";
 import "/src/styles/caltopo.css";
+import Reveal from "./ui/Reveal";
 
 const CalTopo = () => {
   const [animate, setAnimate] = useState(false);
@@ -96,12 +97,17 @@ const CalTopo = () => {
       <div className="guide">
         <main className="container">
           <article className="sections">
-            <div className="hero caltopo-bg">
-              <div className="hero-text">
-                <h1 className={animate ? "animate" : ""}>How to Use CalTopo</h1>
+            <Reveal delay={0}>
+              <div className="hero caltopo-bg">
+                <div className="hero-text">
+                  <h1 className={animate ? "animate" : ""}>
+                    How to Use CalTopo
+                  </h1>
+                </div>
               </div>
-            </div>
-            <div className="content-wrapper">
+            </Reveal>
+            <Reveal variant="up" delay={100}>
+              <div className="content-wrapper">
               <section className="dis-row g-2">
                 <div className="section-half">
                   <h3 className="preSlide slideIn">Why is CalTopo useful?</h3>
@@ -1183,7 +1189,8 @@ const CalTopo = () => {
                 </div>
               </section>
               <div className="vrt-spc"></div>
-            </div>
+              </div>
+            </Reveal>
           </article>
         </main>
       </div>

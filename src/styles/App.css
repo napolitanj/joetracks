@@ -1,15 +1,21 @@
+:root {
+  --bg-color: #f8f9f5;
+  --text-color: #111111;
+  --muted-text: #354047;
+  --card-bg: rgba(248, 249, 245, 0.88);
+  --border-color: #d2d8d3;
+  --accent-color: #0b5d7a;
+  --link-color: var(--accent-color);
+  --muted-color: var(--border-color);
+}
+
 body {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  background-color: var(--bg-color, white);
-  color: var(--text-color, black);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   width: 100%;
-  transition: background-color 0.3s, color 0.3s;
-  --bg-color: white;
-  --text-color: black;
-  --link-color: #3f51b5;
-  --border-color: #ccc;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -20,7 +26,7 @@ body div {
 }
 
 a {
-  color: var(--link-color, #3f51b5);
+  color: var(--link-color);
 }
 
 .route-content-wrapper {
@@ -32,8 +38,12 @@ a {
 }
 
 body.dark {
-  --bg-color: #121212;
-  --text-color: #e0e0e0;
-  --link-color: #90caf9;
-  --border-color: #444;
+  --bg-color: #111417;
+  --text-color: #f2f4f5;
+  --muted-text: #bcc7ce;
+  --card-bg: rgba(25, 31, 36, 0.9);
+  --border-color: #2f3a42;
+  --accent-color: #4fa4c3;
+  --link-color: var(--accent-color);
+  --muted-color: var(--border-color);
 }

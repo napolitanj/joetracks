@@ -1,11 +1,14 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "/src/styles/App.css";
 import Navbar from "./components/Navbar";
-import Bio from "./components/pages/Bio";
+import Footer from "./components/Footer";
+import Home from "./components/pages/Home";
+import About from "./components/pages/About";
 import Portfolio from "./components/pages/Portfolio";
-import Blog from "./components/pages/Blog";
 import BlogPost from "./components/pages/BlogPost";
 import Contact from "./components/pages/Contact";
+import GuidesIndex from "./components/pages/GuidesIndex";
+import ToolsIndex from "./components/pages/ToolsIndex";
 import EditorPage from "./components/pages/Editor";
 import AccessDenied from "./components/pages/AccessDenied";
 import PortfolioEditor from "./components/PortfolioEditor";
@@ -32,11 +35,18 @@ function App() {
       <ScrollToTop />
       <main className="route-content-wrapper">
         <Routes>
-          <Route path="/" element={<Bio />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/start-here" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/guides" element={<GuidesIndex />} />
+          <Route path="/guides/:slug" element={<BlogPost />} />
+          <Route path="/tools" element={<ToolsIndex />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
+
+          <Route path="/blog" element={<Navigate to="/guides" replace />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+
           <Route path="/editor" element={<EditorPage />} />
           <Route path="/editor/:slug" element={<EditorPage />} />
           <Route path="/access-denied" element={<AccessDenied />} />
@@ -67,9 +77,14 @@ function App() {
             path="/michigan-ski-tracker"
             element={<MichiganSkiTracker />}
           />
+          <Route
+            path="/tools/michigan-ski-tracker"
+            element={<Navigate to="/michigan-ski-tracker" replace />}
+          />
           <Route path="/coord-tool" element={<CoordTool />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }

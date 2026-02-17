@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { checkAuth } from "../../utils/checkAuth";
+import Reveal from "../ui/Reveal";
 import "../../styles/BlogPost.css";
 
 type Post = {
@@ -49,23 +50,31 @@ const BlogPost = () => {
 
   return (
     <>
-      <Link to="/blog">⇦ Back to Blog Dashboard</Link>
+      <Reveal delay={0}>
+        <Link to="/blog">⇦ Back to Blog Dashboard</Link>
+      </Reveal>
       <article className="single-post-container">
         <div className={`post-contents ${fadeIn ? "show" : ""}`}>
-          <h1>{post.title}</h1>
-          {post.imageUrl && (
-            <img src={post.imageUrl} alt={post.title} className="post-image" />
-          )}
-          <p>
-            <time dateTime={new Date(post.created_at * 1000).toISOString()}>
-              {new Date(post.created_at * 1000).toLocaleDateString()}
-            </time>
-          </p>
-          <div>
-            {post.content.split(/\n{2,}/).map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
-          </div>
+          <Reveal variant="up" delay={80}>
+            <h1>{post.title}</h1>
+            {post.imageUrl && (
+              <img src={post.imageUrl} alt={post.title} className="post-image" />
+            )}
+          </Reveal>
+          <Reveal variant="up" delay={140}>
+            <p>
+              <time dateTime={new Date(post.created_at * 1000).toISOString()}>
+                {new Date(post.created_at * 1000).toLocaleDateString()}
+              </time>
+            </p>
+          </Reveal>
+          <Reveal variant="up" delay={200}>
+            <div>
+              {post.content.split(/\n{2,}/).map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </article>
       {isAuthorized && (
