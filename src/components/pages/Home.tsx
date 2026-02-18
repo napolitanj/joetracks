@@ -67,7 +67,7 @@ const Home = () => {
       <BannerImage />
 
       <Reveal as="section" className="home-section" delay={0}>
-        <div className="home-inner">
+        <div className="home-container home-inner">
           <h2>Plan Great Lakes adventures with confidence</h2>
           <p className="home-subhead">
             JoeTracks is a practical resource hub for people who want clear
@@ -86,7 +86,7 @@ const Home = () => {
       </Reveal>
 
       <Reveal as="section" className="home-section" variant="up" delay={80}>
-        <div className="home-inner">
+        <div className="home-container home-inner">
           <h2>What You Can Use Right Now</h2>
           <div className="home-grid home-grid-two">
             {offers.map((item) => (
@@ -106,7 +106,7 @@ const Home = () => {
       </Reveal>
 
       <Reveal as="section" className="home-section" variant="up" delay={160}>
-        <div className="home-inner">
+        <div className="home-container home-inner">
           <h2>Featured Items</h2>
           <div className="home-grid home-grid-two">
             <article className="home-card home-featured-card">
@@ -134,8 +134,8 @@ const Home = () => {
         </div>
       </Reveal>
 
-      <Reveal as="section" className="home-topo-band" variant="up" delay={240}>
-        <div className="home-inner">
+      <Reveal as="section" className="home-section home-topo-band" variant="up" delay={240}>
+        <div className="home-container home-inner">
           <div className="home-topo-content">
             <h2>Simple systems beat complicated gear</h2>
             <p>
@@ -151,7 +151,7 @@ const Home = () => {
       </Reveal>
 
       <Reveal as="section" className="home-section" variant="up" delay={320}>
-        <div className="home-inner">
+        <div className="home-container home-inner">
           <h2>How to Use This Site</h2>
           <div className="home-grid home-grid-three">
             <article className="home-card">
@@ -186,7 +186,7 @@ const Home = () => {
       </Reveal>
 
       <Reveal as="section" className="home-section" variant="up" delay={400}>
-        <div className="home-inner">
+        <div className="home-container home-inner">
           <div className="home-split">
             <div className="home-split-media">
               <img
@@ -208,7 +208,7 @@ const Home = () => {
       </Reveal>
 
       <Reveal as="section" className="home-section" variant="up" delay={480}>
-        <div className="home-inner home-cta-final">
+        <div className="home-container home-inner home-cta-final">
           <h2>Have a question or want to collaborate?</h2>
           <Link to="/contact" className="home-btn home-btn-primary">
             Contact
@@ -217,7 +217,7 @@ const Home = () => {
       </Reveal>
 
       <Reveal as="section" className="home-section" variant="up" delay={560}>
-        <div className="home-inner">
+        <div className="home-container home-inner">
           <h2>Latest Guides</h2>
           <div className="home-grid home-grid-guides">
             {latestGuides.map((item) => (
