@@ -21,17 +21,13 @@ const Footer = () => {
             Build outdoor confidence &amp; competence.
           </p>
           <Link to="/contact" className="site-footer-contact-btn">
-            Contact Us
+            Contact
           </Link>
         </div>
 
         <div className="site-footer-divider" />
 
         <div className="site-footer-bottom">
-          <section className="site-footer-col site-footer-col-location">
-            <p>Traverse City, Michigan</p>
-          </section>
-
           <nav className="site-footer-col" aria-label="Guides">
             <h2>Guides</h2>
             <Link to="/north-manitou-island-guide">North Manitou Island</Link>

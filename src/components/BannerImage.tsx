@@ -16,23 +16,19 @@ const BannerImage = () => {
       <div className="banner">
         <div className="banner-container">
           <div className="banner-image"></div>
-          <div
-            className="banner-text"
-            style={{ "--banner-offset": `${offset}px` } as CSSProperties}
-          >
+          <div className="banner-text">
             <div className="banner-content">
-              <h1>Build Outdoor Confidence &amp; Competence</h1>
+              <h1>Competence and confidence in the outdoors.</h1>
               <p className="subheader">
-                Guides, Tools, and Resources for Adventures in the Great Lakes
+                Clear, practical guides and tools designed for everyone —
+                accessible instantly in your browser. No apps, accounts, or
+                unnecessary friction.
               </p>
               <div className="banner-cta">
-                <Link
-                  to="/start-here"
-                  className="banner-btn banner-btn-primary"
-                >
+                <Link to="/start-here" className="home-btn home-btn--overlay">
                   Start Here
                 </Link>
-                <Link to="/guides" className="banner-btn banner-btn-secondary">
+                <Link to="/guides" className="home-btn home-btn-secondary">
                   Browse Guides
                 </Link>
               </div>

@@ -68,83 +68,141 @@ const Home = () => {
 
       <Reveal as="section" className="home-section" delay={0}>
         <div className="home-container home-inner">
-          <h2>Plan Great Lakes adventures with confidence</h2>
-          <p className="home-subhead">
-            JoeTracks is a practical resource hub for people who want clear
-            planning guidance, reliable tools, and straightforward information
-            before heading outside.
-          </p>
-          <div className="home-start-cta">
-            <Link to="/guides" className="home-btn home-btn-primary">
-              Browse Guides
-            </Link>
-            <Link to="/tools" className="home-btn home-btn-secondary">
-              See Tools
-            </Link>
+          <div className="home-split">
+            <div className="home-split-copy">
+              <h2>Plan Better Days Outside</h2>
+              <p className="home-subhead">
+                JoeTracks is a practical resource hub built to simplify
+                real-world outdoor decision-making.
+              </p>
+              <br></br>
+              <p className="home-subhead">
+                Whether you’re planning a paddle, hike, or winter outing, you’ll
+                find clear guidance, reliable tools, and field-tested
+                information designed to reduce guesswork and uncertainty.
+              </p>
+              <div className="home-start-cta">
+                <Link to="/guides" className="home-btn home-btn-primary">
+                  Browse Guides
+                </Link>
+                <Link to="/tools" className="home-btn home-btn-secondary">
+                  See Tools
+                </Link>
+              </div>
+            </div>
+            <div className="home-split-media">
+              <img
+                src="/images/Map-compass.png"
+                alt="wild edibles on a frisbee"
+              />
+            </div>
           </div>
         </div>
       </Reveal>
 
       <Reveal as="section" className="home-section" variant="up" delay={80}>
         <div className="home-container home-inner">
-          <h2>What You Can Use Right Now</h2>
+          <h2>Start with a Guide or Use a Tool</h2>
+          <p className="home-subhead">
+            Two things live here right now: detailed field guides, and simple
+            planning tools you can use instantly in your browser.
+          </p>
+
           <div className="home-grid home-grid-two">
-            {offers.map((item) => (
-              <article key={item.href} className="home-card home-offer-card">
-                <div className="home-card-icon" aria-hidden="true">
-                  {item.icon}
+            {/* Guides */}
+            <article className="home-card home-offer-card">
+              <figure className="home-offer-media">
+                <img
+                  className="home-card-image"
+                  src="/images/north-manitou-guide-preview.png"
+                  alt="preview of a digital backpacking guide"
+                  loading="lazy"
+                />
+              </figure>
+
+              <div className="home-offer-body">
+                <h3>Field Guides</h3>
+                <p>
+                  Practical route writeups built from real trips — logistics,
+                  conditions, and the small details that make the day go
+                  smoothly.
+                </p>
+
+                <ul className="home-offer-list">
+                  <li>Approach + trailhead notes (parking, season, access)</li>
+                  <li>Route beta (key turns, hazards, timing)</li>
+                  <li>
+                    Gear notes, lessons learned, and photos that match the text
+                  </li>
+                </ul>
+
+                <div className="home-start-cta">
+                  <Link to="/guides" className="home-btn home-btn-primary">
+                    Browse Guides
+                  </Link>
                 </div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <Link to={item.href} className="home-card-link">
-                  {item.cta}
-                </Link>
-              </article>
-            ))}
+              </div>
+            </article>
+
+            {/* Tools */}
+            <article className="home-card home-offer-card">
+              <figure className="home-offer-media">
+                <img
+                  className="home-card-image"
+                  src="/images/ski-tracker-preview.png"
+                  alt="graphic of a snowfall tracking tool"
+                  loading="lazy"
+                />
+              </figure>
+
+              <div className="home-offer-body">
+                <h3>Planning Tools</h3>
+                <p>
+                  Lightweight utilities for quick decisions — built to reduce
+                  friction when you’re choosing where to go and when.
+                </p>
+
+                <ul className="home-offer-list">
+                  <li>
+                    Compare conditions fast (snowfall, weather windows, timing)
+                  </li>
+                  <li>Make better calls before you commit to a route</li>
+                  <li>No accounts, no apps — just open and use</li>
+                </ul>
+
+                <div className="home-start-cta">
+                  <Link to="/tools" className="home-btn home-btn-primary">
+                    Explore Digital Tools
+                  </Link>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </Reveal>
 
-      <Reveal as="section" className="home-section" variant="up" delay={160}>
-        <div className="home-container home-inner">
-          <h2>Featured Items</h2>
-          <div className="home-grid home-grid-two">
-            <article className="home-card home-featured-card">
-              <h3>Featured Guide: North Manitou Island</h3>
-              <p>
-                A complete planning guide for ferry logistics, routing, and
-                backcountry travel on North Manitou Island.
-              </p>
-              <Link to="/north-manitou-island-guide" className="home-card-link">
-                Open Guide
-              </Link>
-            </article>
-
-            <article className="home-card home-featured-card">
-              <h3>Featured Tool: Michigan Ski Tracker</h3>
-              <p>
-                Live snowfall and weather data across Michigan resorts for
-                better trip timing.
-              </p>
-              <Link to="/michigan-ski-tracker" className="home-card-link">
-                Open Tool
-              </Link>
-            </article>
-          </div>
-        </div>
-      </Reveal>
-
-      <Reveal as="section" className="home-section home-topo-band" variant="up" delay={240}>
+      <Reveal
+        as="section"
+        className="home-section home-topo-band"
+        variant="up"
+        delay={240}
+      >
         <div className="home-container home-inner">
           <div className="home-topo-content">
-            <h2>Simple systems beat complicated gear</h2>
+            <h2>
+              Built for people who want to get outside — even if they don't know
+              where to start.
+            </h2>
             <p>
-              Good decisions come from clear planning habits. JoeTracks focuses
-              on practical systems that help you assess conditions, choose the
-              right route, and move with confidence.
+              Whether you're planning weekend trips, ski tours, backpacking
+              routes, or just trying to avoid dumb mistakes, these guides and
+              tools are designed for real-world use — not fantasy expeditions or
+              gear obsession.
             </p>
-            <Link to="/start-here" className="home-btn home-btn--overlay">
-              Start Here
+            <br></br>
+            <p>Clear information. Practical systems. Better days outside.</p>
+            <Link to="/guides" className="home-btn home-btn-primary">
+              Browse Guides
             </Link>
           </div>
         </div>
