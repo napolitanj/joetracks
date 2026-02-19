@@ -3,10 +3,14 @@
   top: 0;
   z-index: 1000;
   min-height: 5em;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3vw, 32px);
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-around;
+  gap: 5rem;
   padding: 0 1rem;
   background: rgba(248, 249, 245, 0.94);
   color: var(--text-color);
@@ -34,8 +38,8 @@
 .Navbar ul {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  gap: 1.1rem;
+  justify-content: center;
+  gap: clamp(1.4rem, 2vw, 2.2rem);
   list-style: none;
   width: auto;
   align-items: center;
@@ -52,6 +56,8 @@
 
 .Navbar a {
   font-size: 1.1em;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   color: var(--text-color);
   text-decoration: none;
   display: inline-block;
@@ -62,10 +68,13 @@
 .Navbar ul a::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.35rem;
   width: 0;
   height: 2px;
+  border-radius: 2px;
+  opacity: 0.9;
   background-color: var(--accent-color);
   transition: width 0.25s ease;
 }
@@ -78,11 +87,12 @@
 .Navbar ul a:hover::after,
 .Navbar ul a:focus-visible::after,
 .Navbar ul .active::after {
-  width: 100%;
+  width: 80%;
 }
 
 .Navbar .active {
   color: var(--accent-color);
+  font-weight: 600;
 }
 
 .hamburger {
@@ -131,6 +141,9 @@
     max-height: 24rem;
     opacity: 1;
     pointer-events: auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
   }
 
   .Navbar li {
@@ -138,6 +151,7 @@
     padding: 0.75em 1em;
     opacity: 1;
     transform: none;
+    animation: none;
   }
 
   .hamburger {

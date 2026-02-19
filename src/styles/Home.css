@@ -1,6 +1,6 @@
 .home-section {
   width: 100%;
-  padding: clamp(48px, 6vw, 88px) 0;
+  padding: clamp(48px, 5vw, 88px) 0;
 }
 
 .home-container {
@@ -23,10 +23,12 @@
   max-width: 70ch;
   color: var(--muted-text);
   line-height: 1.65;
+  font-size: 1.2em;
 }
 
 .home-start-cta {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1rem;
@@ -142,6 +144,7 @@
   border: 1px solid var(--border-color);
   border-radius: 0.9rem;
   padding: 1.05rem;
+  margin-top: 1em;
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
@@ -155,8 +158,23 @@
 }
 
 .home-card p {
+  font-size: 1.2em;
   color: var(--muted-text);
   line-height: 1.55;
+}
+
+.home-card-image {
+  width: 100%;
+  aspect-ratio: 3 / 2; /* clean, versatile ratio */
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.home-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .home-card-icon {
@@ -189,7 +207,7 @@
   position: relative;
   width: 100%;
   padding-block: clamp(56px, 8vw, 96px);
-  --topo-overlay: rgba(11, 93, 107, 0.35);
+  --topo-overlay: rgba(11, 93, 107, 0.55);
 }
 
 .home-topo-band::before {
@@ -208,7 +226,7 @@
 .home-topo-content {
   position: relative;
   z-index: 2;
-  width: min(38rem, 100%);
+  width: min(50rem, 100%);
   color: #f8fafb;
   padding: clamp(20px, 3vw, 28px);
 }
@@ -222,7 +240,8 @@
 .home-topo-content p {
   line-height: 1.6;
   margin-bottom: 1rem;
-  max-width: 540px;
+
+  font-size: 1.2em;
 }
 
 .hero-content h1,

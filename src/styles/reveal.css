@@ -1,30 +1,73 @@
 .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+body.js .reveal {
   opacity: 0;
   transform: translateY(14px);
   transition:
-    opacity 700ms ease-out,
-    transform 700ms ease-out;
+    opacity 550ms ease,
+    transform 550ms ease;
   will-change: opacity, transform;
 }
 
-.reveal.reveal-left {
+body.js .reveal.reveal-left {
   transform: translateX(-18px);
 }
 
-.reveal.reveal-right {
+body.js .reveal.reveal-right {
   transform: translateX(18px);
 }
 
-.reveal.is-visible {
+body.js .reveal.reveal-up {
+  transform: translateY(14px);
+}
+
+body.js .reveal.is-visible {
   opacity: 1;
-  transform: translate(0, 0);
+  transform: none;
+}
+
+body.js .reveal-delay-0 {
+  transition-delay: 0ms;
+}
+
+body.js .reveal-delay-80 {
+  transition-delay: 80ms;
+}
+
+body.js .reveal-delay-120 {
+  transition-delay: 120ms;
+}
+
+body.js .reveal-delay-200 {
+  transition-delay: 200ms;
+}
+
+body.js .reveal-delay-280 {
+  transition-delay: 280ms;
+}
+
+body.js .reveal-delay-360 {
+  transition-delay: 360ms;
+}
+
+body.js .reveal-delay-440 {
+  transition-delay: 440ms;
+}
+
+body.js .reveal-delay-520 {
+  transition-delay: 520ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal,
-  .reveal.reveal-left,
-  .reveal.reveal-right,
-  .reveal.is-visible {
+  body.js .reveal,
+  body.js .reveal.reveal-up,
+  body.js .reveal.reveal-left,
+  body.js .reveal.reveal-right,
+  body.js .reveal.is-visible {
     opacity: 1;
     transform: none;
     transition: none;

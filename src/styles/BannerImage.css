@@ -34,79 +34,51 @@
   right: clamp(1.25rem, 6vw, 5rem);
   transform: translateY(calc(-50% + var(--banner-offset, 0px)));
   z-index: 2;
-  width: min(40rem, 86vw);
+  width: min(36rem, 90vw);
   opacity: 0;
   animation: fadeIn 0.55s ease-out forwards;
   animation-delay: 0.35s;
 }
 
 .banner-content {
-  background: rgba(248, 249, 245, 0.88);
-  border: 1px solid rgba(17, 17, 17, 0.1);
-  border-radius: 0.85rem;
+  background: rgba(248, 249, 245, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 1rem;
   padding: clamp(1rem, 2vw, 1.8rem);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14);
   color: var(--text-color);
 }
 
 .banner-text h1 {
-  font-size: clamp(2rem, 4.8vw, 3.35rem);
-  line-height: 1.1;
+  font-size: clamp(2.2rem, 4.2vw, 2.9rem);
+  line-height: 1.12;
   color: var(--text-color);
   font-weight: 700;
+  letter-spacing: -0.01em;
   margin-bottom: 0.65rem;
 }
 
 .banner-text .subheader {
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  color: #232629;
-  line-height: 1.45;
+  font-size: clamp(0.98rem, 1.7vw, 1.1rem);
+  color: var(--muted-text, #2a2f33);
+  line-height: 1.5;
+  max-width: 52ch;
 }
 
 .banner-cta {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 0.7rem;
   margin-top: 1rem;
-}
-
-.banner-btn {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-height: 2.7rem;
-  padding: 0.6rem 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid transparent;
-  font-weight: 600;
-  text-decoration: none;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+  justify-content: flex-start;
 }
 
-.banner-btn-primary {
-  background: var(--accent-color);
-  color: #fff;
-}
-
-.banner-btn-primary:hover,
-.banner-btn-primary:focus-visible {
-  background: #0a4d68;
-  color: #fff;
-}
-
-.banner-btn-secondary {
-  background: transparent;
-  color: var(--text-color);
-  border-color: var(--muted-color);
-}
-
-.banner-btn-secondary:hover,
-.banner-btn-secondary:focus-visible {
-  border-color: var(--accent-color);
-  color: var(--accent-color);
+.banner-cta > * {
+  width: fit-content;
 }
 
 @keyframes fadeIn {
