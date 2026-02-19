@@ -254,11 +254,11 @@ const Home = () => {
 
               {/* Newsletter CTA (use a Link for now; swap to a real form later) */}
               <div className="home-start-cta">
-                <Link to="/contact" className="home-btn home-btn-primary">
-                  Get Updates
+                <Link to="/guides" className="home-btn home-btn-primary">
+                  Browse live guides
                 </Link>
-                <Link to="/guides" className="home-btn home-btn-secondary">
-                  Browse Live Guides
+                <Link to="/contact" className="home-btn home-btn-secondary">
+                  Request a new one
                 </Link>
               </div>
 

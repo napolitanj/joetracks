@@ -52,17 +52,11 @@ export default function MichiganSkiTracker() {
       }
 
       setForecastById(map);
-      console.log("Fetched per-resort forecasts:", map);
-
       setLoading(false);
     }
 
     load();
   }, []);
-
-  if (loading) {
-    return <div>Loading ski forecasts…</div>;
-  }
 
   return (
     <>
@@ -106,82 +100,128 @@ export default function MichiganSkiTracker() {
           },
         ]}
       />
-      <div className="ski-wrapper">
-        <h1>Michigan Ski Tracker</h1>
-      {/* ----- REGION FILTER UI ----- */}
-      <div className="region-controls">
-        <label>
-          Region:
-          <select
-            value={regionFilter}
-            onChange={(e) => setRegionFilter(e.target.value)}
-          >
-            {REGIONS.map((r) => (
-              <option key={r}>{r}</option>
-            ))}
-          </select>
-        </label>
-      </div>
-      <div className="ski-note">
-        Tap any resort to view the detailed NOAA forecast.
-      </div>
-      {lastUpdated && (
-        <div className="last-updated">Last updated: {lastUpdated}</div>
-      )}
+      <section className="tool-page">
+        <div className="tool-hero">
+          <div className="tool-hero-inner">
+            <h1 className="tool-hero-title">Michigan Ski Tracker</h1>
+            <p className="tool-hero-subhead">
+              Projected 24 & 48-hour snowfall totals for every ski area in
+              Michigan — built to point skiers to the best conditions.
+            </p>
+            <ul className="tool-cred">
+              <li>Powered by highly-accurate NOAA forecast data.</li>
+              <li>
+                Resort totals are based on a pinpointed mid-mountain location
+                (not nearest town, base, or summit).
+              </li>
+              <li>Updated twice daily.</li>
+            </ul>
+            <p className="ski-note">
+              Tap any resort to view the full NOAA forecast.
+            </p>
+          </div>
+        </div>
 
-      {/* ----- SKI TABLE ----- */}
-      <div className="ski-table-container">
-        <table className="ski-table">
-          <thead>
-            <tr>
-              <th>Resort</th>
-              <th>24h Snow</th>
-              <th>48h Snow</th>
-            </tr>
-          </thead>
+        <div className="tool-hero-inner">
+          <div className="mst-controls">
+            <div className="mst-controls-row">
+              <div className="mst-filter">
+                <label htmlFor="region-select">Sort by Region</label>
+              <select
+                id="region-select"
+                value={regionFilter}
+                onChange={(e) => setRegionFilter(e.target.value)}
+              >
+                {REGIONS.map((r) => (
+                  <option key={r}>{r}</option>
+                ))}
+              </select>
+            </div>
+              <div className="mst-updated">
+                {lastUpdated
+                  ? `Last updated: ${lastUpdated}`
+                  : "Last updated: —"}
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <tbody>
-            {filtered.map((resort) => {
-              const fc = forecastById[resort.id];
+        <div className="tool-hero-inner">
+          <div className="tool-results-card">
+            {loading && (
+              <div className="tool-loading" role="status" aria-live="polite">
+                Loading latest forecast…
+              </div>
+            )}
 
-              if (!fc || fc.error) {
-                return (
-                  <tr key={resort.id}>
-                    <td className="resort-link disabled">{resort.name}</td>
-                    <td>-</td>
-                    <td>-</td>
-                  </tr>
-                );
-              }
+            {!loading && filtered.length === 0 && (
+              <div className="tool-empty">
+                No resorts match this region yet. Try another filter.
+              </div>
+            )}
 
-              return (
-                <tr key={resort.id}>
-                  <td>
-                    <a
-                      className="resort-link"
-                      href={fc.links?.nwsPage}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {resort.name}
-                    </a>
-                  </td>
-                  <td className={fc.snow24h >= 10 ? "snow-alert" : ""}>
-                    {fc.snow24h ?? "-"}{" "}
-                    {fc.snow24h > 0 && <span className="snow-icon">❄️</span>}
-                  </td>
+            {!loading && filtered.length > 0 && (
+              <div className="ski-table-container">
+                <table className="tool-table">
+                  <thead>
+                    <tr>
+                      <th>Resort</th>
+                      <th>24h Snow</th>
+                      <th>48h Snow</th>
+                    </tr>
+                  </thead>
 
-                  <td className={fc.snow48h >= 20 ? "snow-alert" : ""}>
-                    {fc.snow48h ?? "-"}{" "}
-                    {fc.snow48h > 0 && <span className="snow-icon">❄️</span>}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-      </div>
+                  <tbody>
+                    {filtered.map((resort) => {
+                      const fc = forecastById[resort.id];
+
+                      if (!fc || fc.error) {
+                        return (
+                          <tr key={resort.id}>
+                            <td className="resort-link disabled">
+                              {resort.name}
+                            </td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                        );
+                      }
+
+                      return (
+                        <tr key={resort.id}>
+                          <td>
+                            <a
+                              className="resort-link"
+                              href={fc.links?.nwsPage}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {resort.name}
+                            </a>
+                          </td>
+                          <td className={fc.snow24h >= 10 ? "snow-alert" : ""}>
+                            {fc.snow24h ?? "-"}{" "}
+                            {fc.snow24h > 0 && (
+                              <span className="snow-icon">❄️</span>
+                            )}
+                          </td>
+
+                          <td className={fc.snow48h >= 20 ? "snow-alert" : ""}>
+                            {fc.snow48h ?? "-"}{" "}
+                            {fc.snow48h > 0 && (
+                              <span className="snow-icon">❄️</span>
+                            )}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
