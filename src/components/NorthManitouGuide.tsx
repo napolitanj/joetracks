@@ -1,8 +1,8 @@
 import "/src/styles/shared.css";
 import "/src/styles/manitou-guide.css";
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
 import Reveal from "./ui/Reveal";
+import SEO from "./SEO";
 
 const NorthManitouGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -14,92 +14,46 @@ const NorthManitouGuide = () => {
 
   return (
     <>
-      <Helmet>
-        {/* Primary */}
-        <title>North Manitou Island Backpacking Guide | JoeTracks</title>
-        <meta
-          name="description"
-          content="A complete backpacking guide to North Manitou Island — ferry info, routes, camping permits, hazards, gear list, maps, and real-world tips for exploring this remote Lake Michigan wilderness."
-        />
-        <link
-          rel="canonical"
-          href="https://joetracks.com/north-manitou-island-guide"
-        />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="article" />
-        <meta
-          property="og:title"
-          content="North Manitou Island Backpacking Guide"
-        />
-        <meta
-          property="og:description"
-          content="Plan your backpacking trip to North Manitou Island with detailed info on routes, ferry logistics, camping permits, hazards, and gear recommendations."
-        />
-        <meta
-          property="og:url"
-          content="https://joetracks.com/north-manitou-island-guide"
-        />
-        <meta
-          property="og:image"
-          content="https://joetracks.com/images/north-manitou/north-manitou-island-backpacking.webp"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="North Manitou Island Backpacking Guide"
-        />
-        <meta
-          name="twitter:description"
-          content="A full guide to backpacking North Manitou Island — ferry schedules, routes, maps, hazards, gear list, and safety essentials."
-        />
-        <meta
-          name="twitter:image"
-          content="https://joetracks.com/images/north-manitou/north-manitou-island-backpacking.webp"
-        />
-
-        {/* Preload Hero Image */}
-        <link
-          rel="preload"
-          as="image"
-          href="https://joetracks.com/images/north-manitou/north-manitou-island-backpacking.webp"
-        />
-
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {`
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "North Manitou Island Backpacking Guide",
-      "description": "A complete guide to backpacking North Manitou Island with ferry details, routes, gear lists, camping permits, maps, and safety tips.",
-      "author": {
-        "@type": "Person",
-        "name": "Joe Napolitan",
-        "url": "https://joetracks.com"
-      },
-      "image": "https://joetracks.com/images/north-manitou/north-manitou-island-backpacking.webp",
-      "url": "https://joetracks.com/north-manitou-island-guide",
-      "publisher": {
-        "@type": "Organization",
-        "name": "JoeTracks",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://joetracks.com/favicon.ico"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://joetracks.com/north-manitou-island-guide"
-      }
-    }
-    `}
-        </script>
-      </Helmet>
+      <SEO
+        title="North Manitou Island Backpacking Guide | JoeTracks"
+        description="Plan a North Manitou Island backpacking trip with ferry logistics, routes, permits, hazards, and practical Great Lakes field notes."
+        canonical="https://joetracks.com/north-manitou-island-guide"
+        image="https://joetracks.com/images/north-manitou/north-manitou-island-backpacking.webp"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "North Manitou Island Backpacking Guide",
+            description:
+              "Plan a North Manitou Island backpacking trip with ferry logistics, routes, permits, hazards, and practical field notes.",
+            url: "https://joetracks.com/north-manitou-island-guide",
+            image:
+              "https://joetracks.com/images/north-manitou/north-manitou-island-backpacking.webp",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "North Manitou Island Backpacking Guide",
+            description:
+              "A complete guide to backpacking North Manitou Island with ferry details, routes, gear lists, camping permits, maps, and safety tips.",
+            image:
+              "https://joetracks.com/images/north-manitou/north-manitou-island-backpacking.webp",
+            author: {
+              "@type": "Person",
+              name: "Joe Napolitan",
+              url: "https://joetracks.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "JoeTracks",
+            },
+            url: "https://joetracks.com/north-manitou-island-guide",
+            mainEntityOfPage:
+              "https://joetracks.com/north-manitou-island-guide",
+            // TODO: add datePublished and dateModified when canonical source dates are finalized.
+          },
+        ]}
+      />
 
       <div className="guide">
         <main className="container" id="page" role="main">
@@ -265,7 +219,7 @@ const NorthManitouGuide = () => {
                               A complete understanding of&nbsp;
                               <a
                                 href="https://lnt.org/why/7-principles/"
-                                target="_blank"
+                                target="_blank" rel="noopener noreferrer"
                               >
                                 Leave No Trace (LNT
                               </a>
@@ -281,7 +235,7 @@ const NorthManitouGuide = () => {
                             <p>
                               <a
                                 href="https://backcountrynorth.com/"
-                                target="_blank"
+                                target="_blank" rel="noopener noreferrer"
                               >
                                 The gear to do it<em>.</em>
                               </a>
@@ -634,7 +588,7 @@ const NorthManitouGuide = () => {
                     <p>
                       Before making any other plans, make sure you can
                       book&nbsp;
-                      <a href="https://manitoutransit.com/" target="_blank">
+                      <a href="https://manitoutransit.com/" target="_blank" rel="noopener noreferrer">
                         Manitou Island Transit
                       </a>
                       &nbsp; tickets to and from the island on the days you wish
@@ -659,7 +613,7 @@ const NorthManitouGuide = () => {
                     <p>
                       <a
                         href="https://manitoutransit.com/rates-schedule/"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                       >
                         Click here to see the ferry schedule and book tickets.
                       </a>
@@ -676,7 +630,7 @@ const NorthManitouGuide = () => {
                       you possess an&nbsp;
                       <a
                         href="https://www.nps.gov/planyourvisit/passes.htm"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                       >
                         NPS America the Beautiful Annual Pass
                       </a>
@@ -725,7 +679,7 @@ const NorthManitouGuide = () => {
                           between M-22 and Lake Michigan.&nbsp;
                           <a
                             href="https://www.villagecheeseshanty.com/"
-                            target="_blank"
+                            target="_blank" rel="noopener noreferrer"
                           >
                             The Village Cheese Shanty
                           </a>
@@ -742,7 +696,7 @@ const NorthManitouGuide = () => {
                       <p>
                         <a
                           href="https://maps.app.goo.gl/X9UEGV8wREY3KEBdA"
-                          target="_blank"
+                          target="_blank" rel="noopener noreferrer"
                         >
                           Here is a Google Maps pin for the location of the
                           Manitou Island Transit office.
@@ -762,7 +716,7 @@ const NorthManitouGuide = () => {
                         the{" "}
                         <a
                           href="https://maps.app.goo.gl/vKevyf4rwznDyMEw6"
-                          target="_blank"
+                          target="_blank" rel="noopener noreferrer"
                         >
                           Leland Fire Department
                         </a>
@@ -856,7 +810,7 @@ const NorthManitouGuide = () => {
                       find {""}
                       <a
                         href="https://www.nps.gov/slbe/planyourvisit/north-manitou-island-map.htm"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                       >
                         here
                       </a>
@@ -902,12 +856,12 @@ const NorthManitouGuide = () => {
                   For me, the journey home is as much a part of every trip to
                   Manitou as the Island itself. If time allows (it is only open
                   7 a.m. - 3 p.m.), {""}
-                  <a href="https://www.9beanrows.com/" target="_blank">
+                  <a href="https://www.9beanrows.com/" target="_blank" rel="noopener noreferrer">
                     9 Bean Rows
                   </a>{" "}
                   on the way to Sutton's Bar serves incredible wood-fired Pizza.{" "}
                   {""}
-                  <a href="https://hoplotbrewing.com/" target="_blank">
+                  <a href="https://hoplotbrewing.com/" target="_blank" rel="noopener noreferrer">
                     Hop Lot Brewing Company
                   </a>{" "}
                   in Sutton's Bay offers craft beer, barbeque, and the best beer

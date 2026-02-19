@@ -5,32 +5,47 @@ type GuideItem = {
   title: string;
   description: string;
   href: string;
+  cta: string;
+  imageSrc: string;
+  imageAlt: string;
 };
 
 const guides: GuideItem[] = [
   {
-    title: "North Manitou Island Guide",
+    title: "Backpacking North Manitou Island",
     description:
-      "A practical backpacking and trip-planning guide for North Manitou Island.",
+      "A practical field guide covering logistics, hazards, route structure, and planning considerations.",
     href: "/north-manitou-island-guide",
+    cta: "Go Backpacking",
+    imageSrc: "/images/north-manitou/north-manitou-island.webp",
+    imageAlt: "Backpacker standing on North Manitou Island shoreline",
   },
   {
     title: "Remote Forecasting Tools",
     description:
-      "A field-tested walkthrough for assessing snow and weather before your trip.",
+      "A technical trip-planning walkthrough for forecasting snow cover remotely.",
     href: "/remote-forecasting-tools",
+    cta: "Find the Best Snow",
+    imageSrc: "/images/remote-forecasting/google-snow-depth-overlay.webp",
+    imageAlt: "Snow depth overlay map used for remote forecasting",
   },
   {
-    title: "Mount Sneffels Guide",
+    title: "Mount Sneffels: Skiing the Snake Couloir",
     description:
-      "Route beta, conditions, and planning notes for skiing the Snake Couloir.",
+      "Route beta, conditions, and planning notes for Mount Sneffels' Snake Couloir.",
     href: "/ski-mount-sneffels",
+    cta: "Go Skiing",
+    imageSrc: "/images/sneffels/Mount-sneffels-view.webp",
+    imageAlt: "Mount Sneffels viewed from the approach route",
   },
   {
-    title: "CalTopo Guide",
+    title: "How to Trip Plan with CalTopo",
     description:
-      "Learn the core CalTopo workflow for map reading, route building, and export.",
+      "Learn the core CalTopo workflow for map reading, route building, and trip planning.",
     href: "/caltopo-guide",
+    cta: "Plan Your Route",
+    imageSrc: "/images/caltopo/Caltopo-Mount-hood-stacked-layers2.png",
+    imageAlt: "CalTopo map with stacked planning layers",
   },
 ];
 
@@ -47,10 +62,13 @@ const GuidesIndex = () => {
         <div className="guides-list">
           {guides.map((guide) => (
             <article key={guide.href} className="guide-card">
+              <Link to={guide.href} className="guide-card-media">
+                <img src={guide.imageSrc} alt={guide.imageAlt} loading="lazy" />
+              </Link>
               <h2>{guide.title}</h2>
               <p>{guide.description}</p>
-              <Link to={guide.href} className="guide-read-link">
-                Read
+              <Link to={guide.href} className="home-card-link">
+                {guide.cta}
               </Link>
             </article>
           ))}

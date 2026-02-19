@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
 import "/src/styles/shared.css";
 import "/src/styles/caltopo.css";
 import Reveal from "./ui/Reveal";
+import SEO from "./SEO";
 
 const CalTopo = () => {
   const [animate, setAnimate] = useState(false);
@@ -14,86 +14,41 @@ const CalTopo = () => {
 
   return (
     <>
-      <Helmet>
-        {/* Primary */}
-        <title>How to Use CalTopo for Trip Planning | JoeTracks</title>
-        <meta
-          name="description"
-          content="A practical, beginner-friendly guide to CalTopo—learn map layers, route building, terrain analysis, printing maps, exporting GPX/KML, and offline navigation tools."
-        />
-        <link rel="canonical" href="https://joetracks.com/caltopo-guide" />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="article" />
-        <meta
-          property="og:title"
-          content="CalTopo Guide for Backcountry Trip Planning"
-        />
-        <meta
-          property="og:description"
-          content="Learn the essential CalTopo tools for planning safer backcountry trips—map layers, snapping routes, terrain shading, exporting files, and more."
-        />
-        <meta
-          property="og:image"
-          content="https://joetracks.com/images/caltopo/caltopo.webp"
-        />
-        <meta property="og:url" content="https://joetracks.com/caltopo-guide" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="CalTopo Guide for Backcountry Trip Planning"
-        />
-        <meta
-          name="twitter:description"
-          content="A clean, accessible walkthrough of CalTopo—how to build routes, read terrain, combine layers, export GPX/KML, and print maps."
-        />
-        <meta
-          name="twitter:image"
-          content="https://joetracks.com/images/caltopo/caltopo.webp"
-        />
-
-        {/* Preload hero image */}
-        <link
-          rel="preload"
-          as="image"
-          href="https://joetracks.com/images/caltopo/caltopo.webp"
-        />
-
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {`
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "How to Use CalTopo for Trip Planning",
-      "description": "A full guide to using CalTopo—map layers, measuring tools, snapping routes, terrain shading, printing, exporting GPX/KML, and offline planning.",
-      "author": {
-        "@type": "Person",
-        "name": "Joe Napolitan",
-        "url": "https://joetracks.com"
-      },
-      "image": "https://joetracks.com/images/caltopo/caltopo.webp",
-      "url": "https://joetracks.com/caltopo-guide",
-      "publisher": {
-        "@type": "Organization",
-        "name": "JoeTracks",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://joetracks.com/favicon.ico"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://joetracks.com/caltopo-guide"
-      }
-    }
-    `}
-        </script>
-      </Helmet>
+      <SEO
+        title="How to Use CalTopo for Trip Planning | JoeTracks"
+        description="Learn CalTopo route building, map layers, terrain tools, and export workflows for safer backcountry trip planning."
+        canonical="https://joetracks.com/caltopo-guide"
+        image="https://joetracks.com/images/caltopo/caltopo.webp"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "How to Use CalTopo for Trip Planning",
+            description:
+              "Learn CalTopo route building, map layers, terrain tools, and export workflows for safer backcountry trip planning.",
+            url: "https://joetracks.com/caltopo-guide",
+            image: "https://joetracks.com/images/caltopo/caltopo.webp",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "CalTopo Guide",
+            applicationCategory: "MapApplication",
+            operatingSystem: "Web",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+            url: "https://joetracks.com/caltopo-guide",
+            image: "https://joetracks.com/images/caltopo/caltopo.webp",
+            publisher: {
+              "@type": "Organization",
+              name: "JoeTracks",
+            },
+          },
+        ]}
+      />
       <div className="guide">
         <main className="container">
           <article className="sections">
@@ -236,7 +191,7 @@ const CalTopo = () => {
                 <div>
                   <p>
                     Head over to {""}
-                    <a href="http://www.caltopo.com/" target="_blank">
+                    <a href="http://www.caltopo.com/" target="_blank" rel="noopener noreferrer">
                       www.caltopo.com
                     </a>
                     {""} in a separate window where you’ll see CalTopo’s

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
 import "/src/styles/sneffels-guide.css";
 import "/src/styles/shared.css";
 import Reveal from "./ui/Reveal";
+import SEO from "./SEO";
 
 const SneffelsGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -14,89 +14,45 @@ const SneffelsGuide = () => {
 
   return (
     <>
-      <Helmet>
-        {/* Primary */}
-        <title>Skiing Mount Sneffels: Snake Couloir Guide | JoeTracks</title>
-        <meta
-          name="description"
-          content="A detailed, real-world guide to skiing Mount Sneffels' Snake Couloir — gear, beta, rappel info, maps, hazards, and a full trip report based on an actual ascent and descent."
-        />
-        <link rel="canonical" href="https://joetracks.com/ski-mount-sneffels" />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="article" />
-        <meta
-          property="og:title"
-          content="Ski Mount Sneffels: Snake Couloir Guide"
-        />
-        <meta
-          property="og:description"
-          content="Learn how to ski the Snake Couloir on Mount Sneffels: rappel details, gear list, approach info, maps, hazards, and a full trip report."
-        />
-        <meta
-          property="og:url"
-          content="https://joetracks.com/ski-mount-sneffels"
-        />
-        <meta
-          property="og:image"
-          content="https://joetracks.com/images/sneffels/Mount-sneffels-view.webp"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Skiing Mount Sneffels: Snake Couloir Guide"
-        />
-        <meta
-          name="twitter:description"
-          content="A complete skier's guide to the Snake Couloir on Mount Sneffels — beta, rappel info, maps, gear list, and trip report."
-        />
-        <meta
-          name="twitter:image"
-          content="https://joetracks.com/images/sneffels/Mount-sneffels-view.webp"
-        />
-
-        {/* Preload Hero Image */}
-        <link
-          rel="preload"
-          as="image"
-          href="https://joetracks.com/images/sneffels/Mount-sneffels-view.webp"
-        />
-
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {`
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Ski Mount Sneffels: Snake Couloir Guide",
-      "description": "A detailed guide to skiing the Snake Couloir on Mount Sneffels with rappel info, approach details, gear list, maps, and a full trip report.",
-      "author": {
-        "@type": "Person",
-        "name": "Joe Napolitan",
-        "url": "https://joetracks.com"
-      },
-      "image": "https://joetracks.com/images/sneffels/Mount-sneffels-view.webp",
-      "url": "https://joetracks.com/ski-mount-sneffels",
-      "publisher": {
-        "@type": "Organization",
-        "name": "JoeTracks",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://joetracks.com/favicon.ico"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://joetracks.com/ski-mount-sneffels"
-      }
-    }
-    `}
-        </script>
-      </Helmet>
+      <SEO
+        title="Skiing Mount Sneffels: Snake Couloir Guide | JoeTracks"
+        description="Detailed Snake Couloir beta for Mount Sneffels: approach logistics, rappel setup, hazard notes, map links, and trip-tested insights."
+        canonical="https://joetracks.com/ski-mount-sneffels"
+        image="https://joetracks.com/images/sneffels/Mount-sneffels-view.webp"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Ski Mount Sneffels: Snake Couloir Guide",
+            description:
+              "Detailed Snake Couloir beta for Mount Sneffels with approach logistics, rappel setup, and hazard notes.",
+            url: "https://joetracks.com/ski-mount-sneffels",
+            image:
+              "https://joetracks.com/images/sneffels/Mount-sneffels-view.webp",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "Ski Mount Sneffels: Snake Couloir Guide",
+            description:
+              "A detailed guide to skiing the Snake Couloir on Mount Sneffels with rappel info, approach details, gear list, maps, and a full trip report.",
+            image:
+              "https://joetracks.com/images/sneffels/Mount-sneffels-view.webp",
+            author: {
+              "@type": "Person",
+              name: "Joe Napolitan",
+              url: "https://joetracks.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "JoeTracks",
+            },
+            url: "https://joetracks.com/ski-mount-sneffels",
+            mainEntityOfPage: "https://joetracks.com/ski-mount-sneffels",
+            // TODO: add datePublished and dateModified when canonical source dates are finalized.
+          },
+        ]}
+      />
 
       <div className="guide">
         <main className="container" id="page" role="main">
@@ -177,15 +133,15 @@ const SneffelsGuide = () => {
                 to various hazards beyond their control that may result in
                 death. This post is designed to tell a story and provide as much
                 information as possible to educate readers. Adequate&nbsp;
-                <a href="https://www.14ers.com/safety.php" target="_blank">
+                <a href="https://www.14ers.com/safety.php" target="_blank" rel="noopener noreferrer">
                   preparation
                 </a>
                 , conditioning, and&nbsp;
-                <a href="https://avtraining.org/recprogram/" target="_blank">
+                <a href="https://avtraining.org/recprogram/" target="_blank" rel="noopener noreferrer">
                   education
                 </a>
                 &nbsp;are essential to engage in this activity safely.&nbsp;
-                <a href="http://www.klingmountainguides.com/" target="_blank">
+                <a href="http://www.klingmountainguides.com/" target="_blank" rel="noopener noreferrer">
                   Hire a guide
                 </a>
                 &nbsp;if you wish to embark on this adventurer and are unsure of
@@ -236,7 +192,7 @@ const SneffelsGuide = () => {
                           skis, boots, skins, pole, and&nbsp;
                           <a
                             href="https://www.rei.com/product/885298/black-diamond-whippet-backcountry-ski-pole-single"
-                            target="_blank"
+                            target="_blank" rel="noopener noreferrer"
                           >
                             whippet
                           </a>
@@ -293,7 +249,7 @@ const SneffelsGuide = () => {
                           smartphone with maps downloaded on&nbsp;
                           <a
                             href="https://www.gaiagps.com/hike/"
-                            target="_blank"
+                            target="_blank" rel="noopener noreferrer"
                           >
                             GAIA GPS
                           </a>
@@ -336,14 +292,14 @@ const SneffelsGuide = () => {
                           Contact&nbsp;
                           <a
                             href="https://www.ouraymountainsports.com/"
-                            target="_blank"
+                            target="_blank" rel="noopener noreferrer"
                           >
                             Ouray Mountain Sports
                           </a>
                           &nbsp;or&nbsp;
                           <a
                             href="http://www.ci.ouray.co.us/city_offices/public_works/index.php"
-                            target="_blank"
+                            target="_blank" rel="noopener noreferrer"
                           >
                             Ouray Public Works Department
                           </a>
@@ -351,7 +307,7 @@ const SneffelsGuide = () => {
                           can&nbsp;
                           <a
                             href="https://goo.gl/maps/ZH35mnpxiZBMqg8f7"
-                            target="_blank"
+                            target="_blank" rel="noopener noreferrer"
                           >
                             access the road from US Highway 550, just south of
                             Ouray after the first switchback
@@ -731,7 +687,7 @@ const SneffelsGuide = () => {
                             at the summit. Evan&nbsp;
                             <a
                               href="https://www.youtube.com/watch?v=7U6tdEevJgs"
-                              target="_blank"
+                              target="_blank" rel="noopener noreferrer"
                             >
                               rigged himself into the system
                             </a>
@@ -808,7 +764,7 @@ const SneffelsGuide = () => {
                             I made two&nbsp;
                             <a
                               href="https://avalanche.org/avalanche-encyclopedia/ski-or-slope-cut/"
-                              target="_blank"
+                              target="_blank" rel="noopener noreferrer"
                             >
                               ski cuts
                             </a>
@@ -822,7 +778,7 @@ const SneffelsGuide = () => {
                             rocks and&nbsp;
                             <a
                               href="https://avalanche.org/avalanche-encyclopedia/loose-snow-avalanche/"
-                              target="_blank"
+                              target="_blank" rel="noopener noreferrer"
                             >
                               sluff
                             </a>

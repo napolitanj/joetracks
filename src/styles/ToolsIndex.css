@@ -25,29 +25,53 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.9rem;
+  justify-items: center;
 }
 
 .tool-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 0.75rem;
-  padding: 1rem;
+  border-radius: 0.9rem;
+  padding: 1.05rem;
+  width: min(760px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.tool-card-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 0.8rem;
+  border: 1px solid var(--border-color);
+}
+
+.tool-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .tool-card h2 {
   font-size: 1.2rem;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.15rem;
   color: var(--text-color);
 }
 
 .tool-card p {
   color: var(--muted-text);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.35rem;
 }
 
 .tool-open-link {
-  display: inline-block;
-  padding: 0.45rem 0.9rem;
+  display: inline-flex;
+  width: fit-content;
+  align-self: flex-start;
+  padding: 0.48rem 0.88rem;
   border-radius: 0.5rem;
   background: var(--accent-color);
   color: #ffffff;
