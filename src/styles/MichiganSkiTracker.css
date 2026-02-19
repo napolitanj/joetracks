@@ -1,155 +1,222 @@
-:root {
-  --bg: #ffffff;
-  --bg-2: #f5f7fa;
-  --border: #e5e5e5;
-  --text: #1a1a1a;
-  --text-muted: #888888;
-  --shadow: rgba(0, 0, 0, 0.08);
+.tool-page {
+  width: 100%;
+  padding: 2rem 1rem 3rem;
 }
 
-.dark {
-  --bg: #1c1c1c;
-  --bg-2: #2a2a2a;
-  --border: #3a3a3a;
-  --text: #e6e6e6;
-  --text-muted: #999999;
-  --shadow: rgba(0, 0, 0, 0.35);
+.tool-hero {
+  margin-bottom: 1rem;
 }
 
-.ski-wrapper {
-  max-width: 900px;
+.tool-hero-inner {
+  width: min(1100px, 94%);
   margin: 0 auto;
-  padding: 24px;
-  color: var(--text);
 }
 
-.ski-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  text-align: center;
-  color: var(--text);
+.tool-hero-title {
+  font-size: clamp(2rem, 4.2vw, 2.9rem);
+  color: var(--text-color);
+  margin-bottom: 0.65rem;
 }
 
-.region-controls {
+.tool-hero-subhead {
+  color: var(--muted-text);
+  font-size: 1.06rem;
+  line-height: 1.6;
+  max-width: 68ch;
+}
+
+.tool-cred {
+  margin: 1rem 0 0.8rem;
+  padding-left: 1.15rem;
+  color: var(--muted-text);
+  line-height: 1.65;
+}
+
+.tool-cred li {
+  margin-bottom: 0.35rem;
+}
+
+.ski-note {
+  color: var(--muted-text);
+  font-size: 0.96rem;
+  margin-top: 0.2rem;
+}
+
+.mst-controls {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.9rem;
+  padding: 0.95rem 1rem;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.mst-controls-row {
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5em;
 }
 
-.region-controls select {
-  padding: 6px 12px;
-  margin-left: 8px;
+.mst-filter {
+  max-width: 50%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.mst-filter label {
+  color: var(--muted-text);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.mst-filter select {
+  width: 100%;
+  padding: 0.52rem 0.68rem;
+  font-size: 0.98rem;
+  color: var(--text-color);
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.55rem;
+}
+
+.mst-filter select:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent-color) 45%, transparent);
+  outline-offset: 2px;
+}
+
+.mst-updated {
+  color: var(--muted-text);
+  font-size: 0.94rem;
+  margin: 0 0 0 auto;
+  white-space: nowrap;
+}
+
+.tool-results-card {
+  margin-top: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.95rem;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.tool-loading,
+.tool-empty {
+  padding: 1rem 1.05rem;
+  color: var(--muted-text);
   font-size: 1rem;
-  background: var(--bg-2);
-  border: 1px solid var(--border);
-  color: var(--text);
-  border-radius: 6px;
 }
 
 .ski-table-container {
   overflow-x: auto;
-  border-radius: 8px;
-  background: var(--bg);
-  box-shadow: 0 0 12px var(--shadow);
-  border: 1px solid var(--border);
 }
 
-/* TABLE */
-.ski-table {
+.tool-table {
   width: 100%;
-  border-collapse: collapse;
-  min-width: 600px;
-  color: var(--text);
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--text-color);
+  min-width: 540px;
 }
 
-.ski-table thead {
-  background: var(--bg-2);
-}
-
-.ski-table th,
-.ski-table td {
-  padding: 12px 14px;
+.tool-table th,
+.tool-table td {
+  padding: 0.86rem 1rem;
   text-align: left;
-  font-size: 0.95rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-color);
 }
 
-.ski-resort-name {
-  font-weight: 600;
+.tool-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: color-mix(in srgb, var(--card-bg) 92%, var(--bg-color) 8%);
+  color: var(--text-color);
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
-.last-updated {
-  color: var(--text);
-  font-size: 0.9rem;
-  margin-bottom: 12px;
-  padding-left: 4px;
-  opacity: 1;
+.tool-table td {
+  font-size: 0.98rem;
 }
 
-.placeholder {
-  color: var(--text-muted);
+.tool-table tbody tr:hover {
+  background: color-mix(in srgb, var(--accent-color) 8%, transparent);
 }
 
-.ski-table tbody tr:hover {
-  background: var(--bg-2);
-  cursor: pointer;
-  transition: background 0.15s;
+.tool-table tbody tr:focus-within {
+  outline: 2px solid color-mix(in srgb, var(--accent-color) 45%, transparent);
+  outline-offset: -2px;
+}
+
+.tool-table tbody tr:last-child td {
+  border-bottom: 0;
 }
 
 .resort-link {
-  font-weight: 600;
-  color: var(--text);
-  text-decoration: underline;
+  color: var(--text-color);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.resort-link:hover,
+.resort-link:focus-visible {
+  color: var(--accent-color);
+  border-color: color-mix(in srgb, var(--accent-color) 40%, transparent);
+  outline: none;
 }
 
 .resort-link.disabled {
-  color: var(--text-muted);
-  text-decoration: none;
+  color: var(--muted-text);
+  font-weight: 600;
   pointer-events: none;
 }
 
-.ski-note {
-  font-size: 0.9rem;
-  margin-bottom: 12px;
-  color: var(--text-muted);
-}
-
-tr {
-  border-radius: 6px;
-}
-tr:hover {
-  background: var(--bg-2);
-  transform: translateY(-1px);
-}
-
 .snow-icon {
+  margin-left: 0.2rem;
   opacity: 0.8;
-  margin-left: 4px;
 }
 
 .snow-alert {
-  color: #ff6666;
-  font-weight: 600;
+  font-weight: 700;
+  color: color-mix(in srgb, #d04444 78%, var(--text-color) 22%);
 }
 
-/* Mobile adjustments */
-@media (max-width: 600px) {
-  .ski-table th,
-  .ski-table td {
-    padding: 8px;
-    font-size: 0.85rem;
+@media (max-width: 720px) {
+  .tool-page {
+    padding: 1.35rem 0.8rem 2.5rem;
   }
 
-  .ski-table {
-    min-width: 100%;
+  .mst-controls-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
 
-  .ski-table-container {
-    margin-top: 12px;
+  .mst-filter {
+    width: 100%;
+    max-width: none;
   }
 
-  .ski-wrapper {
-    padding: 16px;
+  .mst-updated {
+    margin: 0;
+    white-space: normal;
+  }
+
+  .tool-table {
+    min-width: 480px;
+  }
+
+  .tool-table th,
+  .tool-table td {
+    padding: 0.8rem 0.85rem;
   }
 }
