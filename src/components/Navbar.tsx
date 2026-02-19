@@ -59,18 +59,19 @@ const Navbar = () => {
         />
       </Link>
       <button
-        className="hamburger"
+        className={`hamburger ${menuOpen ? "is-open" : ""}`}
         onClick={() => setMenuOpen((prev) => !prev)}
-        aria-label="Toggle navigation menu"
+        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={menuOpen}
+        aria-controls="mobile-navigation-menu"
       >
-        ☰
+        <span className="hamburger-icon" aria-hidden="true">
+          <span className="hamburger-line" />
+          <span className="hamburger-line" />
+          <span className="hamburger-line" />
+        </span>
       </button>
-      <ul className={menuOpen ? "open" : ""}>
-        <li>
-          <NavLink to="/" onClick={() => setMenuOpen(false)}>
-            Start Here
-          </NavLink>
-        </li>
+      <ul id="mobile-navigation-menu" className={menuOpen ? "open" : ""}>
         <li>
           <NavLink to="/guides" onClick={() => setMenuOpen(false)}>
             Guides

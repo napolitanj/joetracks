@@ -26,6 +26,14 @@
   font-size: 1.2em;
 }
 
+.home-subhead + .home-subhead {
+  margin-top: 0.9rem;
+}
+
+.home-subhead--mt {
+  margin-top: 0.75rem;
+}
+
 .home-start-cta {
   display: flex;
   flex-direction: row;
@@ -163,6 +171,22 @@
   line-height: 1.55;
 }
 
+.guide-card-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 0.8rem;
+  border: 1px solid var(--border-color);
+}
+
+.guide-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .home-card-image {
   width: 100%;
   aspect-ratio: 3 / 2; /* clean, versatile ratio */
@@ -266,6 +290,16 @@
 .home-split-copy p {
   color: var(--muted-text);
   line-height: 1.65;
+}
+
+.home-offer-list {
+  margin: 0.8rem 0 1rem;
+  padding-left: 1.2rem;
+}
+
+.home-offer-list li {
+  font-size: 1.08rem;
+  line-height: 1.6;
 }
 
 .home-cta-final {

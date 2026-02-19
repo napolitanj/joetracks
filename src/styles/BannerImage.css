@@ -61,7 +61,7 @@
 }
 
 .banner-text .subheader {
-  font-size: clamp(0.98rem, 1.7vw, 1.1rem);
+  font-size: clamp(0.98rem, 1.7vw, 1.2rem);
   color: var(--muted-text, #2a2f33);
   line-height: 1.5;
   max-width: 52ch;
@@ -104,6 +104,10 @@
 
   .banner-cta {
     justify-content: center;
+  }
+
+  .banner-text .subheader {
+    font-size: 1.1em;
   }
 }
 

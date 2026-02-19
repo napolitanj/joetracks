@@ -36,7 +36,7 @@ function App() {
       <main className="route-content-wrapper">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/start-here" element={<Home />} />
+          <Route path="/start-here" element={<Navigate to="/" replace />} />
           <Route path="/about" element={<About />} />
           <Route path="/guides" element={<GuidesIndex />} />
           <Route path="/guides/:slug" element={<BlogPost />} />

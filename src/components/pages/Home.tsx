@@ -8,56 +8,46 @@ type CardItem = {
   description: string;
   href: string;
   cta: string;
-  icon?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 };
-
-const offers: CardItem[] = [
-  {
-    title: "Guides",
-    description:
-      "Detailed route and planning writeups built from real trips and field conditions.",
-    href: "/guides",
-    cta: "Browse Guides",
-    icon: "🧭",
-  },
-  {
-    title: "Tools",
-    description:
-      "Simple utilities that help you plan smarter before you commit to a route.",
-    href: "/tools",
-    cta: "See Tools",
-    icon: "🛠️",
-  },
-];
 
 const latestGuides: CardItem[] = [
   {
-    title: "North Manitou Island Guide",
+    title: "Backpacking North Manitou Island",
     description:
-      "Logistics, route planning, and backcountry travel notes for North Manitou.",
+      "A practical field guide covering logistics, hazards, route structure, and planning considerations.",
     href: "/north-manitou-island-guide",
-    cta: "Read",
+    cta: "Go Backpacking",
+    imageSrc: "/images/north-manitou/north-manitou-island.webp",
+    imageAlt: "Backpacker standing on North Manitou Island shoreline",
   },
   {
     title: "Remote Forecasting Tools",
     description:
-      "A field-tested workflow for evaluating snow and weather before your trip.",
+      "A technical trip-planning walkthrough for forecasting snow cover remotely.",
     href: "/remote-forecasting-tools",
-    cta: "Read",
+    cta: "Find the Best Snow",
+    imageSrc: "/images/remote-forecasting/google-snow-depth-overlay.webp",
+    imageAlt: "Snow depth overlay map used for remote forecasting",
   },
   {
-    title: "Mount Sneffels Guide",
+    title: "Mount Sneffels: Skiing the Snake Couloir",
     description:
-      "Detailed beta and practical planning notes for skiing the Snake Couloir.",
+      "Route beta, conditions, and planning notes for Mount Sneffels' Snake Couloir.",
     href: "/ski-mount-sneffels",
-    cta: "Read",
+    cta: "Go Skiing",
+    imageSrc: "/images/sneffels/Mount-sneffels-view.webp",
+    imageAlt: "Mount Sneffels viewed from the approach route",
   },
   {
-    title: "CalTopo Guide",
+    title: "How to Trip Plan with CalTopo",
     description:
-      "A plain-language walkthrough of layers, routing, and exporting maps.",
+      "Learn the core CalTopo workflow for map reading, route building, and trip planning.",
     href: "/caltopo-guide",
-    cta: "Read",
+    cta: "Plan Your Route",
+    imageSrc: "/images/caltopo/Caltopo-Mount-hood-stacked-layers2.png",
+    imageAlt: "CalTopo map with stacked planning layers",
   },
 ];
 
@@ -72,14 +62,15 @@ const Home = () => {
             <div className="home-split-copy">
               <h2>Plan Better Days Outside</h2>
               <p className="home-subhead">
-                JoeTracks is a practical resource hub built to simplify
-                real-world outdoor decision-making.
+                JoeTracks provides <strong>field-tested guides</strong> and{" "}
+                <strong>practical planning tools</strong> simplify real-world
+                outdoor decision-making — from access and logistics to
+                conditions and route choices.
               </p>
-              <br></br>
               <p className="home-subhead">
-                Whether you’re planning a paddle, hike, or winter outing, you’ll
-                find clear guidance, reliable tools, and field-tested
-                information designed to reduce guesswork and uncertainty.
+                While much of the content focuses on the Great Lakes region, the
+                underlying principles and systems are built to remain useful
+                anywhere you explore.
               </p>
               <div className="home-start-cta">
                 <Link to="/guides" className="home-btn home-btn-primary">
@@ -93,7 +84,7 @@ const Home = () => {
             <div className="home-split-media">
               <img
                 src="/images/Map-compass.png"
-                alt="wild edibles on a frisbee"
+                alt="Map and compass illustration"
               />
             </div>
           </div>
@@ -102,10 +93,11 @@ const Home = () => {
 
       <Reveal as="section" className="home-section" variant="up" delay={80}>
         <div className="home-container home-inner">
-          <h2>Start with a Guide or Use a Tool</h2>
+          <h2>Start Here</h2>
           <p className="home-subhead">
-            Two things live here right now: detailed field guides, and simple
-            planning tools you can use instantly in your browser.
+            New to JoeTracks? These are the fastest ways to understand how the
+            platform works — practical field guides and lightweight planning
+            tools you can use instantly in your browser.
           </p>
 
           <div className="home-grid home-grid-two">
@@ -121,19 +113,21 @@ const Home = () => {
               </figure>
 
               <div className="home-offer-body">
-                <h3>Field Guides</h3>
+                <h3>Digital Trip-Planning Guides</h3>
                 <p>
-                  Practical route writeups built from real trips — logistics,
-                  conditions, and the small details that make the day go
-                  smoothly.
+                  Clear, experience-driven guides built from real trips —
+                  focused on logistics, conditions, and the details that shape
+                  real-world outcomes.
                 </p>
 
                 <ul className="home-offer-list">
-                  <li>Approach + trailhead notes (parking, season, access)</li>
-                  <li>Route beta (key turns, hazards, timing)</li>
                   <li>
-                    Gear notes, lessons learned, and photos that match the text
+                    Approach & access notes (parking, season, entry points)
                   </li>
+                  <li>
+                    Route structure (key turns, hazards, timing considerations)
+                  </li>
+                  <li>Observations, lessons learned, and supporting visuals</li>
                 </ul>
 
                 <div className="home-start-cta">
@@ -158,16 +152,14 @@ const Home = () => {
               <div className="home-offer-body">
                 <h3>Planning Tools</h3>
                 <p>
-                  Lightweight utilities for quick decisions — built to reduce
-                  friction when you’re choosing where to go and when.
+                  Lightweight utilities designed to support faster, more
+                  confident decisions when choosing where to go and when.
                 </p>
 
                 <ul className="home-offer-list">
-                  <li>
-                    Compare conditions fast (snowfall, weather windows, timing)
-                  </li>
-                  <li>Make better calls before you commit to a route</li>
-                  <li>No accounts, no apps — just open and use</li>
+                  <li>Quickly determine where the best snow will fall</li>
+                  <li>Reduce uncertainty before committing to a route</li>
+                  <li>No accounts, no apps — open and use</li>
                 </ul>
 
                 <div className="home-start-cta">
@@ -181,105 +173,21 @@ const Home = () => {
         </div>
       </Reveal>
 
-      <Reveal
-        as="section"
-        className="home-section home-topo-band"
-        variant="up"
-        delay={240}
-      >
+      <Reveal as="section" className="home-section" variant="up" delay={160}>
         <div className="home-container home-inner">
-          <div className="home-topo-content">
-            <h2>
-              Built for people who want to get outside — even if they don't know
-              where to start.
-            </h2>
-            <p>
-              Whether you're planning weekend trips, ski tours, backpacking
-              routes, or just trying to avoid dumb mistakes, these guides and
-              tools are designed for real-world use — not fantasy expeditions or
-              gear obsession.
-            </p>
-            <br></br>
-            <p>Clear information. Practical systems. Better days outside.</p>
-            <Link to="/guides" className="home-btn home-btn-primary">
-              Browse Guides
-            </Link>
-          </div>
-        </div>
-      </Reveal>
-
-      <Reveal as="section" className="home-section" variant="up" delay={320}>
-        <div className="home-container home-inner">
-          <h2>How to Use This Site</h2>
-          <div className="home-grid home-grid-three">
-            <article className="home-card">
-              <div className="home-card-icon" aria-hidden="true">
-                1.
-              </div>
-              <h3>Pick a Guide</h3>
-              <p>
-                Start with a route page to understand terrain and logistics.
-              </p>
-            </article>
-            <article className="home-card">
-              <div className="home-card-icon" aria-hidden="true">
-                2.
-              </div>
-              <h3>Use a Tool</h3>
-              <p>
-                Check weather and snow signals so your plan matches conditions.
-              </p>
-            </article>
-            <article className="home-card">
-              <div className="home-card-icon" aria-hidden="true">
-                3.
-              </div>
-              <h3>Go Outside</h3>
-              <p>
-                Take a simple, informed plan into the field and adapt as needed.
-              </p>
-            </article>
-          </div>
-        </div>
-      </Reveal>
-
-      <Reveal as="section" className="home-section" variant="up" delay={400}>
-        <div className="home-container home-inner">
-          <div className="home-split">
-            <div className="home-split-media">
-              <img
-                src="/images/Frisbee-Dinner.png"
-                alt="wild edibles on a frisbee"
-              />
-            </div>
-            <div className="home-split-copy">
-              <h2>Built for real planning, not content overload</h2>
-              <p>
-                JoeTracks is focused on one outcome: help people build outdoor
-                confidence and competence through clear guidance. The emphasis
-                is Great Lakes adventure planning with practical systems you can
-                use right away.
-              </p>
-            </div>
-          </div>
-        </div>
-      </Reveal>
-
-      <Reveal as="section" className="home-section" variant="up" delay={480}>
-        <div className="home-container home-inner home-cta-final">
-          <h2>Have a question or want to collaborate?</h2>
-          <Link to="/contact" className="home-btn home-btn-primary">
-            Contact
-          </Link>
-        </div>
-      </Reveal>
-
-      <Reveal as="section" className="home-section" variant="up" delay={560}>
-        <div className="home-container home-inner">
-          <h2>Latest Guides</h2>
+          <h2>Featured Guides</h2>
           <div className="home-grid home-grid-guides">
             {latestGuides.map((item) => (
               <article key={item.href} className="home-card">
+                {item.imageSrc && (
+                  <Link to={item.href} className="guide-card-media">
+                    <img
+                      src={item.imageSrc}
+                      alt={item.imageAlt ?? item.title}
+                      loading="lazy"
+                    />
+                  </Link>
+                )}
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
                 <Link to={item.href} className="home-card-link">
@@ -288,6 +196,95 @@ const Home = () => {
               </article>
             ))}
           </div>
+        </div>
+      </Reveal>
+
+      <Reveal
+        as="section"
+        className="home-section home-topo-band"
+        variant="up"
+        delay={240}
+      >
+        <div className="home-container home-inner">
+          <div className="home-topo-content">
+            <h2>Getting outside shouldn’t feel complicated.</h2>
+            <p>
+              JoeTracks is designed to reduce the friction that keeps people
+              indoors — unclear information, scattered resources, and
+              unnecessary complexity.
+            </p>
+            <p>
+              Whether you’re just getting started or refining existing skills,
+              the goal remains the same: clearer decisions, better judgment, and
+              more enjoyable days outside.
+            </p>
+            <p>
+              Clear information. Proven systems. Real-world usefulness — in the
+              Great Lakes and beyond.
+            </p>
+
+            <div className="home-start-cta">
+              <Link to="/guides" className="home-btn home-btn-primary">
+                Browse Guides
+              </Link>
+              <Link to="/tools" className="home-btn home-btn-secondary">
+                See Tools
+              </Link>
+            </div>
+          </div>
+        </div>
+      </Reveal>
+
+      <Reveal as="section" className="home-section" variant="up" delay={320}>
+        <div className="home-container home-inner">
+          <div className="home-split">
+            <div className="home-split-copy">
+              <h2>What’s next</h2>
+              <p className="home-subhead">
+                JoeTracks is continuously expanding with new guides, tools, and
+                planning resources designed to simplify real-world outdoor
+                decisions.
+              </p>
+
+              <ul className="home-offer-list">
+                <li>Hiking, biking, and backpacking destinations</li>
+                <li>River paddling routes (access, shuttles, logistics)</li>
+                <li>Beginner-friendly “how to start” resources</li>
+              </ul>
+
+              {/* Newsletter CTA (use a Link for now; swap to a real form later) */}
+              <div className="home-start-cta">
+                <Link to="/contact" className="home-btn home-btn-primary">
+                  Get Updates
+                </Link>
+                <Link to="/guides" className="home-btn home-btn-secondary">
+                  Browse Live Guides
+                </Link>
+              </div>
+
+              <p className="home-subhead home-subhead--mt">
+                No spam — just new guides, tools, and useful planning resources
+                as they’re released.
+              </p>
+            </div>
+
+            <div className="home-split-media">
+              <img
+                src="/images/manitou-island-backpacking-docks.png"
+                alt="Backpackers waiting for the Manitou Island Ferry"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </Reveal>
+
+      <Reveal as="section" className="home-section" variant="up" delay={400}>
+        <div className="home-container home-inner home-cta-final">
+          <h2>Have feedback, questions or want to collaborate?</h2>
+          <Link to="/contact" className="home-btn home-btn-primary">
+            Contact
+          </Link>
         </div>
       </Reveal>
     </>

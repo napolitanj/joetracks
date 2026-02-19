@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../../styles/MichiganSkiTracker.css";
 import { RESORTS } from "../../data/michiganResorts";
+import SEO from "../SEO";
 
 const REGIONS = [
   "All Regions",
@@ -64,7 +65,49 @@ export default function MichiganSkiTracker() {
   }
 
   return (
-    <div className="ski-wrapper">
+    <>
+      <SEO
+        title="Michigan Ski Tracker | JoeTracks"
+        description="Live Michigan ski resort snowfall and weather tracker powered by NOAA forecasts to support better Great Lakes trip planning."
+        canonical="https://joetracks.com/michigan-ski-tracker"
+        image="https://joetracks.com/images/ski-tracker-preview.png"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Michigan Ski Tracker",
+            description:
+              "Live Michigan ski resort snowfall and weather tracker powered by NOAA forecasts.",
+            url: "https://joetracks.com/michigan-ski-tracker",
+            image: "https://joetracks.com/images/ski-tracker-preview.png",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "Michigan Ski Tracker",
+            applicationCategory: "SportsApplication",
+            operatingSystem: "Web",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+            url: "https://joetracks.com/michigan-ski-tracker",
+            image: "https://joetracks.com/images/ski-tracker-preview.png",
+            author: {
+              "@type": "Person",
+              name: "Joe Napolitan",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "JoeTracks",
+            },
+            // TODO: replace with a dedicated 1200x630 OG image for richer social previews.
+          },
+        ]}
+      />
+      <div className="ski-wrapper">
+        <h1>Michigan Ski Tracker</h1>
       {/* ----- REGION FILTER UI ----- */}
       <div className="region-controls">
         <label>
@@ -118,7 +161,7 @@ export default function MichiganSkiTracker() {
                       className="resort-link"
                       href={fc.links?.nwsPage}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                     >
                       {resort.name}
                     </a>
@@ -138,6 +181,7 @@ export default function MichiganSkiTracker() {
           </tbody>
         </table>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

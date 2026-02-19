@@ -103,6 +103,9 @@ body.dark .contact-link-card img[src*="linkedin"] {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  width: 100%;
+  max-width: none;
+  align-self: stretch;
 }
 
 .contact-form label {
