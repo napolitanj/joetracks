@@ -212,11 +212,30 @@
   }
 
   .tool-table {
-    min-width: 480px;
+    min-width: 30em;
   }
 
   .tool-table th,
   .tool-table td {
     padding: 0.8rem 0.85rem;
+  }
+}
+
+@media (max-width: 555px) {
+  .tool-page {
+    padding: 0em;
+  }
+
+  .tool-hero {
+    padding: 0rem 0.8rem 0rem;
+  }
+
+  .tool-results-card,
+  .tool-hero-inner {
+    width: 100%;
+  }
+
+  .tool-table {
+    min-width: 20em;
   }
 }

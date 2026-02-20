@@ -1,49 +1,235 @@
-.stats-link {
-  font-size: 1.5em;
-}
-
-.sneffels-bg {
+.sneffels-guide .sneffels-bg {
   background-image: url("/images/sneffels/Mount-sneffels-view.webp");
 }
 
-.sneffels-intro {
-  background: #fff;
-  color: #1a1a1a;
-  margin: 0 auto;
-  gap: 2em;
+.sneffels-guide .sneffels-hero {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
 }
 
-.intro-image-wrapper {
+.sneffels-guide .sneffels-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 18, 27, 0.62) 0%,
+    rgba(7, 18, 27, 0.42) 44%,
+    rgba(7, 18, 27, 0.68) 100%
+  );
+  z-index: 0;
+}
+
+.sneffels-guide .sneffels-hero .hero-text {
+  position: relative;
+  z-index: 1;
+  width: min(72rem, 92%);
+  margin: 0 auto;
+  text-align: center;
+  color: #f6f8f9;
+}
+
+.sneffels-guide .sneffels-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  max-width: 22ch;
+  margin: 0 auto;
+  text-shadow: 0 0.1rem 0.75rem rgba(0, 0, 0, 0.42);
+}
+
+.sneffels-guide .content-wrapper {
+  max-width: min(70rem, 94%);
+  margin: 0 auto;
+}
+
+.sneffels-guide .sneffels-intro {
+  gap: clamp(1rem, 2.2vw, 2rem);
+  align-items: center;
+}
+
+.sneffels-guide .intro-image-wrapper {
   position: relative;
   overflow: hidden;
 }
 
-.intro-image {
+.sneffels-guide .intro-image {
   display: block;
   object-fit: cover;
   width: 100%;
-  height: 100%;
-  object-position: 43.235924130394345% 82.14285714285714%;
+  height: auto;
 }
 
-.image-caption {
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 0.5rem;
+.sneffels-guide h2 {
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
+  line-height: 1.2;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
 }
 
-.intro-text {
-  flex: 1 1 500px;
-  font-size: 1rem;
-  line-height: 1.6;
+.sneffels-guide h3 {
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  line-height: 1.3;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
 }
 
-.intro-text p {
-  margin-bottom: 1.5rem;
+.sneffels-guide h4 {
+  font-size: clamp(1.08rem, 1.8vw, 1.25rem);
+  line-height: 1.3;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
 }
 
-.link-block a {
-  color: #3f5fa9;
+.sneffels-guide p,
+.sneffels-guide li {
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+.sneffels-guide .section-half > p,
+.sneffels-guide .section-half li p,
+.sneffels-guide figcaption p,
+.sneffels-guide .intro-text p {
+  max-width: 70ch;
+}
+
+.sneffels-guide .intro-text p {
+  margin-bottom: 1.2rem;
+}
+
+.sneffels-guide .sneffels-top-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.sneffels-guide .sneffels-quick-nav {
+  margin: 0;
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.9rem;
+  padding: 0.85rem 0.95rem;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.sneffels-guide .sneffels-quick-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.25rem;
+  border-bottom: 0.0625rem solid
+    color-mix(in srgb, var(--accent-color) 30%, transparent);
+  color: var(--accent-color);
+  text-decoration: none;
   font-weight: 600;
-  text-decoration: underline;
+}
+
+.sneffels-guide .sneffels-quick-nav a:hover,
+.sneffels-guide .sneffels-quick-nav a:focus-visible {
+  color: var(--text-color);
+  border-bottom-color: color-mix(in srgb, var(--text-color) 40%, transparent);
+  outline: none;
+}
+
+.sneffels-guide .stats-link {
+  display: inline-flex;
+  align-items: center;
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 999rem;
+  padding: 0.35rem 0.72rem;
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0.2rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+.sneffels-guide .stats-link:hover,
+.sneffels-guide .stats-link:focus-visible {
+  color: var(--accent-color);
+  border-color: color-mix(in srgb, var(--accent-color) 45%, transparent);
+  outline: none;
+}
+
+.sneffels-guide .section-half img,
+.sneffels-guide figure > img,
+.sneffels-guide .image-shape-container-element img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+  border: 0.0625rem solid var(--border-color);
+  display: block;
+}
+
+.sneffels-guide figcaption,
+.sneffels-guide .image-caption {
+  margin-top: 0.45rem;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+.sneffels-guide .section-divider,
+.sneffels-guide .block.horizontalrule-block hr,
+.sneffels-guide .block-content hr {
+  border: 0;
+  border-top: 0.0625rem solid var(--border-color);
+  margin: 1.25rem 0;
+}
+
+.sneffels-guide .link-block a {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.sneffels-guide a:focus-visible {
+  outline: 0.125rem solid
+    color-mix(in srgb, var(--accent-color) 45%, transparent);
+  outline-offset: 0.125rem;
+}
+
+.sneffels-guide iframe {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .sneffels-guide .sneffels-hero {
+    min-height: clamp(16rem, 42vh, 24rem);
+  }
+
+  .sneffels-guide .dis-row {
+    flex-direction: column;
+  }
+
+  .sneffels-guide .section-half {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sneffels-guide .sneffels-hero {
+    min-height: clamp(14rem, 36vh, 19rem);
+  }
+
+  .sneffels-guide .sneffels-hero .hero-text {
+    width: min(72rem, 94%);
+  }
+
+  .sneffels-guide .sneffels-intro {
+    gap: 1rem;
+  }
 }

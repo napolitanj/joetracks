@@ -52,64 +52,138 @@ const NorthManitouGuide = () => {
               "https://joetracks.com/north-manitou-island-guide",
             // TODO: add datePublished and dateModified when canonical source dates are finalized.
           },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://joetracks.com/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Guides",
+                item: "https://joetracks.com/guides",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "North Manitou Island Backpacking Guide",
+                item: "https://joetracks.com/north-manitou-island-guide",
+              },
+            ],
+          },
         ]}
       />
 
-      <div className="guide">
+      <div className="guide manitou-guide">
         <main className="container" id="page" role="main">
           <article className="sections">
-            <Reveal delay={0}>
-              <section className="hero manitou-bg">
-                <div className="hero-text">
-                  <h1 className={animate ? "animate" : ""}>
-                    How to Plan a Backpacking Trip to North Manitou Island
-                  </h1>
-                </div>
-              </section>
-            </Reveal>
+            <section className="hero manitou-bg manitou-hero">
+              <div className="hero-text">
+                <h1 className={animate ? "animate" : ""}>
+                  How to Plan a Backpacking Trip to North Manitou Island
+                </h1>
+                <p className="manitou-hero-subtitle">
+                  Ferry logistics, route planning, hazards, and practical field
+                  notes for a confident North Manitou Island trip.
+                </p>
+              </div>
+            </section>
+
+            <section className="content-wrapper manitou-top-meta">
+              <a
+                href="https://manitoutransit.com/rates-schedule/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {" "}
+                <p className="alert-text">
+                  NOTICE: THE SLEEPING BEAR DUNES NATIONAL PARK SERVICE HAS
+                  CLOSED BOTH SOUTH AND NORTH MANITOU ISLANDS DOCKS FOR THE
+                  WHOLE 2026 SEASON. MANITOU ISLAND TRANSIT WILL NOT BE
+                  OPERATING
+                </p>{" "}
+              </a>
+              <hr className="section-divider" />
+              <nav className="manitou-quick-nav" aria-label="Quick navigation">
+                <h2>Quick Nav</h2>
+                <ul>
+                  <li>
+                    <a href="#essential-information">Essential information</a>
+                  </li>
+                  <li>
+                    <a href="#hazards">Hazards</a>
+                  </li>
+                  <li>
+                    <a href="#packing-list">Packing list</a>
+                  </li>
+                  <li>
+                    <a href="#ferry-passage">Ferry passage</a>
+                  </li>
+                  <li>
+                    <a href="#permits-and-fees">Permits and fees</a>
+                  </li>
+                  <li>
+                    <a href="#what-to-do">What to do</a>
+                  </li>
+                  <li>
+                    <a href="#planning-your-route">Map and route planning</a>
+                  </li>
+                </ul>
+              </nav>
+            </section>
+
             <Reveal variant="up" delay={80}>
               <section className="content-wrapper dis-col">
-              <div className="dis-row g-2">
-                <div className="section-half">
-                  <h2>What is North Manitou Island?</h2>
-                  <p>
-                    North Manitou Island is a part of the Sleeping Bear Dunes
-                    National Lakeshore and is located roughly 10 miles west of
-                    the small fishing town of Leland, which is about a 40-minute
-                    drive from Traverse City. The last settlements on North
-                    Manitou Island were abandoned over a century ago, leaving
-                    the island devoid of human civilization aside from the small
-                    village on the eastern shore where park rangers reside.
-                  </p>
-                  <p>
-                    Aside from its pristine natural beauty and Caribbean-colored
-                    water, camping on North Manitou Island offers visitors
-                    established trail systems and diverse terrain that beckons
-                    hikers of all skill levels. With 21 miles of shoreline and a
-                    total landmass of just over 22 square miles, backpacking
-                    North Manitou Island offers some of the most remote yet
-                    accessible wilderness in the Great Lakes Region.
-                  </p>
+                <div className="dis-row g-2">
+                  <div className="section-half">
+                    <h2>What is North Manitou Island?</h2>
+                    <p>
+                      North Manitou Island is a part of the Sleeping Bear Dunes
+                      National Lakeshore and is located roughly 10 miles west of
+                      the small fishing town of Leland, which is about a
+                      40-minute drive from Traverse City. The last settlements
+                      on North Manitou Island were abandoned over a century ago,
+                      leaving the island devoid of human civilization aside from
+                      the small village on the eastern shore where park rangers
+                      reside.
+                    </p>
+                    <p>
+                      Aside from its pristine natural beauty and
+                      Caribbean-colored water, camping on North Manitou Island
+                      offers visitors established trail systems and diverse
+                      terrain that beckons hikers of all skill levels. With 21
+                      miles of shoreline and a total landmass of just over 22
+                      square miles, backpacking North Manitou Island offers some
+                      of the most remote yet accessible wilderness in the Great
+                      Lakes Region.
+                    </p>
+                  </div>
+                  <div className="section-half">
+                    <figure>
+                      <img
+                        src={`${
+                          import.meta.env.BASE_URL
+                        }images/north-manitou/north-manitou-island.webp`}
+                        alt="North Manitou Island West Shore"
+                        className="intro-image"
+                      />
+                      <figcaption>
+                        <p>
+                          The Island’s west shore offers pristine beaches,
+                          massive dunes, spectacular sunsets and incredible
+                          stargazing.
+                        </p>
+                      </figcaption>
+                    </figure>
+                  </div>
                 </div>
-                <div className="section-half">
-                  <figure>
-                    <img
-                      src={`${
-                        import.meta.env.BASE_URL
-                      }images/north-manitou/north-manitou-island.webp`}
-                      alt="North Manitou Island West Shore"
-                      className="intro-image"
-                    />
-                    <figcaption>
-                      <p>
-                        The Island’s west shore offers pristine beaches, massive
-                        dunes, spectacular sunsets and incredible stargazing.
-                      </p>
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-              <hr className="section-divider" />
+
+                <hr className="section-divider" />
               </section>
             </Reveal>
             <div className="content-wrapper">
@@ -125,47 +199,53 @@ const NorthManitouGuide = () => {
                   </figure>
                 </div>
                 <div className="section-half">
-                  <h4>Our North Manitou Island backpacking guide includes…</h4>
+                  <h3>Our North Manitou Island backpacking guide includes…</h3>
 
                   {/* Need hyperlinking via bookmarks added */}
                   <ul>
                     <li>
                       <p>
-                        <a>Essential information.</a>
+                        <a href="#essential-information">
+                          Essential information.
+                        </a>
                       </p>
                     </li>
                     <li>
                       <p>
-                        <a>Hazards you’ll encounter.</a>
+                        <a href="#hazards">Hazards you’ll encounter.</a>
                       </p>
                     </li>
                     <li>
                       <p>
-                        <a>North Manitou Island Packing List.</a>
+                        <a href="#packing-list">
+                          North Manitou Island Packing List.
+                        </a>
                       </p>
                     </li>
                     <li>
                       <p>
-                        <a>
+                        <a href="#ferry-passage">
                           Booking passage on the North Manitou Island Ferry.
                         </a>
                       </p>
                     </li>
                     <li>
                       <p>
-                        <a>
+                        <a href="#permits-and-fees">
                           North Manitou Island Camping permits and entrance fee.
                         </a>
                       </p>
                     </li>
                     <li>
                       <p>
-                        <a>What to do on North Manitou Island.</a>
+                        <a href="#what-to-do">
+                          What to do on North Manitou Island.
+                        </a>
                       </p>
                     </li>
                     <li>
                       <p>
-                        <a>
+                        <a href="#planning-your-route">
                           North Manitou Island Map and details on planning your
                           route.
                         </a>
@@ -180,7 +260,7 @@ const NorthManitouGuide = () => {
               <Reveal as="section" variant="up" delay={140}>
                 <div id="dis-col">
                   <div className="section-header">
-                    <h2>
+                    <h2 id="essential-information">
                       Essential Information for Visiting North Manitou Island
                     </h2>
                   </div>
@@ -219,7 +299,8 @@ const NorthManitouGuide = () => {
                               A complete understanding of&nbsp;
                               <a
                                 href="https://lnt.org/why/7-principles/"
-                                target="_blank" rel="noopener noreferrer"
+                                target="_blank"
+                                rel="noopener noreferrer"
                               >
                                 Leave No Trace (LNT
                               </a>
@@ -235,7 +316,8 @@ const NorthManitouGuide = () => {
                             <p>
                               <a
                                 href="https://backcountrynorth.com/"
-                                target="_blank" rel="noopener noreferrer"
+                                target="_blank"
+                                rel="noopener noreferrer"
                               >
                                 The gear to do it<em>.</em>
                               </a>
@@ -262,7 +344,7 @@ const NorthManitouGuide = () => {
                       <hr className="section-divider" />
                     </div>
                     <div>
-                      <h3>Hazards on North Manitou Island</h3>
+                      <h3 id="hazards">Hazards on North Manitou Island</h3>
                       <p>
                         Most outdoor enthusiasts will probably find the island's
                         topography, flora, and fauna very forgiving. There are
@@ -307,7 +389,11 @@ const NorthManitouGuide = () => {
                         </li>
                         <li>
                           <p>
-                            <a>
+                            <a
+                              href="https://americanhiking.org/ticks/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <strong>Ticks</strong>
                             </a>
                             <strong>. </strong>These tiny insects can cause Lyme
@@ -320,7 +406,11 @@ const NorthManitouGuide = () => {
                         </li>
                         <li>
                           <p>
-                            <a>
+                            <a
+                              href="https://www.massaudubon.org/nature-wildlife/plants/poison-ivy"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <strong>Poison Ivy</strong>
                             </a>
                             <strong>. </strong>Know how to identify it and wear
@@ -390,7 +480,9 @@ const NorthManitouGuide = () => {
                     </div>
                     <div>
                       <div>
-                        <h3>North Manitou Island Packing List</h3>
+                        <h3 id="packing-list">
+                          North Manitou Island Packing List
+                        </h3>
                         <p>
                           Everyone has their own style. In addition to what you
                           bring to eat, here’s our recommended packing list:
@@ -401,9 +493,12 @@ const NorthManitouGuide = () => {
                         <ul>
                           <li>
                             <p>
-                              <a>
-                                Backpack that fits everything you need (40+
-                                liters)
+                              <a
+                                href="https://www.osprey.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                Backpack (40+ liters recommended)
                               </a>
                             </p>
                           </li>
@@ -441,8 +536,8 @@ const NorthManitouGuide = () => {
                           </li>
                           <li>
                             <p>
-                              Water filter, <a>Aquamira</a>, Iodine tablets, or
-                              other purification
+                              Water filter, Aquamira, Iodine tablets, or other
+                              purification
                             </p>
                           </li>
                           <li>
@@ -467,12 +562,20 @@ const NorthManitouGuide = () => {
                           </li>
                         </ul>
                         <p>
-                          <strong>Clothing</strong>
+                          <strong>
+                            Clothing (may vary depending on the month)
+                          </strong>
                         </p>
                         <ul>
                           <li>
                             <p>
-                              <a>Hiking shoes/boots</a>
+                              <a
+                                href="https://www.fleetfeet.com/s/traversecity?srsltid=AfmBOoovF2cdhLD-TbyN3tgq3JJsKGL3IRUSVzKNLCrIu66CZletJTG_"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                Hiking shoes/boots
+                              </a>
                             </p>
                           </li>
                           <li>
@@ -493,7 +596,7 @@ const NorthManitouGuide = () => {
                             </p>
                           </li>
                           <li>
-                            <p>Rain jacket + rain pants</p>
+                            <p>Rain jacket or poncho</p>
                           </li>
                           <li>
                             <p>Non-cotton hiking pants</p>
@@ -584,11 +687,17 @@ const NorthManitouGuide = () => {
                     />
                   </figure>
                   <div className="section-half">
-                    <h3>Book Passage on the North Manitou Island Ferry</h3>
+                    <h3 id="ferry-passage">
+                      Book Passage on the North Manitou Island Ferry
+                    </h3>
                     <p>
                       Before making any other plans, make sure you can
                       book&nbsp;
-                      <a href="https://manitoutransit.com/" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://manitoutransit.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Manitou Island Transit
                       </a>
                       &nbsp; tickets to and from the island on the days you wish
@@ -613,7 +722,8 @@ const NorthManitouGuide = () => {
                     <p>
                       <a
                         href="https://manitoutransit.com/rates-schedule/"
-                        target="_blank" rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         Click here to see the ferry schedule and book tickets.
                       </a>
@@ -623,14 +733,17 @@ const NorthManitouGuide = () => {
                 <div className="vrt-spc"></div>
                 <div className="dis-row g-2">
                   <div className="section-half">
-                    <h3>North Manitou Island Permits and Entrance Fee</h3>
+                    <h3 id="permits-and-fees">
+                      North Manitou Island Permits and Entrance Fee
+                    </h3>
                     <p>
                       You will pay for your permits and entrance fee upon
                       arriving at the Manitou Island Transit Ticket Office. If
                       you possess an&nbsp;
                       <a
                         href="https://www.nps.gov/planyourvisit/passes.htm"
-                        target="_blank" rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         NPS America the Beautiful Annual Pass
                       </a>
@@ -679,7 +792,8 @@ const NorthManitouGuide = () => {
                           between M-22 and Lake Michigan.&nbsp;
                           <a
                             href="https://www.villagecheeseshanty.com/"
-                            target="_blank" rel="noopener noreferrer"
+                            target="_blank"
+                            rel="noopener noreferrer"
                           >
                             The Village Cheese Shanty
                           </a>
@@ -696,7 +810,8 @@ const NorthManitouGuide = () => {
                       <p>
                         <a
                           href="https://maps.app.goo.gl/X9UEGV8wREY3KEBdA"
-                          target="_blank" rel="noopener noreferrer"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           Here is a Google Maps pin for the location of the
                           Manitou Island Transit office.
@@ -716,7 +831,8 @@ const NorthManitouGuide = () => {
                         the{" "}
                         <a
                           href="https://maps.app.goo.gl/vKevyf4rwznDyMEw6"
-                          target="_blank" rel="noopener noreferrer"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           Leland Fire Department
                         </a>
@@ -773,7 +889,7 @@ const NorthManitouGuide = () => {
               <div className="dis-row g-2">
                 <div className="dis-col section-half">
                   <div>
-                    <h3>Arriving at the Island</h3>
+                    <h3 id="what-to-do">Arriving at the Island</h3>
                     <p>
                       Once you have your gear, head to the village for the
                       ranger orientation. There, you’ll find a composting privy
@@ -800,7 +916,7 @@ const NorthManitouGuide = () => {
                       already seen significant impact from previous campers is
                       always better than trampling down a new campsite.
                     </p>
-                    <h3>Planning Your Route</h3>
+                    <h3 id="planning-your-route">Planning Your Route</h3>
                     <p>
                       We’ve generated a high-resolution, shaded topographic
                       North Manitou Island hiking map. Click the image to open
@@ -810,7 +926,8 @@ const NorthManitouGuide = () => {
                       find {""}
                       <a
                         href="https://www.nps.gov/slbe/planyourvisit/north-manitou-island-map.htm"
-                        target="_blank" rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         here
                       </a>
@@ -819,21 +936,31 @@ const NorthManitouGuide = () => {
                     <p>
                       Whether you’re new to backpacking or experienced, we
                       highly recommend checking out our guide on {""}
-                      <a>how to use CalTopo to plan a route</a>. It’s a great
-                      way to head to the island with a well-constructed plan
-                      about how much distance and elevation you’ll be hiking
-                      each day.
+                      <a href="/caltopo-guide">
+                        how to use CalTopo to plan a route
+                      </a>
+                      . It’s a great way to head to the island with a
+                      well-constructed plan about how much distance and
+                      elevation you’ll be hiking each day.
                     </p>
                   </div>
                   <div className="vrt-spc"></div>
                   <div className="button-container">
-                    <a className="button"> Plan Your Hike </a>
+                    <a className="button" href="/caltopo-guide">
+                      {" "}
+                      Plan Your Hike{" "}
+                    </a>
                   </div>
                 </div>
                 <div className="section-half cnt">
                   <figure id="yui_3_17_2_1_1753204324355_187">
                     {/* Need hyperlinking to big map */}
-                    <a id="yui_3_17_2_1_1753204324355_186">
+                    <a
+                      id="yui_3_17_2_1_1753204324355_186"
+                      href={`${import.meta.env.BASE_URL}images/north-manitou/North-manitou-island-topo-map.webp`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <img
                         src={`${
                           import.meta.env.BASE_URL
@@ -856,12 +983,20 @@ const NorthManitouGuide = () => {
                   For me, the journey home is as much a part of every trip to
                   Manitou as the Island itself. If time allows (it is only open
                   7 a.m. - 3 p.m.), {""}
-                  <a href="https://www.9beanrows.com/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://www.9beanrows.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     9 Bean Rows
                   </a>{" "}
                   on the way to Sutton's Bar serves incredible wood-fired Pizza.{" "}
                   {""}
-                  <a href="https://hoplotbrewing.com/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://hoplotbrewing.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Hop Lot Brewing Company
                   </a>{" "}
                   in Sutton's Bay offers craft beer, barbeque, and the best beer

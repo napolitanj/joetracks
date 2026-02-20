@@ -29,7 +29,9 @@ const Footer = () => {
 
         <div className="site-footer-bottom">
           <nav className="site-footer-col" aria-label="Guides">
-            <h2>Guides</h2>
+            <h2>
+              <Link to="/guides">Guides</Link>
+            </h2>
             <Link to="/north-manitou-island-guide">North Manitou Island</Link>
             <Link to="/ski-mount-sneffels">Skiing Mount Sneffels</Link>
             <Link to="/caltopo-guide">How to Use CalTopo</Link>
@@ -37,13 +39,16 @@ const Footer = () => {
           </nav>
 
           <nav className="site-footer-col" aria-label="Tools">
-            <h2>Tools</h2>
+            <h2>
+              <Link to="/tools">Tools</Link>
+            </h2>
             <Link to="/michigan-ski-tracker">Michigan Ski Tracker</Link>
           </nav>
 
           <nav className="site-footer-col" aria-label="Portfolio">
-            <h2>About</h2>
-            <Link to="/about">About</Link>
+            <h2>
+              <Link to="/about">About</Link>
+            </h2>
             <Link to="/portfolio">Portfolio</Link>
             <Link to="/contact">Contact</Link>
           </nav>

@@ -1,30 +1,199 @@
-.caltopo-bg {
+.caltopo-guide .caltopo-bg {
   background-image: url("/images/caltopo/pictured+rocks.webp");
 }
 
-.image-swap-container {
+.caltopo-guide .caltopo-hero {
   position: relative;
-  display: inline-block;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
 }
 
-.image-swap-container img {
+.caltopo-guide .caltopo-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 18, 27, 0.62) 0%,
+    rgba(7, 18, 27, 0.42) 44%,
+    rgba(7, 18, 27, 0.68) 100%
+  );
+  z-index: 0;
+}
+
+.caltopo-guide .caltopo-hero .hero-text {
+  position: relative;
+  z-index: 1;
+  width: min(72rem, 92%);
+  margin: 0 auto;
+  text-align: center;
+  color: #f6f8f9;
+}
+
+.caltopo-guide .caltopo-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  max-width: 22ch;
+  margin: 0 auto;
+  text-shadow: 0 0.1rem 0.75rem rgba(0, 0, 0, 0.42);
+}
+
+.caltopo-guide .content-wrapper {
+  max-width: min(70rem, 94%);
+  margin: 0 auto;
+}
+
+.caltopo-guide h2 {
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
+  line-height: 1.2;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+}
+
+.caltopo-guide h3 {
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  line-height: 1.3;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.caltopo-guide h4 {
+  font-size: clamp(1.08rem, 1.8vw, 1.25rem);
+  line-height: 1.3;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.caltopo-guide p,
+.caltopo-guide li {
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+.caltopo-guide .section-half > p,
+.caltopo-guide .section-half li p,
+.caltopo-guide figcaption p {
+  max-width: 70ch;
+}
+
+.caltopo-guide .section-half img,
+.caltopo-guide figure > img,
+.caltopo-guide .sqs-image-shape-container-element img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+  border: 0.0625rem solid var(--border-color);
+  display: block;
+}
+
+.caltopo-guide figcaption,
+.caltopo-guide .image-caption {
+  margin-top: 0.45rem;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+.caltopo-guide .section-divider,
+.caltopo-guide .horizontalrule-block hr,
+.caltopo-guide .block-content hr {
+  border: 0;
+  border-top: 0.0625rem solid var(--border-color);
+  margin: 1.25rem 0;
+}
+
+.caltopo-guide .caltopo-quick-nav {
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.9rem;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.05);
+}
+
+.caltopo-guide .caltopo-quick-nav .sqs-html h3 {
+  margin-bottom: 0.7rem;
+}
+
+.caltopo-guide .caltopo-quick-nav h4 a {
+  color: var(--text-color);
+  text-decoration: none;
+  border-bottom: 0.0625rem solid
+    color-mix(in srgb, var(--accent-color) 30%, transparent);
+}
+
+.caltopo-guide .caltopo-quick-nav h4 a:hover,
+.caltopo-guide .caltopo-quick-nav h4 a:focus-visible {
+  color: var(--accent-color);
+  border-bottom-color: color-mix(in srgb, var(--accent-color) 45%, transparent);
+  outline: none;
+}
+
+.caltopo-guide a {
+  color: var(--accent-color);
+}
+
+.caltopo-guide a:focus-visible {
+  outline: 0.125rem solid
+    color-mix(in srgb, var(--accent-color) 45%, transparent);
+  outline-offset: 0.125rem;
+}
+
+.caltopo-guide .image-swap-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.caltopo-guide .image-swap-container img {
   display: block;
   width: 100%;
   height: auto;
   transition: opacity 0.3s ease;
 }
 
-.img-hover {
+.caltopo-guide .img-hover {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
 
-.image-swap-container:hover .img-hover {
+.caltopo-guide .image-swap-container:hover .img-hover {
   opacity: 1;
 }
 
-.image-swap-container:hover .img-default {
+.caltopo-guide .image-swap-container:hover .img-default {
   opacity: 0;
+}
+
+@media (max-width: 900px) {
+  .caltopo-guide .caltopo-hero {
+    min-height: clamp(16rem, 42vh, 24rem);
+  }
+
+  .caltopo-guide .dis-row {
+    flex-direction: column;
+  }
+
+  .caltopo-guide .section-half {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .caltopo-guide .caltopo-hero {
+    min-height: clamp(14rem, 36vh, 19rem);
+  }
+
+  .caltopo-guide .caltopo-hero .hero-text {
+    width: min(72rem, 94%);
+  }
 }
