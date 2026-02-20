@@ -99,9 +99,14 @@ const Contact = () => {
           <ul>
             <li>Questions about route details or planning assumptions.</li>
             <li>Bug reports or feature requests for site tools.</li>
-            <li>Speaking, workshop, or collaboration inquiries.</li>
+            <li>Instructional, workshop, or collaboration inquiries.</li>
             <li>Edits, corrections, or updates to published guides.</li>
           </ul>
+          <p className="contact-expectation">
+            If you're building something useful — a tool, guide, small brand, or
+            project — and are interested in building an app, website, or landing
+            page, I'm always open to interesting collaborations.
+          </p>
           <p className="contact-expectation">
             I usually reply within a few days.
           </p>
@@ -127,51 +132,6 @@ const Contact = () => {
             </a>
           ))}
         </div>
-
-        <form className="contact-form" onSubmit={onSubmit} noValidate>
-          <h2>Send a message</h2>
-          <label htmlFor="contact-name">Name</label>
-          <input
-            id="contact-name"
-            name="name"
-            type="text"
-            value={values.name}
-            onChange={(e) => setValues({ ...values, name: e.target.value })}
-            aria-invalid={Boolean(errors.name)}
-          />
-          {errors.name && <p className="form-error">{errors.name}</p>}
-
-          <label htmlFor="contact-email">Email</label>
-          <input
-            id="contact-email"
-            name="email"
-            type="email"
-            value={values.email}
-            onChange={(e) => setValues({ ...values, email: e.target.value })}
-            aria-invalid={Boolean(errors.email)}
-          />
-          {errors.email && <p className="form-error">{errors.email}</p>}
-
-          <label htmlFor="contact-message">Message</label>
-          <textarea
-            id="contact-message"
-            name="message"
-            rows={6}
-            value={values.message}
-            onChange={(e) => setValues({ ...values, message: e.target.value })}
-            aria-invalid={Boolean(errors.message)}
-          />
-          {errors.message && <p className="form-error">{errors.message}</p>}
-
-          <button type="submit" className="contact-submit">
-            Send Message
-          </button>
-          {sent && (
-            <p className="form-success">
-              Thanks — your message is ready to send.
-            </p>
-          )}
-        </form>
       </div>
     </section>
   );

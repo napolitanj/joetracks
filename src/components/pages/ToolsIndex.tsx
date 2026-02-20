@@ -5,6 +5,7 @@ type ToolItem = {
   title: string;
   description: string;
   href: string;
+  cta: string;
   imageSrc: string;
   imageAlt: string;
 };
@@ -15,6 +16,7 @@ const tools: ToolItem[] = [
     description:
       "A live tracker for Michigan ski resorts with current snowfall and weather conditions. Built to make Great Lakes trip planning faster and easier.",
     href: "/michigan-ski-tracker",
+    cta: "Find the Best Snow",
     imageSrc: "/images/ski-tracker-preview.png",
     imageAlt: "Michigan Ski Tracker table preview with resort weather data",
   },
@@ -26,8 +28,8 @@ const ToolsIndex = () => {
       <div className="tools-index-inner">
         <h1>Tools</h1>
         <p className="tools-index-intro">
-          Small utilities I&apos;m building for outdoor planning in the Great
-          Lakes.
+          Free and accessible utilities built to help you make great plans fast
+          and get outside.
         </p>
 
         <div className="tools-list">
@@ -39,7 +41,7 @@ const ToolsIndex = () => {
               <h2>{tool.title}</h2>
               <p>{tool.description}</p>
               <Link to={tool.href} className="tool-open-link">
-                Open
+                {tool.cta}
               </Link>
             </article>
           ))}
