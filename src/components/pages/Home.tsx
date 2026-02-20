@@ -95,9 +95,10 @@ const Home = () => {
         <div className="home-container home-inner">
           <h2>Start Here</h2>
           <p className="home-subhead">
-            New to JoeTracks? These are the fastest ways to understand how the
-            platform works — practical field guides and lightweight planning
-            tools you can use instantly in your browser.
+            First time here? The fastest way to understand what's offered on
+            this platform is to check out one of the features below — digital
+            field guides and lightweight planning tools you can use instantly in
+            your browser.
           </p>
 
           <div className="home-grid home-grid-two">
