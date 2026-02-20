@@ -38,6 +38,15 @@ const Portfolio = () => {
   return (
     <>
       <div className="portfolio-container">
+        <header className="portfolio-header">
+          <h1>Portfolio</h1>
+          <p>
+            Here you can view a selection of my work across software, digital
+            marketing, journalism, and program leadership. I created this page
+            to share a clean snapshot of my toolkit with potential collaborators
+            — but feel free to browse if you're just looking around!
+          </p>
+        </header>
         {isAuthorized && (
           <div className="create-feature">
             <Link to="/portfolioeditor">+ Create New Feature</Link>

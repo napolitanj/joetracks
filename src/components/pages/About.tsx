@@ -22,7 +22,7 @@ const About = () => {
           <div className="meet-joe-content">
             <img className="meet-joe-photo" src={headerPhoto} alt="Joe" />
 
-            <div>
+            <div className="meet-joe-copy">
               <p>
                 I'm Joe Napolitan. My background spans years of professional
                 work in outdoor environments, including ski patrol, avalanche
