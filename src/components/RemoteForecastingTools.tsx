@@ -15,10 +15,10 @@ const RemoteForecastingTools = () => {
   return (
     <>
       <SEO
-        title="Remote Snow Forecasting Tools for Backcountry Travel | JoeTracks"
-        description="Use NOHRSC, SNOTEL, SWE, and satellite layers to assess snow conditions remotely and plan safer backcountry trips."
+        title="Remote Forecasting Tools for Snow & Trip Planning | JoeTracks"
+        description="A practical workflow using NOHRSC, SNOTEL, SWE, and map overlays to assess snow conditions remotely and plan better mountain trips."
         canonical="https://joetracks.com/remote-forecasting-tools"
-        image="https://joetracks.com/images/remote-forecasting/skintrack.webp"
+        image=""
         jsonLd={[
           {
             "@context": "https://schema.org",
@@ -32,38 +32,67 @@ const RemoteForecastingTools = () => {
           },
           {
             "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "Remote Forecasting Tools",
-            applicationCategory: "WeatherApplication",
-            operatingSystem: "Web",
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "USD",
-            },
+            "@type": "Article",
+            headline: "Remote Forecasting Tools for Backcountry Snow Travel",
+            description:
+              "A practical guide to using NOHRSC, SNOTEL, SWE, and map overlays for snow-influenced trip planning.",
             url: "https://joetracks.com/remote-forecasting-tools",
             image:
               "https://joetracks.com/images/remote-forecasting/skintrack.webp",
+            author: {
+              "@type": "Person",
+              name: "Joe Napolitan",
+            },
             publisher: {
               "@type": "Organization",
               name: "JoeTracks",
             },
+            // TODO: add dateModified when editorial update dates are finalized.
           },
         ]}
       />
 
-      <div className="guide">
-        <main className="container" id="page" role="main">
+      <main className="remote-forecasting-guide guide" id="page" role="main">
+        <div className="container">
           <article>
-            <Reveal delay={0}>
-              <section className="hero remote-bg">
-                <div className="hero-text">
-                  <h1 className={animate ? "animate" : ""}>
-                    Remote Forecasting Tools for Planning Trips in Snow
-                  </h1>
-                </div>
-              </section>
-            </Reveal>
+            <section className="hero remote-forecasting-hero remote-forecasting-bg">
+              <div className="hero-text">
+                <h1 className={animate ? "animate" : ""}>
+                  Remote Forecasting Tools for Planning Trips in Snow
+                </h1>
+                <p className="remote-forecasting-hero-subtitle">
+                  A map-first workflow for turning snow and weather data into
+                  clear, practical trip decisions.
+                </p>
+              </div>
+            </section>
+
+            <section className="content-wrapper remote-forecasting-top-meta">
+              <nav
+                className="remote-forecasting-quick-nav"
+                aria-label="Quick navigation"
+              >
+                <h2>Quick Nav</h2>
+                <ul>
+                  <li>
+                    <a href="#overview">Overview</a>
+                  </li>
+                  <li>
+                    <a href="#snowpack-fundamentals">Snowpack Fundamentals</a>
+                  </li>
+                  <li>
+                    <a href="#remote-tools">Tools</a>
+                  </li>
+                  <li>
+                    <a href="#common-mistakes">Common mistakes</a>
+                  </li>
+                  <li>
+                    <a href="#examples">Examples</a>
+                  </li>
+                </ul>
+              </nav>
+            </section>
+
             <div className="content-wrapper">
               <Reveal as="section" variant="up" delay={80}>
                 <div className="dis-row g-2">
@@ -76,7 +105,7 @@ const RemoteForecastingTools = () => {
                     />
                   </figure>
                   <div className="section-half">
-                    <h2>Introduction</h2>
+                    <h2 id="overview">Introduction</h2>
                     <p>
                       Snow cover is a key consideration when planning a winter
                       backpacking trip or a high-elevation hike in late spring
@@ -130,14 +159,20 @@ const RemoteForecastingTools = () => {
                           <figcaption className="image-caption-wrapper">
                             <p>
                               Photograph courtesy of {""}
-                              <a href="https://www.researchgate.net/">
+                              <a
+                                href="https://www.researchgate.net/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
                                 https://www.researchgate.net/
                               </a>
                             </p>
                           </figcaption>
                         </figure>
                         <div className="section-half">
-                          <h2>Snowpack Fundamentals</h2>
+                          <h2 id="snowpack-fundamentals">
+                            Snowpack Fundamentals
+                          </h2>
                           <p>
                             Three distinct snow climates exist in mountainous
                             regions:
@@ -223,13 +258,17 @@ const RemoteForecastingTools = () => {
                             alt="An image showing snow metamorphosis"
                             src={`${
                               import.meta.env.BASE_URL
-                            }images/remote-forecasting/snow-climate-classification-map.webp`}
+                            }images/remote-forecasting/Snow-metamorphosis.webp`}
                           />
                           <figcaption className="image-caption-wrapper">
                             <div className="image-caption">
                               <p>
                                 Photograph courtesy of {""}
-                                <a href="https://www.avalanchecourse.com/">
+                                <a
+                                  href="https://www.avalanchecourse.com/"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
                                   https://www.avalanchecourse.com/
                                 </a>
                               </p>
@@ -268,7 +307,11 @@ const RemoteForecastingTools = () => {
                       Snow metamorphosis is complex, but that does not mean that
                       more knowledge is not valuable. If you want to dive deeper
                       into the topic, the {""}
-                      <a href="https://www.avalanchecourse.com/wp-content/uploads/2020/10/Snowpack-Pro-2.pdf">
+                      <a
+                        href="https://www.avalanchecourse.com/wp-content/uploads/2020/10/Snowpack-Pro-2.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <strong>
                           American Avalanche Institute’s Pro Level 2 PDF
                           Workbook
@@ -362,7 +405,9 @@ const RemoteForecastingTools = () => {
                   </figure>
 
                   <div>
-                    <h2>Digital Tools for Assessing Snow Remotely</h2>
+                    <h2 id="remote-tools">
+                      Digital Tools for Assessing Snow Remotely
+                    </h2>
                     <p>
                       Two tools to assess snow conditions as you plan your trip
                       are {""}
@@ -374,7 +419,11 @@ const RemoteForecastingTools = () => {
                     </p>
                     <p>
                       On {""}
-                      <a href="https://nwcc-apps.sc.egov.usda.gov/imap/">
+                      <a
+                        href="https://nwcc-apps.sc.egov.usda.gov/imap/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         https://nwcc-apps.sc.egov.usda.gov/imap/
                       </a>
                       {""} you will find a map displaying remote weather
@@ -412,15 +461,21 @@ const RemoteForecastingTools = () => {
                 </div>
                 <div className="dis-row g-2">
                   <div className="section-half">
+                    <h3 id="tools">Tool Setup in Practice</h3>
                     <p>
-                      <a href="https://www.nohrsc.noaa.gov/interactive/html/map.html">
-                        https://www.nohrsc.noaa.gov/interactive/html/map.html
+                      <a
+                        href="https://www.nohrsc.noaa.gov/interactive/html/map.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        The National Operational Hydrologic Remote Sensing
+                        Center
                       </a>
-                      {""} is a tool that uses these remote weather stations and
-                      data collected via aircraft and satellites to represent
-                      snow data on a map visually. The interface includes many
-                      options for tweaking your map, but only a few are needed
-                      to inform your trip planning.
+                      {""} offers a tool that uses these remote weather stations
+                      and data collected via aircraft and satellites to
+                      represent snow data on a map visually. The interface
+                      includes many options for tweaking your map, but only a
+                      few are needed to inform your trip planning.
                     </p>
                     <p>
                       In addition to using the search bar, you can click and
@@ -468,7 +523,11 @@ const RemoteForecastingTools = () => {
                         The NOHRSC provides the option to export snow overlays
                         and weather stations as KMZ files using the links on
                         this page: {""}
-                        <a href="https://www.nohrsc.noaa.gov/earth/">
+                        <a
+                          href="https://www.nohrsc.noaa.gov/earth/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           https://www.nohrsc.noaa.gov/earth/
                         </a>
                         .
@@ -487,6 +546,7 @@ const RemoteForecastingTools = () => {
                 </div>
                 <div className="dis-row g-2">
                   <div className="section-half">
+                    <h3 id="common-mistakes">Common Mistakes to Avoid</h3>
                     <p>
                       Freshly fallen snow and the density of old snow can
                       portray misleading data. When checking snow depth, it is
@@ -554,7 +614,7 @@ const RemoteForecastingTools = () => {
               >
                 <div className="dis-row g-2">
                   <div>
-                    <h2>Example Use Cases</h2>
+                    <h2 id="examples">Example Use Cases</h2>
                     <p>
                       Say it's March 20, and you aim to section-hike the CDT
                       from Colorado's Wolf Creek to Slumgullion Pass during the
@@ -608,13 +668,18 @@ const RemoteForecastingTools = () => {
                     trips more informed and, with any luck, more enjoyable
                     outcomes.
                   </p>
+                  <div className="button-container">
+                    <a className="button" href="/tools">
+                      Browse Tools
+                    </a>
+                  </div>
                 </div>
               </Reveal>
               <div className="vrt-spc"></div>
             </div>
           </article>
-        </main>
-      </div>
+        </div>
+      </main>
     </>
   );
 };
