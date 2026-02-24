@@ -441,7 +441,7 @@ const RemoteForecastingTools = () => {
                       </li>
                     </ol>
                     <p>
-                      From here, you can review a 30-day history of date
+                      From here, you can review a 30-day history of data
                       collected at the weather station including temperature,
                       wind, and precipitation.
                     </p>
