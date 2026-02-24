@@ -342,10 +342,6 @@ const RemoteForecastingTools = () => {
                       </li>
                     </ol>
                     <p>
-                      A colder storm in Steamboat, Colorado, drops 1.5 inches of
-                      water as snow at 3% density, accumulating 50 inches of
-                      fluffy powder.
-                      <br />
                       The fallen snow in the Sierras, already quite dense, will
                       consolidate further into one solid layer a couple of feet
                       deep. The fluffy Colorado storm, on the other hand, will
