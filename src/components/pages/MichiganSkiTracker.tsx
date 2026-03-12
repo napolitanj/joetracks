@@ -109,16 +109,22 @@ export default function MichiganSkiTracker() {
               Michigan — built to point skiers to the best conditions.
             </p>
             <ul className="tool-cred">
-              <li>Powered by highly-accurate NOAA forecast data.</li>
               <li>
-                Resort totals are based on a pinpointed mid-mountain location
-                (not nearest town, base, or summit).
+                Powered by NOAA's point-forecast data for each resort's
+                mid-mountain coordinates (not the nearest town, base, or
+                summit).
               </li>
               <li>Updated twice daily.</li>
             </ul>
             <p className="ski-note">
-              Tap any resort to view the full NOAA forecast.
+              Tap any resort to visit weather.gov and view the full NOAA
+              forecast.
             </p>
+            <p className="alert-text">
+              Check resort websites for operating status, and full forecasts for
+              variables including wind, temperature, and rain. This tool tracks
+              snowfall only.
+            </p>{" "}
           </div>
         </div>
 
@@ -127,16 +133,16 @@ export default function MichiganSkiTracker() {
             <div className="mst-controls-row">
               <div className="mst-filter">
                 <label htmlFor="region-select">Sort by Region</label>
-              <select
-                id="region-select"
-                value={regionFilter}
-                onChange={(e) => setRegionFilter(e.target.value)}
-              >
-                {REGIONS.map((r) => (
-                  <option key={r}>{r}</option>
-                ))}
-              </select>
-            </div>
+                <select
+                  id="region-select"
+                  value={regionFilter}
+                  onChange={(e) => setRegionFilter(e.target.value)}
+                >
+                  {REGIONS.map((r) => (
+                    <option key={r}>{r}</option>
+                  ))}
+                </select>
+              </div>
               <div className="mst-updated">
                 {lastUpdated
                   ? `Last updated: ${lastUpdated}`
