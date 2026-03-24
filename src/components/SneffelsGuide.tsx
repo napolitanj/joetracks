@@ -177,7 +177,7 @@ const SneffelsGuide = () => {
                     education
                   </a>
                   &nbsp;are essential to engage in this activity safely. Hire a
-                  guide if you wish to embark on this adventurer and are unsure
+                  guide if you wish to embark on this adventure and are unsure
                   of your capabilities.
                 </p>
                 <p className="preFade">
