@@ -27,6 +27,7 @@ import SoftwareTechSupport from "./components/SoftwareTechSupport";
 import OutdoorLeadership from "./components/OutdoorLeadership";
 import MichiganSkiTracker from "./components/pages/MichiganSkiTracker";
 import CoordTool from "./dev/coords";
+import SleepingBearSkiGuide from "./components/SleepingBearSkiGuide";
 
 function App() {
   return (
@@ -59,6 +60,10 @@ function App() {
           <Route path="/programmanagement" element={<ProgramManagement />} />
           <Route path="/outdoorleadership" element={<OutdoorLeadership />} />
           <Route path="/ski-mount-sneffels" element={<SneffelsGuide />} />
+          <Route
+            path="/ski-sleeping-bear-dunes"
+            element={<SleepingBearSkiGuide />}
+          />
           <Route
             path="/softwaretechsupport"
             element={<SoftwareTechSupport />}
