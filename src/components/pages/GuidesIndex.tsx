@@ -12,6 +12,15 @@ type GuideItem = {
 
 const guides: GuideItem[] = [
   {
+    title: "Skiing Sleeping Bear Dunes: A Field Guide to Shauger Hill",
+    description:
+      "Trip planning, gear, and field notes for skiing the Sleeping Bear Dunes.",
+    href: "/ski-sleeping-bear-dunes",
+    cta: "Ski the Dunes",
+    imageSrc: "/images/ski-sleeping-bear/ski-sleeping-bear-intro.png",
+    imageAlt: "A skier on the snow-covered dunes at Sleeping Bear",
+  },
+  {
     title: "Backpacking North Manitou Island",
     description:
       "A practical field guide covering logistics, hazards, route structure, and planning considerations.",
