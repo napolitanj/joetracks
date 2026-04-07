@@ -3,6 +3,7 @@ import "/src/styles/manitou-guide.css";
 import { useEffect, useState } from "react";
 import Reveal from "./ui/Reveal";
 import SEO from "./SEO";
+import NewsletterCapture from "./NewsletterCapture";
 
 const NorthManitouGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -673,6 +674,10 @@ const NorthManitouGuide = () => {
               <div>
                 <hr className="section-divider" />
               </div>
+              <NewsletterCapture
+                headline="More Northern Michigan Guides on the Way"
+                subtext="I publish new guides every month: paddling, biking, hiking, and more. Sign up for notices and exclusive content."
+              />
               <Reveal as="section" variant="up" delay={300}>
                 <div className="section-header">
                   <h2>How to Get to North Manitou Island</h2>

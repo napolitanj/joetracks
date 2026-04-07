@@ -28,6 +28,7 @@ import OutdoorLeadership from "./components/OutdoorLeadership";
 import MichiganSkiTracker from "./components/pages/MichiganSkiTracker";
 import CoordTool from "./dev/coords";
 import SleepingBearSkiGuide from "./components/SleepingBearSkiGuide";
+import NewsletterStickyBar from "./components/NewsletterStickyBar";
 
 function App() {
   return (
@@ -90,6 +91,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <NewsletterStickyBar />
     </>
   );
 }

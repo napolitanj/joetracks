@@ -3,6 +3,7 @@ import "/src/styles/sneffels-guide.css";
 import "/src/styles/shared.css";
 import Reveal from "./ui/Reveal";
 import SEO from "./SEO";
+import NewsletterCapture from "./NewsletterCapture";
 
 const SneffelsGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -439,6 +440,10 @@ const SneffelsGuide = () => {
                 </div>
               </section>
             </Reveal>
+            <NewsletterCapture
+              headline="I'm Building Field Guides for Northern Michigan"
+              subtext="I publish new guides every month: paddling, biking, hiking, and more. Sign up for notices and exclusive content."
+            />
             <Reveal variant="up" delay={260}>
               <section id="trip-report" className="page-section">
                 <div className="section-border">

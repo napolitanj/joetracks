@@ -14,6 +14,15 @@ type CardItem = {
 
 const latestGuides: CardItem[] = [
   {
+    title: "Skiing Sleeping Bear Dunes: A Field Guide to Shauger Hill",
+    description:
+      "Trip planning, gear, and field notes for skiing the Sleeping Bear Dunes.",
+    href: "/ski-sleeping-bear-dunes",
+    cta: "Ski the Dunes",
+    imageSrc: "/images/ski-sleeping-bear/ski-sleeping-bear-intro.png",
+    imageAlt: "A skier on the snow-covered dunes at Sleeping Bear",
+  },
+  {
     title: "Backpacking North Manitou Island",
     description:
       "A practical field guide covering logistics, hazards, route structure, and planning considerations.",
@@ -30,15 +39,6 @@ const latestGuides: CardItem[] = [
     cta: "Find the Best Snow",
     imageSrc: "/images/remote-forecasting/google-snow-depth-overlay.webp",
     imageAlt: "Snow depth overlay map used for remote forecasting",
-  },
-  {
-    title: "Mount Sneffels: Skiing the Snake Couloir",
-    description:
-      "Route beta, conditions, and planning notes for Mount Sneffels' Snake Couloir.",
-    href: "/ski-mount-sneffels",
-    cta: "Go Skiing",
-    imageSrc: "/images/sneffels/Mount-sneffels-view.webp",
-    imageAlt: "Mount Sneffels viewed from the approach route",
   },
   {
     title: "How to Trip Plan with CalTopo",
@@ -63,12 +63,12 @@ const Home = () => {
               <h2>Plan Better Days Outside</h2>
               <p className="home-subhead">
                 JoeTracks provides <strong>field-tested guides</strong> and{" "}
-                <strong>practical planning tools</strong> simplify real-world
-                outdoor decision-making — from access and logistics to
-                conditions and route choices.
+                <strong>planning tools</strong> to simplify real-world outdoor
+                decision-making — from access and logistics to conditions and
+                the lesser-known adventures in the region.
               </p>
               <p className="home-subhead">
-                While much of the content focuses on the Great Lakes region, the
+                While much of the content focuses on Northern Michigan, the
                 underlying principles and systems are built to remain useful
                 anywhere you explore.
               </p>
@@ -218,10 +218,6 @@ const Home = () => {
               Whether you’re just getting started or refining existing skills,
               the goal remains the same: clearer decisions, better judgment, and
               more enjoyable days outside.
-            </p>
-            <p>
-              Clear information. Proven systems. Real-world usefulness — in the
-              Great Lakes and beyond.
             </p>
 
             <div className="home-start-cta">

@@ -3,6 +3,7 @@ import "/src/styles/shared.css";
 import "/src/styles/caltopo.css";
 import Reveal from "./ui/Reveal";
 import SEO from "./SEO";
+import NewsletterCapture from "./NewsletterCapture";
 
 const CalTopo = () => {
   const [animate, setAnimate] = useState(false);
@@ -557,6 +558,11 @@ const CalTopo = () => {
                   </p>
                 </section>
                 <div className="section-divider"></div>
+                <div className="vrt-spc"></div>
+                <NewsletterCapture
+                  headline="I'm Building Field Guides for Northern Michigan"
+                  subtext="I publish new guides every month: paddling, biking, hiking, and more. Sign up for notices and exclusive content."
+                />
                 <div className="vrt-spc"></div>
                 <section className="dis-row g-2 cnt">
                   <figure className="section-half">
