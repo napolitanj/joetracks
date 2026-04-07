@@ -3,6 +3,7 @@ import "/src/styles/sleeping-bear-guide.css";
 import "/src/styles/shared.css";
 import Reveal from "./ui/Reveal";
 import SEO from "./SEO";
+import NewsletterCapture from "./NewsletterCapture";
 
 const SleepingBearGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -313,6 +314,10 @@ const SleepingBearGuide = () => {
                         </ul>
                       </div>
                     </div>
+                    <NewsletterCapture
+                      headline="I publish guides all year."
+                      subtext="Skiing, biking, paddling, and more — sign up to be notified when new guides are published and gain access to exclusive content."
+                    />
                     <div className="block html-block block-html">
                       <div className="block-content">
                         <div id="interactive-map" className="dis-col">
@@ -784,7 +789,7 @@ const SleepingBearGuide = () => {
                               this guide with anyone you feel would value the
                               information, and consider subscribing to the{" "}
                               <a
-                                href="https://joetracks.kit.com/14ee2d887c"
+                                href="https://joetracks.kit.com/aeee0d9ec0"
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
