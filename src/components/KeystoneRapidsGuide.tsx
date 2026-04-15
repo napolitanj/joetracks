@@ -264,7 +264,7 @@ const KeystoneRapidsGuide = () => {
             </Reveal>
             {/* ── Newsletter ── */}
             <Reveal variant="up" delay={500}>
-              <section className="content-wrapper row cnt-vrt cnt-hrz">
+              <section className="content-wrapper row cnt-vrt cnt-hrz mobile-col">
                 <div className="col cnt-vrt cnt-hrz">
                   <h2>Enjoying this guide?</h2>
                   <p>Support this project for free.</p>
