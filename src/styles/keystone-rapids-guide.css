@@ -350,4 +350,8 @@
   .keystone-rapids-guide .keystone-rapids-intro {
     gap: 1rem;
   }
+
+  .mobile-col {
+    flex-direction: column;
+  }
 }
