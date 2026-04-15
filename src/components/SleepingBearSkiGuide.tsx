@@ -315,8 +315,8 @@ const SleepingBearGuide = () => {
                       </div>
                     </div>
                     <NewsletterCapture
-                      headline="I publish guides all year."
-                      subtext="Skiing, biking, paddling, and more — sign up to be notified when new guides are published and gain access to exclusive content."
+                      headline="I publish several guides every month."
+                      subtext="Skiing, biking, paddling, and more — subscribing to the newsletter is a free and easy way to support me in building free community resources. Sign up to be notified when new guides are published and gain access to exclusive content."
                     />
                     <div className="block html-block block-html">
                       <div className="block-content">
@@ -826,7 +826,7 @@ const SleepingBearGuide = () => {
                 </div>
                 <hr className="section-divider" />
                 <div className="vrt-spc"></div>
-                <div className="row row">
+                <div className="content-wrapper row row">
                   <div className="cnt">
                     <iframe
                       width="560"

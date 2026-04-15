@@ -58,7 +58,7 @@ const NewsletterCapture = ({ headline, subtext }: Props) => {
               className="newsletter-capture__btn"
               disabled={status === "loading"}
             >
-              {status === "loading" ? "Sending…" : "Send Me Guides"}
+              {status === "loading" ? "Sending…" : "Sign Me Up"}
             </button>
           </form>
         </>

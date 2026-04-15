@@ -30,6 +30,15 @@ const guides: GuideItem[] = [
     imageAlt: "Backpacker standing on North Manitou Island shoreline",
   },
   {
+    title: "Paddling the Keystone Rapids — A Boardman River Guide",
+    description:
+      "Current conditions, paddling and bike shuttle logistics, and a detailed breakdown of each hazard.",
+    href: "/boardman-river-keystone-rapids",
+    cta: "Run a River",
+    imageSrc: "/images/keystone-rapids/keystone-rapids-card.webp",
+    imageAlt: "A paddler navigating the Boardman River's Keystone Rapids",
+  },
+  {
     title: "Remote Forecasting Tools",
     description:
       "A technical trip-planning walkthrough for forecasting snow cover remotely.",
