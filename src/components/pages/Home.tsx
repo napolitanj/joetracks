@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import BannerImage from "../BannerImage";
 import Reveal from "../ui/Reveal";
+import NewsletterCapture from "../NewsletterCapture";
 import "../../styles/Home.css";
 
 type CardItem = {
@@ -32,13 +33,13 @@ const latestGuides: CardItem[] = [
     imageAlt: "Backpacker standing on North Manitou Island shoreline",
   },
   {
-    title: "Remote Forecasting Tools",
+    title: "Paddling the Keystone Rapids — A Boardman River Guide",
     description:
-      "A technical trip-planning walkthrough for forecasting snow cover remotely.",
-    href: "/remote-forecasting-tools",
-    cta: "Find the Best Snow",
-    imageSrc: "/images/remote-forecasting/google-snow-depth-overlay.webp",
-    imageAlt: "Snow depth overlay map used for remote forecasting",
+      "Current conditions, paddling and bike shuttle logistics, and a detailed breakdown of each hazard.",
+    href: "/boardman-river-keystone-rapids",
+    cta: "Run a River",
+    imageSrc: "/images/keystone-rapids/keystone-rapids-card.webp",
+    imageAlt: "A paddler navigating the Boardman River's Keystone Rapids",
   },
   {
     title: "How to Trip Plan with CalTopo",
@@ -107,8 +108,8 @@ const Home = () => {
               <figure className="home-offer-media">
                 <img
                   className="home-card-image"
-                  src="/images/north-manitou-guide-preview.png"
-                  alt="preview of a digital backpacking guide"
+                  src="/images/keystone-rapids-preview.png"
+                  alt="A snapshot preview of ap addling guide"
                   loading="lazy"
                 />
               </figure>
@@ -236,7 +237,7 @@ const Home = () => {
         <div className="home-container home-inner">
           <div className="home-split">
             <div className="home-split-copy">
-              <h2>What’s next</h2>
+              <h2>What’s on the way</h2>
               <p className="home-subhead">
                 JoeTracks is continuously expanding with new guides, tools, and
                 planning resources designed to simplify real-world outdoor
@@ -248,8 +249,6 @@ const Home = () => {
                 <li>River paddling routes (access, shuttles, logistics)</li>
                 <li>Beginner-friendly “how to start” resources</li>
               </ul>
-
-              {/* Newsletter CTA (use a Link for now; swap to a real form later) */}
               <div className="home-start-cta">
                 <Link to="/guides" className="home-btn home-btn-primary">
                   Browse live guides
@@ -259,9 +258,14 @@ const Home = () => {
                 </Link>
               </div>
 
+              <NewsletterCapture
+                headline="Several guides are published each month."
+                subtext="Subscribing to the newsletter is a free and easy way to support free community resources. Sign up to be notified when new guides are published and gain access to subscriber-only content."
+              />
+
               <p className="home-subhead home-subhead--mt">
-                No spam — just new guides, tools, and useful planning resources
-                as they’re released.
+                No spam — just field-tested guides, tools, and useful planning
+                resources as they’re released.
               </p>
             </div>
 

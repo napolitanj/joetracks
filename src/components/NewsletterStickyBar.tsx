@@ -55,7 +55,8 @@ const NewsletterStickyBar = () => {
     >
       <div className="newsletter-sticky-bar__inner">
         <span className="newsletter-sticky-bar__headline">
-          Field-tested guides for Northern Michigan's outdoors.
+          Join the newsletter to support the project, know when new guides are
+          published, and access exclusive content.
         </span>
         {status === "success" ? (
           <p className="newsletter-sticky-bar__confirm">
@@ -83,7 +84,7 @@ const NewsletterStickyBar = () => {
               disabled={status === "loading"}
               tabIndex={visible ? 0 : -1}
             >
-              {status === "loading" ? "Sending…" : "Send Me Guides"}
+              {status === "loading" ? "Sending…" : "Sign Me Up"}
             </button>
           </form>
         )}

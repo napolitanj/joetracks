@@ -1,0 +1,353 @@
+.keystone-rapids-guide .keystone-rapids-bg {
+  background-image: url("/images/keystone-rapids/keystone-rapids-banner.webp");
+}
+
+.keystone-rapids-guide .keystone-rapids-hero {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+
+.keystone-rapids-guide .keystone-rapids-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 18, 27, 0.32) 0%,
+    rgba(7, 18, 27, 0.32) 44%,
+    rgba(7, 18, 27, 0.18) 100%
+  );
+  z-index: 0;
+}
+
+.keystone-rapids-guide .keystone-rapids-hero .hero-text {
+  position: relative;
+  z-index: 1;
+  width: min(72rem, 92%);
+  margin: 0 auto;
+  text-align: center;
+  color: #f6f8f9;
+}
+
+.keystone-rapids-guide .keystone-rapids-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  max-width: 22ch;
+  margin: 0 auto;
+  text-shadow: 0 0.1rem 0.75rem rgba(0, 0, 0, 0.42);
+}
+
+.keystone-rapids-guide .content-wrapper {
+  max-width: min(70rem, 94%);
+  margin: 0 auto;
+}
+
+.keystone-rapids-guide .keystone-rapids-intro {
+  gap: clamp(1rem, 2.2vw, 2rem);
+  align-items: center;
+}
+
+.keystone-rapids-guide .intro-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.keystone-rapids-guide .intro-image {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.keystone-rapids-guide h2 {
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
+  line-height: 1.2;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+}
+
+.keystone-rapids-guide h3 {
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  line-height: 1.3;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.keystone-rapids-guide h4 {
+  font-size: clamp(1.08rem, 1.8vw, 1.25rem);
+  line-height: 1.3;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.keystone-rapids-guide p,
+.keystone-rapids-guide li {
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+.keystone-rapids-guide .section-half > p,
+.keystone-rapids-guide .section-half li p,
+.keystone-rapids-guide figcaption p,
+.keystone-rapids-guide .intro-text p {
+  max-width: 70ch;
+}
+
+.keystone-rapids-guide .intro-text p {
+  margin-bottom: 1.2rem;
+}
+
+.keystone-rapids-guide .keystone-rapids-top-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.keystone-rapids-guide .keystone-rapids-quick-nav {
+  margin-top: 1em;
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.9rem;
+  padding: 0.85rem 0.95rem;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.keystone-rapids-guide .keystone-rapids-quick-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.25rem;
+  border-bottom: 0.0625rem solid
+    color-mix(in srgb, var(--accent-color) 30%, transparent);
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.keystone-rapids-guide .keystone-rapids-quick-nav a:hover,
+.keystone-rapids-guide .keystone-rapids-quick-nav a:focus-visible {
+  color: var(--text-color);
+  border-bottom-color: color-mix(in srgb, var(--text-color) 40%, transparent);
+  outline: none;
+}
+
+.keystone-rapids-guide .stats-link {
+  display: inline-flex;
+  align-items: center;
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 999rem;
+  padding: 0.35rem 0.72rem;
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0.2rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+.keystone-rapids-guide .stats-link:hover,
+.keystone-rapids-guide .stats-link:focus-visible {
+  color: var(--accent-color);
+  border-color: color-mix(in srgb, var(--accent-color) 45%, transparent);
+  outline: none;
+}
+
+.keystone-rapids-guide .section-half img,
+.keystone-rapids-guide figure > img,
+.keystone-rapids-guide .image-shape-container-element img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+  border: 0.0625rem solid var(--border-color);
+  display: block;
+}
+
+.keystone-rapids-guide figcaption,
+.keystone-rapids-guide .image-caption {
+  margin-top: 0.45rem;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+.keystone-rapids-guide .section-divider,
+.keystone-rapids-guide .block.horizontalrule-block hr,
+.keystone-rapids-guide .block-content hr {
+  border: 0;
+  border-top: 0.0625rem solid var(--border-color);
+  margin: 1.25rem 0;
+}
+
+.keystone-rapids-guide .link-block a {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.keystone-rapids-guide a:focus-visible {
+  outline: 0.125rem solid
+    color-mix(in srgb, var(--accent-color) 45%, transparent);
+  outline-offset: 0.125rem;
+}
+
+.keystone-rapids-guide iframe {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 0.8rem;
+}
+
+.keystone-rapids-guide .stats-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.keystone-rapids-guide .stats-list li {
+  padding: 0.6rem 0.85rem;
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.6rem;
+  font-size: 0.97rem;
+}
+
+.keystone-rapids-guide .river-flow-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.9rem;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+.keystone-rapids-guide .river-flow-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-text);
+}
+
+.keystone-rapids-guide .river-flow-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.1;
+}
+
+.keystone-rapids-guide .river-flow-status {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.keystone-rapids-guide .river-flow-timestamp {
+  font-size: 0.8rem;
+  color: var(--muted-text);
+}
+
+.keystone-rapids-guide .river-flow-source {
+  font-size: 0.78rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  margin-top: 0.25rem;
+}
+
+.river-alert {
+  color: red;
+  font-size: 1.5em;
+}
+
+.keystone-rapids-guide .rapids-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 2.5rem;
+  margin-top: 1rem;
+}
+
+.keystone-rapids-guide .rapid-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.keystone-rapids-guide .rapid-card figure {
+  margin: 0;
+  margin-top: 0.75rem;
+  flex: 1;
+}
+
+.keystone-rapids-guide .rapid-card--full {
+  grid-column: 1 / -1;
+}
+
+.description-container {
+  margin-top: 1em;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: em;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: em;
+}
+
+.cnt-vrt {
+  align-items: center;
+}
+
+.cnt-hrz {
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .keystone-rapids-guide .rapids-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .keystone-rapids-guide .keystone-rapids-hero {
+    min-height: clamp(16rem, 42vh, 24rem);
+  }
+
+  .keystone-rapids-guide .dis-row {
+    flex-direction: column;
+  }
+
+  .keystone-rapids-guide .section-half {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .keystone-rapids-guide .keystone-rapids-hero {
+    min-height: clamp(14rem, 36vh, 19rem);
+  }
+
+  .keystone-rapids-guide .keystone-rapids-hero .hero-text {
+    width: min(72rem, 94%);
+  }
+
+  .keystone-rapids-guide .keystone-rapids-intro {
+    gap: 1rem;
+  }
+}

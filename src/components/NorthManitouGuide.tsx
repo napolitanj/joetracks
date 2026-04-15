@@ -675,8 +675,8 @@ const NorthManitouGuide = () => {
                 <hr className="section-divider" />
               </div>
               <NewsletterCapture
-                headline="More Northern Michigan Guides on the Way"
-                subtext="I publish new guides every month: paddling, biking, hiking, and more. Sign up for notices and exclusive content."
+                headline="I publish several guides every month."
+                subtext="Skiing, biking, paddling, and more — subscribing to the newsletter is a free and easy way to support me in building free community resources. Sign up to be notified when new guides are published and gain access to exclusive content."
               />
               <Reveal as="section" variant="up" delay={300}>
                 <div className="section-header">
@@ -959,7 +959,6 @@ const NorthManitouGuide = () => {
                 </div>
                 <div className="section-half cnt">
                   <figure id="yui_3_17_2_1_1753204324355_187">
-                    {/* Need hyperlinking to big map */}
                     <a
                       id="yui_3_17_2_1_1753204324355_186"
                       href={`${import.meta.env.BASE_URL}images/north-manitou/North-manitou-island-topo-map.webp`}

@@ -28,6 +28,7 @@ import OutdoorLeadership from "./components/OutdoorLeadership";
 import MichiganSkiTracker from "./components/pages/MichiganSkiTracker";
 import CoordTool from "./dev/coords";
 import SleepingBearSkiGuide from "./components/SleepingBearSkiGuide";
+import KeystoneRapidsGuide from "./components/KeystoneRapidsGuide";
 import NewsletterStickyBar from "./components/NewsletterStickyBar";
 
 function App() {
@@ -64,6 +65,10 @@ function App() {
           <Route
             path="/ski-sleeping-bear-dunes"
             element={<SleepingBearSkiGuide />}
+          />
+          <Route
+            path="/boardman-river-keystone-rapids"
+            element={<KeystoneRapidsGuide />}
           />
           <Route
             path="/softwaretechsupport"
