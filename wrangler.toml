@@ -1,0 +1,11 @@
+name = "joetracks"
+compatibility_date = "2024-09-23"
+
+# Cloudflare Pages configuration.
+# The [pages_build_output_dir] tells Wrangler where your built assets live.
+# This must match the `outDir` in vite.config.ts.
+pages_build_output_dir = "dist"
+
+# The functions/ directory at the project root is automatically picked up by
+# Cloudflare Pages — no additional configuration needed to activate the
+# middleware. Wrangler uses it for local `wrangler pages dev` testing as well.
