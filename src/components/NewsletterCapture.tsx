@@ -33,7 +33,7 @@ const NewsletterCapture = ({ headline, subtext }: Props) => {
     <div className="newsletter-capture content-wrapper">
       {status === "success" ? (
         <p className="newsletter-capture__confirm">
-          You're in — I'll send it the moment it's live.
+          You're in — check your inbox to confirm your email!
         </p>
       ) : (
         <>

@@ -44,7 +44,7 @@ figcaption {
 .content-wrapper {
   padding-left: 3.5vmax;
   padding-right: 3.5vmax;
-  padding-top: 3vmax;
+  padding-top: 1em;
 }
 
 .vrt-spc {
@@ -197,7 +197,9 @@ figcaption {
   white-space: pre-wrap;
   opacity: 0;
   transform: translateY(30%);
-  transition: transform 0.45s ease 0.075s, opacity 0.45s ease 0.075s;
+  transition:
+    transform 0.45s ease 0.075s,
+    opacity 0.45s ease 0.075s;
   line-height: 1.2;
   margin: 0 auto;
   max-width: 90%;

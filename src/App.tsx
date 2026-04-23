@@ -30,6 +30,7 @@ import CoordTool from "./dev/coords";
 import SleepingBearSkiGuide from "./components/SleepingBearSkiGuide";
 import KeystoneRapidsGuide from "./components/KeystoneRapidsGuide";
 import NewsletterStickyBar from "./components/NewsletterStickyBar";
+import TrailGuideTemplate from "./components/pages/TrailGuideTemplate";
 
 function App() {
   return (
@@ -93,6 +94,7 @@ function App() {
             element={<Navigate to="/michigan-ski-tracker" replace />}
           />
           <Route path="/coord-tool" element={<CoordTool />} />
+          <Route path="/trails/:slug" element={<TrailGuideTemplate />} />
         </Routes>
       </main>
       <Footer />
