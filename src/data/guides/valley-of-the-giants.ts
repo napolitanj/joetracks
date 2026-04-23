@@ -67,6 +67,7 @@ export const valleyOfTheGiantsGuide: TrailGuide = {
     "Foot traffic is not allowed on the Grand Traverse Motorcycle Trail. Limit your travel to roads or designated hiking trails.",
     "Do not disturb or remove any natural, cultural, or historic features along the trail.",
   ],
+  youtubeEmbedId: "5qBKyU6bwsE",
   managedBy: "North Country Trail Association — Grand Traverse Chapter",
   lastUpdated: "2026-04-23",
 };

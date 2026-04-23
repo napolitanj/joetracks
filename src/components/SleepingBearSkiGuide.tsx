@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "/src/styles/sleeping-bear-guide.css";
 import "/src/styles/shared.css";
 import Reveal from "./ui/Reveal";
@@ -823,6 +824,9 @@ const SleepingBearGuide = () => {
                       </div>
                     </div>
                   </div>
+                  <Link to="/guides" className="back-to-guides">
+                    ← Back to Guides
+                  </Link>
                 </div>
                 <hr className="section-divider" />
                 <div className="vrt-spc"></div>

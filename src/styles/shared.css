@@ -44,7 +44,7 @@ figcaption {
 .content-wrapper {
   padding-left: 3.5vmax;
   padding-right: 3.5vmax;
-  padding-top: 1em;
+  padding-top: 2em;
 }
 
 .vrt-spc {
@@ -220,4 +220,17 @@ figcaption {
   .section-half {
     width: 100%;
   }
+}
+
+.back-to-guides {
+  display: inline-block;
+  margin: 0 0 40px 0;
+  font-size: 0.875rem;
+  color: #2a5f6a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-to-guides:hover {
+  text-decoration: underline;
 }
