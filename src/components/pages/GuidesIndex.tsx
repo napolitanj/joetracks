@@ -51,7 +51,8 @@ const guides: GuideItem[] = [
   },
   {
     title: "Trail Guide: Valley of the Giants",
-    description: "PLACEHOLDER — short description of Valley of the Giants.",
+    description:
+      "A 3-mile section of the NCT that is home to one of the Lower Peninsula's only old growth forests.",
     href: "/trails/valley-of-the-giants",
     cta: "Go Hiking",
     imageSrc:
