@@ -5,6 +5,7 @@ import RiverFlow from "./RiverFlow";
 import Reveal from "./ui/Reveal";
 import SEO from "./SEO";
 import NewsletterCapture from "./NewsletterCapture";
+import { Link } from "react-router-dom";
 
 const KeystoneRapidsGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -563,7 +564,9 @@ const KeystoneRapidsGuide = () => {
                 </p>
 
                 <hr className="section-divider" />
-
+                <Link to="/guides" className="back-to-guides">
+                  ← Back to Guides
+                </Link>
                 <div className="vrt-spc"></div>
                 <div className="row row">
                   <div className="cnt">

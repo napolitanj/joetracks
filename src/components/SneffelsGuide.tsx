@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "/src/styles/sneffels-guide.css";
 import "/src/styles/shared.css";
 import Reveal from "./ui/Reveal";
@@ -995,7 +996,10 @@ const SneffelsGuide = () => {
                       </div>
                     </div>
                     <hr className="section-divider" />
-                    <div className="vrt-spc"></div>
+                    <Link to="/guides" className="back-to-guides">
+                      ← Back to Guides
+                    </Link>
+
                     <div className="row row">
                       <div className="cnt">
                         <iframe
@@ -1004,6 +1008,7 @@ const SneffelsGuide = () => {
                           src="https://www.youtube.com/embed/x5xDWhBtSOg?si=3QV6qPqS7VNXE10l"
                           title="YouTube video player"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
                         ></iframe>
                       </div>
                       <div className="col col-2 span-2">

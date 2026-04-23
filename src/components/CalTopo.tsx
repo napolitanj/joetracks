@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "/src/styles/shared.css";
 import "/src/styles/caltopo.css";
 import Reveal from "./ui/Reveal";
@@ -1185,6 +1186,9 @@ const CalTopo = () => {
                       </p>
                     </div>
                   </div>
+                  <Link to="/guides" className="back-to-guides">
+                    ← Back to Guides
+                  </Link>
                 </section>
                 <div className="vrt-spc"></div>
               </div>
