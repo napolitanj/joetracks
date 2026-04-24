@@ -421,11 +421,16 @@
   .tg-stats-grid {
     border-right: none;
     border-bottom: 1px solid #e0ddd8;
+    width: 100%;
   }
 
   .tg-getting-there {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
+  }
+
+  .tg-activities-panel {
+    width: 100%;
   }
 }
