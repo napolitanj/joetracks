@@ -32,7 +32,7 @@ const Contact = () => {
     () => [
       {
         label: "Email",
-        href: "mailto:napolitanjoe@gmail.com",
+        href: "mailto:joe@joetracks.com",
         icon: "/images/email-icon.png",
         external: false,
       },
@@ -40,12 +40,6 @@ const Contact = () => {
         label: "YouTube",
         href: "https://www.youtube.com/@joetracks",
         icon: "/images/youtube-icon.png",
-        external: true,
-      },
-      {
-        label: "LinkedIn",
-        href: "https://linkedin.com/in/joseph-napolitan/",
-        icon: "/images/linkedin-icon.png",
         external: true,
       },
     ],
@@ -80,7 +74,7 @@ const Contact = () => {
       `Name: ${values.name.trim()}\nEmail: ${values.email.trim()}\n\nMessage:\n${values.message.trim()}`,
     );
 
-    window.location.href = `mailto:napolitanjoe@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:joe@joetracks.com?subject=${subject}&body=${body}`;
     setSent(true);
     setValues(initialValues);
   };
@@ -90,22 +84,27 @@ const Contact = () => {
       <div className="contact-inner">
         <h1>Contact</h1>
         <p className="contact-subhead">
-          Questions about guides, tool feedback, collaboration ideas, or
-          corrections are all welcome.
+          Questions/comments about guides, tool feedback, collaboration ideas,
+          or corrections are all welcome.
         </p>
 
         <div className="contact-card">
-          <h2>Best reasons to reach out</h2>
+          <h2>Best reasons to reach out:</h2>
           <ul>
             <li>Questions about route details or planning assumptions.</li>
-            <li>Bug reports or feature requests for site tools.</li>
+            <li>Trip planning consulting</li>
+            <li>
+              Bug reports, suggestions, or feature requests for site tools.
+            </li>
             <li>Instructional, workshop, or collaboration inquiries.</li>
             <li>Edits, corrections, or updates to published guides.</li>
           </ul>
           <p className="contact-expectation">
             If you're building something useful — a tool, guide, small brand, or
-            project — and are interested in building an app, website, or landing
-            page, I'm always open to interesting collaborations.
+            project — and are interested in building an app, website, or YouTube
+            channel, I'm always open to sharing insights and interesting
+            collaborations. Email me with details about your project and what
+            you need help with.
           </p>
           <p className="contact-expectation">
             I usually reply within a few days.

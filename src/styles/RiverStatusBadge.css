@@ -1,0 +1,73 @@
+.river-status-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+
+/* USGS condition color system — blue scale for high/above, green for normal,
+   amber/brown for below/low */
+
+.river-status-badge--high {
+  background: rgba(10, 50, 120, 0.11);
+  color: #0a3278;
+}
+
+.river-status-badge--above-normal {
+  background: rgba(50, 120, 200, 0.12);
+  color: #1e5fa0;
+}
+
+.river-status-badge--normal {
+  background: rgba(40, 140, 70, 0.13);
+  color: #1e7a40;
+}
+
+.river-status-badge--below-normal {
+  background: rgba(180, 140, 40, 0.13);
+  color: #7a5c00;
+}
+
+.river-status-badge--low {
+  background: rgba(140, 55, 15, 0.11);
+  color: #7a2e08;
+}
+
+.river-status-badge--unknown {
+  background: rgba(128, 128, 128, 0.1);
+  color: var(--muted-text);
+}
+
+body.dark .river-status-badge--high {
+  background: rgba(50, 110, 220, 0.2);
+  color: #6a9ee8;
+}
+
+body.dark .river-status-badge--above-normal {
+  background: rgba(80, 150, 230, 0.18);
+  color: #7ab8e8;
+}
+
+body.dark .river-status-badge--normal {
+  background: rgba(58, 158, 95, 0.2);
+  color: #4ec97e;
+}
+
+body.dark .river-status-badge--below-normal {
+  background: rgba(200, 160, 50, 0.18);
+  color: #d4aa50;
+}
+
+body.dark .river-status-badge--low {
+  background: rgba(200, 90, 40, 0.18);
+  color: #d4724a;
+}
+
+body.dark .river-status-badge--unknown {
+  background: rgba(128, 128, 128, 0.14);
+  color: var(--muted-text);
+}

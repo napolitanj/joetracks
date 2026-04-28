@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../../styles/About.css";
 import headerPhoto from "/images/bio-pic.png";
+import NewsletterCapture from "../NewsletterCapture";
 
 const About = () => {
   return (
@@ -9,11 +10,11 @@ const About = () => {
         <h1>About</h1>
 
         <p className="about-intro">
-          JoeTracks provides practical guides and planning tools designed to
+          JoeTracks offers practical guides and planning tools designed to
           simplify real-world outdoor decisions. While much of the content
-          focuses on the Great Lakes region, the underlying principles remain
-          useful anywhere: prepare well, reduce unnecessary complexity, and move
-          with greater confidence outside.
+          focuses on the Northern Michigan, the underlying principles remain
+          useful anywhere: prepare well, reduce unnecessary complexity, and
+          execute with greater confidence outside.
         </p>
 
         <section className="about-section meet-joe">
@@ -26,13 +27,12 @@ const About = () => {
               <p>
                 I'm Joe Napolitan. My background spans years of professional
                 work in outdoor environments, including ski patrol, avalanche
-                hazard reduction, wilderness guiding and education, and
-                technical systems development. My experience includes extended
-                backcountry travel, multi-day expeditions, and technical terrain
-                across a wide range of environments — all of which inform the
-                practical, decision-focused approach behind JoeTracks.
+                hazard reduction, backcountry guiding, and wilderness education.
+                My personal experience includes thru-hiking, bike touring,
+                ski-mountaineering and paddling expeditions, and alpine climbing
+                — all of which inform the practical, decision-focused approach
+                behind my guides and tools.
               </p>
-
               <p>
                 My experience in both the outdoor and tech industries shaped the
                 foundations of this website: clear guidance, practical tools,
@@ -42,17 +42,33 @@ const About = () => {
                 front of a screen before getting outside, it doesn&apos;t belong
                 here.
               </p>
+              <p>
+                My mission with this project to protect wild places in the Great
+                Lakes Region by increasing access to them. I believe that by
+                building a connection with nature, individuals are more inclined
+                to protect natural resources and enjoy them responsibly. My
+                tools and guides are designed to fill in knowledge gaps that
+                will help people get outside safely and sustainably.
+              </p>
+              <p>
+                If you would like to support this project, please consider
+                signing up for my newsletter using the signup below.
+              </p>
             </div>
           </div>
         </section>
-
+        <div className="content-wrapper row cnt-vrt cnt-hrz mobile-col">
+          <NewsletterCapture
+            headline=""
+            subtext="Subscribing to the newsletter is an free and easy way to support this project."
+          />
+        </div>
         <section className="about-section">
           <h2>Background & Training</h2>
 
           <p>
-            This work is informed by formal education, professional work
-            experience, and specialized training across outdoor leadership,
-            safety, and technical systems.
+            This project is informed by formal education, professional work, and
+            personal experience.
           </p>
 
           <ul>
@@ -71,8 +87,8 @@ const About = () => {
               EMT & 90-Day Semester in the Rocky Mountains
             </li>
             <li>
-              <strong>American Canoe Association</strong> | Canoe & Sea Kayak
-              Instructor
+              <strong>American Canoe Association</strong> | Level I Canoe & Sea
+              Kayak Instructor
             </li>
             <li>
               <strong>United States Parachute Association</strong> | USPA
@@ -91,9 +107,7 @@ const About = () => {
             <li>
               Practical planning tools for conditions, logistics, and timing
             </li>
-            <li>
-              Field-tested notes that prioritize clarity over noise or hype
-            </li>
+            <li>Relevant notes built from experience in the field</li>
           </ul>
         </section>
 

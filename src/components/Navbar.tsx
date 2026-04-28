@@ -82,6 +82,7 @@ const Navbar = () => {
             Tools
           </NavLink>
         </li>
+
         <li>
           <NavLink to="/about" onClick={() => setMenuOpen(false)}>
             About

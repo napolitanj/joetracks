@@ -20,6 +20,15 @@ const tools: ToolItem[] = [
     imageSrc: "/images/ski-tracker-preview.png",
     imageAlt: "Michigan Ski Tracker table preview with resort weather data",
   },
+  {
+    title: "Michigan River Tracker",
+    description:
+      "Live flow and gauge height readings for Northern Michigan rivers, pulled directly from USGS Water Services. Know conditions before you paddle.",
+    href: "/river-conditions",
+    cta: "Check River Conditions",
+    imageSrc: "/images/river-tracker-preview.webp",
+    imageAlt: "Michigan River Tracker showing live USGS flow data",
+  },
 ];
 
 const ToolsIndex = () => {

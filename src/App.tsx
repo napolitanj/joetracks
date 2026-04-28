@@ -26,6 +26,7 @@ import ProgramManagement from "./components/ProgramManagement";
 import SoftwareTechSupport from "./components/SoftwareTechSupport";
 import OutdoorLeadership from "./components/OutdoorLeadership";
 import MichiganSkiTracker from "./components/pages/MichiganSkiTracker";
+import RiverTracker from "./components/RiverTracker";
 import CoordTool from "./dev/coords";
 import SleepingBearSkiGuide from "./components/SleepingBearSkiGuide";
 import KeystoneRapidsGuide from "./components/KeystoneRapidsGuide";
@@ -92,6 +93,11 @@ function App() {
           <Route
             path="/tools/michigan-ski-tracker"
             element={<Navigate to="/michigan-ski-tracker" replace />}
+          />
+          <Route path="/river-conditions" element={<RiverTracker />} />
+          <Route
+            path="/tools/river-conditions"
+            element={<Navigate to="/river-conditions" replace />}
           />
           <Route path="/coord-tool" element={<CoordTool />} />
           <Route path="/trails/:slug" element={<TrailGuideTemplate />} />

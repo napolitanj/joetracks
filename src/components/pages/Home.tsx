@@ -61,18 +61,14 @@ const Home = () => {
         <div className="home-container home-inner">
           <div className="home-split">
             <div className="home-split-copy">
-              <h2>Plan Better Days Outside</h2>
+              <h2>Guides and Tools That Actually Get You Out There</h2>
               <p className="home-subhead">
                 JoeTracks provides <strong>field-tested guides</strong> and{" "}
                 <strong>planning tools</strong> to simplify real-world outdoor
                 decision-making — from access and logistics to conditions and
                 the lesser-known adventures in the region.
               </p>
-              <p className="home-subhead">
-                While much of the content focuses on Northern Michigan, the
-                underlying principles and systems are built to remain useful
-                anywhere you explore.
-              </p>
+
               <div className="home-start-cta">
                 <Link to="/guides" className="home-btn home-btn-primary">
                   Browse Guides

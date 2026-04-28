@@ -33,9 +33,11 @@ const Footer = () => {
               <Link to="/guides">Guides</Link>
             </h2>
             <Link to="/north-manitou-island-guide">North Manitou Island</Link>
-            <Link to="/ski-mount-sneffels">Skiing Mount Sneffels</Link>
+            <Link to="/ski-sleeping-bear-dunes">Skiing Sleeping Bear</Link>
+            <Link to="boardman-river-keystone-rapids">
+              Paddle the Keystone Rapids
+            </Link>
             <Link to="/caltopo-guide">How to Use CalTopo</Link>
-            <Link to="/remote-forecasting-tools">Remote Forecasting Tools</Link>
           </nav>
 
           <nav className="site-footer-col" aria-label="Tools">
@@ -43,6 +45,7 @@ const Footer = () => {
               <Link to="/tools">Tools</Link>
             </h2>
             <Link to="/michigan-ski-tracker">Michigan Ski Tracker</Link>
+            <Link to="/river-conditions">Michigan River Tracker</Link>
           </nav>
 
           <nav className="site-footer-col" aria-label="Portfolio">

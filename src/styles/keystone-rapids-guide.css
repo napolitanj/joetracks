@@ -301,13 +301,13 @@
 .row {
   display: flex;
   flex-direction: row;
-  gap: em;
+  gap: 1em;
 }
 
 .col {
   display: flex;
   flex-direction: column;
-  gap: em;
+  gap: 1em;
 }
 
 .cnt-vrt {

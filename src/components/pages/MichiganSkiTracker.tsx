@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "../../styles/MichiganSkiTracker.css";
 import { RESORTS } from "../../data/michiganResorts";
 import SEO from "../SEO";
+import NewsletterCapture from "../NewsletterCapture";
 
 const REGIONS = [
   "All Regions",
@@ -125,6 +126,16 @@ export default function MichiganSkiTracker() {
               variables including wind, temperature, and rain. This tool tracks
               snowfall only.
             </p>{" "}
+            <section className="content-wrapper row cnt-vrt cnt-hrz mobile-col">
+              <div className="col cnt-vrt cnt-hrz">
+                <h2>Enjoying this tool?</h2>
+                <p>Support this project for free.</p>
+              </div>
+              <NewsletterCapture
+                headline="I publish new guides and tools weekly."
+                subtext="Subscribing to the newsletter costs nothing and supports me in building free community resources."
+              />
+            </section>
           </div>
         </div>
 

@@ -212,6 +212,10 @@ const KeystoneRapidsGuide = () => {
                           Road until the bridge is repaired.{" "}
                         </p>
                         <p>
+                          The gauging station was also damaged in the flood.
+                          Flow rates above may be inaccurate.
+                        </p>
+                        <p>
                           Due to tunnel damage, the Beitner Canoe Launch is no
                           longer viable as put-in. Use the ramp at the Keystone
                           Rapids Trailhead to access the river.

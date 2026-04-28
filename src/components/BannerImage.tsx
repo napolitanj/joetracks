@@ -12,8 +12,7 @@ const BannerImage = () => {
               <h1>Competence, clarity, and confidence in the outdoors.</h1>
               <p className="subheader">
                 Clear, practical guides and tools built for everyone —
-                accessible instantly in your browser. No apps, accounts, or
-                unnecessary friction.
+                accessible instantly in your browser, no downloads required.
               </p>
               <div className="banner-cta">
                 <Link to="/guides" className="home-btn home-btn--overlay">

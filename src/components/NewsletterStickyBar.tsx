@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "/src/styles/newsletter.css";
 
-const KIT_FORM_URL = "https://app.kit.com/forms/9272089/subscriptions";
+const KIT_FORM_URL = "https://app.kit.com/forms/9379833/subscriptions";
 const DISMISSED_KEY = "newsletter-bar-dismissed";
 
 const NewsletterStickyBar = () => {
