@@ -5,6 +5,7 @@ import { useRiverData } from "./useRiverData";
 import { useFavorites } from "./useFavorites";
 import RiverStatusBadge from "./RiverStatusBadge";
 import NewsletterCapture from "../NewsletterCapture";
+import SEO from "../SEO";
 
 type Tab =
   | "★ Favorites"
@@ -60,10 +61,75 @@ export default function RiverTracker() {
       : "No rivers found.";
 
   return (
-    <section className="tool-page">
+    <>
+      <SEO
+        title="Michigan River Conditions | Live Flow & Gauge Data — JoeTracks"
+        description="Real-time river flow rates and gauge heights for Michigan paddling rivers, updated continuously from USGS gauging stations. Compares current conditions to historical averages for every date of the year."
+        canonical="https://joetracks.com/river-conditions"
+        image="https://joetracks.com/images/og-river-tracker.png"
+        ogType="website"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Michigan River Conditions | Live Flow & Gauge Data",
+            description:
+              "Real-time river flow rates and gauge heights for Michigan paddling rivers, updated continuously from USGS gauging stations.",
+            url: "https://joetracks.com/river-conditions",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Michigan River Tracker",
+            description:
+              "Live river conditions tool for Michigan paddlers — flow rates and gauge heights from USGS Water Services, compared to historical daily averages.",
+            url: "https://joetracks.com/river-conditions",
+            applicationCategory: "SportsApplication",
+            operatingSystem: "Web",
+            author: {
+              "@type": "Person",
+              name: "Joe Napolitan",
+              url: "https://joetracks.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "JoeTracks",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://joetracks.com/images/logo-lockup-teal.png",
+              },
+            },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://joetracks.com/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Tools",
+                item: "https://joetracks.com/tools",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Michigan River Tracker",
+                item: "https://joetracks.com/river-conditions",
+              },
+            ],
+          },
+        ]}
+      />
+      <section className="tool-page">
       <div className="tool-hero">
         <div className="tool-hero-inner">
-          <h1 className="tool-hero-title">Michigan River Tracker</h1>
+          <h1 className="tool-hero-title">Michigan River Conditions</h1>
           <p className="tool-hero-subhead">
             Michigan River conditions built from live flow and gauge height
             readings across the state — pulled directly from USGS Water
@@ -239,5 +305,6 @@ export default function RiverTracker() {
         </p>
       </div>
     </section>
+    </>
   );
 }
