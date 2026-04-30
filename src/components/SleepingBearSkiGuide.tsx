@@ -5,6 +5,8 @@ import "/src/styles/shared.css";
 import Reveal from "./ui/Reveal";
 import SEO from "./SEO";
 import NewsletterCapture from "./NewsletterCapture";
+import LNTNotice from "./guide/LNTNotice";
+import ManagedBy from "./guide/ManagedBy";
 
 const SleepingBearGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -824,10 +826,8 @@ const SleepingBearGuide = () => {
                       </div>
                     </div>
                   </div>
-                  <Link to="/guides" className="back-to-guides">
-                    ← Back to Guides
-                  </Link>
                 </div>
+
                 <hr className="section-divider" />
                 <div className="vrt-spc"></div>
                 <div className="content-wrapper row row">
@@ -842,9 +842,17 @@ const SleepingBearGuide = () => {
                     ></iframe>
                   </div>
                 </div>
+                <div className="guide-footer-attributions content-wrapper">
+                  <ManagedBy organization="sleepingBearDunes" />
+                  <LNTNotice />
+                  <Link to="/guides" className="back-to-guides">
+                    ← Back to Guides
+                  </Link>
+                </div>
+
+                <div className="vrt-spc"></div>
               </section>
-            </Reveal>
-            <div className="vrt-spc"></div>
+            </Reveal>{" "}
           </article>
         </main>
       </div>

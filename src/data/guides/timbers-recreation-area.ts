@@ -60,5 +60,7 @@ export const timbersGuide: TrailGuide = {
     "Special use permits are required for research or other non-recreational activities.",
   ],
   managedBy: "Long Lake Township / Grand Traverse Regional Land Conservancy",
+  managedByKey: "grandTraverseRegionalLandConservancy",
+
   lastUpdated: "2026-04-17",
 };

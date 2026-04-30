@@ -59,6 +59,7 @@ const guides: GuideItem[] = [
       "/images/nct/valley-of-the-giants/valley-of-the-giants-banner.webp",
     imageAlt: "PLACEHOLDER — Valley of the Giants image alt text",
   },
+
   {
     title: "Trip Planning With Remote Forecasting Tools",
     description:

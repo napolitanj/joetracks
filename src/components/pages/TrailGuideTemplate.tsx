@@ -5,6 +5,8 @@ import { getGuideBySlug } from "../../data/guides/index";
 import { Activity } from "../../types/Trailguide";
 import "../../styles/TrailGuideTemplate.css";
 import NewsletterCapture from "../NewsletterCapture";
+import ManagedBy from "../guide/ManagedBy";
+import LNTNotice from "../guide/LNTNotice";
 
 const activityLabels: Record<Activity, string> = {
   hiking: "Hiking",
@@ -262,10 +264,6 @@ export default function TrailGuideTemplate() {
             </div>
           )}
 
-          {/* Managed By */}
-          {guide.managedBy && (
-            <p className="tg-managed-by">Managed by {guide.managedBy}</p>
-          )}
           {/* YouTube Embed */}
           {guide.youtubeEmbedId && (
             <div className="tg-section">
@@ -284,6 +282,11 @@ export default function TrailGuideTemplate() {
             headline="I publish several free guides every month."
             subtext="If you love free resources like these, subscribing to the newsletter is an easy way to support this project. Sign up to be notified when new guides are published and gain access to exclusive content."
           />
+          <div className="guide-footer-attributions content-wrapper">
+            {guide.managedBy && <ManagedBy organization={guide.managedByKey} />}
+            <LNTNotice />
+          </div>
+          <div className="vrt-spc"></div>
           <Link to="/guides" className="tg-back-link">
             ← Back to Guides
           </Link>

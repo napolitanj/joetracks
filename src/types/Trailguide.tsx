@@ -1,4 +1,11 @@
-export type GuideCategory = "hiking" | "paddling" | "skiing" | "biking";
+import { ManagingOrgKey } from "../data/managingOrganizations";
+
+export type GuideCategory =
+  | "hiking"
+  | "paddling"
+  | "skiing"
+  | "biking"
+  | "mountain-biking";
 export type Difficulty = "easy" | "moderate" | "hard";
 export type GuideTier = "free" | "subscriber" | "paid";
 export type Activity =
@@ -54,4 +61,5 @@ export interface TrailGuide {
   propertyRules: string[];
   parkingMapUrl?: string;
   youtubeEmbedId?: string;
+  managedByKey: ManagingOrgKey;
 }

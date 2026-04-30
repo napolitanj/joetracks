@@ -83,6 +83,9 @@ const About = () => {
               | Pro Level I
             </li>
             <li>
+              <strong>Leave No Trace (LNT)</strong> | Master Educator
+            </li>
+            <li>
               <strong> National Outdoor Leadership School</strong> | Wilderness
               EMT & 90-Day Semester in the Rocky Mountains
             </li>

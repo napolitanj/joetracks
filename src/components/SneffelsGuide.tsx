@@ -5,6 +5,8 @@ import "/src/styles/shared.css";
 import Reveal from "./ui/Reveal";
 import SEO from "./SEO";
 import NewsletterCapture from "./NewsletterCapture";
+import LNTNotice from "./guide/LNTNotice";
+import ManagedBy from "./guide/ManagedBy";
 
 const SneffelsGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -996,9 +998,6 @@ const SneffelsGuide = () => {
                       </div>
                     </div>
                     <hr className="section-divider" />
-                    <Link to="/guides" className="back-to-guides">
-                      ← Back to Guides
-                    </Link>
 
                     <div className="row row">
                       <div className="cnt">
@@ -1021,6 +1020,13 @@ const SneffelsGuide = () => {
                 </div>
               </section>
             </Reveal>
+            <div className="guide-footer-attributions content-wrapper">
+              <ManagedBy organization="ourayRangerDistrict" />
+              <LNTNotice />
+              <Link to="/guides" className="back-to-guides">
+                ← Back to Guides
+              </Link>
+            </div>
             <div className="vrt-spc"></div>
           </article>
         </main>

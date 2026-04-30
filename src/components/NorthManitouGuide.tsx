@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Reveal from "./ui/Reveal";
 import SEO from "./SEO";
 import NewsletterCapture from "./NewsletterCapture";
+import LNTNotice from "./guide/LNTNotice";
+import ManagedBy from "./guide/ManagedBy";
 
 const NorthManitouGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -1008,19 +1010,17 @@ const NorthManitouGuide = () => {
                   garden I've ever seen. I often struggle to decide between the
                   two.
                 </p>
-                <p>
-                  We hope you enjoyed this guide and found it helpful. Please
-                  share it with others if you did! If you have any feedback or
-                  questions, please reach out to us using our contact form.
-                  Also, be sure to subscribe below, so you stay up to date with
-                  new guides we publish each month. Have a nice trip!
-                </p>
+
+                <div className="guide-footer-attributions content-wrapper">
+                  <ManagedBy organization="sleepingBearDunes" />
+                  <LNTNotice />
+                </div>
+                <div className="vrt-spc"></div>
               </div>
               <Link to="/guides" className="back-to-guides">
                 ← Back to Guides
               </Link>
             </div>
-            <div className="vrt-spc"></div>
           </article>
         </main>
       </div>

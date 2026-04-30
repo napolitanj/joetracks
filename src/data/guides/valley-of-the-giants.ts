@@ -69,5 +69,6 @@ export const valleyOfTheGiantsGuide: TrailGuide = {
   ],
   youtubeEmbedId: "5qBKyU6bwsE",
   managedBy: "North Country Trail Association — Grand Traverse Chapter",
+  managedByKey: "northCountryTrailAssociation",
   lastUpdated: "2026-04-23",
 };

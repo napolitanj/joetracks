@@ -1,0 +1,33 @@
+.lnt-notice {
+  border-top: 1px solid var(--border-color);
+  padding: 1.25rem 0 0.5rem;
+  margin-top: 2rem;
+  max-width: 680px;
+}
+
+.lnt-notice__heading {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-text);
+  margin-bottom: 0.45rem;
+}
+
+.lnt-notice__body {
+  font-size: 0.88rem;
+  color: var(--muted-text);
+  line-height: 1.6;
+  margin-bottom: 0.6rem !important;
+}
+
+.lnt-notice__link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.lnt-notice__link:hover {
+  text-decoration: underline;
+}
