@@ -845,9 +845,6 @@ const SleepingBearGuide = () => {
                 <div className="guide-footer-attributions content-wrapper">
                   <ManagedBy organization="sleepingBearDunes" />
                   <LNTNotice />
-                  <Link to="/guides" className="back-to-guides">
-                    ← Back to Guides
-                  </Link>
                 </div>
 
                 <div className="vrt-spc"></div>
@@ -855,6 +852,9 @@ const SleepingBearGuide = () => {
             </Reveal>{" "}
           </article>
         </main>
+        <Link to="/guides" className="back-to-guides">
+          ← Back to Guides
+        </Link>
       </div>
     </>
   );

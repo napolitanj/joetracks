@@ -1186,15 +1186,15 @@ const CalTopo = () => {
                       </p>
                     </div>
                   </div>
-                  <Link to="/guides" className="back-to-guides">
-                    ← Back to Guides
-                  </Link>
                 </section>
                 <div className="vrt-spc"></div>
               </div>
             </Reveal>
           </article>
         </main>
+        <Link to="/guides" className="back-to-guides">
+          ← Back to Guides
+        </Link>
       </div>
     </>
   );

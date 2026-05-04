@@ -679,13 +679,13 @@ const RemoteForecastingTools = () => {
                 </div>
               </Reveal>
               <div className="vrt-spc"></div>
-              <Link to="/guides" className="back-to-guides">
-                ← Back to Guides
-              </Link>
             </div>
           </article>
         </div>
       </main>
+      <Link to="/guides" className="back-to-guides">
+        ← Back to Guides
+      </Link>
     </>
   );
 };

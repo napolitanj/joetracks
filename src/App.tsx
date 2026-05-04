@@ -30,6 +30,7 @@ import RiverTracker from "./components/RiverTracker";
 import CoordTool from "./dev/coords";
 import SleepingBearSkiGuide from "./components/SleepingBearSkiGuide";
 import KeystoneRapidsGuide from "./components/KeystoneRapidsGuide";
+import PalmerWoodsGuide from "./components/PalmerWoodsGuide";
 import NewsletterStickyBar from "./components/NewsletterStickyBar";
 import TrailGuideTemplate from "./components/pages/TrailGuideTemplate";
 
@@ -71,6 +72,10 @@ function App() {
           <Route
             path="/boardman-river-keystone-rapids"
             element={<KeystoneRapidsGuide />}
+          />
+          <Route
+            path="/palmer-woods-forest-reserve"
+            element={<PalmerWoodsGuide />}
           />
           <Route
             path="/softwaretechsupport"

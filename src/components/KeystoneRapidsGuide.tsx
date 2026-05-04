@@ -103,7 +103,6 @@ const KeystoneRapidsGuide = () => {
                 </div>
               </section>
             </Reveal>
-
             {/* ── Intro ── */}
             <Reveal variant="up" delay={80}>
               <section className="content-wrapper dis-col">
@@ -164,7 +163,6 @@ const KeystoneRapidsGuide = () => {
                 <hr className="section-divider" />
               </section>
             </Reveal>
-
             {/* ── Overview / At a Glance ── */}
             <Reveal variant="up" delay={140}>
               <section className="content-wrapper">
@@ -210,18 +208,15 @@ const KeystoneRapidsGuide = () => {
                           {" "}
                           The Beitner Road bridge collapsed during a flooding
                           event on April 15, 2026 and is impassable. The river
-                          can only be accessed from the east side using Keystone
-                          Road until the bridge is repaired.{" "}
+                          can no longer be accessed from Beitner Road, and
+                          repairs are not expected to be completed before the
+                          end of summer 2026.{" "}
                         </p>
                         <p>
                           The gauging station was also damaged in the flood.
                           Flow rates above may be inaccurate.
                         </p>
-                        <p>
-                          Due to tunnel damage, the Beitner Canoe Launch is no
-                          longer viable as put-in. Use the ramp at the Keystone
-                          Rapids Trailhead to access the river.
-                        </p>
+
                         <figure>
                           <img
                             src="/images/keystone-rapids/beitner-bridge-destroyed.webp"
@@ -282,7 +277,6 @@ const KeystoneRapidsGuide = () => {
                 />
               </section>
             </Reveal>
-
             {/* ── The Float ── */}
             <Reveal variant="up" delay={200}>
               <section id="the-float" className="content-wrapper">
@@ -389,7 +383,6 @@ const KeystoneRapidsGuide = () => {
                 <hr className="section-divider" />
               </section>
             </Reveal>
-
             {/* ── Rapids Breakdown ── */}
             <Reveal variant="up" delay={260}>
               <section id="rapids" className="content-wrapper">
@@ -540,7 +533,6 @@ const KeystoneRapidsGuide = () => {
                 <hr className="section-divider" />
               </section>
             </Reveal>
-
             <Reveal variant="up" delay={380}>
               <section id="rules" className="content-wrapper">
                 <h2>Rules and Regulations</h2>
@@ -568,9 +560,7 @@ const KeystoneRapidsGuide = () => {
                   , and adhere to the rules and regulations posted at
                   trailheads.
                 </p>
-
                 <hr className="section-divider" />
-
                 <div className="vrt-spc"></div>
                 <div className="row row">
                   <div className="cnt">
@@ -584,18 +574,18 @@ const KeystoneRapidsGuide = () => {
                     ></iframe>
                   </div>
                 </div>
+                <div className="guide-footer-attributions content-wrapper">
+                  <ManagedBy organization="grandTraverseConservationDistrict" />
+                  <LNTNotice />
+                </div>
+                <div className="vrt-spc"></div>{" "}
               </section>
             </Reveal>
-            <div className="guide-footer-attributions content-wrapper">
-              <ManagedBy organization="grandTraverseConservationDistrict" />
-              <LNTNotice />
-              <Link to="/guides" className="back-to-guides">
-                ← Back to Guides
-              </Link>
-            </div>
-            <div className="vrt-spc"></div>
           </article>
         </main>
+        <Link to="/guides" className="back-to-guides">
+          ← Back to Guides
+        </Link>
       </div>
     </>
   );

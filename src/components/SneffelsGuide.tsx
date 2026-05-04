@@ -1023,13 +1023,13 @@ const SneffelsGuide = () => {
             <div className="guide-footer-attributions content-wrapper">
               <ManagedBy organization="ourayRangerDistrict" />
               <LNTNotice />
-              <Link to="/guides" className="back-to-guides">
-                ← Back to Guides
-              </Link>
             </div>
             <div className="vrt-spc"></div>
           </article>
         </main>
+        <Link to="/guides" className="back-to-guides">
+          ← Back to Guides
+        </Link>
       </div>
     </>
   );

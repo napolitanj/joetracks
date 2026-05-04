@@ -23,30 +23,19 @@ const ManagedBy = ({ organization }: ManagedByProps) => {
       <p className="managed-by__heading">Managed by {org.name}</p>
       <p className="managed-by__description">{org.shortDescription}</p>
       <p className="managed-by__support">
-        {org.supportPartner ? (
-          <>
-            If you've enjoyed these trails, consider supporting{" "}
-            <a
-              className="managed-by__support-link"
-              href={org.supportUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {org.supportPartner}
-            </a>
-            , the nonprofit partner that funds projects and programs at this
-            location.
-          </>
-        ) : (
+        <>
+          If you've enjoyed these trails, consider supporting{" "}
           <a
             className="managed-by__support-link"
             href={org.supportUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
-            If you've enjoyed these trails, consider supporting their work →
+            {org.supportPartner}
           </a>
-        )}
+          , the nonprofit partner that funds projects and programs at this
+          location.
+        </>
       </p>
       <a
         className="managed-by__org-link"

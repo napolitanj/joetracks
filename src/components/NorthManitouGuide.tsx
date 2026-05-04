@@ -1017,12 +1017,12 @@ const NorthManitouGuide = () => {
                 </div>
                 <div className="vrt-spc"></div>
               </div>
-              <Link to="/guides" className="back-to-guides">
-                ← Back to Guides
-              </Link>
             </div>
           </article>
         </main>
+        <Link to="/guides" className="back-to-guides">
+          ← Back to Guides
+        </Link>
       </div>
     </>
   );

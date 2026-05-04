@@ -1,0 +1,343 @@
+.palmer-woods-guide .palmer-woods-bg {
+  background-image: url("/images/palmer-woods/palmer-woods-hero.webp");
+}
+
+.palmer-woods-guide .palmer-woods-hero {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+
+.palmer-woods-guide .palmer-woods-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 18, 27, 0.32) 0%,
+    rgba(7, 18, 27, 0.32) 44%,
+    rgba(7, 18, 27, 0.18) 100%
+  );
+  z-index: 0;
+}
+
+.palmer-woods-guide .palmer-woods-hero .hero-text {
+  position: relative;
+  z-index: 1;
+  width: min(72rem, 92%);
+  margin: 0 auto;
+  text-align: center;
+  color: #f6f8f9;
+}
+
+.palmer-woods-guide .palmer-woods-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  max-width: 22ch;
+  margin: 0 auto;
+  text-shadow: 0 0.1rem 0.75rem rgba(0, 0, 0, 0.42);
+}
+
+.palmer-woods-guide .palmer-woods-hero .hero-subhead {
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 400;
+  margin-top: 0.6rem;
+  opacity: 0.9;
+  text-shadow: 0 0.05rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+.palmer-woods-guide .content-wrapper {
+  max-width: min(70rem, 94%);
+  margin: 0 auto;
+}
+
+.palmer-woods-guide .palmer-woods-intro {
+  gap: clamp(1rem, 2.2vw, 2rem);
+  align-items: center;
+}
+
+.palmer-woods-guide .intro-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.palmer-woods-guide .intro-image {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.palmer-woods-guide h2 {
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
+  line-height: 1.2;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+}
+
+.palmer-woods-guide h3 {
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  line-height: 1.3;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.palmer-woods-guide h4 {
+  font-size: clamp(1.08rem, 1.8vw, 1.25rem);
+  line-height: 1.3;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.palmer-woods-guide p,
+.palmer-woods-guide li {
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+.palmer-woods-guide .section-half > p,
+.palmer-woods-guide .section-half li p,
+.palmer-woods-guide figcaption p,
+.palmer-woods-guide .intro-text p {
+  max-width: 70ch;
+}
+
+.palmer-woods-guide .intro-text p {
+  margin-bottom: 1.2rem;
+}
+
+.palmer-woods-guide .palmer-woods-quick-nav {
+  margin-top: 1em;
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.9rem;
+  padding: 0.85rem 0.95rem;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.palmer-woods-guide .palmer-woods-quick-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.25rem;
+  border-bottom: 0.0625rem solid
+    color-mix(in srgb, var(--accent-color) 30%, transparent);
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.palmer-woods-guide .palmer-woods-quick-nav a:hover,
+.palmer-woods-guide .palmer-woods-quick-nav a:focus-visible {
+  color: var(--text-color);
+  border-bottom-color: color-mix(in srgb, var(--text-color) 40%, transparent);
+  outline: none;
+}
+
+.palmer-woods-guide .section-half img,
+.palmer-woods-guide figure > img,
+.palmer-woods-guide .image-shape-container-element img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+  border: 0.0625rem solid var(--border-color);
+  display: block;
+}
+
+.palmer-woods-guide figcaption,
+.palmer-woods-guide .image-caption {
+  margin-top: 0.45rem;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+.palmer-woods-guide .section-divider,
+.palmer-woods-guide .block.horizontalrule-block hr,
+.palmer-woods-guide .block-content hr {
+  border: 0;
+  border-top: 0.0625rem solid var(--border-color);
+  margin: 1.25rem 0;
+}
+
+.palmer-woods-guide .link-block a {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.palmer-woods-guide a:focus-visible {
+  outline: 0.125rem solid
+    color-mix(in srgb, var(--accent-color) 45%, transparent);
+  outline-offset: 0.125rem;
+}
+
+.palmer-woods-guide iframe {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 0.8rem;
+}
+
+/* ── Maps grid ── */
+.palmer-woods-guide .maps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 2.5rem;
+  margin-top: 1rem;
+}
+
+.palmer-woods-guide .map-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.palmer-woods-guide .map-block-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-text);
+  margin-bottom: 0.5rem;
+}
+
+.palmer-woods-guide .map-block figure {
+  margin: 0;
+  flex: 1;
+}
+
+/* ── Trails grid ── */
+.palmer-woods-guide .trails-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 2.5rem;
+  margin-top: 1rem;
+}
+
+.palmer-woods-guide .trail-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.8rem;
+  padding: 1.1rem 1.2rem;
+}
+
+.palmer-woods-guide .trail-card h3 {
+  margin-bottom: 0.4rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+}
+
+.palmer-woods-guide .trail-card figure {
+  margin: 0;
+  margin-top: 0.75rem;
+  flex: 1;
+}
+
+.palmer-woods-guide .trail-meta {
+  font-size: 0.88rem;
+  color: var(--muted-text);
+  margin-bottom: 0.6rem;
+}
+
+/* ── Difficulty pills ── */
+.palmer-woods-guide .difficulty-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 999rem;
+  padding: 0.18rem 0.65rem;
+  margin-bottom: 0.5rem;
+}
+
+.palmer-woods-guide .difficulty-pill--beginner {
+  background: #2e7d32;
+  color: #fff;
+}
+
+.palmer-woods-guide .difficulty-pill--intermediate {
+  background: #1565c0;
+  color: #fff;
+}
+
+.palmer-woods-guide .difficulty-pill--intermediate-difficult {
+  background: linear-gradient(90deg, #1565c0 50%, #111 50%);
+  color: #fff;
+}
+
+.palmer-woods-guide .difficulty-pill--difficult {
+  background: #111;
+  color: #fff;
+}
+
+/* ── Hub sub-headings ── */
+.palmer-woods-guide .hub-heading {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 0.125rem solid var(--border-color);
+  grid-column: 1 / -1;
+}
+
+/* ── Know Before / Rules list ── */
+.palmer-woods-guide .know-before-list {
+  padding-left: 1.4rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.palmer-woods-guide .know-before-list li {
+  margin-bottom: 0.6rem;
+}
+
+/* ── YouTube row ── */
+.palmer-woods-guide .video-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+@media (max-width: 900px) {
+  .palmer-woods-guide .maps-grid,
+  .palmer-woods-guide .trails-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .palmer-woods-guide .palmer-woods-hero {
+    min-height: clamp(16rem, 42vh, 24rem);
+  }
+
+  .palmer-woods-guide .dis-row {
+    flex-direction: column;
+  }
+
+  .palmer-woods-guide .section-half {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .palmer-woods-guide .palmer-woods-hero {
+    min-height: clamp(14rem, 36vh, 19rem);
+  }
+
+  .palmer-woods-guide .palmer-woods-hero .hero-text {
+    width: min(72rem, 94%);
+  }
+
+  .palmer-woods-guide .palmer-woods-intro {
+    gap: 1rem;
+  }
+}
