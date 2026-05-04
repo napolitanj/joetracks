@@ -99,7 +99,6 @@ const PalmerWoodsGuide = () => {
                   <h1 className={animate ? "animate" : ""}>
                     Mountain Biking at Palmer Woods Forest Reserve
                   </h1>
-                  <p className="hero-subhead">A Leelanau County Trail Guide</p>
                 </div>
               </section>
             </Reveal>
@@ -110,29 +109,40 @@ const PalmerWoodsGuide = () => {
                 <div id="overview" className="dis-row palmer-woods-intro">
                   <div className="intro-text section-half">
                     <p>
-                      {/* [PLACEHOLDER] Introduction paragraph 1 about Palmer Woods — overview of the reserve, location in Leelanau County, and significance of the new trail system. */}
-                      [PLACEHOLDER — Introductory paragraph about Palmer Woods Forest Reserve: its location in Leelanau County, Michigan, and the significance of the newly completed trail system.]
+                      Palmer Woods Forest Reserve is a 1,115-acre property in
+                      Leelanau County, about thirty minutes west of Traverse
+                      City, Michigan. Owned by the Leelanau Conservancy, it
+                      holds one of the most ambitious mountain bike trail
+                      systems in the state. The network was completed in early
+                      April 2026 after eight years of development, with 27 miles
+                      of singletrack and 15 miles of separate hiking and skiing
+                      trails.
                     </p>
                     <p>
-                      {/* [PLACEHOLDER] Introduction paragraph 2 — character of the riding, terrain, forest type, and what makes this system unique in the region. */}
-                      [PLACEHOLDER — Second paragraph describing the character of the riding, the terrain, forest types, and what distinguishes Palmer Woods from other trail systems in northwest Michigan.]
+                      The riding stands apart from most of the lower peninsula.
+                      Roughly 400 feet of vertical relief runs through northern
+                      hardwood forest bordered on three sides by Sleeping Bear
+                      Dunes National Lakeshore. The trails were purpose-built
+                      for mountain biking, designed for progression so riders of
+                      any skill level can find something fun to explore.
                     </p>
                     <p>
-                      {/* [PLACEHOLDER] Introduction paragraph 3 — logistics overview and what this guide covers. */}
-                      [PLACEHOLDER — Third paragraph providing a logistics overview and a brief description of what this guide covers.]
+                      The newest trails in the Chaga Hub opened on April 3, 2026
+                      and aren't yet mapped on Trailforks or Mountain Bike
+                      Project. Check out the maps and trail descriptions below
+                      for the most current information available.
                     </p>
                   </div>
                   <div className="intro-image-wrapper section-half">
                     <img
-                      src="/images/palmer-woods/palmer-woods-intro.webp"
-                      alt="A mountain biker on a trail at Palmer Woods Forest Reserve"
+                      src="/images/palmer-woods/palmer-woods-turkey-tail.webp"
+                      alt="A biking trail at Palmer Woods Forest Reserve"
                       className="intro-image"
                     />
                     <p className="palmer-woods-quick-nav">
-                      Jump to:{" "}
-                      <a href="#maps">Maps</a>{" "}
-                      <a href="#trails">Trails</a>{" "}
+                      Jump to:
                       <a href="#getting-there">Getting There</a>{" "}
+                      <a href="#maps">Maps</a> <a href="#trails">Trails</a>{" "}
                       <a href="#know-before-you-go">Know Before You Go</a>{" "}
                       <a href="#rules">Rules</a>
                     </p>
@@ -142,57 +152,130 @@ const PalmerWoodsGuide = () => {
                 <p>
                   <em>
                     Palmer Woods is a working forest reserve managed by the
-                    Leelanau Conservancy. Stay on marked trails, respect trail
-                    directionality, and yield appropriately to other users.
-                    Mountain biking, hiking, and skiing trails are physically
-                    separate networks — bikes are not permitted on the hike/ski
-                    trails.
+                    Leelanau Conservancy. Both Sleeping Bear Dunes National
+                    Lakeshore and private property border this natural area.
+                    Stay on marked trails, respect trail directionality, and
+                    yield appropriately to other users. Mountain biking, hiking,
+                    and skiing trails are physically separate networks — bikes
+                    are not permitted on the hike/ski trails.
                   </em>
                 </p>
                 <hr className="section-divider" />
               </section>
             </Reveal>
-
+            {/* ── Getting There ── */}
+            <Reveal variant="up" delay={260}>
+              <section id="getting-there" className="content-wrapper">
+                <h2>Getting There</h2>
+                <div className="dis-row g-2">
+                  <div className="section-half">
+                    <ul className="stats-list">
+                      <p>
+                        Palmer Woods Reserve is a 22-mile, 30-minute drive from
+                        Traverse City, Michigan. The northern entrance is not
+                        yet designated on Google Maps, but the link below is
+                        pinned to its location on the east side of Wheeler Road.
+                      </p>
+                      <li>
+                        <strong>South Lot (main entrance):</strong>{" "}
+                        <a
+                          href="https://maps.app.goo.gl/rmA1Do8CZHyzVopHA"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Directions
+                        </a>
+                      </li>
+                      <li>
+                        <strong>North Lot:</strong>{" "}
+                        <a
+                          href="https://maps.app.goo.gl/Lwu1VpMoFRW5D13s9"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Directions
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <figure className="section-half">
+                    <img
+                      src="/images/palmer-woods/palmer-woods-getting-there.webp"
+                      alt="The trailhead at Palmer Woods Forest Reserve"
+                    />
+                  </figure>
+                </div>
+                <hr className="section-divider" />
+              </section>
+            </Reveal>
             {/* ── Maps ── */}
             <Reveal variant="up" delay={140}>
               <section id="maps" className="content-wrapper">
                 <h2>Trail Maps</h2>
-                <div className="maps-grid">
-                  <div className="map-block">
-                    <p className="map-block-label">South Hubs</p>
-                    <figure className="block-image-figure intrinsic">
-                      <a
-                        href={`${import.meta.env.BASE_URL}images/palmer-woods/palmer-woods-south-hubs-map.png`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img
-                          src="/images/palmer-woods/palmer-woods-south-hubs-map.png"
-                          alt="Map of the south hubs trail system at Palmer Woods"
-                        />
-                      </a>
-                    </figure>
-                  </div>
-                  <div className="map-block">
-                    <p className="map-block-label">Chaga Hub</p>
-                    <figure className="block-image-figure intrinsic">
-                      <a
-                        href={`${import.meta.env.BASE_URL}images/palmer-woods/palmer-woods-chaga-hub-map.png`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img
-                          src="/images/palmer-woods/palmer-woods-chaga-hub-map.png"
-                          alt="Map of the Chaga Hub trail system at Palmer Woods"
-                        />
-                      </a>
-                    </figure>
-                  </div>
-                </div>
                 <p>
-                  {/* [PLACEHOLDER] Text explaining the two-hub structure of the trail system. */}
-                  [PLACEHOLDER — Paragraph explaining the two-hub structure of the Palmer Woods trail system, how they connect, and how to plan a route across them.]
+                  The Palmer Woods trail system is split across two physically
+                  separate hubs, each with its own parking area along Wheeler
+                  Road. The southern hubs contain the original network of
+                  beginner and intermediate trails built between 2018 and 2023.
+                  The northern hub, called the Chaga Hub, opened in April 2026
+                  and adds the system's most technical riding.
                 </p>
+
+                <div className="map-section">
+                  <h3>South Hubs</h3>
+                  <p>
+                    The three southern hubs are accessed from the main entrance,
+                    where visitors will also find restrooms, changing areas, a
+                    bike service station, and a covered picnic area. The hubs
+                    are spaced along the lower, middle, and upper Price Valley,
+                    with several trails converging at each. This makes it easy
+                    to link routes into rides of varying length and difficulty.
+                  </p>
+                  <figure className="block-image-figure intrinsic map-figure">
+                    <a
+                      href={`${import.meta.env.BASE_URL}images/palmer-woods/palmer-woods-south-map.png`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="/images/palmer-woods/palmer-woods-south-map.png"
+                        alt="Map of the south hubs trail system at Palmer Woods"
+                      />
+                    </a>
+                    <figcaption className="map-caption">
+                      Tap to open full-size map.
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <div className="map-section">
+                  <h3>Chaga Hub (North)</h3>
+                  <p>
+                    The Chaga Hub holds the system's most challenging trails.
+                    Intermediate riders will find longer climbs and faster
+                    descents than anywhere in the southern hubs, while advanced
+                    riders can take on technical rock features, drops, and the
+                    system's only black-diamond downhill. The northern parking
+                    area sits along Wheeler Road and is parking-only with no
+                    facilities.
+                  </p>
+                  <figure className="block-image-figure intrinsic map-figure">
+                    <a
+                      href={`${import.meta.env.BASE_URL}images/palmer-woods/palmer-woods-north-map.png`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="/images/palmer-woods/palmer-woods-north-map.png"
+                        alt="Map of the Chaga Hub trail system at Palmer Woods"
+                      />
+                    </a>
+                    <figcaption className="map-caption">
+                      Tap to open full-size map.
+                    </figcaption>
+                  </figure>
+                </div>
+
                 <hr className="section-divider" />
               </section>
             </Reveal>
@@ -201,12 +284,12 @@ const PalmerWoodsGuide = () => {
             <Reveal variant="up" delay={500}>
               <section className="content-wrapper row cnt-vrt cnt-hrz mobile-col">
                 <div className="col cnt-vrt cnt-hrz">
-                  <h2>Enjoying this guide?</h2>
+                  <h2>Enjoying this guide so far?</h2>
                   <p>Support this project for free.</p>
                 </div>
                 <NewsletterCapture
                   headline="I publish several guides every month."
-                  subtext="Skiing, biking, paddling, and more — subscribing to the newsletter is a free and easy way to support me in building free community resources. Sign up to be notified when new guides are published and gain access to subscriber-only content."
+                  subtext="Subscribing to the newsletter is a free and easy way to support me in building free community resources. Sign up to be notified when new guides are published and gain access to subscriber-only content."
                 />
               </section>
             </Reveal>
@@ -217,218 +300,255 @@ const PalmerWoodsGuide = () => {
                 <hr className="section-divider" />
                 <h2>The Trails</h2>
                 <p>
-                  {/* [PLACEHOLDER] Overview of the trail system, progression, and what to expect. */}
-                  [PLACEHOLDER — Overview of the Palmer Woods trail system: total mileage, skill progression from beginner to difficult, trail surface character, and general expectations for a day of riding.]
+                  <strong>
+                    Most of the biking trails in the preserve are directional,
+                    with one-way traffic alternating direction most days.
+                  </strong>{" "}
+                  Trails are well-marked by posts listing a trail's name,
+                  difficulty, and information about which direction you should
+                  embark on any given day of the week.{" "}
                 </p>
-
                 <div className="trails-grid">
-                  {/* ── Low Valley Hub ── */}
-                  <div className="hub-heading">Low Valley Hub</div>
+                  {/* ── Southern Hubs ── */}
+                  <div className="hub-heading">Southern Hubs</div>
+                  <figure className="hub-image-figure">
+                    <img
+                      className="hub-image"
+                      src="/images/palmer-woods/enlightener-s-turn.webp"
+                      alt="A biker navigates a turn in Palmer Woods Preserve"
+                    />
+                    <figcaption className="hub-image-caption">
+                      The Southern Hubs offer both beginner and intermediate
+                      trails with optional advanced features, such as The
+                      Enlightener pictured above.
+                    </figcaption>
+                  </figure>
 
                   <div className="trail-card">
                     <h3>Ursa Minor</h3>
-                    <span className="difficulty-pill difficulty-pill--beginner">Beginner</span>
-                    <p className="trail-meta">1.0 mi</p>
-                    <p>[PLACEHOLDER — Description of Ursa Minor trail.]</p>
-                    {/* TODO: Add trail photo */}
-                    <figure>
-                      <img
-                        src="/images/palmer-woods/trails/ursa-minor.webp"
-                        alt="Ursa Minor trail at Palmer Woods Forest Reserve"
-                      />
-                    </figure>
+                    <span className="difficulty-pill difficulty-pill--beginner">
+                      Beginner
+                    </span>
+                    <div className="trail-meta-container">
+                      <p className="trail-meta">Length: 1.0 mi</p>
+                      <p className="trail-meta">Vert: +/-59 ft</p>
+                    </div>
+                    <p>
+                      With 1.0 mile of singletrack and less than 60 feet of
+                      climbing, Ursa Minor is an ideal introductory trail for
+                      beginners or a warmup for experienced riders. An optional
+                      "session" area near the parking lot lets riders practice
+                      small drops and rollers.
+                    </p>
                   </div>
-
-                  {/* ── Mid Valley Hub ── */}
-                  <div className="hub-heading">Mid Valley Hub</div>
 
                   <div className="trail-card">
                     <h3>Ursa Major</h3>
-                    <span className="difficulty-pill difficulty-pill--beginner">Beginner</span>
-                    <p className="trail-meta">3.3 mi</p>
-                    <p>[PLACEHOLDER — Description of Ursa Major trail.]</p>
-                    {/* TODO: Add trail photo */}
-                    <figure>
-                      <img
-                        src="/images/palmer-woods/trails/ursa-major.webp"
-                        alt="Ursa Major trail at Palmer Woods Forest Reserve"
-                      />
-                    </figure>
+                    <span className="difficulty-pill difficulty-pill--beginner">
+                      Beginner
+                    </span>
+                    <div className="trail-meta-container">
+                      <p className="trail-meta">Length: 3.3 mi</p>
+                      <p className="trail-meta">Vert: +/-242 ft</p>
+                    </div>
+                    <p>
+                      A step up from Ursa Minor, this trail offers gradual
+                      climbs, flowy but controlled descents, bermed S-turns, and
+                      access to more advanced trails in the upper hubs.
+                      Occasional jumps and rock features all have bypasses.
+                    </p>
                   </div>
 
                   <div className="trail-card">
                     <h3>Acer Ridge</h3>
-                    <span className="difficulty-pill difficulty-pill--intermediate">Intermediate</span>
-                    <p className="trail-meta">2.5 mi</p>
-                    <p>[PLACEHOLDER — Description of Acer Ridge trail.]</p>
-                    {/* TODO: Add trail photo */}
-                    <figure>
-                      <img
-                        src="/images/palmer-woods/trails/acer-ridge.webp"
-                        alt="Acer Ridge trail at Palmer Woods Forest Reserve"
-                      />
-                    </figure>
+                    <span className="difficulty-pill difficulty-pill--intermediate">
+                      Intermediate
+                    </span>
+                    <div className="trail-meta-container">
+                      <p className="trail-meta">Length: 2.5 mi</p>
+                      <p className="trail-meta">Vert: +/-325 ft</p>
+                    </div>
+                    <p>
+                      Acer Ridge knocks the climbing out first so riders can
+                      enjoy the descent uninterrupted. Fast, flowy, and built
+                      for intermediate riders, the route also includes optional
+                      technical features for those ready to push it.
+                    </p>
                   </div>
 
                   <div className="trail-card">
                     <h3>The Enlightener</h3>
-                    <span className="difficulty-pill difficulty-pill--intermediate">Intermediate</span>
-                    <p className="trail-meta">2.8 mi · One-way, counterclockwise</p>
-                    <p>[PLACEHOLDER — Description of The Enlightener trail.]</p>
-                    {/* TODO: Add trail photo */}
-                    <figure>
-                      <img
-                        src="/images/palmer-woods/trails/the-enlightener.webp"
-                        alt="The Enlightener trail at Palmer Woods Forest Reserve"
-                      />
-                    </figure>
+                    <span className="difficulty-pill difficulty-pill--intermediate">
+                      Intermediate
+                    </span>
+                    <div className="trail-meta-container">
+                      <p className="trail-meta">Length: 2.8 mi</p>
+                      <p className="trail-meta">Vert: +/-291 ft</p>
+                    </div>
+                    <p>
+                      Touring the eastern boundary, The Enlightener winds in and
+                      out of gullies along the slope of the reserve. Riders will
+                      find thoughtfully-built S-turns, optional advanced
+                      sections, drops, and rollers along extended downhill
+                      stretches.
+                    </p>
                   </div>
-
-                  {/* ── High Valley Hub ── */}
-                  <div className="hub-heading">High Valley Hub</div>
 
                   <div className="trail-card">
                     <h3>Beechdrops</h3>
-                    <span className="difficulty-pill difficulty-pill--intermediate">Intermediate</span>
-                    <p className="trail-meta">1.0 mi</p>
-                    <p>[PLACEHOLDER — Description of Beechdrops trail.]</p>
-                    {/* TODO: Add trail photo */}
-                    <figure>
-                      <img
-                        src="/images/palmer-woods/trails/beechdrops.webp"
-                        alt="Beechdrops trail at Palmer Woods Forest Reserve"
-                      />
-                    </figure>
+                    <span className="difficulty-pill difficulty-pill--intermediate">
+                      Intermediate
+                    </span>
+                    <div className="trail-meta-container">
+                      <p className="trail-meta">Length: 1.0 mi</p>
+                      <p className="trail-meta">Vert: +/-261 ft</p>
+                    </div>
+                    <p>
+                      Beechdrops is a short trail connecting Fiddlehead back to
+                      the Mid Valley Hub. Fast, flowy, and entirely downhill,
+                      it's the fun way to return to the parking lot from the
+                      northern trails.
+                    </p>
                   </div>
 
                   <div className="trail-card">
                     <h3>Waxwing Connector</h3>
-                    <span className="difficulty-pill difficulty-pill--intermediate">Intermediate</span>
-                    <p className="trail-meta">2.5 mi</p>
-                    <p>[PLACEHOLDER — Description of Waxwing Connector trail.]</p>
-                    {/* TODO: Add trail photo */}
-                    <figure>
-                      <img
-                        src="/images/palmer-woods/trails/waxwing-connector.webp"
-                        alt="Waxwing Connector trail at Palmer Woods Forest Reserve"
-                      />
-                    </figure>
+                    <span className="difficulty-pill difficulty-pill--intermediate">
+                      Intermediate
+                    </span>
+                    <div className="trail-meta-container">
+                      <p className="trail-meta">Length: 1.4 mi</p>
+                      <p className="trail-meta">Vert: +/-230 ft</p>
+                    </div>
+                    <p>
+                      One of just a few two-way biking trails in Palmer Woods,
+                      the Waxwing Connector links the intermediate trails on the
+                      east side of the reserve to the Mid Valley Hub. When
+                      heading east to west, the majority of this trail is
+                      downhill.
+                    </p>
                   </div>
 
                   <div className="trail-card">
                     <h3>Fiddlehead</h3>
-                    <span className="difficulty-pill difficulty-pill--intermediate">Intermediate</span>
-                    <p className="trail-meta">
-                      2.7 mi · Directional, alternates daily (CW Tue/Thu/Sat,
-                      CCW Mon/Wed/Fri/Sun)
+                    <span className="difficulty-pill difficulty-pill--intermediate">
+                      Intermediate
+                    </span>
+                    <div className="trail-meta-container">
+                      <p className="trail-meta">Length: 2.7 mi</p>
+                      <p className="trail-meta">Vert: +/-300 ft</p>
+                    </div>
+                    <p>
+                      Regardless of which direction the trail runs that day,
+                      riders will earn extended sections of berms, rollers, and
+                      optional rock drops on the downhill after two sustained
+                      climbs. Fiddlehead also provides access to the Swallowtail
+                      Connector for riders headed to the Chaga Hub.
                     </p>
-                    <p>[PLACEHOLDER — Description of Fiddlehead trail.]</p>
-                    {/* TODO: Add trail photo */}
-                    <figure>
-                      <img
-                        src="/images/palmer-woods/trails/fiddlehead.webp"
-                        alt="Fiddlehead trail at Palmer Woods Forest Reserve"
-                      />
-                    </figure>
                   </div>
 
                   {/* ── Chaga Hub ── */}
                   <div className="hub-heading">Chaga Hub</div>
+                  <figure className="hub-image-figure">
+                    <img
+                      className="hub-image"
+                      src="/images/palmer-woods/turkey-tail-feature.webp"
+                      alt="A rocky feature on the Turkey Tail trail in Palmer Woods"
+                    />
+                    <figcaption className="hub-image-caption">
+                      Trails in the Chaga Hub include advanced terrain like this
+                      technical rock section on Turkey Tail.
+                    </figcaption>
+                  </figure>
 
                   <div className="trail-card">
                     <h3>Swallowtail</h3>
-                    <span className="difficulty-pill difficulty-pill--intermediate">Intermediate</span>
-                    <p className="trail-meta">1.8 mi</p>
-                    <p>[PLACEHOLDER — Description of Swallowtail trail.]</p>
-                    {/* TODO: Add trail photo */}
-                    <figure>
-                      <img
-                        src="/images/palmer-woods/trails/swallowtail.webp"
-                        alt="Swallowtail trail at Palmer Woods Forest Reserve"
-                      />
-                    </figure>
+                    <span className="difficulty-pill difficulty-pill--intermediate">
+                      Intermediate
+                    </span>
+                    <div className="trail-meta-container">
+                      <p className="trail-meta">Length: 1.8 mi</p>
+                      <p className="trail-meta">Vert: +/-298 ft</p>
+                    </div>
+                    <p>
+                      A two-way trail linking the southern hubs to the Chaga
+                      Hub. Riding it south to north is the better direction —
+                      primarily downhill and stacked with rollers, fast turns,
+                      and rock kickers.
+                    </p>
                   </div>
 
                   <div className="trail-card">
                     <h3>Chaga Connector</h3>
-                    <span className="difficulty-pill difficulty-pill--intermediate">Intermediate</span>
-                    <p className="trail-meta">0.6 mi</p>
-                    <p>[PLACEHOLDER — Description of Chaga Connector trail.]</p>
-                    {/* TODO: Add trail photo */}
-                    <figure>
-                      <img
-                        src="/images/palmer-woods/trails/chaga-connector.webp"
-                        alt="Chaga Connector trail at Palmer Woods Forest Reserve"
-                      />
-                    </figure>
+                    <span className="difficulty-pill difficulty-pill--intermediate">
+                      Intermediate
+                    </span>
+                    <div className="trail-meta-container">
+                      <p className="trail-meta">Length: 0.6 mi</p>
+                      <p className="trail-meta">Vert: +/-190 ft</p>
+                    </div>
+                    <p>
+                      A two-way trail offering access to the Chaga Hub from the
+                      north parking lot. Trending toward intermediate/advanced,
+                      the mandatory rock features in both directions are a
+                      preview of what the rest of the hub demands.
+                    </p>
                   </div>
 
                   <div className="trail-card">
                     <h3>Turkey Tail</h3>
-                    <span className="difficulty-pill difficulty-pill--intermediate-difficult">Intermediate–Difficult</span>
-                    <p className="trail-meta">3.7 mi</p>
-                    <p>[PLACEHOLDER — Description of Turkey Tail trail.]</p>
-                    {/* TODO: Add trail photo */}
-                    <figure>
-                      <img
-                        src="/images/palmer-woods/trails/turkey-tail.webp"
-                        alt="Turkey Tail trail at Palmer Woods Forest Reserve"
-                      />
-                    </figure>
+                    <span className="difficulty-pill difficulty-pill--intermediate-difficult">
+                      Intermediate–Difficult
+                    </span>
+                    <div className="trail-meta-container">
+                      <p className="trail-meta">Length: 3.7 mi</p>
+                      <p className="trail-meta">Vert: +/-486 ft</p>
+                    </div>
+                    <p>
+                      Fast, challenging, and beautifully crafted, Turkey Tail is
+                      arguably the best intermediate trail in the reserve. Long
+                      climbs give way to extended sections of flowy downhill
+                      peppered with advanced features. Expect rocky obstacles to
+                      appear without warning.
+                    </p>
                   </div>
 
                   <div className="trail-card">
                     <h3>Hemlock Hollow</h3>
-                    <span className="difficulty-pill difficulty-pill--intermediate">Intermediate</span>
-                    <p className="trail-meta">3.5 mi</p>
-                    <p>[PLACEHOLDER — Description of Hemlock Hollow trail.]</p>
-                    {/* TODO: Add trail photo */}
-                    <figure>
-                      <img
-                        src="/images/palmer-woods/trails/hemlock-hollow.webp"
-                        alt="Hemlock Hollow trail at Palmer Woods Forest Reserve"
-                      />
-                    </figure>
+                    <span className="difficulty-pill difficulty-pill--intermediate">
+                      Intermediate
+                    </span>
+                    <div className="trail-meta-container">
+                      <p className="trail-meta">Length: 3.5 mi</p>
+                      <p className="trail-meta">Vert: +/-384 ft</p>
+                    </div>
+                    <p>
+                      Hemlock Hollow was under maintenance during my visit.
+                      Detailed description coming after my next ride. Based on
+                      the route, expect intermediate-level singletrack along the
+                      eastern edge of the Chaga Hub.
+                    </p>
                   </div>
 
                   <div className="trail-card">
                     <h3>Lion's Mane</h3>
-                    <span className="difficulty-pill difficulty-pill--difficult">Difficult</span>
-                    <p className="trail-meta">1.0 mi · One-way downhill</p>
-                    <p>[PLACEHOLDER — Description of Lion's Mane trail.]</p>
-                    {/* TODO: Add trail photo */}
-                    <figure>
-                      <img
-                        src="/images/palmer-woods/trails/lions-mane.webp"
-                        alt="Lion's Mane trail at Palmer Woods Forest Reserve"
-                      />
-                    </figure>
-                  </div>
-                </div>
-                <hr className="section-divider" />
-              </section>
-            </Reveal>
-
-            {/* ── Getting There ── */}
-            <Reveal variant="up" delay={260}>
-              <section id="getting-there" className="content-wrapper">
-                <h2>Getting There</h2>
-                <div className="dis-row g-2">
-                  <div className="section-half">
+                    <span className="difficulty-pill difficulty-pill--difficult">
+                      Difficult
+                    </span>
+                    <div className="trail-meta-container">
+                      <p className="trail-meta">
+                        Length: 1.0 mi · One-way downhill
+                      </p>
+                      <p className="trail-meta">Vert: -249 ft</p>
+                    </div>
                     <p>
-                      {/* [PLACEHOLDER] Parking, trailheads, and what to expect at trailhead facilities. */}
-                      [PLACEHOLDER — Parking information for the north and south trailheads near the Wheeler/Darwin intersection, driving directions, and what to expect at the trailhead facilities.]
-                    </p>
-                    <p>
-                      [PLACEHOLDER — Additional trailhead details: amenities, parking capacity, and any seasonal considerations.]
+                      The only advanced route in Palmer Woods, Lion's Mane is
+                      strictly downhill — riders ascend via Turkey Tail to
+                      access it. Gravity alone pulls you through a steep flow
+                      trail filled with jumps and rock features up to two feet
+                      in height.
                     </p>
                   </div>
-                  <figure className="section-half">
-                    <img
-                      src="/images/palmer-woods/trailhead.webp"
-                      alt="The trailhead at Palmer Woods Forest Reserve"
-                    />
-                  </figure>
                 </div>
                 <hr className="section-divider" />
               </section>
@@ -439,11 +559,26 @@ const PalmerWoodsGuide = () => {
               <section id="know-before-you-go" className="content-wrapper">
                 <h2>Know Before You Go</h2>
                 <ul className="know-before-list">
-                  <li>[PLACEHOLDER — Know before you go item 1.]</li>
-                  <li>[PLACEHOLDER — Know before you go item 2.]</li>
-                  <li>[PLACEHOLDER — Know before you go item 3.]</li>
-                  <li>[PLACEHOLDER — Know before you go item 4.]</li>
-                  <li>[PLACEHOLDER — Know before you go item 5.]</li>
+                  <li>
+                    Cellular reception is limited throughout the preserve.
+                  </li>
+                  <li>
+                    There are portable toilets, but no running water at the
+                    south parking lot.
+                  </li>
+                  <li>
+                    Ticks carrying Lyme disease are present in Palmer Woods.
+                    Take precaution, and do thorough checks after every visit.
+                  </li>
+                  <li>
+                    Hunting is permitted in the preserve. Take precautions by
+                    wearing bright clothing during active hunting seasons.{" "}
+                  </li>
+
+                  <li>
+                    Respect the nearby private residents. Stay on trails and
+                    please drive slowly along Wheeler and School Lake Roads.
+                  </li>
                 </ul>
                 <hr className="section-divider" />
               </section>
@@ -495,13 +630,13 @@ const PalmerWoodsGuide = () => {
             <div className="guide-footer-attributions content-wrapper">
               <ManagedBy organization="leelanauConservancy" />
               <LNTNotice />
-              <Link to="/guides" className="back-to-guides">
-                ← Back to Guides
-              </Link>
             </div>
             <div className="vrt-spc"></div>
           </article>
         </main>
+        <Link to="/guides" className="back-to-guides">
+          ← Back to Guides
+        </Link>
       </div>
     </>
   );

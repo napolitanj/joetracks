@@ -73,10 +73,7 @@ function App() {
             path="/boardman-river-keystone-rapids"
             element={<KeystoneRapidsGuide />}
           />
-          <Route
-            path="/palmer-woods-forest-reserve"
-            element={<PalmerWoodsGuide />}
-          />
+          <Route path="/palmer-woods-biking" element={<PalmerWoodsGuide />} />
           <Route
             path="/softwaretechsupport"
             element={<SoftwareTechSupport />}

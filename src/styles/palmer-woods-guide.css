@@ -1,5 +1,5 @@
 .palmer-woods-guide .palmer-woods-bg {
-  background-image: url("/images/palmer-woods/palmer-woods-hero.webp");
+  background-image: url("/images/palmer-woods/palmer-biking-banner-cropped.webp");
 }
 
 .palmer-woods-guide .palmer-woods-hero {
@@ -187,31 +187,37 @@
   border-radius: 0.8rem;
 }
 
-/* ── Maps grid ── */
-.palmer-woods-guide .maps-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem 2.5rem;
-  margin-top: 1rem;
+/* ── Map sections ── */
+.palmer-woods-guide .map-section {
+  margin-bottom: 3rem;
 }
 
-.palmer-woods-guide .map-block {
-  display: flex;
-  flex-direction: column;
+.palmer-woods-guide .map-section h3 {
+  margin-bottom: 0.75rem;
 }
 
-.palmer-woods-guide .map-block-label {
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--muted-text);
-  margin-bottom: 0.5rem;
+.palmer-woods-guide .map-section p {
+  margin-bottom: 1.5rem;
 }
 
-.palmer-woods-guide .map-block figure {
+.palmer-woods-guide .map-figure {
   margin: 0;
-  flex: 1;
+  width: 100%;
+}
+
+.palmer-woods-guide .map-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.8rem;
+  border: 0.0625rem solid var(--border-color);
+}
+
+.palmer-woods-guide .map-caption {
+  margin-top: 0.45rem;
+  font-size: 0.95rem;
+  color: var(--muted-text);
+  text-align: center;
 }
 
 /* ── Trails grid ── */
@@ -242,10 +248,17 @@
   flex: 1;
 }
 
+.palmer-woods-guide .trail-meta-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+
 .palmer-woods-guide .trail-meta {
   font-size: 0.88rem;
   color: var(--muted-text);
-  margin-bottom: 0.6rem;
+  margin: 0;
 }
 
 /* ── Difficulty pills ── */
@@ -280,6 +293,32 @@
   color: #fff;
 }
 
+/* ── Hub images ── */
+.palmer-woods-guide .hub-image-figure {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.palmer-woods-guide .hub-image {
+  width: 60%;
+  height: auto;
+  border-radius: 0.8rem;
+  border: 0.0625rem solid var(--border-color);
+  display: block;
+}
+
+.palmer-woods-guide .hub-image-caption {
+  margin-top: 0.45rem;
+  font-size: 0.95rem;
+  color: var(--muted-text);
+  width: 60%;
+}
+
 /* ── Hub sub-headings ── */
 .palmer-woods-guide .hub-heading {
   font-size: clamp(1.15rem, 2vw, 1.4rem);
@@ -289,6 +328,24 @@
   padding-bottom: 0.35rem;
   border-bottom: 0.125rem solid var(--border-color);
   grid-column: 1 / -1;
+}
+
+/* ── Stats list (parking, etc.) ── */
+.palmer-woods-guide .stats-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.palmer-woods-guide .stats-list li {
+  padding: 0.6rem 0.85rem;
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.6rem;
+  font-size: 0.97rem;
 }
 
 /* ── Know Before / Rules list ── */
@@ -310,9 +367,12 @@
 }
 
 @media (max-width: 900px) {
-  .palmer-woods-guide .maps-grid,
   .palmer-woods-guide .trails-grid {
     grid-template-columns: 1fr;
+  }
+
+  .palmer-woods-guide .hub-image-figure {
+    width: 100%;
   }
 
   .palmer-woods-guide .palmer-woods-hero {
@@ -324,6 +384,13 @@
   }
 
   .palmer-woods-guide .section-half {
+    width: 100%;
+  }
+
+  .palmer-woods-guide .hub-image {
+    width: 100%;
+  }
+  .palmer-woods-guide .hub-image-caption {
     width: 100%;
   }
 }

@@ -38,6 +38,15 @@ const guides: GuideItem[] = [
     imageSrc: "/images/keystone-rapids/keystone-rapids-card.webp",
     imageAlt: "A paddler navigating the Boardman River's Keystone Rapids",
   },
+  {
+    title: "Mountain Biking at Palmer Woods Forest Reserve",
+    description:
+      "27 miles of purpose-built singletrack across two trail hubs in Leelanau County, with maps, trail breakdowns, and trip-planning info.",
+    href: "/palmer-woods-biking",
+    cta: "Go Mountain Biking",
+    imageSrc: "/images/palmer-woods/palmer-woods-card.webp",
+    imageAlt: "A mountain biker on a trail at Palmer Woods Forest Reserve",
+  },
 
   {
     title: "Trail Guide: Timbers Recreation Area",
