@@ -617,7 +617,7 @@ const PalmerWoodsGuide = () => {
                     <iframe
                       width="560"
                       height="315"
-                      src="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID"
+                      src="https://www.youtube.com/embed/Jfp6XPN_M8o?si=xGWxXTteyPYXdZkX"
                       title="Mountain Biking Palmer Woods Forest Reserve"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
