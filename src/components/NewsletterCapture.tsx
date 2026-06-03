@@ -4,11 +4,12 @@ import "/src/styles/newsletter.css";
 type Props = {
   headline: string;
   subtext: string;
+  formUrl?: string;
 };
 
 const KIT_FORM_URL = "https://app.kit.com/forms/9272089/subscriptions";
 
-const NewsletterCapture = ({ headline, subtext }: Props) => {
+const NewsletterCapture = ({ headline, subtext, formUrl }: Props) => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
 
@@ -17,7 +18,7 @@ const NewsletterCapture = ({ headline, subtext }: Props) => {
     if (!email) return;
     setStatus("loading");
     try {
-      await fetch(KIT_FORM_URL, {
+      await fetch(formUrl ?? KIT_FORM_URL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },

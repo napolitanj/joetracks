@@ -1,0 +1,321 @@
+/* TODO: image path — replace with actual hero banner */
+.betsie-river-guide .betsie-river-bg {
+  background-image: url("/images/betsie-river/betsie-river-banner.webp");
+}
+
+.betsie-river-guide .betsie-river-hero {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+
+.betsie-river-guide .betsie-river-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 18, 27, 0.32) 0%,
+    rgba(7, 18, 27, 0.32) 44%,
+    rgba(7, 18, 27, 0.18) 100%
+  );
+  z-index: 0;
+}
+
+.betsie-river-guide .betsie-river-hero .hero-text {
+  position: relative;
+  z-index: 1;
+  width: min(72rem, 92%);
+  margin: 0 auto;
+  text-align: center;
+  color: #f6f8f9;
+}
+
+.betsie-river-guide .betsie-river-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  max-width: 22ch;
+  margin: 0 auto;
+  text-shadow: 0 0.1rem 0.75rem rgba(0, 0, 0, 0.42);
+}
+
+.betsie-river-guide .content-wrapper {
+  max-width: min(70rem, 94%);
+  margin: 0 auto;
+}
+
+.betsie-river-guide .betsie-river-intro {
+  gap: clamp(1rem, 2.2vw, 2rem);
+  align-items: center;
+}
+
+.betsie-river-guide .intro-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.betsie-river-guide .intro-image {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.betsie-river-guide h2 {
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
+  line-height: 1.2;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+}
+
+.betsie-river-guide h3 {
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  line-height: 1.3;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.betsie-river-guide p,
+.betsie-river-guide li {
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+.betsie-river-guide .section-half > p,
+.betsie-river-guide .section-half li p,
+.betsie-river-guide figcaption p,
+.betsie-river-guide .intro-text p {
+  max-width: 70ch;
+}
+
+.betsie-river-guide .intro-text p {
+  margin-bottom: 1.2rem;
+}
+
+.betsie-river-guide .betsie-river-quick-nav {
+  margin-top: 1em;
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.9rem;
+  padding: 0.85rem 0.95rem;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.betsie-river-guide .betsie-river-quick-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.25rem;
+  border-bottom: 0.0625rem solid
+    color-mix(in srgb, var(--accent-color) 30%, transparent);
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.betsie-river-guide .betsie-river-quick-nav a:hover,
+.betsie-river-guide .betsie-river-quick-nav a:focus-visible {
+  color: var(--text-color);
+  border-bottom-color: color-mix(in srgb, var(--text-color) 40%, transparent);
+  outline: none;
+}
+
+.betsie-river-guide .section-half img,
+.betsie-river-guide figure > img,
+.betsie-river-guide .image-shape-container-element img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+  border: 0.0625rem solid var(--border-color);
+  display: block;
+}
+
+.betsie-river-guide figcaption,
+.betsie-river-guide .image-caption {
+  margin-top: 0.45rem;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+.betsie-river-guide .section-divider {
+  border: 0;
+  border-top: 0.0625rem solid var(--border-color);
+  margin: 1.25rem 0;
+}
+
+.betsie-river-guide a:focus-visible {
+  outline: 0.125rem solid
+    color-mix(in srgb, var(--accent-color) 45%, transparent);
+  outline-offset: 0.125rem;
+}
+
+.betsie-river-guide iframe {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 0.8rem;
+}
+
+.betsie-river-guide .betsie-river-chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 2.5rem;
+  margin-top: 1rem;
+}
+
+.betsie-river-guide .betsie-river-chapter-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.9rem;
+  padding: 1.25rem 1.4rem;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.04);
+}
+
+.betsie-river-guide .betsie-river-chapter-card h3 {
+  margin-bottom: 0.4rem;
+}
+
+.betsie-river-guide .betsie-river-free-guide-callout {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0.25rem;
+  color: var(--text-color);
+  max-width: 68ch;
+  margin: 0 auto;
+}
+
+.betsie-river-guide .betsie-river-free-guide-callout a {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 0.0625rem solid
+    color-mix(in srgb, var(--accent-color) 40%, transparent);
+}
+
+.betsie-river-guide .betsie-river-free-guide-callout a:hover,
+.betsie-river-guide .betsie-river-free-guide-callout a:focus-visible {
+  color: var(--text-color);
+  border-bottom-color: color-mix(in srgb, var(--text-color) 40%, transparent);
+  outline: none;
+}
+
+.betsie-river-guide .betsie-river-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.betsie-river-guide .betsie-river-faq-item {
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.betsie-river-guide .betsie-river-faq-summary {
+  cursor: pointer;
+  padding: 0.95rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.97rem;
+  color: var(--text-color);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+}
+
+.betsie-river-guide .betsie-river-faq-summary:hover {
+  color: var(--accent-color);
+}
+
+.betsie-river-guide .betsie-river-faq-summary[aria-expanded="true"] {
+  border-bottom: 0.0625rem solid var(--border-color);
+}
+
+.betsie-river-guide .betsie-river-faq-icon {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--accent-color);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* grid-template-rows trick: animates both open and close */
+.betsie-river-guide .betsie-river-faq-answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.22s ease;
+}
+
+.betsie-river-guide .betsie-river-faq-answer-wrapper[aria-hidden="false"] {
+  grid-template-rows: 1fr;
+}
+
+.betsie-river-guide .faq-answer {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.betsie-river-guide .faq-answer p {
+  margin: 0;
+  max-width: 70ch;
+  padding: 0.85rem 1.1rem 1rem;
+}
+
+@media (max-width: 900px) {
+  .betsie-river-guide .betsie-river-chapters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .betsie-river-guide .betsie-river-hero {
+    min-height: clamp(16rem, 42vh, 24rem);
+  }
+
+  .betsie-river-guide .dis-row {
+    flex-direction: column;
+  }
+
+  .betsie-river-guide .section-half {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .betsie-river-guide .betsie-river-hero {
+    min-height: clamp(14rem, 36vh, 19rem);
+  }
+
+  .betsie-river-guide .betsie-river-hero .hero-text {
+    width: min(72rem, 94%);
+  }
+
+  .betsie-river-guide .betsie-river-intro {
+    gap: 1rem;
+  }
+
+  .mobile-col {
+    flex-direction: column;
+  }
+}

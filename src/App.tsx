@@ -31,6 +31,7 @@ import CoordTool from "./dev/coords";
 import SleepingBearSkiGuide from "./components/SleepingBearSkiGuide";
 import KeystoneRapidsGuide from "./components/KeystoneRapidsGuide";
 import PalmerWoodsGuide from "./components/PalmerWoodsGuide";
+import BetsieRiverGuide from "./components/BetsieRiverGuide";
 import NewsletterStickyBar from "./components/NewsletterStickyBar";
 import TrailGuideTemplate from "./components/pages/TrailGuideTemplate";
 
@@ -74,6 +75,7 @@ function App() {
             element={<KeystoneRapidsGuide />}
           />
           <Route path="/palmer-woods-biking" element={<PalmerWoodsGuide />} />
+          <Route path="/betsie-river" element={<BetsieRiverGuide />} />
           <Route
             path="/softwaretechsupport"
             element={<SoftwareTechSupport />}

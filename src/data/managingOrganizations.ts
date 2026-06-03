@@ -12,7 +12,8 @@ export type ManagingOrgKey =
   | "grandTraverseConservationDistrict"
   | "northCountryTrailAssociation"
   | "sleepingBearDunes"
-  | "ourayRangerDistrict";
+  | "ourayRangerDistrict"
+  | "michiganDNR";
 
 export const managingOrganizations: Record<ManagingOrgKey, ManagingOrganization> = {
   leelanauConservancy: {
@@ -58,5 +59,14 @@ export const managingOrganizations: Record<ManagingOrgKey, ManagingOrganization>
     url: "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=80754",
     supportUrl: "https://ouraytrails.org/support-us",
     supportPartner: "Ouray Trail Group",
+  },
+  michiganDNR: {
+    name: "Michigan Department of Natural Resources",
+    shortDescription:
+      "The state agency responsible for managing Michigan's natural resources, including public water access sites, boat launches, and state forest campgrounds along the Betsie River corridor.",
+    url: "https://www.michigan.gov/dnr",
+    // TODO: verify support URL and partner — replace with a local Betsie River watershed org if preferred
+    supportUrl: "https://www.michigan.gov/dnr/about/foundation",
+    supportPartner: "Michigan DNR Foundation",
   },
 };

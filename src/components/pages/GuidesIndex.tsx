@@ -30,6 +30,15 @@ const guides: GuideItem[] = [
     imageAlt: "Backpacker standing on North Manitou Island shoreline",
   },
   {
+    title: "The Betsie River: A Paddler's Guide",
+    description:
+      "A 37-page guide to the entire Betsie River. Maps, shuttle routes, camping, and details for significant hazards are all included.",
+    href: "/betsie-river",
+    cta: "Go Paddling",
+    imageSrc: "/images/betsie-river/betsie-river-card.webp",
+    imageAlt: "A canoer navigating the Betsie River.",
+  },
+  {
     title: "Paddling the Keystone Rapids — A Boardman River Guide",
     description:
       "Current conditions, paddling and bike shuttle logistics, and a detailed breakdown of each hazard.",
@@ -43,20 +52,9 @@ const guides: GuideItem[] = [
     description:
       "27 miles of purpose-built singletrack across two trail hubs in Leelanau County, with maps, trail breakdowns, and trip-planning info.",
     href: "/palmer-woods-biking",
-    cta: "Go Mountain Biking",
+    cta: "Go Biking",
     imageSrc: "/images/palmer-woods/palmer-woods-card.webp",
     imageAlt: "A mountain biker on a trail at Palmer Woods Forest Reserve",
-  },
-
-  {
-    title: "Trail Guide: Timbers Recreation Area",
-    description:
-      "A 250-acre preserve along Long Lake with 4.5 miles of trails, lake access, and a universally accessible loop.",
-    href: "/trails/timbers-recreation-area",
-    cta: "Go Hiking",
-    imageSrc:
-      "/images/conservancy-natural-areas/timbers-recreation-area/timbers-recreation-area-banner.webp",
-    imageAlt: "Fern Lake at Timbers Recreation Area in autumn",
   },
   {
     title: "Trail Guide: Valley of the Giants",
@@ -68,7 +66,16 @@ const guides: GuideItem[] = [
       "/images/nct/valley-of-the-giants/valley-of-the-giants-banner.webp",
     imageAlt: "PLACEHOLDER — Valley of the Giants image alt text",
   },
-
+  {
+    title: "Trail Guide: Timbers Recreation Area",
+    description:
+      "A 250-acre preserve along Long Lake with 4.5 miles of trails, lake access, and a universally accessible loop.",
+    href: "/trails/timbers-recreation-area",
+    cta: "Go Hiking",
+    imageSrc:
+      "/images/conservancy-natural-areas/timbers-recreation-area/timbers-recreation-area-banner.webp",
+    imageAlt: "Fern Lake at Timbers Recreation Area in autumn",
+  },
   {
     title: "Trip Planning With Remote Forecasting Tools",
     description:
