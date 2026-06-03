@@ -24,6 +24,15 @@ const latestGuides: CardItem[] = [
     imageAlt: "A skier on the snow-covered dunes at Sleeping Bear",
   },
   {
+    title: "The Betsie River: A Paddler's Guide",
+    description:
+      "A 37-page guide to the entire Betsie River. Maps, shuttle routes, camping, and details for significant hazards are all included.",
+    href: "/betsie-river",
+    cta: "Go Paddling",
+    imageSrc: "/images/betsie-river/betsie-river-card.webp",
+    imageAlt: "A canoer navigating the Betsie River.",
+  },
+  {
     title: "Backpacking North Manitou Island",
     description:
       "A practical field guide covering logistics, hazards, route structure, and planning considerations.",
@@ -32,15 +41,7 @@ const latestGuides: CardItem[] = [
     imageSrc: "/images/north-manitou/north-manitou-island.webp",
     imageAlt: "Backpacker standing on North Manitou Island shoreline",
   },
-  {
-    title: "Paddling the Keystone Rapids — A Boardman River Guide",
-    description:
-      "Current conditions, paddling and bike shuttle logistics, and a detailed breakdown of each hazard.",
-    href: "/boardman-river-keystone-rapids",
-    cta: "Run a River",
-    imageSrc: "/images/keystone-rapids/keystone-rapids-card.webp",
-    imageAlt: "A paddler navigating the Boardman River's Keystone Rapids",
-  },
+
   {
     title: "How to Trip Plan with CalTopo",
     description:
