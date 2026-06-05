@@ -7,6 +7,7 @@ import SEO from "./SEO";
 import NewsletterCapture from "./NewsletterCapture";
 import LNTNotice from "./guide/LNTNotice";
 import ManagedBy from "./guide/ManagedBy";
+import SupportNotice from "./guide/SupportNotice";
 
 const NorthManitouGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -1014,6 +1015,7 @@ const NorthManitouGuide = () => {
                 <div className="guide-footer-attributions content-wrapper">
                   <ManagedBy organization="sleepingBearDunes" />
                   <LNTNotice />
+                  <SupportNotice />
                 </div>
                 <div className="vrt-spc"></div>
               </div>

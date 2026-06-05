@@ -7,6 +7,7 @@ import "../../styles/TrailGuideTemplate.css";
 import NewsletterCapture from "../NewsletterCapture";
 import ManagedBy from "../guide/ManagedBy";
 import LNTNotice from "../guide/LNTNotice";
+import SupportNotice from "../guide/SupportNotice";
 
 const activityLabels: Record<Activity, string> = {
   hiking: "Hiking",
@@ -285,6 +286,7 @@ export default function TrailGuideTemplate() {
           <div className="guide-footer-attributions content-wrapper">
             {guide.managedBy && <ManagedBy organization={guide.managedByKey} />}
             <LNTNotice />
+            <SupportNotice />
           </div>
           <div className="vrt-spc"></div>
           <Link to="/guides" className="tg-back-link">

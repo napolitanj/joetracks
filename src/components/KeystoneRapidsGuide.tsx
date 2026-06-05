@@ -8,6 +8,7 @@ import NewsletterCapture from "./NewsletterCapture";
 import { Link } from "react-router-dom";
 import LNTNotice from "./guide/LNTNotice";
 import ManagedBy from "./guide/ManagedBy";
+import SupportNotice from "./guide/SupportNotice";
 
 const KeystoneRapidsGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -577,6 +578,7 @@ const KeystoneRapidsGuide = () => {
                 <div className="guide-footer-attributions content-wrapper">
                   <ManagedBy organization="grandTraverseConservationDistrict" />
                   <LNTNotice />
+                  <SupportNotice />
                 </div>
                 <div className="vrt-spc"></div>{" "}
               </section>

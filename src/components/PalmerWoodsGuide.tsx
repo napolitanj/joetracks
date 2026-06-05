@@ -7,6 +7,7 @@ import NewsletterCapture from "./NewsletterCapture";
 import { Link } from "react-router-dom";
 import LNTNotice from "./guide/LNTNotice";
 import ManagedBy from "./guide/ManagedBy";
+import SupportNotice from "./guide/SupportNotice";
 
 const PalmerWoodsGuide = () => {
   const [animate, setAnimate] = useState(false);
@@ -630,6 +631,7 @@ const PalmerWoodsGuide = () => {
             <div className="guide-footer-attributions content-wrapper">
               <ManagedBy organization="leelanauConservancy" />
               <LNTNotice />
+              <SupportNotice />
             </div>
             <div className="vrt-spc"></div>
           </article>

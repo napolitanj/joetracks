@@ -56,9 +56,14 @@
 .guide-footer-attributions {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   gap: 1em;
+}
+
+.guide-footer-attributions > * {
+  flex: 1 1 260px;
 }
 
 @media (max-width: 900px) {

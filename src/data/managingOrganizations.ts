@@ -15,13 +15,17 @@ export type ManagingOrgKey =
   | "ourayRangerDistrict"
   | "michiganDNR";
 
-export const managingOrganizations: Record<ManagingOrgKey, ManagingOrganization> = {
+export const managingOrganizations: Record<
+  ManagingOrgKey,
+  ManagingOrganization
+> = {
   leelanauConservancy: {
     name: "Leelanau Conservancy",
     shortDescription:
       "A nonprofit land trust that has preserved over 18,000 acres in Leelanau County since 1988, with 28 natural areas open to the public.",
     url: "https://leelanauconservancy.org/",
     supportUrl: "https://leelanauconservancy.org/donate/",
+    supportPartner: "Leelanau Conservancy",
   },
   grandTraverseRegionalLandConservancy: {
     name: "Grand Traverse Regional Land Conservancy",
@@ -29,6 +33,7 @@ export const managingOrganizations: Record<ManagingOrgKey, ManagingOrganization>
       "A regional land trust protecting natural, scenic, and farm lands across a five-county area in northwest Michigan, with over 49,000 acres preserved and 80+ properties open to the public.",
     url: "https://www.gtrlc.org/",
     supportUrl: "https://www.gtrlc.org/donate/conservancy-fund/",
+    supportPartner: "Grand Traverse Regional Land Conservancy",
   },
   grandTraverseConservationDistrict: {
     name: "Grand Traverse Conservation District",
@@ -36,6 +41,7 @@ export const managingOrganizations: Record<ManagingOrgKey, ManagingOrganization>
       "A community-serving organization based at the Boardman River Nature Center that manages over 3,000 acres of public parklands and works to protect the Boardman-Ottaway River watershed.",
     url: "https://natureiscalling.org/",
     supportUrl: "https://natureiscalling.org/donate",
+    supportPartner: "Grand Traverse Conservation District",
   },
   northCountryTrailAssociation: {
     name: "North Country Trail Association",
@@ -43,6 +49,7 @@ export const managingOrganizations: Record<ManagingOrgKey, ManagingOrganization>
       "The nonprofit steward of the 4,800-mile North Country National Scenic Trail, which stretches across eight states from North Dakota to Vermont. Volunteers maintain and protect the trail in partnership with the National Park Service.",
     url: "https://northcountrytrail.org/",
     supportUrl: "https://northcountrytrail.org/giving-membership/donate/",
+    supportPartner: "North Country Trail Association",
   },
   sleepingBearDunes: {
     name: "Sleeping Bear Dunes National Lakeshore (National Park Service)",
