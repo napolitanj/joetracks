@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../../styles/About.css";
-import headerPhoto from "/images/bio-pic.png";
+import headerPhoto from "/images/bio-pic.webp";
 import NewsletterCapture from "../NewsletterCapture";
 
 const About = () => {
