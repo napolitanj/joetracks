@@ -93,14 +93,14 @@ const CalTopo = () => {
                   <div className="section-half">
                     <h3 className="preSlide slideIn">Why is CalTopo useful?</h3>
                     <p className=" fadeIn">
-                      Learning to use CalTopo is among the most valuable skills
-                      available for planning your next adventure. Mastering the
+                      CalTopo is among the most valuable tools available for
+                      planning your next adventure from home. Mastering the
                       basics of Caltopo’s interface not only allows you to
-                      embark on a journey well-informed but also allows you to
-                      leave folks back home with a comprehensive plan if you go
-                      missing. Thus, learning CalTopo will enable you to better
-                      plan and executes excursions while vastly increasing your
-                      margin of safety.
+                      embark on a journey well-informed, but also allows you to
+                      leave folks back home with a comprehensive route plan in
+                      case you go missing. Thus, learning CalTopo enables you to
+                      execute better trips while increasing your margin of
+                      safety.
                     </p>
                     <p className=" fadeIn">
                       With dozens of valuable features, learning how to use
