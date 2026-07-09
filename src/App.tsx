@@ -32,6 +32,7 @@ import SleepingBearSkiGuide from "./components/SleepingBearSkiGuide";
 import KeystoneRapidsGuide from "./components/KeystoneRapidsGuide";
 import PalmerWoodsGuide from "./components/PalmerWoodsGuide";
 import BetsieRiverGuide from "./components/BetsieRiverGuide";
+import KalkaskaMoraineLoopGuide from "./components/KalkaskaMoraineLoopGuide";
 import NewsletterStickyBar from "./components/NewsletterStickyBar";
 import TrailGuideTemplate from "./components/pages/TrailGuideTemplate";
 
@@ -76,6 +77,7 @@ function App() {
           />
           <Route path="/palmer-woods-biking" element={<PalmerWoodsGuide />} />
           <Route path="/betsie-river" element={<BetsieRiverGuide />} />
+          <Route path="/kalkaska-moraine-loop" element={<KalkaskaMoraineLoopGuide />} />
           <Route
             path="/softwaretechsupport"
             element={<SoftwareTechSupport />}

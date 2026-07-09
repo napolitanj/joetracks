@@ -1,0 +1,367 @@
+/* TODO: replace — hero image path once asset is ready */
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-bg {
+  background-image: url("/images/kalkaska-moraine-loop/kalkaska-moraine-loop-banner.webp");
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-hero {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 18, 27, 0.32) 0%,
+    rgba(7, 18, 27, 0.32) 44%,
+    rgba(7, 18, 27, 0.18) 100%
+  );
+  z-index: 0;
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-hero .hero-text {
+  position: relative;
+  z-index: 1;
+  width: min(72rem, 92%);
+  margin: 0 auto;
+  text-align: center;
+  color: #f6f8f9;
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  max-width: 22ch;
+  margin: 0 auto;
+  text-shadow: 0 0.1rem 0.75rem rgba(0, 0, 0, 0.42);
+}
+
+.kalkaska-moraine-loop-guide .content-wrapper {
+  max-width: min(70rem, 94%);
+  margin: 0 auto;
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-intro {
+  gap: clamp(1rem, 2.2vw, 2rem);
+  align-items: center;
+}
+
+.kalkaska-moraine-loop-guide .intro-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.kalkaska-moraine-loop-guide .intro-image {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.kalkaska-moraine-loop-guide h2 {
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
+  line-height: 1.2;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+}
+
+.kalkaska-moraine-loop-guide h3 {
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  line-height: 1.3;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.kalkaska-moraine-loop-guide p,
+.kalkaska-moraine-loop-guide li {
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+.kalkaska-moraine-loop-guide .section-half > p,
+.kalkaska-moraine-loop-guide .section-half li p,
+.kalkaska-moraine-loop-guide figcaption p,
+.kalkaska-moraine-loop-guide .intro-text p {
+  max-width: 70ch;
+}
+
+.kalkaska-moraine-loop-guide .intro-text p {
+  margin-bottom: 1.2rem;
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-quick-nav {
+  margin-top: 1em;
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.9rem;
+  padding: 0.85rem 0.95rem;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-quick-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.25rem;
+  border-bottom: 0.0625rem solid
+    color-mix(in srgb, var(--accent-color) 30%, transparent);
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-quick-nav a:hover,
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-quick-nav a:focus-visible {
+  color: var(--text-color);
+  border-bottom-color: color-mix(in srgb, var(--text-color) 40%, transparent);
+  outline: none;
+}
+
+.kalkaska-moraine-loop-guide .section-half img,
+.kalkaska-moraine-loop-guide figure > img,
+.kalkaska-moraine-loop-guide .image-shape-container-element img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+  border: 0.0625rem solid var(--border-color);
+  display: block;
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-overview-map {
+  margin-top: 2rem;
+}
+
+.kalkaska-moraine-loop-guide figcaption,
+.kalkaska-moraine-loop-guide .image-caption {
+  margin-top: 0.45rem;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+.kalkaska-moraine-loop-guide .section-divider {
+  border: 0;
+  border-top: 0.0625rem solid var(--border-color);
+  margin: 1.25rem 0;
+}
+
+.kalkaska-moraine-loop-guide a:focus-visible {
+  outline: 0.125rem solid
+    color-mix(in srgb, var(--accent-color) 45%, transparent);
+  outline-offset: 0.125rem;
+}
+
+.kalkaska-moraine-loop-guide iframe {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 0.8rem;
+}
+
+/* 2x2 grid for four legs (Betsie used repeat(3,1fr)) */
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-legs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 2.5rem;
+  margin-top: 1rem;
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-leg-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.9rem;
+  padding: 1.25rem 1.4rem;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.04);
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-leg-card h3 {
+  margin-bottom: 0.4rem;
+}
+
+/* Leg card placeholder images */
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-leg-card .leg-img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.6rem;
+  border: 0.0625rem solid var(--border-color);
+  display: block;
+  margin-bottom: 1rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-paid-guide-callout {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0.25rem;
+  color: var(--text-color);
+  max-width: 68ch;
+  margin: 0 auto;
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-paid-guide-callout a {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 0.0625rem solid
+    color-mix(in srgb, var(--accent-color) 40%, transparent);
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-paid-guide-callout a:hover,
+.kalkaska-moraine-loop-guide
+  .kalkaska-moraine-loop-paid-guide-callout
+  a:focus-visible {
+  color: var(--text-color);
+  border-bottom-color: color-mix(in srgb, var(--text-color) 40%, transparent);
+  outline: none;
+}
+
+/* Buy CTA button */
+.kalkaska-moraine-loop-guide .kml-buy-btn {
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.85rem 2rem;
+  background: var(--accent-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+.kalkaska-moraine-loop-guide .kml-buy-btn:hover,
+.kalkaska-moraine-loop-guide .kml-buy-btn:focus-visible {
+  opacity: 0.88;
+  transform: translateY(-0.1rem);
+  outline: 0.125rem solid
+    color-mix(in srgb, var(--accent-color) 45%, transparent);
+  outline-offset: 0.125rem;
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-faq-item {
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-faq-summary {
+  cursor: pointer;
+  padding: 0.95rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.97rem;
+  color: var(--text-color);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-faq-summary:hover {
+  color: var(--accent-color);
+}
+
+.kalkaska-moraine-loop-guide
+  .kalkaska-moraine-loop-faq-summary[aria-expanded="true"] {
+  border-bottom: 0.0625rem solid var(--border-color);
+}
+
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-faq-icon {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--accent-color);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* grid-template-rows trick: animates both open and close */
+.kalkaska-moraine-loop-guide .kalkaska-moraine-loop-faq-answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.22s ease;
+}
+
+.kalkaska-moraine-loop-guide
+  .kalkaska-moraine-loop-faq-answer-wrapper[aria-hidden="false"] {
+  grid-template-rows: 1fr;
+}
+
+.kalkaska-moraine-loop-guide .faq-answer {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.kalkaska-moraine-loop-guide .faq-answer p {
+  margin: 0;
+  max-width: 70ch;
+  padding: 0.85rem 1.1rem 1rem;
+}
+
+@media (max-width: 900px) {
+  .kalkaska-moraine-loop-guide .kalkaska-moraine-loop-legs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kalkaska-moraine-loop-guide .kalkaska-moraine-loop-hero {
+    min-height: clamp(16rem, 42vh, 24rem);
+  }
+
+  .kalkaska-moraine-loop-guide .dis-row {
+    flex-direction: column;
+  }
+
+  .kalkaska-moraine-loop-guide .section-half {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .kalkaska-moraine-loop-guide .kalkaska-moraine-loop-hero {
+    min-height: clamp(14rem, 36vh, 19rem);
+  }
+
+  .kalkaska-moraine-loop-guide .kalkaska-moraine-loop-hero .hero-text {
+    width: min(72rem, 94%);
+  }
+
+  .kalkaska-moraine-loop-guide .kalkaska-moraine-loop-intro {
+    gap: 1rem;
+  }
+
+  .mobile-col {
+    flex-direction: column;
+  }
+}

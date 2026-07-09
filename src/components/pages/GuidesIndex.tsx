@@ -12,6 +12,17 @@ type GuideItem = {
 
 const guides: GuideItem[] = [
   {
+    title: "The Kalkaska Moraine Loop — A 50-Mile Michigan Backpacking Loop",
+    description:
+      "A field-verified 50-mile backpacking loop through the sandy moraine country southeast of Traverse City. Four legs, full maps, elevation profiles, waypoints, and a CalTopo mapset.",
+    href: "/kalkaska-moraine-loop",
+    cta: "Get the Guide",
+    imageSrc:
+      "/images/kalkaska-moraine-loop/kalkaska-moraine-loop-banner.webp",
+    imageAlt:
+      "The Kalkaska Moraine Loop backpacking route through northern Michigan",
+  },
+  {
     title: "Skiing Sleeping Bear Dunes: A Field Guide to Shauger Hill",
     description:
       "Trip planning, gear, and field notes for skiing the Sleeping Bear Dunes.",
