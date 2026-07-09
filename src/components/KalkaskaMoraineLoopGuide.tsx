@@ -159,20 +159,6 @@ const KalkaskaMoraineLoopGuide = () => {
               </section>
             </Reveal>
 
-            {/* ── Paid Guide Callout ── */}
-            <Reveal variant="up" delay={80}>
-              <section className="content-wrapper">
-                <p className="kalkaska-moraine-loop-paid-guide-callout kalkaska-moraine-loop-quick-nav">
-                  <em>
-                    The complete guide to the Kalkaska Moraine Loop is available
-                    now. Four legs, three shorter trips, full maps, elevation
-                    profiles, waypoints, and a companion CalTopo mapset.
-                  </em>{" "}
-                  <a href="#guide-cta">Get the guide.</a>
-                </p>
-              </section>
-            </Reveal>
-
             {/* ── Overview / Intro ── */}
             <Reveal variant="up" delay={80}>
               <section className="content-wrapper dis-col">
@@ -243,14 +229,15 @@ const KalkaskaMoraineLoopGuide = () => {
             <Reveal variant="up" delay={140}>
               <section
                 id="guide-cta"
-                className="content-wrapper row cnt-vrt cnt-hrz mobile-col"
+                className="content-wrapper col cnt-vrt cnt-hrz"
               >
+                {/* ── CTA copy + button ── */}
                 <div className="col cnt-vrt cnt-hrz">
                   <h2>Get the Complete Guide</h2>
                   <p>
-                    The full Kalkaska Moraine Loop guide, $25. Every leg mapped
-                    and broken down, with water, camping, and navigation figured
-                    out, so you can plan and hike it with confidence.
+                    Download the 26-page Kalkaska Moraine Loop guidebook here.
+                    Every leg is outlined, with water, camping, and waypoints
+                    and more, so you can plan and hike it with confidence.
                   </p>
                   <a
                     href={PRODUCT_URL}
@@ -260,6 +247,52 @@ const KalkaskaMoraineLoopGuide = () => {
                   >
                     Buy the Guide ($25)
                   </a>
+                </div>{" "}
+                <div className="kml-preview-row">
+                  <figure>
+                    {/* TODO: replace preview-leg-reference.webp */}
+                    <img
+                      className="kml-preview-img"
+                      src="/images/kalkaska-moraine-loop/guide-preview-1.webp"
+                      alt="A leg reference page from the Kalkaska Moraine Loop guide showing the leg map, elevation profile, and waypoint datasheet"
+                      loading="lazy"
+                      width="850"
+                      height="1100"
+                    />
+                    <figcaption>
+                      Every leg contains a custom map and elevation profile.
+                    </figcaption>
+                  </figure>
+                  <figure>
+                    {/* TODO: replace preview-leg-description.webp */}
+                    <img
+                      className="kml-preview-img"
+                      src="/images/kalkaska-moraine-loop/guide-preview-2.webp"
+                      alt="A preview of a mile-by-mile data set for the Kalkaska Moraine Loop."
+                      loading="lazy"
+                      width="850"
+                      height="1100"
+                    />
+                    <figcaption>
+                      Mile-by-mile data sheets mark water, camping, tricky
+                      turns, and more.
+                    </figcaption>
+                  </figure>
+                  <figure>
+                    {/* TODO: replace preview-datasheet.webp */}
+                    <img
+                      className="kml-preview-img"
+                      src="/images/kalkaska-moraine-loop/guide-preview-3.webp"
+                      alt="A close-up of a page from the Kalkaska Moraine Loop guide"
+                      loading="lazy"
+                      width="850"
+                      height="1100"
+                    />
+                    <figcaption>
+                      The guide inculdes an interactive CalTopo mapset with
+                      realtime navigation.
+                    </figcaption>
+                  </figure>
                 </div>
               </section>
             </Reveal>

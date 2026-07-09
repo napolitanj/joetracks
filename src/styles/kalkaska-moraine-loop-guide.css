@@ -231,10 +231,49 @@
   outline: none;
 }
 
+/* Guide preview images */
+.kalkaska-moraine-loop-guide .kml-preview-caption {
+  text-align: center;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.kalkaska-moraine-loop-guide .kml-preview-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.kalkaska-moraine-loop-guide .kml-preview-row figure {
+  margin: 0;
+}
+
+.kalkaska-moraine-loop-guide .kml-preview-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8.5 / 11;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0.6rem;
+  border: 0.0625rem solid var(--border-color);
+  display: block;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.04);
+}
+
+.kalkaska-moraine-loop-guide .kml-preview-row figcaption {
+  text-align: center;
+  color: var(--muted-text);
+  font-size: 0.9rem;
+  margin-top: 0.45rem;
+}
+
 /* Buy CTA button */
 .kalkaska-moraine-loop-guide .kml-buy-btn {
   display: inline-block;
-  margin-top: 1.25rem;
+  margin-top: 0.5rem;
   padding: 0.85rem 2rem;
   background: var(--accent-color);
   color: #fff;
@@ -332,6 +371,10 @@
 
 @media (max-width: 900px) {
   .kalkaska-moraine-loop-guide .kalkaska-moraine-loop-legs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kalkaska-moraine-loop-guide .kml-preview-row {
     grid-template-columns: 1fr;
   }
 
