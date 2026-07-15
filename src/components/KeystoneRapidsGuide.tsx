@@ -135,7 +135,7 @@ const KeystoneRapidsGuide = () => {
                   </div>
                   <div className="intro-image-wrapper section-half">
                     <img
-                      src="/images/keystone-rapids/boardman-river-canoeing.webp"
+                      src={`${import.meta.env.BASE_URL}images/keystone-rapids/boardman-river-canoeing.webp`}
                       alt="A canoer paddling the Boardman River"
                       className="intro-image"
                     />
@@ -187,7 +187,7 @@ const KeystoneRapidsGuide = () => {
                         rel="noopener noreferrer"
                       >
                         <img
-                          src="/images/keystone-rapids/keystone-rapids-map.png"
+                          src={`${import.meta.env.BASE_URL}images/keystone-rapids/keystone-rapids-map.png`}
                           alt="Keystone Rapids map of the Boardman River"
                         />
                       </a>
@@ -220,7 +220,7 @@ const KeystoneRapidsGuide = () => {
 
                         <figure>
                           <img
-                            src="/images/keystone-rapids/beitner-bridge-destroyed.webp"
+                            src={`${import.meta.env.BASE_URL}images/keystone-rapids/beitner-bridge-destroyed.webp`}
                             alt="The collapse of the Beitner Road bridge"
                           />
                         </figure>
@@ -287,7 +287,7 @@ const KeystoneRapidsGuide = () => {
                 <div className="dis-row g-2">
                   <figure className="section-half">
                     <img
-                      src="/images/keystone-rapids/keystone-rapids-summer.webp"
+                      src={`${import.meta.env.BASE_URL}images/keystone-rapids/keystone-rapids-summer.webp`}
                       alt="Two paddlers navigating the Boardman River"
                     />
                   </figure>
@@ -376,7 +376,7 @@ const KeystoneRapidsGuide = () => {
                   </div>
                   <figure className="section-half">
                     <img
-                      src="/images/keystone-rapids/bike-shuttle.webp"
+                      src={`${import.meta.env.BASE_URL}images/keystone-rapids/bike-shuttle.webp`}
                       alt="A view along Keystone Road"
                     />
                   </figure>
@@ -406,7 +406,7 @@ const KeystoneRapidsGuide = () => {
                     </p>
                     <figure>
                       <img
-                        src="/images/keystone-rapids/stump-wave.webp"
+                        src={`${import.meta.env.BASE_URL}images/keystone-rapids/stump-wave.webp`}
                         alt="The Stump Wave rapid on the Boardman River"
                       />
                     </figure>
@@ -423,7 +423,7 @@ const KeystoneRapidsGuide = () => {
                     </p>
                     <figure>
                       <img
-                        src="/images/keystone-rapids/erosion-rapids-keystone.webp"
+                        src={`${import.meta.env.BASE_URL}images/keystone-rapids/erosion-rapids-keystone.webp`}
                         alt="The Erosion rapids on the Boardman River"
                       />
                     </figure>
@@ -438,7 +438,7 @@ const KeystoneRapidsGuide = () => {
                     </p>
                     <figure>
                       <img
-                        src="/images/keystone-rapids/lazy-tree.webp"
+                        src={`${import.meta.env.BASE_URL}images/keystone-rapids/lazy-tree.webp`}
                         alt="The lazy tree wave on the Keystone Rapids"
                       />
                     </figure>
@@ -456,7 +456,7 @@ const KeystoneRapidsGuide = () => {
                     </p>
                     <figure>
                       <img
-                        src="/images/keystone-rapids/platform-wave.webp"
+                        src={`${import.meta.env.BASE_URL}images/keystone-rapids/platform-wave.webp`}
                         alt="The Platform Waves on the Boardman River"
                       />
                     </figure>
@@ -471,7 +471,7 @@ const KeystoneRapidsGuide = () => {
                     </p>
                     <figure>
                       <img
-                        src="/images/keystone-rapids/oxbow.webp"
+                        src={`${import.meta.env.BASE_URL}images/keystone-rapids/oxbow.webp`}
                         alt="The Oxbow wave on the Boardman River"
                       />
                     </figure>
@@ -488,7 +488,7 @@ const KeystoneRapidsGuide = () => {
                     </p>
                     <figure>
                       <img
-                        src="/images/keystone-rapids/old-pond.webp"
+                        src={`${import.meta.env.BASE_URL}images/keystone-rapids/old-pond.webp`}
                         alt="The Old Pond wave on the Boardman River"
                       />
                     </figure>
@@ -508,7 +508,7 @@ const KeystoneRapidsGuide = () => {
                       </p>
                       <figure>
                         <img
-                          src="/images/keystone-rapids/pinhole-sweeper.webp"
+                          src={`${import.meta.env.BASE_URL}images/keystone-rapids/pinhole-sweeper.webp`}
                           alt="The Pinhole Sweeper on the Boardman River"
                         />
                       </figure>
@@ -524,7 +524,7 @@ const KeystoneRapidsGuide = () => {
                       </p>
                       <figure>
                         <img
-                          src="/images/keystone-rapids/ropeswing-strainer.webp"
+                          src={`${import.meta.env.BASE_URL}images/keystone-rapids/ropeswing-strainer.webp`}
                           alt="The Ropeswing Strainer on the Boardman River"
                         />
                       </figure>

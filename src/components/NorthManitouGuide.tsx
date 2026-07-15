@@ -113,33 +113,6 @@ const NorthManitouGuide = () => {
                   OPERATING
                 </p>{" "}
               </a>
-              <hr className="section-divider" />
-              <nav className="manitou-quick-nav" aria-label="Quick navigation">
-                <h2>Quick Nav</h2>
-                <ul>
-                  <li>
-                    <a href="#essential-information">Essential information</a>
-                  </li>
-                  <li>
-                    <a href="#hazards">Hazards</a>
-                  </li>
-                  <li>
-                    <a href="#packing-list">Packing list</a>
-                  </li>
-                  <li>
-                    <a href="#ferry-passage">Ferry passage</a>
-                  </li>
-                  <li>
-                    <a href="#permits-and-fees">Permits and fees</a>
-                  </li>
-                  <li>
-                    <a href="#what-to-do">What to do</a>
-                  </li>
-                  <li>
-                    <a href="#planning-your-route">Map and route planning</a>
-                  </li>
-                </ul>
-              </nav>
             </section>
 
             <Reveal variant="up" delay={80}>
