@@ -11,13 +11,13 @@ export const pyramidPointGuide: TrailGuide = {
     lat: 44.962497,
     lng: -85.902181,
     county: "Leelanau",
-    drivingMinutesFromTC: 45, // approximate, confirm
+    drivingMinutesFromTC: 45,
   },
   stats: {
     trailMiles: 6.07,
-    suggestedRouteMiles: 3.8, // TODO: reconcile against the "roughly 1.2-mile" short-route figure in the narrative
+    suggestedRouteMiles: 3.24,
     acres: 870,
-    difficulty: "hard", // confirm — the 1.2-mile short route to the overlook feels more "moderate"
+    difficulty: "hard",
   },
   heroImage: "/images/pyramid-point/pyramid-point-hero.webp",
   mapImage: "/images/pyramid-point/pyramid-point-map.png",
@@ -51,7 +51,7 @@ export const pyramidPointGuide: TrailGuide = {
     },
     {
       heading: "Suggested Long Route",
-      body: `The loop I recommend is 3.8 miles and can be started from any of the three trailheads listed. This loop is not listed on AllTrails, and uses official but rarely-used trails that are challenging to find. For this reason, this loop is only recommended for experienced hikers with route finding confidence. I recommend starting from the Good Harbor Drive trailhead and doing the loop clockwise, as it saves the most scenic portions for last and the steepest hills as descents.
+      body: `The loop I recommend is 3.2 miles and can be started from any of the three trailheads listed. This loop is not listed on AllTrails, and uses official but rarely-used trails that are challenging to find. For this reason, this loop is only recommended for experienced hikers with route finding confidence. I recommend starting from the Good Harbor Drive trailhead and doing the loop clockwise, as it saves the most scenic portions for last and the steepest hills as descents.
 
 Carefully review the details below against the map, as many of these trails are not marked.
 
