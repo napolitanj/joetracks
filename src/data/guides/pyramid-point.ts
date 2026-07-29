@@ -44,14 +44,26 @@ export const pyramidPointGuide: TrailGuide = {
   activities: ["hiking", "backpacking", "hunting", "wildlife-viewing", "pets"],
   sections: [
     {
-      heading: "The Point",
+      heading: "Area Overview",
       body: 'Pyramid Point sits inside the Port Oneida Rural Historic District, the largest intact historic farming landscape held in public ownership in the country. The Miller family farmed this ground for years, raising five daughters in a hand-hewn log home near the start of the trail. One of them, Mary, stayed on alone after her parents died and built a small shack further up the trail rather than leave. Farming this glacially scoured, nutrient-poor ground was never easy, but families here got by on wheat, rye, oats, corn, and a few dairy cows and hogs.\n\nFrom the main overlook, on a clear day you can pick out four islands: South Manitou to the west, North Manitou almost directly north, and South and North Fox Island further northeast. Between here and North Manitou you\'ll spot a small white structure that looks like a sail from a distance, locals call it "the Crib," a decommissioned lighthouse now owned and maintained by a nonprofit.\n\nThe National Park Service requests that visitors do not descend the dune to the water to prevent further erosion. The dune is also much steeper and taller than it looks from the top and the return climb up is difficult. If you want to hike to the base of the dune, walk along the shoreline from Good Harbor Beach instead. The shoreline is very rocky, so be sure to bring shoes if you choose to traverse it.',
       image: "/images/pyramid-point/pyramid-point-dunes.webp",
       imageAlt: "Overlook view toward the islands from Pyramid Point",
     },
     {
-      heading: "Suggested Long Route",
-      body: `The loop I recommend is 3.2 miles and can be started from any of the three trailheads listed. This loop is not listed on AllTrails, and uses official but rarely-used trails that are challenging to find. For this reason, this loop is only recommended for experienced hikers with route finding confidence. I recommend starting from the Good Harbor Drive trailhead and doing the loop clockwise, as it saves the most scenic portions for last and the steepest hills as descents.
+      heading: "Short Route - Pyramid Point Overlook",
+      body: "If you just want the view, you don't need to hike the whole loop. A popular and very well-marked trail ascends 223 feet from the Pyramid Point Trailhead 0.6 miles to the main overlook. You'll follow the same trail down, making for a round trip of roughly 1.2 miles with all of the climbing during the first half. This route is highlighted in blue on the map.",
+      image: "/images/pyramid-point/pyramid-point-overlook.webp",
+      imageAlt: "The short overlook trail to Pyramid Point",
+    },
+    {
+      heading: "Medium Route - The Meadow Loop",
+      body: "The Meadow Loop is a 2.3-mile-long route that navigates the forests and meadow south of Pyramid Point. It is well-marked and connects trail markers 1, 2, and 3 before finishing with a short road walk back to the parking area. With 438 feet of ascent/descent across variable terrain, this route should be considered moderate if not difficult. Some of it is well-maintained, some of it is sandy and steep enough that the climb back up from the meadows can be challenging for some hikers. A few stretches of trail might be overgrown between trail crew visits. The additional challenge of this loop results in less traffic, lending to higher chances of seeing wildlife.",
+      image: "/images/pyramid-point/pyramid-point-meadow-loop.webp",
+      imageAlt: "The Meadow Loop trail near Pyramid Point",
+    },
+    {
+      heading: "Challenging Route - Pyramid Point Tour",
+      body: `The loop I prefer is 3.24 miles and can be started from any of the three trailheads listed. This loop is not listed on AllTrails, and uses official but rarely-used trails that are challenging to find. For this reason, this loop is only recommended for experienced hikers with route finding confidence. I recommend starting from the Good Harbor Drive Trailhead, or West Lake Michigan Road Trailhead, and doing the loop clockwise, as it saves the most scenic portions for last and the steepest hills as descents.
 
 Carefully review the details below against the map, as many of these trails are not marked.
 
@@ -66,12 +78,6 @@ The trail along the rim leads back to an overlook of Lake Michigan. To your righ
       imageAlt: "The hard-to-spot connector trail junction",
     },
     {
-      heading: "Suggested Short Route",
-      body: "If you just want the view, you don't need the whole loop. A popular and very well-marked trail ascends from the Pyramid Point Trailhead 0.6 miles up to the main overlook. You'll follow the same trail down, making for a round trip of roughly 1.2 miles with all of the climbing during the first half. That's the version most people do, and it's enough to see the islands and the Crib without the extra mileage.",
-      image: "/images/pyramid-point/pyramid-point-overlook.webp",
-      imageAlt: "The short overlook trail to Pyramid Point",
-    },
-    {
       heading: "Wildlife and What You Might See",
       body: "This stretch sees more wildlife activity than its popularity would suggest. I observed a resident red-tailed hawk hunting the dunes just east of the point two-days in a row, and spotted a barred owl and white-tailed deer in the forest near the ponds south of Hidden Lake. Milkweed grows thick through here too, which attracts monarch butterflies for a good portion of the summer. Expect wildflowers in the meadows through spring and summer, strong color in fall, and light use for snowshoeing in winter.",
       image: "/images/pyramid-point/pyramid-point-monarch.webp",
@@ -83,6 +89,7 @@ The trail along the rim leads back to an overlook of Lake Michigan. To your righ
     "Do not descend the dune to Lake Michigan. It's farther and steeper than it looks, the clay base is slick when wet, and this bluff is already heavily eroded.",
     "Mountain bikes are not permitted on any National Park Service trail here.",
     "Dogs are allowed on a leash no longer than 6 feet.",
+    "Ticks carrying lyme disease are present in this area, especially in tall grass. Wear appropriate clothing and do a thorough tick check after your hike.",
     "Stay on the marked trail, even where unofficial social trails look tempting — this dune ecosystem is fragile and slow to recover.",
     "Hunting is allowed in this area, so be sure to wear bright orange, especially during deer firearm seasons.",
   ],
@@ -93,6 +100,7 @@ The trail along the rim leads back to an overlook of Lake Michigan. To your righ
     "No speakers or amplified sound, keep voices down out of respect for wildlife and other visitors.",
     'Pack out everything, including food scraps and "biodegradable" waste.',
     "Camping is not permitted along this route.",
+    "Aerial drones are not allowed within National Park boundaries.",
   ],
   managedBy: "National Park Service — Sleeping Bear Dunes National Lakeshore",
   managedByKey: "sleepingBearDunes",
