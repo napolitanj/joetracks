@@ -17,6 +17,7 @@ export type Activity =
   | "no-hunting"
   | "paddling"
   | "skiing"
+  | "snowshoeing"
   | "mountain-biking"
   | "wildlife-viewing"
   | "universal-access"

@@ -17,6 +17,7 @@ const activityLabels: Record<Activity, string> = {
   hunting: "Hunting",
   paddling: "Canoe, Kayaking, SUP",
   skiing: "Skiing",
+  snowshoeing: "Snowshoeing",
   "mountain-biking": "Mountain Biking",
   "wildlife-viewing": "Wildlife Viewing",
   "universal-access": "Universally Accessible",

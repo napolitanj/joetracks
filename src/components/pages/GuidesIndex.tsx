@@ -96,6 +96,16 @@ const guides: GuideItem[] = [
     imageAlt: "Fern Lake at Timbers Recreation Area in autumn",
   },
   {
+    title: "Trail Guide: Whaleback Natural Area",
+    description:
+      "A 40-acre bluff rising 300 feet over Lake Michigan near Leland, with sweeping views of the Manitou Passage.",
+    href: "/trails/whaleback-natural-area",
+    cta: "Go Hiking",
+    imageSrc:
+      "/images/conservancy-natural-areas/whaleback-natural-area/whaleback-natural-area-banner.webp",
+    imageAlt: "PLACEHOLDER — Whaleback Natural Area image alt text",
+  },
+  {
     title: "Trip Planning With Remote Forecasting Tools",
     description:
       "A technical trip-planning walkthrough for forecasting snow cover remotely.",
