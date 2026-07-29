@@ -102,6 +102,7 @@ The trail along the rim leads back to an overlook of Lake Michigan. To your righ
     "Camping is not permitted along this route.",
     "Aerial drones are not allowed within National Park boundaries.",
   ],
+  youtubeEmbedId: "MLgrR-z1uM0",
   managedBy: "National Park Service — Sleeping Bear Dunes National Lakeshore",
   managedByKey: "sleepingBearDunes",
   lastUpdated: "2026-07-27",
