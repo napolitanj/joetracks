@@ -23,6 +23,7 @@
 
 .support-notice__btn {
   display: inline-block;
+  align-self: center;
   padding: 0.5rem 1rem;
   border-radius: 0.45rem;
   background: var(--accent-color);

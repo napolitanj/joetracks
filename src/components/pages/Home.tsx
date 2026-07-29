@@ -62,12 +62,15 @@ const Home = () => {
         <div className="home-container home-inner">
           <div className="home-split">
             <div className="home-split-copy">
-              <h2>Guides and Tools That Actually Get You Out There</h2>
+              <h2>
+                Guides and Tools Built for Northern Michigan's Great Outdoors
+              </h2>
               <p className="home-subhead">
                 JoeTracks provides <strong>field-tested guides</strong> and{" "}
                 <strong>planning tools</strong> to simplify real-world outdoor
-                decision-making — from access and logistics to conditions and
-                the lesser-known adventures in the region.
+                decision-making. From logistics to real-time conditions, you'll
+                find resources better informing visits to your favorite spots
+                and discover lesser-known adventures in the region.
               </p>
 
               <div className="home-start-cta">

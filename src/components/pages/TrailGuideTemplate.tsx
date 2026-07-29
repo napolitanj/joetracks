@@ -5,12 +5,14 @@ import { getGuideBySlug } from "../../data/guides/index";
 import { Activity } from "../../types/Trailguide";
 import "../../styles/TrailGuideTemplate.css";
 import NewsletterCapture from "../NewsletterCapture";
+import GatedDownload from "../GatedDownload";
 import ManagedBy from "../guide/ManagedBy";
 import LNTNotice from "../guide/LNTNotice";
 import SupportNotice from "../guide/SupportNotice";
 
 const activityLabels: Record<Activity, string> = {
   hiking: "Hiking",
+  backpacking: "Backpacking",
   fishing: "Fishing",
   hunting: "Hunting",
   paddling: "Canoe, Kayaking, SUP",
@@ -186,16 +188,43 @@ export default function TrailGuideTemplate() {
             {/* Getting There */}
             <div className="tg-getting-there">
               <span className="tg-gt-label">Getting There</span>
-              <span className="tg-gt-address">{guide.parking}</span>
-              {guide.parkingMapUrl && (
-                <a
-                  href={guide.parkingMapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="tg-gt-link"
-                >
-                  Open in Google Maps →
-                </a>
+              {guide.trailheads && guide.trailheads.length > 0 ? (
+                <div className="tg-trailhead-list">
+                  {guide.trailheads.map((th, i) => (
+                    <div key={i} className="tg-trailhead">
+                      <div className="tg-trailhead-header">
+                        <span className="tg-trailhead-name">{th.label}</span>
+                        {th.recommended && (
+                          <span className="tg-trailhead-badge">
+                            Recommended
+                          </span>
+                        )}
+                      </div>
+                      <a
+                        href={th.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="tg-gt-link"
+                      >
+                        Open in Google Maps →
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <>
+                  <span className="tg-gt-address">{guide.parking}</span>
+                  {guide.parkingMapUrl && (
+                    <a
+                      href={guide.parkingMapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="tg-gt-link"
+                    >
+                      Open in Google Maps →
+                    </a>
+                  )}
+                </>
               )}
             </div>
           </div>
@@ -221,7 +250,11 @@ export default function TrailGuideTemplate() {
           {guide.sections.map((section, i) => (
             <div key={i} className="tg-section">
               <h2 className="tg-section-heading">{section.heading}</h2>
-              <p className="tg-body">{section.body}</p>
+              {section.body.split("\n\n").map((para, j) => (
+                <p key={j} className="tg-body">
+                  {para}
+                </p>
+              ))}
               {section.image && (
                 <img
                   src={section.image}
@@ -262,6 +295,35 @@ export default function TrailGuideTemplate() {
                   ))}
                 </ul>
               )}
+            </div>
+          )}
+
+          {/* Downloads */}
+          {guide.downloads && guide.downloads.length > 0 && (
+            <div className="tg-section tg-downloads">
+              <h2 className="tg-section-heading">Downloads</h2>
+              <div className="tg-downloads-list">
+                {guide.downloads.map((d, i) =>
+                  d.gated ? (
+                    <GatedDownload
+                      key={i}
+                      label={d.label}
+                      description={d.description ?? ""}
+                      fileUrl={d.fileUrl}
+                    />
+                  ) : (
+                    <a
+                      key={i}
+                      href={d.fileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="tg-button tg-download-link"
+                    >
+                      {d.label}
+                    </a>
+                  ),
+                )}
+              </div>
             </div>
           )}
 

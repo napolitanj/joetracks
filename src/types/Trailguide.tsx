@@ -10,6 +10,7 @@ export type Difficulty = "easy" | "moderate" | "hard";
 export type GuideTier = "free" | "subscriber" | "paid";
 export type Activity =
   | "hiking"
+  | "backpacking"
   | "fishing"
   | "birding"
   | "hunting"
@@ -29,6 +30,21 @@ export interface GuideSection {
   body: string;
   image?: string;
   imageAlt?: string;
+}
+
+export interface Trailhead {
+  label: string;
+  mapUrl: string;
+  lat: number;
+  lng: number;
+  recommended?: boolean;
+}
+
+export interface GuideDownload {
+  label: string;
+  fileUrl: string;
+  description?: string; // shown for gated downloads
+  gated?: boolean; // default false = plain public link
 }
 
 export interface TrailGuide {
@@ -52,14 +68,18 @@ export interface TrailGuide {
   };
   heroImage: string;
   mapImage: string;
-  parking: string;
+  // single-trailhead guides use `parking` (+ optional `parkingMapUrl`);
+  // multi-trailhead guides use `trailheads` instead.
+  parking?: string;
+  parkingMapUrl?: string;
+  trailheads?: Trailhead[];
   sections: GuideSection[]; // the route narrative, split into headed chunks
   knowBeforeYouGo: string[]; // 4-6 tight bullets
   managedBy?: string;
   lastUpdated: string; // "2025-07-01"
   activities: Activity[];
   propertyRules: string[];
-  parkingMapUrl?: string;
+  downloads?: GuideDownload[];
   youtubeEmbedId?: string;
   managedByKey: ManagingOrgKey;
 }

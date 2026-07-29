@@ -17,8 +17,7 @@ const guides: GuideItem[] = [
       "A field-verified 50-mile backpacking loop through the sandy moraine country southeast of Traverse City. Four legs, full maps, elevation profiles, waypoints, and a CalTopo mapset.",
     href: "/kalkaska-moraine-loop",
     cta: "Get the Guide",
-    imageSrc:
-      "/images/kalkaska-moraine-loop/kalkaska-moraine-loop-banner.webp",
+    imageSrc: "/images/kalkaska-moraine-loop/kalkaska-moraine-loop-banner.webp",
     imageAlt:
       "The Kalkaska Moraine Loop backpacking route through northern Michigan",
   },
@@ -66,6 +65,15 @@ const guides: GuideItem[] = [
     cta: "Go Biking",
     imageSrc: "/images/palmer-woods/palmer-woods-card.webp",
     imageAlt: "A mountain biker on a trail at Palmer Woods Forest Reserve",
+  },
+  {
+    title: "The Complete Pyramid Point Hiking Guide",
+    description:
+      "A dune-top overlook inside the Port Oneida Rural Historic District with views of North and South Manitou Island. Full loop and a short out-and-back option.",
+    href: "/trails/pyramid-point",
+    cta: "Go Hiking",
+    imageSrc: "/images/pyramid-point/pyramid-point-hero.webp",
+    imageAlt: "PLACEHOLDER — Pyramid Point image alt text",
   },
   {
     title: "Trail Guide: Valley of the Giants",

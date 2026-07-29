@@ -4,6 +4,10 @@
   padding-bottom: 80px;
 }
 
+.tg-content {
+  padding: 0 24px;
+}
+
 /* Hero */
 .tg-hero {
   position: relative;
@@ -115,7 +119,11 @@
   font-size: 0.975rem;
   line-height: 1.75;
   color: #333;
-  margin: 0;
+  margin: 0 0 14px 0;
+}
+
+.tg-body:last-child {
+  margin-bottom: 0;
 }
 
 .tg-section-img {
@@ -259,6 +267,51 @@
 
 .tg-gt-link:hover {
   text-decoration: underline;
+}
+
+/* Trailhead list */
+.tg-trailhead-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.tg-trailhead {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e0ddd8;
+}
+
+.tg-trailhead:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.tg-trailhead-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tg-trailhead-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.tg-trailhead-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #2a5f6a;
+  background: #eef4f4;
+  border: 1px solid #c8dfe2;
+  border-radius: 20px;
+  padding: 2px 8px;
 }
 
 /* Map clickable */
