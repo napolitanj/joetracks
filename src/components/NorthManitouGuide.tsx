@@ -100,19 +100,23 @@ const NorthManitouGuide = () => {
             </section>
 
             <section className="content-wrapper manitou-top-meta">
-              <a
-                href="https://manitoutransit.com/rates-schedule/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {" "}
-                <p className="alert-text">
-                  NOTICE: THE SLEEPING BEAR DUNES NATIONAL PARK SERVICE HAS
-                  CLOSED BOTH SOUTH AND NORTH MANITOU ISLANDS DOCKS FOR THE
-                  WHOLE 2026 SEASON. MANITOU ISLAND TRANSIT WILL NOT BE
-                  OPERATING
-                </p>{" "}
-              </a>
+              <p className="alert-text">
+                <strong>NOTICE:</strong> The Manitou Island Transit will not be
+                operating during the 2026 season while new docks are under
+                construction on both islands.{" "}
+                <strong>
+                  Currently, the only charter service offering passage to the
+                  island is Manitou Passage LLC. Contact Jimmy at 231-218-5853.
+                </strong>{" "}
+                <a
+                  href="https://www.nps.gov/slbe/planyourvisit/northmanitouisland.htm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {" "}
+                  Click here for additional details about the closure.{" "}
+                </a>
+              </p>{" "}
             </section>
 
             <Reveal variant="up" delay={80}>
