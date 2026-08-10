@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "/src/styles/newsletter.css";
+import { NEWSLETTER_DESCRIPTION } from "./NewsletterCapture";
 
 const KIT_FORM_URL = "https://app.kit.com/forms/9379833/subscriptions";
 const DISMISSED_KEY = "newsletter-bar-dismissed";
@@ -55,8 +56,7 @@ const NewsletterStickyBar = () => {
     >
       <div className="newsletter-sticky-bar__inner">
         <span className="newsletter-sticky-bar__headline">
-          Join the newsletter to support the project, know when new guides are
-          published, and access exclusive content.
+          {NEWSLETTER_DESCRIPTION}
         </span>
         {status === "success" ? (
           <p className="newsletter-sticky-bar__confirm">

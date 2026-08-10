@@ -3,8 +3,9 @@ import { TrailGuide } from "../../types/Trailguide";
 export const palmerWoodsGuide: TrailGuide = {
   slug: "palmer-woods-forest-reserve",
   title: "Palmer Woods Forest Reserve",
+  seoTitle: "Palmer Woods Forest Reserve Mountain Biking, Leelanau",
   shortDescription:
-    "PLACEHOLDER — short description for guide cards and meta description.",
+    "27-miles of some of Michigan's best biking single track, located just off of M22 on the Leelanau Peninsula",
   category: "mountain-biking",
   tier: "free",
   location: {

@@ -4,7 +4,7 @@ import "/src/styles/shared.css";
 import RiverFlow from "./RiverFlow";
 import Reveal from "./ui/Reveal";
 import SEO from "./SEO";
-import NewsletterCapture from "./NewsletterCapture";
+import NewsletterCTA from "./NewsletterCTA";
 import { Link } from "react-router-dom";
 import LNTNotice from "./guide/LNTNotice";
 import ManagedBy from "./guide/ManagedBy";
@@ -267,16 +267,7 @@ const KeystoneRapidsGuide = () => {
             </Reveal>
             {/* ── Newsletter ── */}
             <Reveal variant="up" delay={500}>
-              <section className="content-wrapper row cnt-vrt cnt-hrz mobile-col">
-                <div className="col cnt-vrt cnt-hrz">
-                  <h2>Enjoying this guide?</h2>
-                  <p>Support this project for free.</p>
-                </div>
-                <NewsletterCapture
-                  headline="I publish several guides every month."
-                  subtext="Skiing, biking, paddling, and more — subscribing to the newsletter is a free and easy way to support me in building free community resources. Sign up to be notified when new guides are published and gain access to subscriber-only content."
-                />
-              </section>
+              <NewsletterCTA />
             </Reveal>
             {/* ── The Float ── */}
             <Reveal variant="up" delay={200}>

@@ -258,10 +258,7 @@ const Home = () => {
                 </Link>
               </div>
 
-              <NewsletterCapture
-                headline="Several guides are published each month."
-                subtext="Subscribing to the newsletter is a free and easy way to support free community resources. Sign up to be notified when new guides are published and gain access to subscriber-only content."
-              />
+              <NewsletterCapture />
 
               <p className="home-subhead home-subhead--mt">
                 No spam — just field-tested guides, tools, and useful planning

@@ -3,7 +3,7 @@ import "/src/styles/palmer-woods-guide.css";
 import "/src/styles/shared.css";
 import Reveal from "./ui/Reveal";
 import SEO from "./SEO";
-import NewsletterCapture from "./NewsletterCapture";
+import NewsletterCTA from "./NewsletterCTA";
 import { Link } from "react-router-dom";
 import LNTNotice from "./guide/LNTNotice";
 import ManagedBy from "./guide/ManagedBy";
@@ -283,16 +283,7 @@ const PalmerWoodsGuide = () => {
 
             {/* ── Newsletter ── */}
             <Reveal variant="up" delay={500}>
-              <section className="content-wrapper row cnt-vrt cnt-hrz mobile-col">
-                <div className="col cnt-vrt cnt-hrz">
-                  <h2>Enjoying this guide so far?</h2>
-                  <p>Support this project for free.</p>
-                </div>
-                <NewsletterCapture
-                  headline="I publish several guides every month."
-                  subtext="Subscribing to the newsletter is a free and easy way to support me in building free community resources. Sign up to be notified when new guides are published and gain access to subscriber-only content."
-                />
-              </section>
+              <NewsletterCTA />
             </Reveal>
 
             {/* ── Trails ── */}

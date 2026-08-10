@@ -2,14 +2,23 @@ import { useState } from "react";
 import "/src/styles/newsletter.css";
 
 type Props = {
-  headline: string;
-  subtext: string;
+  headline?: string;
+  subtext?: string;
   formUrl?: string;
 };
 
 const KIT_FORM_URL = "https://app.kit.com/forms/9272089/subscriptions";
 
-const NewsletterCapture = ({ headline, subtext, formUrl }: Props) => {
+export const NEWSLETTER_HEADLINE =
+  "Get the Michigan routes and outdoor beta you can't find elsewhere.";
+export const NEWSLETTER_DESCRIPTION =
+  "Every month I scout, map, and document outdoor destinations in Northern Michigan: conditions, water sources, campsites, put-ins, all the details you need to get out there. Subscribers get updates I don't post anywhere else, plus discounts when paid guides launch.";
+
+const NewsletterCapture = ({
+  headline = NEWSLETTER_HEADLINE,
+  subtext = NEWSLETTER_DESCRIPTION,
+  formUrl,
+}: Props) => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
 
@@ -38,8 +47,10 @@ const NewsletterCapture = ({ headline, subtext, formUrl }: Props) => {
         </p>
       ) : (
         <>
-          <p className="newsletter-capture__headline">{headline}</p>
-          <p className="newsletter-capture__subtext">{subtext}</p>
+          {headline && (
+            <p className="newsletter-capture__headline">{headline}</p>
+          )}
+          {subtext && <p className="newsletter-capture__subtext">{subtext}</p>}
           <form
             className="newsletter-capture__form"
             onSubmit={handleSubmit}

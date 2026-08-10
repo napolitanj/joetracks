@@ -4,7 +4,7 @@ import { RIVERS, getConditionFromPercentile } from "../../data/riverConfig";
 import { useRiverData } from "./useRiverData";
 import { useFavorites } from "./useFavorites";
 import RiverStatusBadge from "./RiverStatusBadge";
-import NewsletterCapture from "../NewsletterCapture";
+import NewsletterCTA from "../NewsletterCTA";
 import SEO from "../SEO";
 
 type Tab =
@@ -148,16 +148,7 @@ export default function RiverTracker() {
             without at least 20 historical data to generate average conditions
             are marked as "No Data."
           </p>
-          <div className="content-wrapper row cnt-vrt cnt-hrz mobile-col">
-            <div className="col cnt-vrt cnt-hrz">
-              <h2>Enjoying this tool?</h2>
-              <p>Support this project for free.</p>
-            </div>
-            <NewsletterCapture
-              headline="I publish new guides and tools weekly."
-              subtext="Subscribing to the newsletter costs nothing and supports me in building free community resources."
-            />
-          </div>
+          <NewsletterCTA />
         </div>
       </div>
 

@@ -52,7 +52,7 @@ export default function TrailGuideTemplate() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>{guide.title} — JoeTracks</title>
+        <title>{guide.seoTitle ?? guide.title}</title>
         <meta name="description" content={guide.shortDescription} />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -246,7 +246,7 @@ export default function TrailGuideTemplate() {
               <span className="tg-map-hint">Click to open full map</span>
             </a>
           </div>
-
+          <NewsletterCapture />
           {/* Narrative Sections */}
           {guide.sections.map((section, i) => (
             <div key={i} className="tg-section">
@@ -342,10 +342,6 @@ export default function TrailGuideTemplate() {
             </div>
           )}
 
-          <NewsletterCapture
-            headline="I publish several free guides every month."
-            subtext="If you love free resources like these, subscribing to the newsletter is an easy way to support this project. Sign up to be notified when new guides are published and gain access to exclusive content."
-          />
           <div className="guide-footer-attributions content-wrapper">
             {guide.managedBy && <ManagedBy organization={guide.managedByKey} />}
             <LNTNotice />

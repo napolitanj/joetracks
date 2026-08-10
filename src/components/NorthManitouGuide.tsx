@@ -651,10 +651,7 @@ const NorthManitouGuide = () => {
               <div>
                 <hr className="section-divider" />
               </div>
-              <NewsletterCapture
-                headline="I publish several guides every month."
-                subtext="Skiing, biking, paddling, and more — subscribing to the newsletter is a free and easy way to support me in building free community resources. Sign up to be notified when new guides are published and gain access to exclusive content."
-              />
+              <NewsletterCapture />
               <Reveal as="section" variant="up" delay={300}>
                 <div className="section-header">
                   <h2>How to Get to North Manitou Island</h2>

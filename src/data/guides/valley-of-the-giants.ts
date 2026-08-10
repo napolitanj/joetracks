@@ -3,8 +3,9 @@ import { TrailGuide } from "../../types/Trailguide";
 export const valleyOfTheGiantsGuide: TrailGuide = {
   slug: "valley-of-the-giants",
   title: "Valley of the Giants",
+  seoTitle: "Valley of the Giants — Michigan Old Growth Forest Hike",
   shortDescription:
-    "A section of the North Country Trail running through one of the few remaining old growth forests in Michigan's Lower Peninsula. Ancient white pines, a creek-carved ravine, and no AllTrails listing.",
+    "A 6-mile out-and-back on the North Country Trail through old-growth white pines near Traverse City. Blaze-by-blaze directions AllTrails doesn't have.",
   category: "hiking",
   tier: "free",
   location: {

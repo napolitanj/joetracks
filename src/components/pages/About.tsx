@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../../styles/About.css";
 import headerPhoto from "/images/bio-pic.webp";
-import NewsletterCapture from "../NewsletterCapture";
+import NewsletterCTA from "../NewsletterCTA";
 
 const About = () => {
   return (
@@ -57,12 +57,7 @@ const About = () => {
             </div>
           </div>
         </section>
-        <div className="content-wrapper row cnt-vrt cnt-hrz mobile-col">
-          <NewsletterCapture
-            headline=""
-            subtext="Subscribing to the newsletter is an free and easy way to support this project."
-          />
-        </div>
+        <NewsletterCTA />
         <section className="about-section">
           <h2>Background & Training</h2>
 

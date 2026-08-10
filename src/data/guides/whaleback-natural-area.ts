@@ -5,8 +5,9 @@ import { TrailGuide } from "../../types/Trailguide";
 export const whalebackNaturalAreaGuide: TrailGuide = {
   slug: "whaleback-natural-area",
   title: "Whaleback Natural Area",
+  seoTitle: "Whaleback Natural Area Hike, Leland — Lake Michigan Bluff",
   shortDescription:
-    "A 40-acre bluff rising 300 feet over Lake Michigan near Leland, with a steep half-mile climb rewarded by sweeping views of the Manitou Passage and a rare stand of thimbleberry.",
+    "A steep half-mile climb to a 300-ft bluff over Lake Michigan near Leland. 1.6-mile loop past thimbleberry patches and Manitou Passage overlooks.",
   category: "hiking",
   tier: "free",
   location: {

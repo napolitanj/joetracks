@@ -51,6 +51,7 @@ export interface GuideDownload {
 export interface TrailGuide {
   slug: string;
   title: string;
+  seoTitle?: string; // <title> tag override; falls back to `title`. Keeps H1 wording separate from search-optimized title.
   shortDescription: string; // used on guide cards + meta description
   category: GuideCategory;
   tier: GuideTier;

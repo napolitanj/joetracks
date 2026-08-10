@@ -3,8 +3,9 @@ import { TrailGuide } from "../../types/Trailguide";
 export const timbersGuide: TrailGuide = {
   slug: "timbers-recreation-area",
   title: "Timbers Recreation Area",
+  seoTitle: "Timbers Recreation Area — Long Lake Hiking & ADA Trail",
   shortDescription:
-    "A 250-acre preserve along Long Lake with 4.5 miles of trails, lake access, and a universally accessible loop.",
+    "Hike the 2.1-mile loop at Timbers Recreation Area on Long Lake near Traverse City: 4.5 mi of trails, a universally accessible route, and fishing access.",
   category: "hiking",
   tier: "free",
   location: {

@@ -3,8 +3,9 @@ import { TrailGuide } from "../../types/Trailguide";
 export const pyramidPointGuide: TrailGuide = {
   slug: "pyramid-point",
   title: "The Complete Pyramid Point Hiking Guide",
+  seoTitle: "Pyramid Point Trails, Sleeping Bear Dunes — 3 Route Options",
   shortDescription:
-    "A dune-top overlook inside the Port Oneida Rural Historic District with views of North and South Manitou Island. Covers the full loop through meadows and hardwood forest and the short out-and-back to the point.",
+    "Three hikes to the Pyramid Point overlook in Sleeping Bear Dunes: a 1.2-mi round trip, a 2.3-mi Meadow Loop, and a 3.24-mi route AllTrails doesn't list.",
   category: "hiking",
   tier: "free",
   location: {

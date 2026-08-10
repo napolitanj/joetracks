@@ -318,10 +318,7 @@ const SleepingBearGuide = () => {
                         </ul>
                       </div>
                     </div>
-                    <NewsletterCapture
-                      headline="I publish several guides every month."
-                      subtext="Skiing, biking, paddling, and more — subscribing to the newsletter is a free and easy way to support me in building free community resources. Sign up to be notified when new guides are published and gain access to exclusive content."
-                    />
+                    <NewsletterCapture />
                     <div className="block html-block block-html">
                       <div className="block-content">
                         <div id="interactive-map" className="dis-col">

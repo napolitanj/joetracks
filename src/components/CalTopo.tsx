@@ -560,10 +560,7 @@ const CalTopo = () => {
                 </section>
                 <div className="section-divider"></div>
                 <div className="vrt-spc"></div>
-                <NewsletterCapture
-                  headline="I'm Building Field Guides for Northern Michigan"
-                  subtext="I publish new guides every month: paddling, biking, hiking, and more. Sign up for notices and exclusive content."
-                />
+                <NewsletterCapture />
                 <div className="vrt-spc"></div>
                 <section className="dis-row g-2 cnt">
                   <figure className="section-half">
