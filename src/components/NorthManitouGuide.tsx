@@ -265,7 +265,7 @@ const NorthManitouGuide = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Buy the Guide ($20)
+                      Buy the Guide ($25)
                     </a>
                   </div>
                   <div className="nmi-preview-row">
@@ -1347,7 +1347,7 @@ const NorthManitouGuide = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Buy the Guide ($20)
+                        Buy the Guide ($25)
                       </a>
                     </div>
                   </section>

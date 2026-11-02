@@ -245,7 +245,7 @@ const KalkaskaMoraineLoopGuide = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Buy the Guide ($20)
+                    Buy the Guide ($25)
                   </a>
                 </div>{" "}
                 <div className="kml-preview-row">
@@ -676,7 +676,7 @@ const KalkaskaMoraineLoopGuide = () => {
                 <div className="col cnt-vrt cnt-hrz">
                   <h2>Ready to Hike the Kalkaska Moraine Loop?</h2>
                   <p>
-                    The complete guide is $20. Everything I learned building and
+                    The complete guide is $25. Everything I learned building and
                     hiking this route, so you don't have to learn it the hard
                     way.
                   </p>
@@ -686,7 +686,7 @@ const KalkaskaMoraineLoopGuide = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Buy the Guide ($20)
+                    Buy the Guide ($25)
                   </a>
                 </div>
               </section>
