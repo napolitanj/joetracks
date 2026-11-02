@@ -31,6 +31,12 @@ interface RouteMeta {
   image: string;
   url: string;
   type: string;
+  /**
+   * Absolute canonical URL for this route. The static index.html ships a
+   * site-root canonical, so without this every route tells a pre-render
+   * crawler it is a duplicate of the homepage.
+   */
+  canonical: string;
 }
 
 const ROUTES: Record<string, RouteMeta> = {
@@ -40,6 +46,7 @@ const ROUTES: Record<string, RouteMeta> = {
       "A beginner's field guide to paddling the Keystone Rapids stretch of the Boardman River in Traverse City, Michigan — put-in and take-out info, rapids breakdown, bike shuttle route, and what to expect on the water.",
     image: "https://joetracks.com/images/keystone-rapids/keystone-rapids-card.webp",
     url: "https://joetracks.com/boardman-river-keystone-rapids",
+    canonical: "https://joetracks.com/boardman-river-keystone-rapids",
     type: "article",
   },
   "/ski-sleeping-bear-dunes": {
@@ -48,6 +55,17 @@ const ROUTES: Record<string, RouteMeta> = {
       "Field-tested guide to skiing Shauger Hill at Sleeping Bear Dunes National Lakeshore — conditions assessment, gear list, approach beta, and a full trip report.",
     image: "https://joetracks.com/images/ski-sleeping-bear/ski-sleeping-bear-banner.png",
     url: "https://joetracks.com/ski-sleeping-bear-dunes",
+    canonical: "https://joetracks.com/ski-sleeping-bear-dunes",
+    type: "article",
+  },
+  "/north-manitou-island-guide": {
+    title: "North Manitou Island Backpacking & Camping Guide | JoeTracks",
+    description:
+      "Ferry and charter access, permits and fees, hazards, packing list, and route planning for backpacking North Manitou Island. Field notes from a decade of trips.",
+    image:
+      "https://joetracks.com/images/north-manitou/north-manitou-island-backpacking.webp",
+    url: "https://joetracks.com/north-manitou-island-guide",
+    canonical: "https://joetracks.com/north-manitou-island-guide",
     type: "article",
   },
 };
@@ -95,6 +113,12 @@ export async function onRequest(context: {
     .on('meta[name="description"]', {
       element(el) {
         el.setAttribute("content", meta.description);
+      },
+    })
+    // Canonical — must match the route, not the site root
+    .on('link[rel="canonical"]', {
+      element(el) {
+        el.setAttribute("href", meta.canonical);
       },
     })
     // OG tags

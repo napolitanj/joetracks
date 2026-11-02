@@ -242,3 +242,187 @@
     gap: 0.8rem;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Guidebook CTA, preview row, and FAQ
+   Ported from kalkaska-moraine-loop-guide.css so the three guide landing
+   pages read the same. These rules are duplicated across that file, the
+   Betsie page, and this one; worth extracting to a shared guide-cta.css
+   when someone has a reason to touch all three.
+   ────────────────────────────────────────────────────────────────────────── */
+
+.manitou-guide .nmi-preview-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.manitou-guide .nmi-preview-row figure {
+  margin: 0;
+}
+
+.manitou-guide .nmi-preview-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8.5 / 11;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0.6rem;
+  border: 0.0625rem solid var(--border-color);
+  display: block;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.04);
+}
+
+.manitou-guide .nmi-preview-row figcaption {
+  text-align: center;
+  color: var(--muted-text);
+  font-size: 0.9rem;
+  margin-top: 0.45rem;
+}
+
+/* Buy CTA button */
+.manitou-guide .nmi-buy-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.85rem 2rem;
+  background: var(--accent-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+.manitou-guide .nmi-buy-btn:hover,
+.manitou-guide .nmi-buy-btn:focus-visible {
+  opacity: 0.88;
+  transform: translateY(-0.1rem);
+  outline: 0.125rem solid
+    color-mix(in srgb, var(--accent-color) 45%, transparent);
+  outline-offset: 0.125rem;
+}
+
+/* Inline "a full guidebook exists" line, high on the page */
+.manitou-guide .nmi-guide-inline {
+  border-left: 0.1875rem solid var(--accent-color);
+  padding: 0.1rem 0 0.1rem 0.9rem;
+  margin: 1.25rem 0;
+}
+
+/* Affiliate disclosure */
+.manitou-guide .nmi-affiliate-note {
+  font-size: 0.85rem;
+  color: var(--muted-text);
+  font-style: italic;
+  margin-top: 0.75rem;
+}
+
+/* Section cards for "What's in the Guide" */
+.manitou-guide .nmi-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.manitou-guide .nmi-section-card {
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1rem 1.15rem;
+}
+
+.manitou-guide .nmi-section-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.manitou-guide .nmi-section-card p {
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+/* FAQ */
+.manitou-guide .nmi-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.manitou-guide .nmi-faq-item {
+  background: var(--card-bg);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.manitou-guide .nmi-faq-summary {
+  cursor: pointer;
+  padding: 0.95rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.97rem;
+  color: var(--text-color);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+}
+
+.manitou-guide .nmi-faq-summary:hover {
+  color: var(--accent-color);
+}
+
+.manitou-guide .nmi-faq-summary[aria-expanded="true"] {
+  border-bottom: 0.0625rem solid var(--border-color);
+}
+
+.manitou-guide .nmi-faq-icon {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--accent-color);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.manitou-guide .nmi-faq-answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.22s ease;
+}
+
+.manitou-guide .nmi-faq-answer-wrapper[aria-hidden="false"] {
+  grid-template-rows: 1fr;
+}
+
+.manitou-guide .faq-answer {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.manitou-guide .faq-answer p {
+  margin: 0;
+  max-width: 70ch;
+  padding: 0.85rem 1.1rem 1rem;
+}
+
+@media (max-width: 900px) {
+  .manitou-guide .nmi-preview-row,
+  .manitou-guide .nmi-sections-grid {
+    grid-template-columns: 1fr;
+  }
+}
