@@ -12,6 +12,15 @@ type GuideItem = {
 
 const guides: GuideItem[] = [
   {
+    title: "Planning a Backpacking Trip to North Manitou Island",
+    description:
+      "A practical field guide covering logistics, hazards, route structure, and planning considerations.",
+    href: "/north-manitou-island-guide",
+    cta: "Go Backpacking",
+    imageSrc: "/images/north-manitou/north-manitou-island.webp",
+    imageAlt: "Backpacker standing on North Manitou Island shoreline",
+  },
+  {
     title: "The Kalkaska Moraine Loop — A 50-Mile Michigan Backpacking Loop",
     description:
       "A field-verified 50-mile backpacking loop through the sandy moraine country southeast of Traverse City. Four legs, full maps, elevation profiles, waypoints, and a CalTopo mapset.",
@@ -20,24 +29,6 @@ const guides: GuideItem[] = [
     imageSrc: "/images/kalkaska-moraine-loop/kalkaska-moraine-loop-banner.webp",
     imageAlt:
       "The Kalkaska Moraine Loop backpacking route through northern Michigan",
-  },
-  {
-    title: "Skiing Sleeping Bear Dunes: A Field Guide to Shauger Hill",
-    description:
-      "Trip planning, gear, and field notes for skiing the Sleeping Bear Dunes.",
-    href: "/ski-sleeping-bear-dunes",
-    cta: "Ski the Dunes",
-    imageSrc: "/images/ski-sleeping-bear/ski-sleeping-bear-intro.png",
-    imageAlt: "A skier on the snow-covered dunes at Sleeping Bear",
-  },
-  {
-    title: "Planning a Backpacking Trip to North Manitou Island",
-    description:
-      "A practical field guide covering logistics, hazards, route structure, and planning considerations.",
-    href: "/north-manitou-island-guide",
-    cta: "Go Backpacking",
-    imageSrc: "/images/north-manitou/north-manitou-island.webp",
-    imageAlt: "Backpacker standing on North Manitou Island shoreline",
   },
   {
     title: "The Betsie River: A Paddler's Guide",
@@ -67,13 +58,13 @@ const guides: GuideItem[] = [
     imageAlt: "A mountain biker on a trail at Palmer Woods Forest Reserve",
   },
   {
-    title: "The Complete Pyramid Point Hiking Guide",
+    title: "Skiing Sleeping Bear Dunes: A Field Guide to Shauger Hill",
     description:
-      "A dune-top overlook inside the Port Oneida Rural Historic District with views of North and South Manitou Island. Full loop and a short out-and-back option.",
-    href: "/trails/pyramid-point",
-    cta: "Go Hiking",
-    imageSrc: "/images/pyramid-point/pyramid-point-hero.webp",
-    imageAlt: "PLACEHOLDER — Pyramid Point image alt text",
+      "Trip planning, gear, and field notes for skiing the Sleeping Bear Dunes.",
+    href: "/ski-sleeping-bear-dunes",
+    cta: "Ski the Dunes",
+    imageSrc: "/images/ski-sleeping-bear/ski-sleeping-bear-intro.png",
+    imageAlt: "A skier on the snow-covered dunes at Sleeping Bear",
   },
   {
     title: "Trail Guide: Valley of the Giants",
@@ -85,6 +76,16 @@ const guides: GuideItem[] = [
       "/images/nct/valley-of-the-giants/valley-of-the-giants-banner.webp",
     imageAlt: "PLACEHOLDER — Valley of the Giants image alt text",
   },
+  {
+    title: "The Complete Pyramid Point Hiking Guide",
+    description:
+      "A dune-top overlook inside the Port Oneida Rural Historic District with views of North and South Manitou Island. Full loop and a short out-and-back option.",
+    href: "/trails/pyramid-point",
+    cta: "Go Hiking",
+    imageSrc: "/images/pyramid-point/pyramid-point-hero.webp",
+    imageAlt: "PLACEHOLDER — Pyramid Point image alt text",
+  },
+
   {
     title: "Trail Guide: Timbers Recreation Area",
     description:
