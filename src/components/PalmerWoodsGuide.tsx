@@ -22,7 +22,7 @@ const PalmerWoodsGuide = () => {
       <SEO
         title="Mountain Biking at Palmer Woods Forest Reserve | JoeTracks"
         description="A guide to mountain biking the just-completed trail system at Palmer Woods Forest Reserve in Leelanau County, Michigan — 27 miles of singletrack across two trail hubs, with detailed maps, trail breakdowns, and trip-planning info."
-        canonical="https://joetracks.com/palmer-woods-forest-reserve"
+        canonical="https://joetracks.com/palmer-woods-biking"
         image="https://joetracks.com/images/palmer-woods/palmer-woods-card.webp"
         ogType="article"
         jsonLd={[
@@ -32,7 +32,7 @@ const PalmerWoodsGuide = () => {
             name: "Mountain Biking at Palmer Woods Forest Reserve",
             description:
               "A guide to mountain biking the just-completed trail system at Palmer Woods Forest Reserve in Leelanau County, Michigan — 27 miles of singletrack across two trail hubs, with detailed maps, trail breakdowns, and trip-planning info.",
-            url: "https://joetracks.com/palmer-woods-forest-reserve",
+            url: "https://joetracks.com/palmer-woods-biking",
             image:
               "https://joetracks.com/images/palmer-woods/palmer-woods-card.webp",
           },
@@ -57,9 +57,9 @@ const PalmerWoodsGuide = () => {
                 url: "https://joetracks.com/images/logo-lockup-teal.png",
               },
             },
-            url: "https://joetracks.com/palmer-woods-forest-reserve",
+            url: "https://joetracks.com/palmer-woods-biking",
             mainEntityOfPage:
-              "https://joetracks.com/palmer-woods-forest-reserve",
+              "https://joetracks.com/palmer-woods-biking",
             datePublished: "2026-05-03",
             dateModified: "2026-05-03",
           },
@@ -83,7 +83,7 @@ const PalmerWoodsGuide = () => {
                 "@type": "ListItem",
                 position: 3,
                 name: "Palmer Woods Forest Reserve Guide",
-                item: "https://joetracks.com/palmer-woods-forest-reserve",
+                item: "https://joetracks.com/palmer-woods-biking",
               },
             ],
           },

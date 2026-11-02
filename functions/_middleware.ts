@@ -68,6 +68,78 @@ const ROUTES: Record<string, RouteMeta> = {
     canonical: "https://joetracks.com/north-manitou-island-guide",
     type: "article",
   },
+  "/betsie-river": {
+    title:
+      "The Betsie River Paddling Guide — Kayaking & Canoeing from Interlochen to Frankfort | JoeTracks",
+    description:
+      "A complete guide to paddling the Betsie River in northern Michigan — 54 miles of kayaking and canoeing from Green Lake near Interlochen to Lake Michigan at Frankfort. Download the free 37-page PDF guide.",
+    image: "https://joetracks.com/images/betsie-river/betsie-river-card.webp",
+    url: "https://joetracks.com/betsie-river",
+    canonical: "https://joetracks.com/betsie-river",
+    type: "article",
+  },
+  "/kalkaska-moraine-loop": {
+    title:
+      "The Kalkaska Moraine Loop — A 50-Mile Michigan Backpacking Loop Guide | JoeTracks",
+    description:
+      "A field-verified 50-mile backpacking loop through the sandy moraine country southeast of Traverse City, Michigan. Four legs, three shorter trips, full maps, elevation profiles, waypoints, and a CalTopo mapset. The only complete guide to the route.",
+    image:
+      "https://joetracks.com/images/kalkaska-moraine-loop/kalkaska-moraine-loop-banner.webp",
+    url: "https://joetracks.com/kalkaska-moraine-loop",
+    canonical: "https://joetracks.com/kalkaska-moraine-loop",
+    type: "article",
+  },
+  "/palmer-woods-biking": {
+    title: "Mountain Biking at Palmer Woods Forest Reserve | JoeTracks",
+    description:
+      "A guide to mountain biking the just-completed trail system at Palmer Woods Forest Reserve in Leelanau County, Michigan — 27 miles of singletrack across two trail hubs, with detailed maps, trail breakdowns, and trip-planning info.",
+    image: "https://joetracks.com/images/palmer-woods/palmer-woods-card.webp",
+    url: "https://joetracks.com/palmer-woods-biking",
+    canonical: "https://joetracks.com/palmer-woods-biking",
+    type: "article",
+  },
+  // Trail guides. These render through /trails/:slug, whose Helmet sets no
+  // canonical at all, so the entries below are the only canonical those
+  // pages get.
+  "/trails/pyramid-point": {
+    title: "Pyramid Point Trails, Sleeping Bear Dunes — 3 Route Options",
+    description:
+      "Three hikes to the Pyramid Point overlook in Sleeping Bear Dunes: a 1.2-mi round trip, a 2.3-mi Meadow Loop, and a 3.24-mi route AllTrails doesn't list.",
+    image: "https://joetracks.com/images/pyramid-point/pyramid-point-hero.webp",
+    url: "https://joetracks.com/trails/pyramid-point",
+    canonical: "https://joetracks.com/trails/pyramid-point",
+    type: "article",
+  },
+  "/trails/whaleback-natural-area": {
+    title: "Whaleback Natural Area Hike, Leland — Lake Michigan Bluff",
+    description:
+      "A steep half-mile climb to a 300-ft bluff over Lake Michigan near Leland. 1.6-mile loop past thimbleberry patches and Manitou Passage overlooks.",
+    image:
+      "https://joetracks.com/images/conservancy-natural-areas/whaleback-natural-area/whaleback-natural-area-banner.webp",
+    url: "https://joetracks.com/trails/whaleback-natural-area",
+    canonical: "https://joetracks.com/trails/whaleback-natural-area",
+    type: "article",
+  },
+  "/trails/valley-of-the-giants": {
+    title: "Valley of the Giants — Michigan Old Growth Forest Hike",
+    description:
+      "A 6-mile out-and-back on the North Country Trail through old-growth white pines near Traverse City. Blaze-by-blaze directions AllTrails doesn't have.",
+    image:
+      "https://joetracks.com/images/nct/valley-of-the-giants/valley-of-the-giants-banner.webp",
+    url: "https://joetracks.com/trails/valley-of-the-giants",
+    canonical: "https://joetracks.com/trails/valley-of-the-giants",
+    type: "article",
+  },
+  "/trails/timbers-recreation-area": {
+    title: "Timbers Recreation Area — Long Lake Hiking & ADA Trail",
+    description:
+      "Hike the 2.1-mile loop at Timbers Recreation Area on Long Lake near Traverse City: 4.5 mi of trails, a universally accessible route, and fishing access.",
+    image:
+      "https://joetracks.com/images/conservancy-natural-areas/timbers-recreation-area/timbers-recreation-area-banner.webp",
+    url: "https://joetracks.com/trails/timbers-recreation-area",
+    canonical: "https://joetracks.com/trails/timbers-recreation-area",
+    type: "article",
+  },
 };
 
 export async function onRequest(context: {
@@ -77,7 +149,10 @@ export async function onRequest(context: {
   const { request, next } = context;
 
   const url = new URL(request.url);
-  const meta = ROUTES[url.pathname];
+  // Trailing slashes are the same page, so normalize before the lookup.
+  const pathname =
+    url.pathname.length > 1 ? url.pathname.replace(/\/+$/, "") : url.pathname;
+  const meta = ROUTES[pathname];
 
   // No match — pass through untouched
   if (!meta) {
