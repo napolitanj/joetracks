@@ -14,7 +14,7 @@ const guides: GuideItem[] = [
   {
     title: "Planning a Backpacking Trip to North Manitou Island",
     description:
-      "A practical field guide covering logistics, hazards, route structure, and planning considerations.",
+      "A 33-page guidebook for visiting Lower Michigan's most coveted backpacking destination.",
     href: "/north-manitou-island-guide",
     cta: "Go Backpacking",
     imageSrc: "/images/north-manitou/north-manitou-island.webp",
@@ -23,7 +23,7 @@ const guides: GuideItem[] = [
   {
     title: "The Kalkaska Moraine Loop — A 50-Mile Michigan Backpacking Loop",
     description:
-      "A field-verified 50-mile backpacking loop through the sandy moraine country southeast of Traverse City. Four legs, full maps, elevation profiles, waypoints, and a CalTopo mapset.",
+      "A 26-page guide detailing a 50-mile hiking loop southeast of Traverse City. Four legs, custom maps, elevation profiles, waypoints, and a CalTopo mapset.",
     href: "/kalkaska-moraine-loop",
     cta: "Get the Guide",
     imageSrc: "/images/kalkaska-moraine-loop/kalkaska-moraine-loop-banner.webp",
@@ -33,7 +33,7 @@ const guides: GuideItem[] = [
   {
     title: "The Betsie River: A Paddler's Guide",
     description:
-      "A 37-page guide to the entire Betsie River. Maps, shuttle routes, camping, and details for significant hazards are all included.",
+      "A FREE 37-page guide to the entire Betsie River. Maps, shuttle routes, camping, and details for significant hazards are all included.",
     href: "/betsie-river",
     cta: "Go Paddling",
     imageSrc: "/images/betsie-river/betsie-river-card.webp",
