@@ -255,7 +255,7 @@ const NorthManitouGuide = () => {
                       The 33-page North Manitou Island guidebook picks up where
                       this page stops. Six sections of the island, each with a
                       custom map, every trail scouted and detailed, pointers for
-                      finding the best camping and beaches, ranked, and four
+                      finding the best camping and beaches, and four suggested
                       itineraries. Built from scouting 75 miles both on and off
                       trail over six days on the island.
                     </p>
@@ -1160,8 +1160,8 @@ const NorthManitouGuide = () => {
                               and a charter holding a Commercial Use
                               Authorization serves the island as well. Which of
                               them is running depends on the year and the state
-                              of the dock, so confirm before you plan around
-                              either.
+                              of the dock, so confirm using the information
+                              above before you plan around either.
                             </p>
                           </div>
                         </div>
@@ -1187,8 +1187,8 @@ const NorthManitouGuide = () => {
                               been relocating the docks on both Manitou islands
                               and expects to publish an operational update in
                               early January 2027 covering dock access and
-                              transportation. That posting is the authority, not
-                              this page.
+                              transportation. Until then, it is best to assume
+                              only the charter will operate.
                             </p>
                           </div>
                         </div>
@@ -1210,10 +1210,10 @@ const NorthManitouGuide = () => {
                         >
                           <div className="faq-answer">
                             <p>
-                              Yes, two things. An entrance pass for Sleeping
-                              Bear Dunes and a Backcountry Use Permit, which
-                              runs $10 per night for an individual and $30 per
-                              night for groups of four or more. They are
+                              Yes, you'll need two things. An entrance pass for
+                              Sleeping Bear Dunes and a Backcountry Use Permit,
+                              which runs $10 per night for an individual and $30
+                              per night for groups of four or more. They are
                               separate and you need both.
                             </p>
                           </div>
@@ -1241,10 +1241,10 @@ const NorthManitouGuide = () => {
                               Everywhere else is the Sleeping Bear Dunes
                               Wilderness, where the Park Service does not
                               designate campsites and dispersed camping is
-                              allowed outside the setbacks: 300 feet from the
-                              Lake Michigan high water mark, from lakes, ponds
-                              and streams, from buildings and other camps, and
-                              from any posted No Camping sign.
+                              allowed anywhere outside the setbacks: 300 feet
+                              from the Lake Michigan high water mark, from
+                              lakes, ponds and streams, from buildings and other
+                              camps, and from any posted No Camping sign.
                             </p>
                           </div>
                         </div>
@@ -1315,12 +1315,11 @@ const NorthManitouGuide = () => {
                         >
                           <div className="faq-answer">
                             <p>
-                              Two days gets you a shoreline overnighter. Four
-                              days completes the South Island Loop. Five or six
-                              days tours most of the island at low daily
-                              mileage. There are 23.65 miles of maintained trail
-                              and another 13.56 miles of mapped unmaintained
-                              trail.
+                              I recommend at least two nights, as an overnight
+                              trip offers little time to truly explore the
+                              island. Touring the entire island using designated
+                              trails can be comfortably done in 4-5 days, which
+                              is how long my trips tend to be.
                             </p>
                           </div>
                         </div>
@@ -1338,8 +1337,8 @@ const NorthManitouGuide = () => {
                       <p>
                         The complete 33-page guide built from six days of
                         fieldwork and 75 miles scouted on foot, so your first
-                        trip does not have to be the one where you figure it
-                        out.
+                        trip does not have to be one where you're guessing where
+                        to go and what to do.
                       </p>
                       <a
                         href={PRODUCT_URL}
