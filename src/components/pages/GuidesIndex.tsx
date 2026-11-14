@@ -21,6 +21,15 @@ const guides: GuideItem[] = [
     imageAlt: "Backpacker standing on North Manitou Island shoreline",
   },
   {
+    title: "Mount Sneffels: Skiing the Snake Couloir",
+    description:
+      "Route beta, conditions, and planning notes for Mount Sneffels' Snake Couloir.",
+    href: "/ski-mount-sneffels",
+    cta: "Go Skiing",
+    imageSrc: "/images/sneffels/Mount-sneffels-view.webp",
+    imageAlt: "Mount Sneffels viewed from the approach route",
+  },
+  {
     title: "The Kalkaska Moraine Loop — A 50-Mile Michigan Backpacking Loop",
     description:
       "A 26-page guide detailing a 50-mile hiking loop southeast of Traverse City. Four legs, custom maps, elevation profiles, waypoints, and a CalTopo mapset.",
@@ -124,15 +133,6 @@ const guides: GuideItem[] = [
     cta: "Plan Your Route",
     imageSrc: "/images/caltopo/Caltopo-Mount-hood-stacked-layers2.png",
     imageAlt: "CalTopo map with stacked planning layers",
-  },
-  {
-    title: "Mount Sneffels: Skiing the Snake Couloir",
-    description:
-      "Route beta, conditions, and planning notes for Mount Sneffels' Snake Couloir.",
-    href: "/ski-mount-sneffels",
-    cta: "Go Skiing",
-    imageSrc: "/images/sneffels/Mount-sneffels-view.webp",
-    imageAlt: "Mount Sneffels viewed from the approach route",
   },
 ];
 
