@@ -225,7 +225,7 @@ const Home = () => {
 
             <div className="home-split-media">
               <img
-                src="/images/manitou-island-backpacking-docks.png"
+                src="/images/manitou-island-backpacking-docks.webp"
                 alt="Backpackers waiting for the Manitou Island ferry"
                 loading="lazy"
               />
