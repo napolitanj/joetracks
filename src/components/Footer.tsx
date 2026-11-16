@@ -54,6 +54,10 @@ const Footer = () => {
             </h2>
 
             <Link to="/contact">Contact</Link>
+            <Link to="https://www.youtube.com/@joetracks">YouTube</Link>
+            <Link to="https://www.instagram.com/crushthesasquatch/?__d=1%2FA">
+              Instagram
+            </Link>
           </nav>
         </div>
       </div>

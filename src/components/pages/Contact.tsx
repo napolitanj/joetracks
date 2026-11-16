@@ -33,13 +33,19 @@ const Contact = () => {
       {
         label: "Email",
         href: "mailto:joe@joetracks.com",
-        icon: "/images/email-icon.png",
+        icon: "/images/icons/email-icon.png",
         external: false,
       },
       {
         label: "YouTube",
         href: "https://www.youtube.com/@joetracks",
-        icon: "/images/youtube-icon.png",
+        icon: "/images/icons/youtube-icon.png",
+        external: true,
+      },
+      {
+        label: "Instagram",
+        href: "https://www.instagram.com/crushthesasquatch/?__d=1%2FA",
+        icon: "/images/icons/Instagram_Glyph_Gradient.png",
         external: true,
       },
     ],

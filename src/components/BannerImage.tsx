@@ -9,10 +9,13 @@ const BannerImage = () => {
           <div className="banner-image"></div>
           <div className="banner-text">
             <div className="banner-content">
-              <h1>Competence, clarity, and confidence in the outdoors.</h1>
+              <h1>
+                Digital tools and guides for Northern Michigan and beyond.
+              </h1>
               <p className="subheader">
-                Clear, practical guides and tools built for everyone —
-                accessible instantly in your browser, no downloads required.
+                Paddling routes, backpacking trips, trip-planning tutorials, and
+                real-time river and snow data data across Michigan. Each guide
+                is built upon real experience in the field.
               </p>
               <div className="banner-cta">
                 <Link to="/guides" className="home-btn home-btn--overlay">
