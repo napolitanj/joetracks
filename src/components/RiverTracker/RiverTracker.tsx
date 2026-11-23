@@ -66,7 +66,7 @@ export default function RiverTracker() {
         title="Michigan River Conditions | Live Flow & Gauge Data — JoeTracks"
         description="Real-time river flow rates and gauge heights for Michigan paddling rivers, updated continuously from USGS gauging stations. Compares current conditions to historical averages for every date of the year."
         canonical="https://joetracks.com/river-conditions"
-        image="https://joetracks.com/images/og-river-tracker.png"
+        image="https://joetracks.com/images/og-image.png"
         ogType="website"
         jsonLd={[
           {

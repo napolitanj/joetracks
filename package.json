@@ -6,11 +6,12 @@
   "homepage": "https://napolitanj.github.io/joetracks/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/check-route-meta.mjs && vite build",
     "deploy": "npm run build && cp docs/index.html docs/404.html && git add docs && git commit -m 'Deploy' && git push",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate:images": "node generateImageList.cjs"
+    "generate:images": "node generateImageList.cjs",
+    "check:seo": "node scripts/check-route-meta.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.16.0",
