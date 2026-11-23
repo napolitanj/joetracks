@@ -1,0 +1,129 @@
+# Archive redirects: old WordPress permalinks to the expedition pages.
+# Generated from the WordPress exports. First match wins, so the explicit
+# per-post rules come before the year-level catch-alls.
+#
+# These fire on paths arriving at joetracks.com. The WordPress.com Site
+# Redirect upgrade forwards each old permalink path-for-path, so
+# haulinhobo.wordpress.com/2013/04/25/gods-country/ lands here as
+# /2013/04/25/gods-country/ and matches the rule below.
+
+# american-west-2013: 23 posts
+/2013/04/02/ready-to-go/  /expeditions/american-west-2013#ready-to-go  301
+/2013/04/02/ready-to-go  /expeditions/american-west-2013#ready-to-go  301
+/2013/04/02/route-overview/  /expeditions/american-west-2013#route-overview  301
+/2013/04/02/route-overview  /expeditions/american-west-2013#route-overview  301
+/2013/04/02/suiting-up/  /expeditions/american-west-2013#suiting-up  301
+/2013/04/02/suiting-up  /expeditions/american-west-2013#suiting-up  301
+/2013/04/03/pow/  /expeditions/american-west-2013#pow  301
+/2013/04/03/pow  /expeditions/american-west-2013#pow  301
+/2013/04/04/day-1/  /expeditions/american-west-2013#day-1  301
+/2013/04/04/day-1  /expeditions/american-west-2013#day-1  301
+/2013/04/05/buena-vista/  /expeditions/american-west-2013#buena-vista  301
+/2013/04/05/buena-vista  /expeditions/american-west-2013#buena-vista  301
+/2013/04/06/well-shit/  /expeditions/american-west-2013#good-company  301
+/2013/04/06/well-shit  /expeditions/american-west-2013#good-company  301
+/2013/04/07/hot-water/  /expeditions/american-west-2013#hot-water  301
+/2013/04/07/hot-water  /expeditions/american-west-2013#hot-water  301
+/2013/04/08/the-long-haul/  /expeditions/american-west-2013#the-long-haul  301
+/2013/04/08/the-long-haul  /expeditions/american-west-2013#the-long-haul  301
+/2013/04/09/hibernation/  /expeditions/american-west-2013#hibernation  301
+/2013/04/09/hibernation  /expeditions/american-west-2013#hibernation  301
+/2013/04/11/rr/  /expeditions/american-west-2013#r-and-r  301
+/2013/04/11/rr  /expeditions/american-west-2013#r-and-r  301
+/2013/04/13/refuge/  /expeditions/american-west-2013#refuge  301
+/2013/04/13/refuge  /expeditions/american-west-2013#refuge  301
+/2013/04/16/todays-ride-is-sponsored-by-the-letter-f/  /expeditions/american-west-2013#todays-ride-is-sponsored-by-the-letter-f  301
+/2013/04/16/todays-ride-is-sponsored-by-the-letter-f  /expeditions/american-west-2013#todays-ride-is-sponsored-by-the-letter-f  301
+/2013/04/24/utah/  /expeditions/american-west-2013#utah  301
+/2013/04/24/utah  /expeditions/american-west-2013#utah  301
+/2013/04/25/gods-country/  /expeditions/american-west-2013#gods-country  301
+/2013/04/25/gods-country  /expeditions/american-west-2013#gods-country  301
+/2013/04/26/bogus-and-beauty/  /expeditions/american-west-2013#bogus-and-beauty  301
+/2013/04/26/bogus-and-beauty  /expeditions/american-west-2013#bogus-and-beauty  301
+/2013/04/30/zion/  /expeditions/american-west-2013#zion  301
+/2013/04/30/zion  /expeditions/american-west-2013#zion  301
+/2013/05/05/beverly-bummin/  /expeditions/american-west-2013#beverly-bummin  301
+/2013/05/05/beverly-bummin  /expeditions/american-west-2013#beverly-bummin  301
+/2013/05/14/livin-easy/  /expeditions/american-west-2013#livin-easy  301
+/2013/05/14/livin-easy  /expeditions/american-west-2013#livin-easy  301
+/2013/06/03/banner-peak-expedition/  /expeditions/american-west-2013#banner-peak-expedition  301
+/2013/06/03/banner-peak-expedition  /expeditions/american-west-2013#banner-peak-expedition  301
+/2013/06/04/san-francisco/  /expeditions/american-west-2013#the-golden-gate  301
+/2013/06/04/san-francisco  /expeditions/american-west-2013#the-golden-gate  301
+/2013/06/06/norcal/  /expeditions/american-west-2013#norcal  301
+/2013/06/06/norcal  /expeditions/american-west-2013#norcal  301
+/2014/01/31/gold-bear/  /expeditions/american-west-2013#gold-bear  301
+/2014/01/31/gold-bear  /expeditions/american-west-2013#gold-bear  301
+
+# appalachian-trail-2014: 28 posts
+/2014/02/05/in-the-meantime/  /expeditions/appalachian-trail-2014#megabus  301
+/2014/02/05/in-the-meantime  /expeditions/appalachian-trail-2014#megabus  301
+/2014/02/06/springer/  /expeditions/appalachian-trail-2014#springer  301
+/2014/02/06/springer  /expeditions/appalachian-trail-2014#springer  301
+/2014/02/09/crushin/  /expeditions/appalachian-trail-2014#crushin  301
+/2014/02/09/crushin  /expeditions/appalachian-trail-2014#crushin  301
+/2014/02/18/february-15th/  /expeditions/appalachian-trail-2014#february-15th  301
+/2014/02/18/february-15th  /expeditions/appalachian-trail-2014#february-15th  301
+/2014/02/20/luxury/  /expeditions/appalachian-trail-2014#luxury  301
+/2014/02/20/luxury  /expeditions/appalachian-trail-2014#luxury  301
+/2014/02/23/hiatus/  /expeditions/appalachian-trail-2014#hiatus  301
+/2014/02/23/hiatus  /expeditions/appalachian-trail-2014#hiatus  301
+/2014/02/24/trail-magic-2/  /expeditions/appalachian-trail-2014#trail-magic  301
+/2014/02/24/trail-magic-2  /expeditions/appalachian-trail-2014#trail-magic  301
+/2014/03/01/familiar-territory/  /expeditions/appalachian-trail-2014#familiar-territory  301
+/2014/03/01/familiar-territory  /expeditions/appalachian-trail-2014#familiar-territory  301
+/2014/03/08/thanksgiving/  /expeditions/appalachian-trail-2014#thanksgiving  301
+/2014/03/08/thanksgiving  /expeditions/appalachian-trail-2014#thanksgiving  301
+/2014/03/16/good-company/  /expeditions/appalachian-trail-2014#good-company  301
+/2014/03/16/good-company  /expeditions/appalachian-trail-2014#good-company  301
+/2014/03/17/roan/  /expeditions/appalachian-trail-2014#roan  301
+/2014/03/17/roan  /expeditions/appalachian-trail-2014#roan  301
+/2014/03/20/on-to-damascus/  /expeditions/appalachian-trail-2014#on-to-damascus  301
+/2014/03/20/on-to-damascus  /expeditions/appalachian-trail-2014#on-to-damascus  301
+/2014/03/23/food/  /expeditions/appalachian-trail-2014#food  301
+/2014/03/23/food  /expeditions/appalachian-trail-2014#food  301
+/2014/04/04/the-appalachian-trail/  /expeditions/appalachian-trail-2014#the-appalachian-trail  301
+/2014/04/04/the-appalachian-trail  /expeditions/appalachian-trail-2014#the-appalachian-trail  301
+/2014/04/25/magic-hippy-love-cloud/  /expeditions/appalachian-trail-2014#magic-hippy-love-cloud  301
+/2014/04/25/magic-hippy-love-cloud  /expeditions/appalachian-trail-2014#magic-hippy-love-cloud  301
+/2014/05/05/hiatus-2/  /expeditions/appalachian-trail-2014#a-world-of-glass-and-concrete  301
+/2014/05/05/hiatus-2  /expeditions/appalachian-trail-2014#a-world-of-glass-and-concrete  301
+/2014/05/11/crushin-part-ii/  /expeditions/appalachian-trail-2014#mothers-day  301
+/2014/05/11/crushin-part-ii  /expeditions/appalachian-trail-2014#mothers-day  301
+/2014/05/14/beast-mode/  /expeditions/appalachian-trail-2014#nascar  301
+/2014/05/14/beast-mode  /expeditions/appalachian-trail-2014#nascar  301
+/2014/05/15/beast-mode-2/  /expeditions/appalachian-trail-2014#high-mileage  301
+/2014/05/15/beast-mode-2  /expeditions/appalachian-trail-2014#high-mileage  301
+/2014/05/22/mozzies/  /expeditions/appalachian-trail-2014#mozzies  301
+/2014/05/22/mozzies  /expeditions/appalachian-trail-2014#mozzies  301
+/2014/06/01/gluttony/  /expeditions/appalachian-trail-2014#gluttony  301
+/2014/06/01/gluttony  /expeditions/appalachian-trail-2014#gluttony  301
+/2014/06/03/gnar/  /expeditions/appalachian-trail-2014#gnar  301
+/2014/06/03/gnar  /expeditions/appalachian-trail-2014#gnar  301
+/2014/06/10/the-finest-day/  /expeditions/appalachian-trail-2014#the-finest-day  301
+/2014/06/10/the-finest-day  /expeditions/appalachian-trail-2014#the-finest-day  301
+/2014/06/10/the-whites/  /expeditions/appalachian-trail-2014#the-white-mountains  301
+/2014/06/10/the-whites  /expeditions/appalachian-trail-2014#the-white-mountains  301
+/2014/06/20/endgame/  /expeditions/appalachian-trail-2014#endgame  301
+/2014/06/20/endgame  /expeditions/appalachian-trail-2014#endgame  301
+/2014/06/30/581/  /expeditions/appalachian-trail-2014#june-11-june-13  301
+/2014/06/30/581  /expeditions/appalachian-trail-2014#june-11-june-13  301
+/2014/07/16/gnarnia/  /expeditions/appalachian-trail-2014#closing-in  301
+/2014/07/16/gnarnia  /expeditions/appalachian-trail-2014#closing-in  301
+/2014/08/22/626/  /expeditions/appalachian-trail-2014#katahdin  301
+/2014/08/22/626  /expeditions/appalachian-trail-2014#katahdin  301
+
+# Catch-alls for attachment pages, date archives and feeds.
+/2013/04/*  /expeditions/american-west-2013  301
+/2013/05/*  /expeditions/american-west-2013  301
+/2013/06/*  /expeditions/american-west-2013  301
+/2014/01/*  /expeditions/american-west-2013  301
+/2014/02/*  /expeditions/appalachian-trail-2014  301
+/2014/03/*  /expeditions/appalachian-trail-2014  301
+/2014/04/*  /expeditions/appalachian-trail-2014  301
+/2014/05/*  /expeditions/appalachian-trail-2014  301
+/2014/06/*  /expeditions/appalachian-trail-2014  301
+/2014/07/*  /expeditions/appalachian-trail-2014  301
+/2014/08/*  /expeditions/appalachian-trail-2014  301
+/2013/*  /expeditions/american-west-2013  301
+/2014/*  /expeditions/appalachian-trail-2014  301

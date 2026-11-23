@@ -1,0 +1,403 @@
+/* Expedition archive template.
+   Design tokens follow TrailGuideTemplate.css: teal #2a5f6a, borders #e0ddd8,
+   headings #1a1a1a, body #333, muted #999. */
+
+.xp-wrapper {
+  /* Gutter is published as a variable so the sticky chapter bar can break out
+     of it on mobile without duplicating the value per breakpoint. */
+  --xp-gutter: 24px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--xp-gutter) 80px;
+}
+
+/* ---------- Hero ---------- */
+
+.xp-hero {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+.xp-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.xp-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  /* App.css sets `body div { flex-direction: column }` globally, so the text is
+     bottom-aligned with justify-content, not align-items. Getting this wrong
+     put the title over the brightest part of the photo with no scrim under it. */
+  flex-direction: column;
+  justify-content: flex-end;
+  /* A scrim rather than a shadow on the type: it holds up whatever photo gets
+     swapped in, instead of depending on that photo being dark where the
+     text happens to sit. */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.55) 28%,
+    rgba(0, 0, 0, 0.2) 55%,
+    rgba(0, 0, 0, 0) 85%
+  );
+}
+
+.xp-hero-inner {
+  padding: 32px 36px;
+  max-width: 760px;
+}
+
+/* The scrim does the work. This is insurance for a bright patch sitting
+   directly behind a letterform, and is deliberately subtle. */
+.xp-eyebrow,
+.xp-title,
+.xp-tagline {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+
+.xp-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 10px;
+}
+
+.xp-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 10px 0;
+  line-height: 1.15;
+}
+
+.xp-tagline {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+}
+
+/* ---------- Intro ---------- */
+
+.xp-intro {
+  max-width: 680px;
+  margin: 32px 0;
+}
+
+.xp-intro-body {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.xp-source-note {
+  font-size: 0.825rem;
+  line-height: 1.6;
+  color: #999;
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid #e0ddd8;
+}
+
+/* ---------- Reader Favorites ----------
+   Card proportions, grid and breakpoint match .guides-list / .guide-card on
+   the guides index so the two pages read as one system. */
+
+.xp-favorites {
+  margin-bottom: 52px;
+}
+
+.xp-favorites-heading {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 6px 0;
+}
+
+.xp-favorites-note {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #666;
+  max-width: 60ch;
+  margin: 0 0 18px 0;
+}
+
+.xp-favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.xp-fav-card {
+  background: #f8f9f5;
+  border: 1px solid #d2d8d3;
+  border-radius: 0.9rem;
+  padding: 1.05rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  height: 100%;
+}
+
+.xp-fav-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 0.8rem;
+  border: 1px solid #d2d8d3;
+  background: #eceae5;
+}
+
+.xp-fav-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.xp-fav-media:hover img {
+  transform: scale(1.03);
+}
+
+.xp-fav-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.xp-fav-title a {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.xp-fav-title a:hover {
+  color: #2a5f6a;
+}
+
+.xp-fav-meta {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #999;
+  font-weight: 500;
+}
+
+.xp-fav-blurb {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.xp-fav-link {
+  display: inline-flex;
+  width: fit-content;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 0.44rem 0.85rem;
+  border-radius: 0.5rem;
+  background: #2a5f6a;
+  color: #fff;
+  font-size: 0.825rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.xp-fav-link:hover,
+.xp-fav-link:focus-visible {
+  background: #1f4a54;
+  color: #fff;
+}
+
+/* ---------- Layout ---------- */
+
+.xp-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.xp-chapters {
+  min-width: 0;
+}
+
+/* ---------- Chapter ---------- */
+
+.xp-chapter {
+  padding-bottom: 56px;
+  margin-bottom: 56px;
+  border-bottom: 1px solid #e0ddd8;
+  scroll-margin-top: 100px;
+}
+
+.xp-chapter:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.xp-chapter-head {
+  margin-bottom: 20px;
+}
+
+.xp-chapter-region {
+  display: block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2a5f6a;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.xp-chapter-title {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.25;
+  margin: 0 0 6px 0;
+}
+
+.xp-chapter-date {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.xp-chapter-note {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 20px 0;
+  padding-left: 14px;
+  border-left: 3px solid #c8dfe2;
+}
+
+.xp-body {
+  font-size: 1.0125rem;
+  line-height: 1.8;
+  color: #333;
+  margin: 0 0 18px 0;
+}
+
+.xp-body:last-child {
+  margin-bottom: 0;
+}
+
+.xp-body a {
+  color: #2a5f6a;
+  text-decoration: underline;
+}
+
+/* ---------- Footer ---------- */
+
+.xp-back-link {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: #2a5f6a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.xp-back-link:hover {
+  text-decoration: underline;
+}
+
+.xp-not-found {
+  padding: 80px 24px;
+  text-align: center;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 900px) {
+  /* Block, not a one-column grid. A grid item's containing block is its own
+     grid area, which on one column is only as tall as the nav itself, so
+     position: sticky had nothing to travel inside. As a block child of
+     .xp-layout the bar can follow the full height of the chapter list. */
+  .xp-layout {
+    display: block;
+  }
+}
+
+/* Four across, or two across. Never one, never three, so a row never
+   leaves a single orphan card stretched across the page. */
+@media (max-width: 900px) {
+  .xp-favorites-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .xp-favorites-grid {
+    gap: 0.6rem;
+  }
+
+  .xp-wrapper {
+    --xp-gutter: 16px;
+    padding-bottom: 64px;
+  }
+
+  /* Hero runs edge to edge on phones, breaking out of the wrapper padding. */
+  .xp-hero {
+    height: 320px;
+    border-radius: 0;
+    margin: 0 calc(var(--xp-gutter) * -1) 28px;
+    width: auto;
+  }
+
+  .xp-hero-inner {
+    padding: 22px 18px;
+  }
+
+  .xp-title {
+    font-size: 1.65rem;
+  }
+
+  .xp-tagline {
+    font-size: 0.925rem;
+  }
+
+  .xp-favorites-heading {
+    font-size: 1.2rem;
+  }
+
+  .xp-fav-card {
+    padding: 0.8rem;
+    gap: 0.45rem;
+  }
+
+  .xp-fav-title {
+    font-size: 1rem;
+  }
+
+  .xp-fav-blurb {
+    font-size: 0.825rem;
+  }
+
+  .xp-chapter-title {
+    font-size: 1.35rem;
+  }
+
+  .xp-body {
+    font-size: 1rem;
+  }
+}

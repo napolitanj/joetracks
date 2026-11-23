@@ -1,17 +1,25 @@
 import { Link } from "react-router-dom";
 import "../styles/ProgramManagement.css";
 import CountUp from "./tools/CountUp";
+import SEO from "./SEO";
 
 export default function ProgramManagement() {
   return (
     <>
+      <SEO
+        title="Program Management & Development | Joe Napolitan"
+        description="Designing, funding, and running outdoor programs end to end, from strategy and partnerships to logistics, training, and measurement."
+        canonical="https://joetracks.com/programmanagement"
+        robots="noindex,follow"
+        image="https://joetracks.com/images/og-image.png"
+      />
       <Link to="/portfolio">⇦ Back to Portfolio Page</Link>
       <section className="category-page">
         {/* Hero */}
         <header className="category-hero">
           <h1>Program Management & Development</h1>
           <p className="category-tagline">
-            Designing, funding, and running programs end-to-end — from strategy
+            Designing, funding, and running programs end-to-end, from strategy
             and partnerships to logistics, training, and measurement.
           </p>
         </header>
@@ -108,10 +116,14 @@ export default function ProgramManagement() {
                 Post-trip surveys fed an improvement loop for the next cohort.
               </p>
               <div className="case-actions">
-                {/* Internal examples use Link; external can be <a> */}
-                <Link to="/portfolio/writing" className="btn">
-                  Risk Management Excerpt From Policy & Procedures
-                </Link>
+                <a
+                  href="/pdfs/origin-pnp-sample.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn"
+                >
+                  Risk Management Excerpt From Policy & Procedures (PDF)
+                </a>
               </div>
             </div>
           </article>

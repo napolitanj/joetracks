@@ -1,0 +1,188 @@
+/* Desktop: a left rail that sticks beside the chapter list. */
+
+.xp-nav {
+  position: sticky;
+  top: 90px;
+  align-self: start;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.xp-nav-heading {
+  display: block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  font-weight: 600;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e0ddd8;
+}
+
+.xp-nav-group {
+  margin-bottom: 18px;
+}
+
+.xp-nav-region {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #2a5f6a;
+  margin-bottom: 6px;
+}
+
+.xp-nav-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-left: 1px solid #e0ddd8;
+}
+
+.xp-nav-group a {
+  display: block;
+  font-size: 0.825rem;
+  line-height: 1.45;
+  color: #666;
+  text-decoration: none;
+  padding: 4px 0 4px 12px;
+  margin-left: -1px;
+  border-left: 2px solid transparent;
+}
+
+.xp-nav-group a:hover {
+  color: #1a1a1a;
+}
+
+.xp-nav-group a.is-active {
+  color: #2a5f6a;
+  font-weight: 600;
+  border-left-color: #2a5f6a;
+}
+
+/* The collapsed bar and the dimmer are mobile only. */
+.xp-nav-toggle,
+.xp-nav-backdrop {
+  display: none;
+}
+
+/* ---------- Mobile: a bar that stacks under the site header ---------- */
+
+@media (max-width: 900px) {
+  .xp-nav {
+    position: sticky;
+    /* Sits directly beneath the sticky site header, whose height is measured
+       at runtime and passed in as --xp-header-offset. */
+    top: var(--xp-header-offset, 0px);
+    z-index: 998;
+    max-height: none;
+    overflow: visible;
+    padding: 0;
+    /* Full-bleed: break out of the wrapper gutter so nothing shows through
+       the sides when the bar is stuck. */
+    margin: 0 calc(var(--xp-gutter, 16px) * -1) 28px;
+  }
+
+  .xp-nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 10px var(--xp-gutter, 16px);
+    background: rgba(248, 249, 245, 0.97);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 0;
+    border-top: 1px solid #e0ddd8;
+    border-bottom: 1px solid #e0ddd8;
+    border-radius: 0;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .xp-nav-toggle-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+  }
+
+  .xp-nav-toggle-kicker {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    color: #2a5f6a;
+  }
+
+  .xp-nav-toggle-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .xp-nav-toggle-icon {
+    font-size: 1rem;
+    line-height: 1;
+    color: #2a5f6a;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* The sheet overlays the page instead of pushing it down, so opening it
+     never moves the entry you were reading. */
+  .xp-nav-body {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    max-height: calc(100vh - var(--xp-header-offset, 0px) - 96px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px var(--xp-gutter, 16px) 20px;
+    background: #fdfdfb;
+    border-bottom: 1px solid #e0ddd8;
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.14);
+  }
+
+  .xp-nav-body.is-open {
+    display: block;
+  }
+
+  .xp-nav-backdrop.is-open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 997;
+    background: rgba(0, 0, 0, 0.28);
+  }
+
+  /* Bigger tap targets in the sheet than in the desktop rail. */
+  .xp-nav-group a {
+    font-size: 0.925rem;
+    padding: 9px 0 9px 14px;
+  }
+
+  .xp-nav-group {
+    margin-bottom: 20px;
+  }
+
+  .xp-nav-region {
+    font-size: 0.78rem;
+  }
+}

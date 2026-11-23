@@ -1,5 +1,4 @@
 import { useParams, Link } from "react-router-dom";
-import { HelmetProvider, Helmet } from "react-helmet-async";
 import { useState } from "react";
 import { getGuideBySlug } from "../../data/guides/index";
 import { Activity } from "../../types/Trailguide";
@@ -9,6 +8,7 @@ import GatedDownload from "../GatedDownload";
 import ManagedBy from "../guide/ManagedBy";
 import LNTNotice from "../guide/LNTNotice";
 import SupportNotice from "../guide/SupportNotice";
+import SEO from "../SEO";
 
 const activityLabels: Record<Activity, string> = {
   hiking: "Hiking",
@@ -50,61 +50,64 @@ export default function TrailGuideTemplate() {
   }
 
   return (
-    <HelmetProvider>
-      <Helmet>
-        <title>{guide.seoTitle ?? guide.title}</title>
-        <meta name="description" content={guide.shortDescription} />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "HikingTrail",
-                name: guide.title,
-                description: guide.shortDescription,
-                url: `https://joetracks.com/trails/${guide.slug}`,
-                geo: {
-                  "@type": "GeoCoordinates",
-                  latitude: guide.location.lat,
-                  longitude: guide.location.lng,
+    <>
+      <SEO
+        title={guide.seoTitle ?? guide.title}
+        description={guide.shortDescription}
+        canonical={`https://joetracks.com/trails/${guide.slug}`}
+        image={`https://joetracks.com${guide.heroImage}`}
+        ogType="article"
+        jsonLd={[
+  {
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "HikingTrail",
+                  name: guide.title,
+                  description: guide.shortDescription,
+                  url: `https://joetracks.com/trails/${guide.slug}`,
+                  geo: {
+                    "@type": "GeoCoordinates",
+                    latitude: guide.location.lat,
+                    longitude: guide.location.lng,
+                  },
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: guide.parking,
+                    addressRegion: "MI",
+                    addressCountry: "US",
+                  },
+                  trailDifficulty: guide.stats.difficulty,
+                  publicAccess: true,
+                  ...(guide.stats.trailMiles && {
+                    trailLength: {
+                      "@type": "QuantitativeValue",
+                      value: guide.stats.trailMiles,
+                      unitCode: "SMI",
+                    },
+                  }),
                 },
-                address: {
-                  "@type": "PostalAddress",
-                  streetAddress: guide.parking,
-                  addressRegion: "MI",
-                  addressCountry: "US",
+                {
+                  "@type": "BreadcrumbList",
+                  itemListElement: [
+                    {
+                      "@type": "ListItem",
+                      position: 1,
+                      name: "Guides",
+                      item: "https://joetracks.com/guides",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 2,
+                      name: guide.title,
+                      item: `https://joetracks.com/trails/${guide.slug}`,
+                    },
+                  ],
                 },
-                trailDifficulty: guide.stats.difficulty,
-                publicAccess: true,
-                ...(guide.stats.trailMiles && {
-                  trailLength: {
-                    "@type": "QuantitativeValue",
-                    value: guide.stats.trailMiles,
-                    unitCode: "SMI",
-                  },
-                }),
-              },
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: "Guides",
-                    item: "https://joetracks.com/guides",
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: guide.title,
-                    item: `https://joetracks.com/trails/${guide.slug}`,
-                  },
-                ],
-              },
-            ],
-          })}
-        </script>
-      </Helmet>
+              ],
+            }
+        ]}
+      />
 
       <div className="tg-wrapper">
         {/* Hero */}
@@ -353,6 +356,6 @@ export default function TrailGuideTemplate() {
           </Link>
         </div>
       </div>
-    </HelmetProvider>
+    </>
   );
 }

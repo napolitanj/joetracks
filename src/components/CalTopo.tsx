@@ -76,8 +76,8 @@ const CalTopo = () => {
         ]}
       />
       <div className="guide caltopo-guide">
-        <main className="container">
-          <article className="sections">
+        <main>
+          <article>
             <Reveal delay={0}>
               <div className="hero caltopo-hero caltopo-bg">
                 <div className="hero-text">
@@ -89,10 +89,10 @@ const CalTopo = () => {
             </Reveal>
             <Reveal variant="up" delay={100}>
               <div className="content-wrapper">
-                <section id="overview" className="dis-row g-2 caltopo-overview">
+                <section id="overview" className="dis-row g-2">
                   <div className="section-half">
-                    <h3 className="preSlide slideIn">Why is CalTopo useful?</h3>
-                    <p className=" fadeIn">
+                    <h3>Why is CalTopo useful?</h3>
+                    <p>
                       CalTopo is among the most valuable tools available for
                       planning your next adventure from home. Mastering the
                       basics of Caltopo’s interface not only allows you to
@@ -102,7 +102,7 @@ const CalTopo = () => {
                       execute better trips while increasing your margin of
                       safety.
                     </p>
-                    <p className=" fadeIn">
+                    <p>
                       With dozens of valuable features, learning how to use
                       CalTopo can appear to be a daunting task. Fear not; we’ve
                       taken the time to consolidate its most valuable aspects
@@ -111,7 +111,7 @@ const CalTopo = () => {
                       interface so you can get back to planning your trip and
                       head outside!
                     </p>
-                    <p className=" fadeIn">
+                    <p>
                       <em>
                         CalTopo's features are extensive. This guide covers what
                         is available to users with the free account and is
@@ -123,15 +123,14 @@ const CalTopo = () => {
 
                   <figure className="section-half dis-col g-2 cnt">
                     <img
-                      className="loaded"
                       src={`${
                         import.meta.env.BASE_URL
                       }images/caltopo/caltopo.webp`}
                       alt="A screenshot of CalTopo’s interface"
                     />
-                    <figcaption className="image-caption-wrapper">
+                    <figcaption>
                       <div className="image-caption">
-                        <p className="sqsrte-small fadeIn">
+                        <p>
                           A screenshot of CalTopo’s interface with a
                           user-designed route and its corresponding elevation
                           profile.
@@ -143,7 +142,7 @@ const CalTopo = () => {
                 <div className="section-divider"></div>
                 <section className="dis-col caltopo-quick-nav">
                   <div className="sqs-html">
-                    <h3 className="preSlide">Contents</h3>
+                    <h3>Contents</h3>
                   </div>
                   <div className="dis-row g-2">
                     <div className="section-half">
@@ -209,18 +208,18 @@ const CalTopo = () => {
                     </div>
                   </div>
                 </section>
-                <div className=" horizontalrule-block -horizontalrule">
+                <div className="horizontalrule-block">
                   <div className="section-divider"></div>
                 </div>
                 <section id="tour-caltopo-interface" className="dis-col">
                   <div className="cnt">
-                    <h3 className="preSlide">A Tour of CalTopo’s Interface</h3>
+                    <h3>A Tour of CalTopo’s Interface</h3>
                   </div>
                   <div>
                     <p>
                       Head over to {""}
                       <a
-                        href="http://www.caltopo.com/"
+                        href="https://www.caltopo.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -340,7 +339,6 @@ const CalTopo = () => {
                       </p>
                       <figure>
                         <img
-                          className="loaded"
                           src={`${
                             import.meta.env.BASE_URL
                           }images/caltopo/Caltopo-interface-settings-menu.webp`}
@@ -400,7 +398,6 @@ const CalTopo = () => {
                   </div>
                   <figure>
                     <img
-                      className="loaded"
                       src={`${
                         import.meta.env.BASE_URL
                       }images/caltopo/Caltopo-interface-measure-menu.webp`}
@@ -413,7 +410,7 @@ const CalTopo = () => {
                   <div className="sqs-html">
                     <p>
                       <a
-                        href="https://forecast.weather.gov/MapClick.php?lat=34.19605&amp;lon=-117.31178#.YQmvuY5KhPY"
+                        href="https://forecast.weather.gov/MapClick.php?lon=-85.616&amp;lat=44.732"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -463,9 +460,9 @@ const CalTopo = () => {
                         alt="Image of a line tool on a map"
                       />
                     </div>
-                    <figcaption className="image-caption-wrapper">
+                    <figcaption>
                       <div className="image-caption">
-                        <p className="sqsrte-small">
+                        <p>
                           The window below the map displays the profile of the
                           line drawn on the map. The black circle on the line
                           corresponds to the position on the profile where the
@@ -512,9 +509,9 @@ const CalTopo = () => {
                 </section>
                 <div className="vrt-spc"></div>
                 <section>
-                  <div className=" image-block -image sqs-text-ready">
+                  <div>
                     <div>
-                      <div className="image-block-l-animation-site-default individual-text-animation-site-default">
+                      <div>
                         <figure>
                           <div>
                             <div>
@@ -526,9 +523,9 @@ const CalTopo = () => {
                               />
                             </div>
                           </div>
-                          <figcaption className="image-caption-wrapper">
+                          <figcaption>
                             <div className="image-caption">
-                              <p className="sqsrte-small">
+                              <p>
                                 Note the colored bars beneath the profile that
                                 indicate the following at any given point on
                                 your profile: slope angle, land cover and tree
@@ -586,7 +583,7 @@ const CalTopo = () => {
                     </div>
                     <figure>
                       <div>
-                        <div className="sqs-image-shape-container-element has-aspect-ratio">
+                        <div className="sqs-image-shape-container-element">
                           <img
                             src={`${
                               import.meta.env.BASE_URL
@@ -595,9 +592,9 @@ const CalTopo = () => {
                           />
                         </div>
                       </div>
-                      <figcaption className="image-caption-wrapper">
+                      <figcaption>
                         <div className="image-caption">
-                          <p className="sqsrte-small">
+                          <p>
                             A CalTopo Map with objects added to indicate routes
                             and campsites day-by-day. Each line can be selected
                             to observe route information, including a profile.
@@ -610,7 +607,7 @@ const CalTopo = () => {
                 <div className="section-divider"></div>
                 <section id="draw-a-route-caltopo" className="dis-col g-2">
                   <div>
-                    <h3 className="preSlide">
+                    <h3>
                       How to Draw a Route With CalTopo
                     </h3>
                   </div>
@@ -660,7 +657,7 @@ const CalTopo = () => {
                 <div className="section-divider"></div>
                 <section id="change-caltopo-appearance" className="dis-col g-2">
                   <div className="sqs-html">
-                    <h3 className="preSlide">
+                    <h3>
                       How to Use CalTopo’s Map Layers Feature to Change the
                       Appearance of Your Map
                     </h3>
@@ -769,7 +766,7 @@ const CalTopo = () => {
                     <div>
                       <figure>
                         <div>
-                          <div className="sqs-image-shape-container-element has-aspect-ratio">
+                          <div className="sqs-image-shape-container-element">
                             <img
                               src={`${
                                 import.meta.env.BASE_URL
@@ -812,7 +809,7 @@ const CalTopo = () => {
                       Maps’ standard street map view.
                     </p>
                   </div>
-                  <div className=" horizontalrule-block -horizontalrule">
+                  <div className="horizontalrule-block">
                     <div>
                       <hr />
                     </div>
@@ -829,7 +826,7 @@ const CalTopo = () => {
                   </p>
                 </section>
                 <div className="section-divider"></div>
-                <div className=" horizontalrule-block -horizontalrule">
+                <div className="horizontalrule-block">
                   <div>
                     <hr />
                   </div>
@@ -986,7 +983,7 @@ const CalTopo = () => {
                 <div className="section-divider"></div>
                 <section id="export-caltopo-map" className="dis-col g-2">
                   <div>
-                    <h3 className="preSlide">
+                    <h3>
                       How to Export and Print Your Map With CalTopo
                     </h3>
                   </div>
@@ -1117,12 +1114,12 @@ const CalTopo = () => {
                       </figure>
                     </div>
                     <div>
-                      <div className=" image-block -image sqs-text-ready">
+                      <div>
                         <div>
-                          <div className="image-block-outer-wrapper layout-caption-below design-layout-inline combination-animation-site-default individual-animation-site-default individual-text-animation-site-default">
+                          <div>
                             <figure>
                               <div>
-                                <div className="sqs-image-shape-container-element has-aspect-ratio">
+                                <div className="sqs-image-shape-container-element">
                                   <img
                                     src={`${
                                       import.meta.env.BASE_URL
@@ -1163,7 +1160,7 @@ const CalTopo = () => {
                 <section>
                   <div>
                     <div className="sqs-html">
-                      <h3 className="preSlide">Have fun out there!</h3>
+                      <h3>Have fun out there!</h3>
                       <p>
                         CalTopo's desktop version has the most streamlined and
                         user-friendly mapping interface available for free

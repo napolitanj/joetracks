@@ -43,7 +43,7 @@ const NewsletterCapture = ({
     <div className="newsletter-capture content-wrapper">
       {status === "success" ? (
         <p className="newsletter-capture__confirm">
-          You're in — check your inbox to confirm your email!
+          You're in. Check your inbox to confirm your email!
         </p>
       ) : (
         <>

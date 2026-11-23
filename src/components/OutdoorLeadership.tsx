@@ -1,18 +1,26 @@
 import { Link } from "react-router-dom";
 import "../styles/OutdoorLeadership.css";
 import CountUp from "./tools/CountUp";
+import SEO from "./SEO";
 
 export default function OutdoorLeadership() {
   return (
     <>
+      <SEO
+        title="Outdoor Leadership & Guiding | Joe Napolitan"
+        description="Fifteen years leading and educating people in wild places: ski patrol, avalanche work, wilderness guiding, and outdoor program design."
+        canonical="https://joetracks.com/outdoorleadership"
+        robots="noindex,follow"
+        image="https://joetracks.com/images/og-image.png"
+      />
       <Link to="/portfolio">⇦ Back to Portfolio Page</Link>
       <section className="category-page">
         {/* Hero */}
         <header className="category-hero">
           <h1>Outdoor Leadership & Guiding</h1>
           <p className="category-tagline">
-            Over a decade of leading and educating people safely in wild places
-            — from alpine ascents to ski resorts to wilderness therapy programs.
+            Fifteen years of leading and educating people safely in wild places,
+            from alpine ascents to ski resorts to wilderness therapy programs.
           </p>
         </header>
 
@@ -22,11 +30,12 @@ export default function OutdoorLeadership() {
             I’ve guided, instructed, and managed programs that have connected
             hundreds of people to the outdoors across the U.S. My work has
             ranged from youth wilderness education to private mountaineering
-            clients — always with a focus on safety, preparation, and
-            transformative experience. I hold certifications from{" "}
-            <strong>AMGA</strong>, <strong>NOLS</strong>, and
-            <strong> AIARE</strong>, and have led teams through high-risk alpine
-            and backcountry environments with professionalism and care.
+            clients, always with a focus on safety, preparation, and
+            transformative experience. My training includes the
+            <strong> AMGA Alpine Skills Course</strong>, a
+            <strong> NOLS Wilderness EMT</strong>, and
+            <strong> AIARE Pro Level 1</strong>, and I have led teams through
+            high-risk alpine and backcountry environments.
           </p>
         </section>
 
@@ -35,7 +44,7 @@ export default function OutdoorLeadership() {
           <div className="stat">
             <span className="stat-num">
               {" "}
-              <CountUp target={14} suffix=" Years" />
+              <CountUp target={15} suffix=" Years" />
             </span>
             <span className="stat-label">Professional field experience</span>
           </div>
@@ -105,7 +114,7 @@ export default function OutdoorLeadership() {
                 equipment selection, and risk management.
               </li>
               <li>
-                Founded and directed Origin Expeditions — delivering accessible
+                Founded and directed Origin Expeditions, delivering accessible
                 wilderness programs for underserved youth.
               </li>
               <li>
@@ -167,7 +176,7 @@ export default function OutdoorLeadership() {
           <p>
             Want to design a wilderness program or plan an expedition? I help
             organizations and individuals create safe, meaningful outdoor
-            experiences — from trip logistics to staff training.
+            experiences, from trip logistics to staff training.
           </p>
           <Link to="/contact" className="btn">
             Get in Touch

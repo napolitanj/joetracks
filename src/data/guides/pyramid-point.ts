@@ -91,7 +91,7 @@ The trail along the rim leads back to an overlook of Lake Michigan. To your righ
     "Mountain bikes are not permitted on any National Park Service trail here.",
     "Dogs are allowed on a leash no longer than 6 feet.",
     "Ticks carrying lyme disease are present in this area, especially in tall grass. Wear appropriate clothing and do a thorough tick check after your hike.",
-    "Stay on the marked trail, even where unofficial social trails look tempting — this dune ecosystem is fragile and slow to recover.",
+    "Stay on the marked trail, even where unofficial social trails look tempting. This dune ecosystem is fragile and slow to recover.",
     "Hunting is allowed in this area, so be sure to wear bright orange, especially during deer firearm seasons.",
   ],
   propertyRules: [

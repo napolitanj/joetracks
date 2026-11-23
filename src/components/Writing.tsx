@@ -1,6 +1,7 @@
 import "../styles/Writing.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import SEO from "./SEO";
 
 const Writing = () => {
   const [fadeIn, setFadeIn] = useState(false);
@@ -11,11 +12,18 @@ const Writing = () => {
 
   return (
     <>
+      <SEO
+        title="Writing Portfolio | Joe Napolitan"
+        description="Grant proposals, outdoor guides, technical documentation, and reporting. Writing that makes information useful and easy to act on."
+        canonical="https://joetracks.com/writing"
+        robots="noindex,follow"
+        image="https://joetracks.com/images/og-image.png"
+      />
       <Link to="/portfolio">⇦ Back to Portfolio Page</Link>
       <div className={`writing-container ${fadeIn ? "show" : ""}`}>
         <h2>Writing Portfolio</h2>
         <p className="intro">
-          My writing bridges technical clarity, storytelling, and strategy —
+          My writing bridges technical clarity, storytelling, and strategy,
           from grant proposals and SEO-optimized web copy to outdoor guides and
           feature articles. Across each project, my goal is the same: write
           clearly, connect with readers, and drive results that matter.
@@ -26,8 +34,8 @@ const Writing = () => {
           <h3>Web & SEO Writing</h3>
           <p>
             Authored long-form digital guides for outdoor recreation that
-            reached thousands of organic readers and earned top Google rankings
-            — including featured snippets for “North Manitou Island Guide” and
+            reached thousands of organic readers and earned top Google rankings,
+            including featured snippets for “North Manitou Island Guide” and
             “Ski Mount Sneffels.” My focus was building trust through clarity
             and authority.
           </p>
@@ -41,7 +49,7 @@ const Writing = () => {
             <li>
               <strong>Samples:</strong>{" "}
               <a
-                href="https://joetracks.com/north-manitou-island-guide"
+                href="/north-manitou-island-guide"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -49,7 +57,7 @@ const Writing = () => {
               </a>
               &nbsp;|&nbsp;
               <a
-                href="https://joetracks.com/ski-mount-sneffels"
+                href="/ski-mount-sneffels"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -64,7 +72,7 @@ const Writing = () => {
           <h3>Technical & Instructional Writing</h3>
           <p>
             Produced documentation, guides, and website content for technology
-            and IT teams — focusing on clarity, usability, and speed. My
+            and IT teams, focusing on clarity, usability, and speed. My
             approach is to make complex systems understandable and easy to
             adopt.
           </p>
@@ -85,7 +93,7 @@ const Writing = () => {
               </a>
               <div className="sample-preview">
                 <img
-                  src="../images/Writing/technical-writing-preview.png"
+                  src="/images/Writing/technical-writing-preview.png"
                   alt="Preview of documentation"
                 />
               </div>
@@ -118,7 +126,7 @@ const Writing = () => {
             <li>
               <strong>Sample:</strong>{" "}
               <a
-                href="../pdfs/Founders Brewing Grant for Portfolio.pdf"
+                href="/pdfs/Founders Brewing Grant for Portfolio.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -136,7 +144,7 @@ const Writing = () => {
             newspaper in southwest Colorado, covering local government, housing
             developments, water issues, and human-interest stories. My reporting
             followed the <strong>AP Style Guide</strong> and emphasized
-            accuracy, objectivity, and clarity — grounding each piece in
+            accuracy, objectivity, and clarity, grounding each piece in
             verifiable information and public impact.
           </p>
           <ul>
@@ -178,7 +186,7 @@ const Writing = () => {
             </a>
             <p>
               Reporting on the tension between development and limited water
-              resources—covering rights, infrastructure planning, and long-term
+              resources, covering rights, infrastructure planning, and long-term
               tradeoffs.
             </p>
           </div>
@@ -204,29 +212,21 @@ const Writing = () => {
           <h3>Travel Blogs</h3>
           <div className="writing-samples">
             <div className="writing-sample">
-              <a
-                href="https://nobohippybro.wordpress.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                "Nobo Hippy Bro" — A Thru-Hike of the Appalachian (2014)
-              </a>
+              <Link to="/expeditions/appalachian-trail-2014">
+                "Nobo Hippy Bro": A Thru-Hike of the Appalachian Trail (2014)
+              </Link>
               <p>
-                Digital field journal from a 2,185-mile thru-hike — ~8,000
+                Digital field journal from a 2,185-mile thru-hike: ~8,000
                 lifetime visits; single-day highs of 3,565 unique visitors and
                 442 views.
               </p>
             </div>
 
             <div className="writing-sample">
-              <a
-                href="https://haulinhobo.wordpress.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                "Haulin' Hobo" — Bike Touring Solo Across The American West
+              <Link to="/expeditions/american-west-2013">
+                "Haulin' Hobo": Bike Touring Solo Across the American West
                 (2013)
-              </a>
+              </Link>
               <p>
                 Digital story from a self-supported, 1500-mile bicycle ride
                 across the deserts and mountains of the Rockies and California's
@@ -238,7 +238,7 @@ const Writing = () => {
 
         <p className="outro">
           Whether it’s a grant proposal, blog post, or technical guide, my goal
-          is the same — write in a way that makes information useful and ideas
+          is the same: write in a way that makes information useful and ideas
           easy to act on.
         </p>
         <Link to="/portfolio">⇦ Back to Portfolio Page</Link>

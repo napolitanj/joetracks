@@ -69,7 +69,7 @@ const tools: CardItem[] = [
     title: "Michigan River Conditions Tracker",
     description:
       "Live USGS gauge readings for rivers across the state, scored against their own historical range so you know whether a level is high, low, or normal for the date.",
-    href: "river-conditions",
+    href: "/river-conditions",
     cta: "Check the rivers",
     imageSrc: "/images/river-tracker-preview.webp",
     imageAlt: "River gauge conditions across Michigan",

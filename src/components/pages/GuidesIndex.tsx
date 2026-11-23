@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../../styles/GuidesIndex.css";
+import SEO from "../SEO";
 
 type GuideItem = {
   title: string;
@@ -83,7 +84,7 @@ const guides: GuideItem[] = [
     cta: "Go Hiking",
     imageSrc:
       "/images/nct/valley-of-the-giants/valley-of-the-giants-banner.webp",
-    imageAlt: "PLACEHOLDER — Valley of the Giants image alt text",
+    imageAlt: "Old-growth white pines along the Valley of the Giants trail",
   },
   {
     title: "The Complete Pyramid Point Hiking Guide",
@@ -92,7 +93,7 @@ const guides: GuideItem[] = [
     href: "/trails/pyramid-point",
     cta: "Go Hiking",
     imageSrc: "/images/pyramid-point/pyramid-point-hero.webp",
-    imageAlt: "PLACEHOLDER — Pyramid Point image alt text",
+    imageAlt: "Lake Michigan from the bluff at Pyramid Point",
   },
 
   {
@@ -113,7 +114,7 @@ const guides: GuideItem[] = [
     cta: "Go Hiking",
     imageSrc:
       "/images/conservancy-natural-areas/whaleback-natural-area/whaleback-natural-area-banner.webp",
-    imageAlt: "PLACEHOLDER — Whaleback Natural Area image alt text",
+    imageAlt: "The Whaleback bluff rising above Lake Michigan near Leland",
   },
   {
     title: "Trip Planning With Remote Forecasting Tools",
@@ -139,6 +140,12 @@ const guides: GuideItem[] = [
 const GuidesIndex = () => {
   return (
     <section className="guides-index">
+      <SEO
+        title="Northern Michigan Trail & Route Guides | JoeTracks"
+        description="Field-researched guides to hiking, paddling, skiing, and mountain biking in Northern Michigan, with maps, access notes, and conditions."
+        canonical="https://joetracks.com/guides"
+        image="https://joetracks.com/images/og-image.png"
+      />
       <div className="guides-index-inner">
         <h1>Guides</h1>
         <p className="guides-index-intro">

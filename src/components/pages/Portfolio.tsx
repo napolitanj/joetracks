@@ -3,6 +3,7 @@ import { checkAuth } from "../../utils/checkAuth";
 import { Link } from "react-router-dom";
 import PortfolioFeature from "../PortfolioFeature";
 import "../../styles/Portfolio.css";
+import SEO from "../SEO";
 
 type Post = {
   id: number;
@@ -37,14 +38,21 @@ const Portfolio = () => {
 
   return (
     <>
+      <SEO
+        title="Portfolio | Joe Napolitan"
+        description="Selected work across software development, outdoor leadership, program management, marketing, and writing."
+        canonical="https://joetracks.com/portfolio"
+        robots="noindex,follow"
+        image="https://joetracks.com/images/og-image.png"
+      />
       <div className="portfolio-container">
         <header className="portfolio-header">
           <h1>Portfolio</h1>
           <p>
             Here you can view a selection of my work across software, digital
             marketing, journalism, and program leadership. I created this page
-            to share a clean snapshot of my toolkit with potential collaborators
-            — but feel free to browse if you're just looking around!
+            to share a clean snapshot of my toolkit with potential collaborators,
+            but feel free to browse if you're just looking around!
           </p>
         </header>
         {isAuthorized && (

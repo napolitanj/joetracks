@@ -48,6 +48,16 @@ const Footer = () => {
             <Link to="/river-conditions">Michigan River Tracker</Link>
           </nav>
 
+          <nav className="site-footer-col" aria-label="Field Archive">
+            <h2>Field Archive</h2>
+            <Link to="/expeditions/appalachian-trail-2014">
+              Appalachian Trail, 2014
+            </Link>
+            <Link to="/expeditions/american-west-2013">
+              American West Bike Tour, 2013
+            </Link>
+          </nav>
+
           <nav className="site-footer-col" aria-label="Portfolio">
             <h2>
               <Link to="/about">About</Link>

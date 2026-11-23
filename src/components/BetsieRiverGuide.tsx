@@ -22,7 +22,7 @@ const BetsieRiverGuide = () => {
     <>
       <SEO
         title="The Betsie River Paddling Guide — Kayaking & Canoeing from Interlochen to Frankfort | JoeTracks"
-        description="A complete guide to paddling the Betsie River in northern Michigan — 54 miles of kayaking and canoeing from Green Lake near Interlochen to Lake Michigan at Frankfort. Download the free 37-page PDF guide."
+        description="A complete guide to paddling the Betsie River in northern Michigan: 54 miles of kayaking and canoeing from Green Lake near Interlochen to Lake Michigan at Frankfort. Download the free 37-page PDF guide."
         canonical="https://joetracks.com/betsie-river"
         image="https://joetracks.com/images/betsie-river/betsie-river-card.webp"
         ogType="article"
@@ -32,7 +32,7 @@ const BetsieRiverGuide = () => {
             "@type": "WebPage",
             name: "The Betsie River Paddling Guide",
             description:
-              "A complete guide to Betsie River kayaking and canoeing — 54 miles from Green Lake near Interlochen to Lake Michigan at Frankfort.",
+              "A complete guide to Betsie River kayaking and canoeing: 54 miles from Green Lake near Interlochen to Lake Michigan at Frankfort.",
             url: "https://joetracks.com/betsie-river",
             image:
               "https://joetracks.com/images/betsie-river/betsie-river-card.webp",
@@ -42,7 +42,7 @@ const BetsieRiverGuide = () => {
             "@type": "Article",
             headline: "The Betsie River Paddling Guide",
             description:
-              "A complete guide to Betsie River paddling — 54 miles of northern Michigan kayaking and canoeing from Interlochen to Frankfort, with mile-by-mile notes on put-ins, take-outs, hazards, and campsites.",
+              "A complete guide to Betsie River paddling: 54 miles of northern Michigan kayaking and canoeing from Interlochen to Frankfort, with mile-by-mile notes on put-ins, take-outs, hazards, and campsites.",
             image:
               "https://joetracks.com/images/betsie-river/betsie-river-card.webp",
             author: {
@@ -171,7 +171,7 @@ const BetsieRiverGuide = () => {
                 <p className="betsie-river-free-guide-callout betsie-river-quick-nav">
                   <em>
                     The 37-page PDF guide to all 54 miles of the Betsie River is
-                    available for free — put-ins, hazards, shuttles, camping,
+                    available for free: put-ins, hazards, shuttles, camping,
                     and maps for every section.
                   </em>{" "}
                   <a href="#guide-cta">Scroll down to download.</a>
@@ -188,7 +188,7 @@ const BetsieRiverGuide = () => {
                       Benzie County and flows 54 miles west before emptying into
                       Lake Michigan at Frankfort. It is a designated Michigan
                       trout stream and one of the Lower Peninsula's most
-                      rewarding thru-paddle routes — one I've documented in a
+                      rewarding thru-paddle routes, one I've documented in a
                       free 37-page guide you can download from this page.
                     </p>
                     <p>
@@ -203,7 +203,7 @@ const BetsieRiverGuide = () => {
                     </p>
                     <p>
                       The free 37-page guide covers all 54 miles in three
-                      chapters — Upper, Middle, and Lower Betsie — with
+                      chapters (Upper, Middle, and Lower Betsie) with
                       mile-by-mile notes on put-ins, take-outs, hazards,
                       campsites, and points of interest for each section.
                       Download it below.
@@ -232,7 +232,7 @@ const BetsieRiverGuide = () => {
                 className="content-wrapper row cnt-vrt cnt-hrz mobile-col"
               >
                 <div className="col cnt-vrt cnt-hrz">
-                  <h2>Get the Full 37-Page Guide — Free</h2>
+                  <h2>Get the Full 37-Page Guide for Free</h2>
                   <p>Download the complete Betsie River paddling guide.</p>
                 </div>
                 <NewsletterCapture
@@ -249,7 +249,7 @@ const BetsieRiverGuide = () => {
                 <p>
                   The full guide divides the Betsie River into three chapters,
                   each covering a distinct stretch with its own character and
-                  logistics. Here's an overview — download the guide for the
+                  logistics. Here's an overview. Download the guide for the
                   complete mile-by-mile detail.
                 </p>
                 <div className="betsie-river-chapters-grid">
@@ -349,13 +349,13 @@ const BetsieRiverGuide = () => {
                     <p>
                       The Betsie runs year-round, but the practical paddling
                       season is May through October. Spring (May–June) offers
-                      higher water and faster current — good for covering miles
+                      higher water and faster current, good for covering miles
                       quickly, but more demanding in the upper section where
                       logjams are an active hazard. Summer (July–August) is the
                       most popular time on the water, with warmer air
                       temperatures offsetting the cold river. September and
                       early October bring fall color, manageable flows, and
-                      lighter crowds — the best combination for most paddlers.
+                      lighter crowds, the best combination for most paddlers.
                     </p>
                     <h3>Skill Level</h3>
                     <p>
@@ -377,7 +377,7 @@ const BetsieRiverGuide = () => {
                       US-31 and M-115 provide access to multiple public boat
                       launches along the river. Outfitters in the Benzonia and
                       Frankfort area offer canoe and kayak rentals with shuttle
-                      service — the easiest way to run the lower sections
+                      service, the easiest way to run the lower sections
                       without pre-positioning a vehicle. For a full thru-paddle,
                       plan on two to four days depending on pace and water
                       levels, and arrange vehicle shuttles in advance.
@@ -385,8 +385,8 @@ const BetsieRiverGuide = () => {
                     <h3>Hazards</h3>
                     <p>
                       The primary hazards on the Betsie River are{" "}
-                      <strong>logjams</strong> — especially in the upper
-                      section, where debris accumulates in the narrow channel —{" "}
+                      <strong>logjams</strong> (especially in the upper
+                      section, where debris accumulates in the narrow channel),{" "}
                       <strong>cold water</strong> (the river is spring-fed and
                       cold even in midsummer; dress for immersion), and the{" "}
                       <strong>Lake Michigan finish</strong> at Frankfort (open
@@ -622,7 +622,7 @@ const BetsieRiverGuide = () => {
                 </div>
                 <NewsletterCapture
                   headline="Everything you need to plan your Betsie River trip."
-                  subtext="Sign up for the JoeTracks newsletter and download the complete guide — mile-by-mile notes for all 54 miles of the Betsie River, plus new guides each month."
+                  subtext="Sign up for the JoeTracks newsletter and download the complete guide: mile-by-mile notes for all 54 miles of the Betsie River, plus new guides each month."
                   formUrl="https://app.kit.com/forms/9483935/subscriptions"
                 />
               </section>

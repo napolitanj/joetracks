@@ -17,7 +17,7 @@ const Bio = () => {
         <img className="bio-pic" src={headerPhoto}></img>
         <div>
           <p>
-            I'm Joe Napolitan — a Michigan-based software engineer, IT
+            I'm Joe Napolitan, a Michigan-based software engineer, IT
             specialist, and former wilderness educator. Over the past decade,
             I’ve led high-stakes expeditions in Alaska, developed websites for
             enterprise brands, and supported IT systems in education and
@@ -25,7 +25,7 @@ const Bio = () => {
             arts school, where I build process documentation, manage data, and
             simplify technical processes for staff and students. My background
             combines hands-on problem-solving with a deep understanding of
-            people and systems — the same mindset I bring to full-stack
+            people and systems, the same mindset I bring to full-stack
             development.
           </p>
           <p>
@@ -33,7 +33,7 @@ const Bio = () => {
             backend logic, or connecting real-world operations with reliable
             code, I like building things that actually make life easier. This
             site highlights some of my projects across software, automation, and
-            outdoor program design — all rooted in the same goal: to create
+            outdoor program design, all rooted in the same goal: to create
             practical, well-crafted systems that deliver great experiences.
           </p>
         </div>

@@ -85,8 +85,8 @@ const SneffelsGuide = () => {
       />
 
       <div className="guide sneffels-guide">
-        <main className="container" id="page" role="main">
-          <article className="sections">
+        <main id="page" role="main">
+          <article>
             <Reveal delay={0}>
               <section className="hero sneffels-hero sneffels-bg">
                 <div className="hero-text">
@@ -159,7 +159,7 @@ const SneffelsGuide = () => {
             </Reveal>
             <Reveal variant="up" delay={140}>
               <section className="content-wrapper">
-                <p className="preFade">
+                <p>
                   Ski mountaineering is an inherently dangerous activity.
                   Individuals who choose to participate in this sport are
                   exposed to various hazards beyond their control that may
@@ -185,7 +185,7 @@ const SneffelsGuide = () => {
                   guide if you wish to embark on this adventure and are unsure
                   of your capabilities.
                 </p>
-                <p className="preFade">
+                <p>
                   <em>
                     JoeTracks is not responsible for what any individual(s)
                     might choose to do with this information.
@@ -198,19 +198,18 @@ const SneffelsGuide = () => {
               <section className="content-wrapper">
                 <div className="dis-row g-2">
                   <div className="section-half">
-                    <div className="layout grid-12 columns-12">
-                      <figure className="block-image-figure intrinsic">
+                    <div>
+                      <figure>
                         <img
                           alt="Two slings around large rocks on the southwest side of a mountain"
-                          className="loaded"
                           src={`${
                             import.meta.env.BASE_URL
                           }images/sneffels/mount-sneffels-rappel-anchor.webp`}
                         />
 
-                        <figcaption className="image-caption-wrapper">
+                        <figcaption>
                           <div className="image-caption">
-                            <p className="sqsrte-small preFade">
+                            <p>
                               Two slings around large rocks on the southwest
                               side of the summit, backed up by 1” tubular
                               webbing we brought. There is a taped carabiner
@@ -220,13 +219,13 @@ const SneffelsGuide = () => {
                         </figcaption>
                       </figure>
                     </div>
-                    <div id="gear-list" className="block html-block block-html">
-                      <h4 className="preFade">
+                    <div id="gear-list" className="block">
+                      <h4>
                         <strong>Gear</strong>
                       </h4>
                       <ul>
                         <li>
-                          <p className="preFade">
+                          <p>
                             skis, boots, skins, pole, and&nbsp;
                             <a
                               href="https://www.rei.com/product/885298/black-diamond-whippet-backcountry-ski-pole-single"
@@ -239,52 +238,52 @@ const SneffelsGuide = () => {
                           </p>
                         </li>
                         <li>
-                          <p className="preFade">beacon, shovel, probe</p>
+                          <p>beacon, shovel, probe</p>
                         </li>
                         <li>
-                          <p className="preFade">crampons, ice ax</p>
+                          <p>crampons, ice ax</p>
                         </li>
                         <li>
-                          <p className="preFade">30L ski pack</p>
+                          <p>30L ski pack</p>
                         </li>
                         <li>
-                          <p className="preFade">
+                          <p>
                             70m 9.8mm rope. 60m would work but require some
                             steep down-climbing in snow. I recommend two 35m,
                             6-7mm ropes if you’ve got them - the 70m was heavy.
                           </p>
                         </li>
                         <li>
-                          <p className="preFade">alpine harness</p>
+                          <p>alpine harness</p>
                         </li>
                         <li>
-                          <p className="preFade">2 locking carabiners</p>
+                          <p>2 locking carabiners</p>
                         </li>
                         <li>
-                          <p className="preFade">rappel device</p>
+                          <p>rappel device</p>
                         </li>
                         <li>
-                          <p className="preFade">rappel extension webbing</p>
+                          <p>rappel extension webbing</p>
                         </li>
                         <li>
-                          <p className="preFade">1m cordelette for prussik</p>
+                          <p>1m cordelette for prussik</p>
                         </li>
                         <li>
-                          <p className="preFade">
+                          <p>
                             7m of 1” webbing for anchor backup
                           </p>
                         </li>
                         <li>
-                          <p className="preFade">2 pairs of gloves</p>
+                          <p>2 pairs of gloves</p>
                         </li>
                         <li>
-                          <p className="preFade">1.5 liters of water</p>
+                          <p>1.5 liters of water</p>
                         </li>
                         <li>
-                          <p className="preFade">headlamp</p>
+                          <p>headlamp</p>
                         </li>
                         <li>
-                          <p className="preFade">
+                          <p>
                             smartphone with maps downloaded on&nbsp;
                             <a
                               href="https://www.gaiagps.com/hike/"
@@ -296,22 +295,22 @@ const SneffelsGuide = () => {
                           </p>
                         </li>
                         <li>
-                          <p className="preFade">sunscreen</p>
+                          <p>sunscreen</p>
                         </li>
                       </ul>
                     </div>
                   </div>
                   <div className="section-half">
-                    <div className="block html-block block-html">
+                    <div className="block">
                       <div className="block-content">
                         <div id="beta" className="dis-col">
-                          <h4 className="preFade">
+                          <h4>
                             <strong>Beta</strong>
                           </h4>
-                          <p className="preFade">
+                          <p>
                             <strong>Rappel Anchor:</strong>
                           </p>
-                          <p className="preFade">
+                          <p>
                             <em>
                               There is an anchor on the southwest side of the
                               summit{" "}
@@ -325,10 +324,10 @@ const SneffelsGuide = () => {
                             recommend a 70m rope. Rumor has it that there are
                             fixed bolts on the summit, but I could not find any.
                           </p>
-                          <p className="preFade">
+                          <p>
                             <strong>Trailhead:</strong>
                           </p>
-                          <p className="preFade">
+                          <p>
                             Contact&nbsp;
                             <a
                               href="https://www.ouraymountainsports.com/"
@@ -339,7 +338,7 @@ const SneffelsGuide = () => {
                             </a>
                             &nbsp;or&nbsp;
                             <a
-                              href="http://www.ci.ouray.co.us/city_offices/public_works/index.php"
+                              href="https://www.ci.ouray.co.us/city_offices/public_works/index.php"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -363,10 +362,10 @@ const SneffelsGuide = () => {
                             closed over a mile east of Camp Bird, resulting in a
                             considerably longer tour.
                           </p>
-                          <p className="preFade">
+                          <p>
                             <strong>Bathrooms and water:</strong>
                           </p>
-                          <p className="preFade">
+                          <p>
                             In 2017 the pit toilets in the basin were unlocked
                             (even before they plowed the road). In 2019 they
                             were not; I'm guessing 2017 was a fluke. If you're
@@ -379,10 +378,10 @@ const SneffelsGuide = () => {
                             ascended back to the base of Lavender Couloir -
                             bring more if you think you'll need it.
                           </p>
-                          <p className="preFade">
+                          <p>
                             <strong>Exit:</strong>
                           </p>
-                          <p className="preFade">
+                          <p>
                             While there's always the option to ski another
                             thousand feet into Blaine Basin, the fastest way out
                             is to trend skiers right out of the couloir to a
@@ -403,7 +402,7 @@ const SneffelsGuide = () => {
                 </div>
                 <div className="dis-row g-2">
                   <div className="section-half">
-                    <figure className="block-image-figure intrinsic">
+                    <figure>
                       <img
                         alt="Overview map of a sneffels trip"
                         src={`${
@@ -411,21 +410,21 @@ const SneffelsGuide = () => {
                         }images/sneffels/mount-sneffels-snake-couloir-map.webp`}
                       />
                       <div className="image-caption">
-                        <p className="sqsrte-small preFade">Overview map.</p>
+                        <p>Overview map.</p>
                       </div>
                     </figure>
                   </div>
                   <div className="section-half">
-                    <figure className="block-image-figure intrinsic">
+                    <figure>
                       <img
                         alt="A view of Sneffels’ north face."
                         src={`${
                           import.meta.env.BASE_URL
                         }images/sneffels/mount-sneffels-snake-couloir-exit.webp`}
                       />
-                      <figcaption className="image-caption-wrapper">
+                      <figcaption>
                         <div className="image-caption">
-                          <p className="sqsrte-small preFade">
+                          <p>
                             A view of Sneffels’ north face. Conditions
                             permitting, follow the red line to save yourself
                             some vert for the traverse. Alternatively, descend
@@ -437,7 +436,7 @@ const SneffelsGuide = () => {
                     </figure>
                   </div>
                 </div>
-                <div className="block horizontalrule-block block-horizontalrule">
+                <div className="block horizontalrule-block">
                   <div className="block-content">
                     <hr />
                   </div>
@@ -446,21 +445,21 @@ const SneffelsGuide = () => {
             </Reveal>
             <NewsletterCapture />
             <Reveal variant="up" delay={260}>
-              <section id="trip-report" className="page-section">
-                <div className="section-border">
-                  <div className="section-background"></div>
+              <section id="trip-report">
+                <div>
+                  <div></div>
                 </div>
                 <div className="content-wrapper">
-                  <div className="content">
+                  <div>
                     <div className="row row">
-                      <div className="col col-12 span-12">
+                      <div className="col">
                         <h2 className="section-header">
                           Mount Sneffels and the Snake Couloir Trip Report
                         </h2>
                         <div className="row row">
                           <div className="dis-row g-2">
                             <div className="dis-col section-half">
-                              <p className="preFade">
+                              <p>
                                 I woke in my car at 4 am, which I had parked
                                 about a half-mile from the road closure. I
                                 immediately turned my car on and blasted heat
@@ -471,7 +470,7 @@ const SneffelsGuide = () => {
                                 ready, we both drove our cars to the parking
                                 area closer to the closure.
                               </p>
-                              <p className="preFade">
+                              <p>
                                 Another group of four gearing up at the
                                 trailhead was also headed for the Snake Couloir.
                                 Feeling pretty cold and eager to get ahead of
@@ -494,10 +493,10 @@ const SneffelsGuide = () => {
                             </figure>
                           </div>
                         </div>
-                        <div className="block html-block block-html">
+                        <div className="block">
                           <div className="block-content">
-                            <div className="html-content">
-                              <p className="preFade">
+                            <div>
+                              <p>
                                 I passed Camp Bird and enjoyed watching first
                                 light on Stoney Mountain. Not long after, I
                                 rounded a corner and Sneffels popped into view.
@@ -509,7 +508,7 @@ const SneffelsGuide = () => {
                                 the road again and follow it west to the pit
                                 toilet.
                               </p>
-                              <p className="preFade">
+                              <p>
                                 As I reached the pit toilet, I was able to see a
                                 party of four ascending the slope to my right; I
                                 assumed to ski Teakettle Mountain. I also
@@ -519,7 +518,7 @@ const SneffelsGuide = () => {
                                 guess it's no secret that this is a prime spot
                                 to base camp for Yankee Boy Basin ski missions.
                               </p>
-                              <p className="preFade">
+                              <p>
                                 The route continued to the looker's right of a
                                 large hill and past an almost entirely buried
                                 sign that marks the summer trailhead for Mount
@@ -532,9 +531,9 @@ const SneffelsGuide = () => {
                           </div>
                         </div>
                         <div className="dis-row g-2">
-                          <figure className="block-image-figure intrinsic">
-                            <div className="image-block-wrapper preSlide">
-                              <div className="image-shape-container-element has-aspect-ratio">
+                          <figure>
+                            <div>
+                              <div className="image-shape-container-element">
                                 <img
                                   alt="Gazing west in Yankee Boy Basin. Kismet Peak to the right blocks Mount Sneffels from view."
                                   src={`${
@@ -543,18 +542,18 @@ const SneffelsGuide = () => {
                                 />
                               </div>
                             </div>
-                            <figcaption className="image-caption-wrapper">
+                            <figcaption>
                               <div className="image-caption">
-                                <p className="sqsrte-small preFade">
+                                <p>
                                   Gazing west in Yankee Boy Basin. Kismet Peak
                                   to the right blocks Mount Sneffels from view.
                                 </p>
                               </div>
                             </figcaption>
                           </figure>
-                          <div className="col col-6 span-6">
-                            <div className="html-content">
-                              <p className="preFade">
+                          <div className="col">
+                            <div>
+                              <p>
                                 Fortunately, the snow was soft enough for us to
                                 skin to the lower saddle. Upon reaching the top,
                                 a relentless 40 mile per hour wind and blowing
@@ -564,7 +563,7 @@ const SneffelsGuide = () => {
                                 provides a view of the next 600 feet we'd ascend
                                 - the long, steep slog that is Lavender Couloir.
                               </p>
-                              <p className="preFade">
+                              <p>
                                 Two years ago, our party boot-packed the
                                 couloir, a cold, waist-deep hell. This time
                                 around, we elected to keep our skins during our
@@ -586,9 +585,9 @@ const SneffelsGuide = () => {
                                 import.meta.env.BASE_URL
                               }images/sneffels/Mount-sneffels-birthday-chutes.webp`}
                             />
-                            <figcaption className="image-caption-wrapper">
+                            <figcaption>
                               <div className="image-caption">
-                                <p className="sqsrte-small preFade">
+                                <p>
                                   The “Birthday Chutes” descend Sneffels’s
                                   southeast face. The party ahead is seen
                                   skinning to the lower saddle where the
@@ -605,9 +604,9 @@ const SneffelsGuide = () => {
                               }images/sneffels/mount-sneffels-lavender-couloir.webp`}
                             />
 
-                            <figcaption className="image-caption-wrapper">
+                            <figcaption>
                               <div className="image-caption">
-                                <p className="sqsrte-small preFade">
+                                <p>
                                   A view of the Lavender Couloir from the upper
                                   saddle looking towards the lower saddle.
                                 </p>
@@ -616,9 +615,9 @@ const SneffelsGuide = () => {
                           </figure>
                         </div>
                         <div className="dis-row g-2">
-                          <figure className="block-image-figure intrinsic">
-                            <div className="image-block-wrapper preSlide">
-                              <div className="image-shape-container-element has-aspect-ratio">
+                          <figure>
+                            <div>
+                              <div className="image-shape-container-element">
                                 <img
                                   alt="The 30-foot scramble from the upper saddle."
                                   src={`${
@@ -627,19 +626,19 @@ const SneffelsGuide = () => {
                                 />
                               </div>
                             </div>
-                            <figcaption className="image-caption-wrapper">
+                            <figcaption>
                               <div className="image-caption">
-                                <p className="sqsrte-small preFade">
+                                <p>
                                   The 30-foot scramble from the upper saddle.
                                 </p>
                               </div>
                             </figcaption>
                           </figure>
-                          <div className="col col-6 span-6">
-                            <div className="block html-block block-html">
+                          <div className="col">
+                            <div className="block">
                               <div className="block-content">
-                                <div className="html-content">
-                                  <p className="preFade">
+                                <div>
+                                  <p>
                                     On the south side of the upper saddle looms
                                     a 30-foot scramble to the summit ridge. Many
                                     online resources suggest that this bit of
@@ -659,10 +658,10 @@ const SneffelsGuide = () => {
                                     equipment on your backpack banging into the
                                     rocks above you.
                                   </p>
-                                  <p className="preFade">
+                                  <p>
                                     <em>Be prepared for class 4 scrambling</em>.
                                   </p>
-                                  <p className="preFade">
+                                  <p>
                                     The party ahead chose to forgo this portion
                                     of the ascent by skinning climbers left out
                                     of the couloir about two-thirds the way up.
@@ -673,7 +672,7 @@ const SneffelsGuide = () => {
                                     their tracks, the snow on this variation was
                                     sun-baked and firm.
                                   </p>
-                                  <p className="preFade">
+                                  <p>
                                     I made my way to the top of the scramble
                                     while Evan stood clear of falling ice and
                                     choss. Once I gained the ridge, I proceeded
@@ -687,12 +686,12 @@ const SneffelsGuide = () => {
                                 </div>
                               </div>
                             </div>
-                            <div className="block image-block block-image text-ready">
+                            <div className="block">
                               <div className="block-content">
-                                <div className="image-block-outer-wrapper layout-caption-below design-layout-inline combination-animation-site-default individual-animation-site-default individual-text-animation-site-default">
-                                  <figure className="block-image-figure intrinsic">
-                                    <div className="image-block-wrapper preSlide">
-                                      <div className="image-shape-container-element has-aspect-ratio">
+                                <div>
+                                  <figure>
+                                    <div>
+                                      <div className="image-shape-container-element">
                                         <img
                                           alt="A view of the summit looking west from the top of the scramble."
                                           src={`${
@@ -701,9 +700,9 @@ const SneffelsGuide = () => {
                                         />
                                       </div>
                                     </div>
-                                    <figcaption className="image-caption-wrapper">
+                                    <figcaption>
                                       <div className="image-caption">
-                                        <p className="sqsrte-small preFade">
+                                        <p>
                                           A view of the summit looking west from
                                           the top of the scramble.
                                         </p>
@@ -717,7 +716,7 @@ const SneffelsGuide = () => {
                         </div>
                         <div className="dis-row g-2">
                           <div className="section-half">
-                            <p className="preFade">
+                            <p>
                               Upon reaching the summit, I noticed that the group
                               ahead of us had descended the south face of
                               Sneffels into the Birthday Chutes. Gazing down the
@@ -731,7 +730,7 @@ const SneffelsGuide = () => {
                               summit (approximately 10 feet from the top of the
                               rappel).
                             </p>
-                            <p className="preFade">
+                            <p>
                               Eager to get out of the wind, we spent little time
                               at the summit. Evan&nbsp;
                               <a
@@ -752,25 +751,25 @@ const SneffelsGuide = () => {
                             </p>
                           </div>
                           <div className="col section-half">
-                            <figure className="block-image-figure intrinsic">
+                            <figure>
                               <img
                                 alt="Evan navigating the outcropping."
                                 src={`${
                                   import.meta.env.BASE_URL
                                 }images/sneffels/mount-sneffels-summit-ridge-skiing.webp`}
                               />
-                              <figcaption className="image-caption-wrapper">
+                              <figcaption>
                                 <div className="image-caption">
-                                  <p className="sqsrte-small preFade">
+                                  <p>
                                     Evan navigates the outcropping to avoid the
                                     cornice on the adjacent side of the ridge.
                                   </p>
                                 </div>
                               </figcaption>
                             </figure>
-                            <figure className="block-image-figure intrinsic">
-                              <div className="image-block-wrapper preSlide">
-                                <div className="image-shape-container-element has-aspect-ratio">
+                            <figure>
+                              <div>
+                                <div className="image-shape-container-element">
                                   <img
                                     alt="a climber rappeling off mount sneffels"
                                     src={`${
@@ -785,9 +784,9 @@ const SneffelsGuide = () => {
                         <div className="vrt-spc"></div>
                         <div className="dis-row g-2">
                           <div className="section-half">
-                            <figure className="block-image-figure intrinsic">
-                              <div className="image-block-wrapper preSlide">
-                                <div className="image-shape-container-element has-aspect-ratio">
+                            <figure>
+                              <div>
+                                <div className="image-shape-container-element">
                                   <img
                                     alt="An image of the 100-foot rappel"
                                     src={`${
@@ -796,9 +795,9 @@ const SneffelsGuide = () => {
                                   />
                                 </div>
                               </div>
-                              <figcaption className="image-caption-wrapper">
+                              <figcaption>
                                 <div className="image-caption">
-                                  <p className="sqsrte-small preFade">
+                                  <p>
                                     The 100-foot rappel could be done with a 60m
                                     rope, but you’ll have a bit of steep down
                                     climbing to do. I have heard rumors of
@@ -810,10 +809,10 @@ const SneffelsGuide = () => {
                             </figure>
                           </div>
                           <div className="section-half dis-col">
-                            <p className="preFade">
+                            <p>
                               My lucky day - I go first!
                             </p>
-                            <p className="preFade">
+                            <p>
                               I made two&nbsp;
                               <a
                                 href="https://wyofile.com/what-is-ski-cutting-and-why-is-it-controversial/"
@@ -843,7 +842,7 @@ const SneffelsGuide = () => {
                               again, I think a straight shot would be reasonable
                               through the choke into a left turn.
                             </p>
-                            <p className="preFade">
+                            <p>
                               Once through the choke, I cut left into the
                               softer, sun-exposed snow. I relished as I cruised
                               through powder of brag-worthy quality for another
@@ -857,8 +856,8 @@ const SneffelsGuide = () => {
                               enjoyed another thousand feet of skiing into the
                               bowl below.
                             </p>
-                            <figure className="block-image-figure intrinsic">
-                              <div className="image-shape-container-element has-aspect-ratio">
+                            <figure>
+                              <div className="image-shape-container-element">
                                 <img
                                   alt="an image of the snake couloir"
                                   src={`${
@@ -868,7 +867,7 @@ const SneffelsGuide = () => {
                               </div>
                             </figure>
                             <div className="vrt-spc"></div>
-                            <figure className="block-image-figure intrinsic">
+                            <figure>
                               <img
                                 alt="an image from the bottom of the snake couloir"
                                 src={`${
@@ -879,9 +878,9 @@ const SneffelsGuide = () => {
                           </div>
                         </div>
                         <div className="vrt-spc"></div>
-                        <figure className="block-image-figure intrinsic">
-                          <div className="image-block-wrapper preSlide">
-                            <div className="image-shape-container-element has-aspect-ratio">
+                        <figure>
+                          <div>
+                            <div className="image-shape-container-element">
                               <img
                                 alt="Evan gazing back at the route mountain"
                                 src={`${
@@ -890,9 +889,9 @@ const SneffelsGuide = () => {
                               />
                             </div>
                           </div>
-                          <figcaption className="image-caption-wrapper">
+                          <figcaption>
                             <div className="image-caption">
-                              <p className="sqsrte-small preFade">
+                              <p>
                                 Evan gazing back at the route. We totaled 3000
                                 vertical feet of skiing from the top of the
                                 couloir to this point.
@@ -902,7 +901,7 @@ const SneffelsGuide = () => {
                         </figure>
                         <div className="dis-row g-2">
                           <div className="section-half">
-                            <p className="preFade">
+                            <p>
                               Celebration ensued before a rapid transition. We
                               were eight hours into our day and still far from
                               the end on account of our decision to ski far into
@@ -912,7 +911,7 @@ const SneffelsGuide = () => {
                               eventually arrived at the base of the slope that
                               would return us to the lower saddle.
                             </p>
-                            <p className="preFade">
+                            <p>
                               Exhaustion kicked in by the time we started our
                               switchbacks towards the lower saddle. As we
                               alternated breaking trail, I found myself counting
@@ -925,9 +924,9 @@ const SneffelsGuide = () => {
                             </p>
                           </div>
                           <div className="section-half">
-                            <figure className="block-image-figure intrinsic">
-                              <div className="image-block-wrapper preSlide">
-                                <div className="image-shape-container-element has-aspect-ratio">
+                            <figure>
+                              <div>
+                                <div className="image-shape-container-element">
                                   <img
                                     alt="an image of the route to the lower saddle is to the right"
                                     src={`${
@@ -936,9 +935,9 @@ const SneffelsGuide = () => {
                                   />
                                 </div>
                               </div>
-                              <figcaption className="image-caption-wrapper">
+                              <figcaption>
                                 <div className="image-caption">
-                                  <p className="sqsrte-small preFade">
+                                  <p>
                                     The route to the lower saddle is to the
                                     right, behind the ridge just beyond Evan.
                                   </p>
@@ -949,7 +948,7 @@ const SneffelsGuide = () => {
                         </div>
                         <div className="dis-row g-2">
                           <div className="section-half">
-                            <p className="preFade">
+                            <p>
                               I reached the Wheel of Fortune Mine from the pit
                               toilets without putting my skins on by staying
                               high and skier's left. The remainder of the route
@@ -957,13 +956,13 @@ const SneffelsGuide = () => {
                               taking advantage of long sections of snow
                               alongside the road to ski.
                             </p>
-                            <p className="preFade">
+                            <p>
                               In conclusion, the route totaled 15.5 miles and
                               7,168 vertical feet over 13 hours and 50 minutes.
                               Here's a short video of footage I gathered along
                               the way.
                             </p>
-                            <p className="preFade">
+                            <p>
                               Thanks for taking the time to read. Enjoy the
                               video below if you're looking for more visual
                               detail from our trip. Please share this guide with
@@ -972,9 +971,9 @@ const SneffelsGuide = () => {
                             </p>
                           </div>
                           <div className="section-half">
-                            <figure className="block-image-figure intrinsic">
-                              <div className="image-block-wrapper preSlide">
-                                <div className="image-shape-container-element has-aspect-ratio">
+                            <figure>
+                              <div>
+                                <div className="image-shape-container-element">
                                   <img
                                     alt="Skiers Ascending to the lower saddle"
                                     src={`${
@@ -983,9 +982,9 @@ const SneffelsGuide = () => {
                                   />
                                 </div>
                               </div>
-                              <figcaption className="image-caption-wrapper">
+                              <figcaption>
                                 <div className="image-caption">
-                                  <p className="sqsrte-small preFade">
+                                  <p>
                                     Ascending to the lower saddle.
                                   </p>
                                 </div>
@@ -1008,8 +1007,8 @@ const SneffelsGuide = () => {
                           allowFullScreen
                         ></iframe>
                       </div>
-                      <div className="col col-2 span-2">
-                        <div className="block website-component-block block-website-component sized vsize-1">
+                      <div className="col">
+                        <div className="block">
                           <div className="block-content"></div>
                         </div>
                       </div>

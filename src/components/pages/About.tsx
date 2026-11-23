@@ -2,19 +2,26 @@ import { Link } from "react-router-dom";
 import "../../styles/About.css";
 import headerPhoto from "/images/bio-pic.webp";
 import NewsletterCTA from "../NewsletterCTA";
+import SEO from "../SEO";
 
 const About = () => {
   return (
     <section className="about-page">
+      <SEO
+        title="About Joe Napolitan | JoeTracks"
+        description="Fifteen years of ski patrol, wilderness guiding, and outdoor education behind the field-researched guides and planning tools on JoeTracks."
+        canonical="https://joetracks.com/about"
+        image="https://joetracks.com/images/og-image.png"
+      />
       <div className="about-inner">
         <h1>About</h1>
 
         <p className="about-intro">
           JoeTracks offers practical guides and planning tools designed to
           simplify real-world outdoor decisions. While much of the content
-          focuses on the Northern Michigan, the underlying principles remain
+          focuses on Northern Michigan, the underlying principles remain
           useful anywhere: prepare well, reduce unnecessary complexity, and
-          execute with greater confidence outside.
+          get outside with more confidence.
         </p>
 
         <section className="about-section meet-joe">
@@ -25,13 +32,13 @@ const About = () => {
 
             <div className="meet-joe-copy">
               <p>
-                I'm Joe Napolitan. My background spans years of professional
-                work in outdoor environments, including ski patrol, avalanche
-                hazard reduction, backcountry guiding, and wilderness education.
-                My personal experience includes thru-hiking, bike touring,
-                ski-mountaineering and paddling expeditions, and alpine climbing
-                — all of which inform the practical, decision-focused approach
-                behind my guides and tools.
+                I'm Joe Napolitan. I've spent fifteen years working
+                professionally in the outdoors: ski patrol and avalanche route
+                leadership at Wolf Creek Ski Area in Colorado, wilderness field
+                guiding, sea kayak instruction, and outdoor education.
+                My personal experience includes <Link to="/expeditions/appalachian-trail-2014">thru-hiking</Link>,{" "}
+                <Link to="/expeditions/american-west-2013">bike touring</Link>,
+                ski-mountaineering and paddling expeditions, and alpine climbing, all of which inform the guides and tools here.
               </p>
               <p>
                 My experience in both the outdoor and tech industries shaped the
@@ -43,7 +50,7 @@ const About = () => {
                 here.
               </p>
               <p>
-                My mission with this project to protect wild places in the Great
+                My mission with this project is to protect wild places in the Great
                 Lakes Region by increasing access to them. I believe that by
                 building a connection with nature, individuals are more inclined
                 to protect natural resources and enjoy them responsibly. My
@@ -69,16 +76,13 @@ const About = () => {
           <ul>
             <li>
               <strong> American Mountain Guides Association</strong> |
-              Apprentice Alpine Guide
+              Alpine Skills Course
             </li>
             <li>
               <strong>
                 American Institute for Avalanche Research and Education
               </strong>{" "}
               | Pro Level I
-            </li>
-            <li>
-              <strong>Leave No Trace (LNT)</strong> | Master Educator
             </li>
             <li>
               <strong> National Outdoor Leadership School</strong> | Wilderness
@@ -96,18 +100,54 @@ const About = () => {
         </section>
 
         <section className="about-section">
-          <h2>What You&apos;ll Find Here</h2>
+          <h2>Field Archive</h2>
 
-          <ul>
-            <li>
-              Clear, experience-driven guides for specific routes and trip types
-            </li>
-            <li>
-              Practical planning tools for conditions, logistics, and timing
-            </li>
-            <li>Relevant notes built from experience in the field</li>
-          </ul>
+          <p className="about-section-lead">
+            Two trips I wrote up as they happened, posted from the trail and the
+            road, and since moved here from the blogs they first appeared on.
+          </p>
+
+          <div className="archive-list">
+            <article className="archive-card">
+              <Link to="/expeditions/appalachian-trail-2014" className="archive-card-media">
+                <img
+                  src="/images/expeditions/appalachian-trail-2014/img_20140607_072802-thumb.webp"
+                  alt="Morning light on the Appalachian Trail"
+                  loading="lazy"
+                />
+              </Link>
+              <h3>Thru-Hiking the Appalachian Trail, 2014</h3>
+              <p>
+                Four months and twenty days northbound, Springer Mountain,
+                Georgia to Mount Katahdin, Maine. Twenty-eight dispatches
+                written on trail.
+              </p>
+              <Link to="/expeditions/appalachian-trail-2014" className="about-cta">
+                Follow the Hike
+              </Link>
+            </article>
+
+            <article className="archive-card">
+              <Link to="/expeditions/american-west-2013" className="archive-card-media">
+                <img
+                  src="/images/expeditions/american-west-2013/wpid-img_20130427_0947081-thumb.webp"
+                  alt="Southern Utah canyon country from the bike tour"
+                  loading="lazy"
+                />
+              </Link>
+              <h3>American West Bike Tour, 2013</h3>
+              <p>
+                Solo and self-supported from Breckenridge to the Pacific,
+                through the San Luis Valley, southern Utah, and the Sierra
+                Nevada. Twenty-three dispatches.
+              </p>
+              <Link to="/expeditions/american-west-2013" className="about-cta">
+                Follow the Ride
+              </Link>
+            </article>
+          </div>
         </section>
+
 
         <div className="about-cta-wrap">
           <Link to="/guides" className="about-cta">

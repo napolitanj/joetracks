@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../../styles/ToolsIndex.css";
+import SEO from "../SEO";
 
 type ToolItem = {
   title: string;
@@ -34,6 +35,12 @@ const tools: ToolItem[] = [
 const ToolsIndex = () => {
   return (
     <section className="tools-index">
+      <SEO
+        title="Outdoor Planning Tools for Michigan | JoeTracks"
+        description="Live river conditions, Michigan ski forecasts, and trip-planning tools built for real decisions. No apps to download, no accounts to make."
+        canonical="https://joetracks.com/tools"
+        image="https://joetracks.com/images/og-image.png"
+      />
       <div className="tools-index-inner">
         <h1>Tools</h1>
         <p className="tools-index-intro">

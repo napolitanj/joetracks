@@ -43,24 +43,40 @@
 }
 
 .meet-joe-content {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  align-items: center;
+  /* Block, not flex. A floated portrait lets the copy wrap beside it and then
+     continue underneath, so there is no tall empty column when the text runs
+     longer than the photo. The old flex row centred a fixed 18rem circle in a
+     column that grew with the copy, which left dead space above and below it
+     between roughly 720px and 1000px. */
+  display: block;
+}
+
+.meet-joe-content::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .meet-joe-photo {
-  width: 18rem;
-  height: 18rem;
+  float: left;
+  /* Scales down through the midrange instead of holding 18rem and squeezing
+     the copy into a narrow column. */
+  width: clamp(9rem, 22vw, 18rem);
+  height: clamp(9rem, 22vw, 18rem);
+  /* Wrap to the circle rather than its bounding box. */
+  shape-outside: circle(50%);
+  shape-margin: 1rem;
+  margin: 0.35rem 1.5rem 1rem 0;
   object-fit: cover;
   border-radius: 999rem;
   border: 0.0625rem solid var(--border-color);
-  flex-shrink: 0;
 }
 
 .meet-joe-copy {
-  flex: 1;
-  min-width: 0;
+  /* Must stay block: a flex or grid container forms a new block formatting
+     context, which would sit beside the float as a rectangle instead of
+     wrapping around it. */
+  display: block;
 }
 
 .meet-joe-content p {
@@ -113,10 +129,90 @@
   background: transparent;
 }
 
+.about-section-lead {
+  color: var(--muted-text);
+  line-height: 1.65;
+  max-width: 70ch;
+}
+
+/* Field Archive cards. White rather than --card-bg, because the surrounding
+   .about-section already uses that and same-on-same reads flat. */
+.archive-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0.9rem;
+  align-items: stretch;
+}
+
+.archive-card {
+  background: #ffffff;
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.8rem;
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  height: 100%;
+}
+
+.archive-card-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  border: 0.0625rem solid var(--border-color);
+  background: #eceae5;
+}
+
+.archive-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.archive-card-media:hover img {
+  transform: scale(1.03);
+}
+
+.archive-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.archive-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--muted-text);
+  margin: 0;
+  flex-grow: 1;
+}
+
+.archive-card .about-cta {
+  margin-top: auto;
+  align-self: flex-start;
+  font-size: 0.875rem;
+}
+
 @media (max-width: 720px) {
-  .meet-joe-content {
-    flex-direction: column;
-    align-items: center;
+  .archive-list {
+    grid-template-columns: 1fr;
+  }
+
+  .meet-joe-photo {
+    float: none;
+    shape-outside: none;
+    display: block;
+    width: 12rem;
+    height: 12rem;
+    margin: 0 auto 1rem;
   }
 
   .about-section h2 {

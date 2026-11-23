@@ -57,7 +57,7 @@ export default function RiverTracker() {
 
   const emptyMessage =
     activeTab === "★ Favorites" && !isSearching
-      ? "No favorites yet — tap the star next to any river to add it here."
+      ? "No favorites yet. Tap the star next to any river to add it here."
       : "No rivers found.";
 
   return (
@@ -82,7 +82,7 @@ export default function RiverTracker() {
             "@type": "WebApplication",
             name: "Michigan River Tracker",
             description:
-              "Live river conditions tool for Michigan paddlers — flow rates and gauge heights from USGS Water Services, compared to historical daily averages.",
+              "Live river conditions tool for Michigan paddlers: flow rates and gauge heights from USGS Water Services, compared to historical daily averages.",
             url: "https://joetracks.com/river-conditions",
             applicationCategory: "SportsApplication",
             operatingSystem: "Web",
@@ -132,7 +132,7 @@ export default function RiverTracker() {
           <h1 className="tool-hero-title">Michigan River Conditions</h1>
           <p className="tool-hero-subhead">
             Michigan River conditions built from live flow and gauge height
-            readings across the state — pulled directly from USGS Water
+            readings across the state, pulled directly from USGS Water
             Services.
           </p>
           <ul className="tool-cred">
@@ -185,7 +185,7 @@ export default function RiverTracker() {
             />
             {isSearching && (
               <p className="rt-search-hint">
-                Searching all regions — clear to return to{" "}
+                Searching all regions. Clear to return to{" "}
                 <strong>{activeTab}</strong>
               </p>
             )}

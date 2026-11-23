@@ -1,16 +1,24 @@
 import "../styles/SoftwareTechSupport.css";
 import { Link } from "react-router-dom";
+import SEO from "./SEO";
 
 export default function SoftwareTechSupport() {
   return (
     <>
+      <SEO
+        title="Software & Tech Support | Joe Napolitan"
+        description="Full-stack tools, community apps, and portfolio websites, built with a focus on polished UX and reliable backend systems."
+        canonical="https://joetracks.com/softwaretechsupport"
+        robots="noindex,follow"
+        image="https://joetracks.com/images/og-image.png"
+      />
       <Link to="/portfolio">⇦ Back to Portfolio Page</Link>
       <section className="software-page">
         {/* Hero Section */}
         <header className="software-hero">
           <h1>Software & Tech Support</h1>
           <p>
-            I design and build real, working tools — everything from full-stack
+            I design and build real, working tools, everything from full-stack
             community apps to portfolio websites. I focus on polished UX,
             backend systems focused on speed and reliability, and making
             technology easy for people to use. Several of the projects below

@@ -1,5 +1,6 @@
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import "../../styles/Contact.css";
+import SEO from "../SEO";
 
 type FormValues = {
   name: string;
@@ -87,6 +88,12 @@ const Contact = () => {
 
   return (
     <section className={`contact-page ${fadeIn ? "show" : ""}`}>
+      <SEO
+        title="Contact | JoeTracks"
+        description="Questions about the guides, feedback on the tools, collaboration ideas, or corrections. Get in touch."
+        canonical="https://joetracks.com/contact"
+        image="https://joetracks.com/images/og-image.png"
+      />
       <div className="contact-inner">
         <h1>Contact</h1>
         <p className="contact-subhead">
@@ -106,8 +113,8 @@ const Contact = () => {
             <li>Edits, corrections, or updates to published guides.</li>
           </ul>
           <p className="contact-expectation">
-            If you're building something useful — a tool, guide, small brand, or
-            project — and are interested in building an app, website, or YouTube
+            If you're building something useful (a tool, guide, small brand, or
+            project) and are interested in building an app, website, or YouTube
             channel, I'm always open to sharing insights and interesting
             collaborations. Email me with details about your project and what
             you need help with.

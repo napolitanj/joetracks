@@ -107,7 +107,7 @@ export default function MichiganSkiTracker() {
             <h1 className="tool-hero-title">Michigan Ski Tracker</h1>
             <p className="tool-hero-subhead">
               Projected 24 & 48-hour snowfall totals for every ski area in
-              Michigan — built to point skiers to the best conditions.
+              Michigan, built to point skiers to the best conditions.
             </p>
             <ul className="tool-cred">
               <li>

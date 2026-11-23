@@ -42,7 +42,7 @@ const SleepingBearGuide = () => {
     <>
       <SEO
         title="Skiing Sleeping Bear Dunes: Shauger Hill Field Guide | JoeTracks"
-        description="Field-tested guide to skiing Shauger Hill at Sleeping Bear Dunes National Lakeshore — conditions assessment, gear list, approach beta, and a full trip report."
+        description="Field-tested guide to skiing Shauger Hill at Sleeping Bear Dunes National Lakeshore: conditions assessment, gear list, approach beta, and a full trip report."
         canonical="https://joetracks.com/ski-sleeping-bear-dunes"
         image="https://joetracks.com/images/ski-sleeping-bear/ski-sleeping-bear-banner.png"
         ogType="article"
@@ -62,7 +62,7 @@ const SleepingBearGuide = () => {
             "@type": "Article",
             headline: "Skiing Sleeping Bear Dunes: Shauger Hill Field Guide",
             description:
-              "A detailed guide to skiing Shauger Hill at Sleeping Bear Dunes National Lakeshore — conditions assessment tools, gear list, approach and return routes, and a full trip report from March 2026.",
+              "A detailed guide to skiing Shauger Hill at Sleeping Bear Dunes National Lakeshore: conditions assessment tools, gear list, approach and return routes, and a full trip report from March 2026.",
             image:
               "https://joetracks.com/images/ski-sleeping-bear/ski-sleeping-bear-banner.png",
             author: {
@@ -111,8 +111,8 @@ const SleepingBearGuide = () => {
       />
 
       <div className="guide sleeping-bear-guide">
-        <main className="container" id="page" role="main">
-          <article className="sections">
+        <main id="page" role="main">
+          <article>
             <Reveal delay={0}>
               <section className="hero sleeping-bear-hero sleeping-bear-bg">
                 <div className="hero-text">
@@ -150,7 +150,7 @@ const SleepingBearGuide = () => {
                       that produce dense snow. The centerpiece is the 450-foot
                       descent from Shauger Hill to Lake Michigan. Connecting
                       turns from top to bottom takes specific gear, planning,
-                      and rare conditions — this guide covers all of it.
+                      and rare conditions. This guide covers all of it.
                     </p>
                     <div className="sleeping-bear-top-meta">
                       <p className="link-block">
@@ -176,7 +176,7 @@ const SleepingBearGuide = () => {
             </Reveal>
             <Reveal variant="up" delay={140}>
               <section className="content-wrapper disclaimer">
-                <p className="preFade">
+                <p>
                   Backcountry skiing is dangerous. Various hazards and remote
                   travel elevate the consequences of injury or equipment
                   failure, and can put both the environment and rescuers at
@@ -184,7 +184,7 @@ const SleepingBearGuide = () => {
                   conditioning, and gear to engage in this activity safely and
                   sustainably.
                 </p>
-                <p className="preFade">
+                <p>
                   <em>
                     JoeTracks is not responsible for what any individual(s)
                     might choose to do with this information.
@@ -197,16 +197,15 @@ const SleepingBearGuide = () => {
               <section className="content-wrapper">
                 <div className="dis-row g-2">
                   <div className="section-half">
-                    <div className="layout grid-12 columns-12">
-                      <figure className="block-image-figure intrinsic">
+                    <div>
+                      <figure>
                         <img
                           alt="a view of Sleeping Bear Dunes from the Empire Buffs Trail"
-                          className="loaded"
                           src="/images/ski-sleeping-bear/empire-bluffs-view.png"
                         />
-                        <figcaption className="image-caption-wrapper">
+                        <figcaption>
                           <div className="image-caption">
-                            <p className="sqsrte-small preFade">
+                            <p>
                               A view of Shauger Hill from the Empire Bluffs
                               Trail in the summer.
                             </p>
@@ -214,12 +213,12 @@ const SleepingBearGuide = () => {
                         </figcaption>
                       </figure>
                     </div>
-                    <div id="rules" className="block html-block block-html">
-                      <h4 className="preFade">
+                    <div id="rules" className="block">
+                      <h4>
                         <strong>Rules, Regulations, and Etiquette</strong>
                       </h4>
 
-                      <p className="preFade">
+                      <p>
                         Skiing is permitted within the Lakeshore where snow
                         cover exists.{" "}
                         <strong>
@@ -229,12 +228,12 @@ const SleepingBearGuide = () => {
                         , and can be acquired at the Philip A. Hart Visitor
                         Center in Empire.
                       </p>
-                      <p className="preFade">
+                      <p>
                         The Sleeping Bear Dunes is a fragile ecosystem. Safety,
                         the integrity of the ecosystem, and respect for park
                         regulations must be prioritized.
                       </p>
-                      <p className="preFade">
+                      <p>
                         <em>
                           Please be a steward of these public lands. Failure to
                           do so compromises both the integrity of the
@@ -247,48 +246,48 @@ const SleepingBearGuide = () => {
                         </em>
                       </p>
                       <div id="gear-list">
-                        <h4 className="preFade">
+                        <h4>
                           <strong>Gear</strong>
                         </h4>
                         <ul>
                           <li>
-                            <p className="preFade">
+                            <p>
                               National Park Pass (required for access, even when
                               staff is not present)
                             </p>
                           </li>
                           <li>
-                            <p className="preFade">
+                            <p>
                               skis, boots, climbing skins, and poles
                             </p>
                           </li>
                           <li>
-                            <p className="preFade">
+                            <p>
                               probe (recommended for depth assessment only)
                             </p>
                           </li>
                           <li>
-                            <p className="preFade">20–30L ski pack</p>
+                            <p>20–30L ski pack</p>
                           </li>
                           <li>
-                            <p className="preFade">1 liter of water</p>
+                            <p>1 liter of water</p>
                           </li>
                           <li>
-                            <p className="preFade">skinning gloves</p>
+                            <p>skinning gloves</p>
                           </li>
                           <li>
-                            <p className="preFade">skiing gloves</p>
+                            <p>skiing gloves</p>
                           </li>
                           <li>
-                            <p className="preFade">headlamp</p>
+                            <p>headlamp</p>
                           </li>
                           <li>
-                            <p className="preFade">
+                            <p>
                               skin wax (heavy snow will glob above 32°F)
                             </p>
                           </li>
                           <li>
-                            <p className="preFade">
+                            <p>
                               charged smartphone with maps downloaded on{" "}
                               <a
                                 href="https://caltopo.com"
@@ -308,10 +307,10 @@ const SleepingBearGuide = () => {
                             </p>
                           </li>
                           <li>
-                            <p className="preFade">sunscreen</p>
+                            <p>sunscreen</p>
                           </li>
                           <li>
-                            <p className="preFade">
+                            <p>
                               red 12–36°F ski wax (recommended for warm storms)
                             </p>
                           </li>
@@ -319,25 +318,24 @@ const SleepingBearGuide = () => {
                       </div>
                     </div>
                     <NewsletterCapture />
-                    <div className="block html-block block-html">
+                    <div className="block">
                       <div className="block-content">
                         <div id="interactive-map" className="dis-col">
-                          <h4 className="preFade">
+                          <h4>
                             <strong>Interactive Map</strong>
                           </h4>
                           <a
                             href="https://caltopo.com/m/1CRAHUN#"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className=""
                           >
-                            <figure className="block-image-figure intrinsic">
+                            <figure>
                               <img
                                 alt="A map of skiing areas near sleeping bear"
                                 src="/images/ski-sleeping-bear/overview-map.png"
                               />
                               <div className="image-caption">
-                                <p className="sqsrte-small preFade">
+                                <p>
                                   Click the preview image above to view the
                                   interactive CalTopo map.
                                 </p>
@@ -351,10 +349,9 @@ const SleepingBearGuide = () => {
                             zones will open a window offering notes, images, and
                             terrain statistics. See the{" "}
                             <a
-                              href="https://joetracks.com/caltopo-guide"
+                              href="/caltopo-guide"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className=""
                             >
                               Trip Planning With CalTopo Guide
                             </a>{" "}
@@ -366,20 +363,20 @@ const SleepingBearGuide = () => {
                     </div>
                   </div>
                   <div className="section-half">
-                    <div className="block html-block block-html">
+                    <div className="block">
                       <div className="block-content">
                         <div id="beta" className="dis-col">
-                          <h4 className="preFade">
+                          <h4>
                             <strong>Beta</strong>
                           </h4>
-                          <p className="preFade">
+                          <p>
                             <strong>Parking and access:</strong>
                           </p>
-                          <p className="preFade">
+                          <p>
                             The best access for Shauger Hill is the North Bar
                             Lake parking lot. After a major storm, the lot will
                             likely be inaccessible, requiring you to park on
-                            North Bar Lake Road — after the March 2026 storm,
+                            North Bar Lake Road. After the March 2026 storm,
                             even that road took a day to clear. Alternative
                             access points are the Shauger Hill Trailhead and
                             Windy Moraine Trailhead, both requiring a much
@@ -388,52 +385,52 @@ const SleepingBearGuide = () => {
                             Don't block driveways that plows will continue
                             working to clear.
                           </p>
-                          <p className="preFade">
+                          <p>
                             Private property exists along the Lakeshore between
                             the dunes and North Bar Lake. Respect private
                             property, know where it is by reviewing the map, and
                             take care not to trespass.
                           </p>
-                          <p className="preFade">
+                          <p>
                             <strong>Approach and return route:</strong>
                           </p>
-                          <p className="preFade">
+                          <p>
                             From North Bar Lake, follow North Bar Lake Road
                             north to Shauger Hill Road (closed in winter).
                             Follow the road up the gully to its apex where the
                             road makes a distinct right turn east. Roughly 100
                             feet after, you'll see signage on your left and a
-                            closed road — follow that path northwest 0.1 miles
+                            closed road. Follow that path northwest 0.1 miles
                             to Pierce Stocking Scenic Drive. Head left, west, to
                             the Dunes Overlook. Total approach from the lot is
                             roughly 1.5 miles and 451 vertical feet.
                           </p>
-                          <p className="preFade">
+                          <p>
                             To return to North Bar Lake, the simplest route is
                             the 1.3-mile walk along the lakeshore. An
                             alternative option is to ascend the South Gully back
                             to Pierce Stocking Scenic Drive, and follow your
                             ascent route back to your car.
                           </p>
-                          <p className="preFade">
+                          <p>
                             <strong>Assessing conditions:</strong>
                           </p>
-                          <p className="preFade">
+                          <p>
                             Good conditions for skiing the dunes are rare, and
                             assessing snowfall remotely before committing to the
-                            drive out is highly recommended. Powdery snow — even
-                            when deep — is scoured off the dunes by wind and
+                            drive out is highly recommended. Powdery snow, even
+                            when deep, is scoured off the dunes by wind and
                             invites collisions with objects below the surface.
                             Dense snow creates a thicker base after
                             consolidation and lets skiers float on top. I watch
                             for at least 2 inches of SWE on the surface with a
                             snow density at or above 15%.
                           </p>
-                          <p className="preFade">
+                          <p>
                             For snowpack fundamentals and a remote assessment
                             toolkit, see the{" "}
                             <a
-                              href="https://joetracks.com/remote-forecasting-tools"
+                              href="/remote-forecasting-tools"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -448,14 +445,14 @@ const SleepingBearGuide = () => {
                             >
                               Maple City weather station
                             </a>{" "}
-                            — 10 miles from the Lakeshore — is the most reliable
+                            (10 miles from the Lakeshore) is the most reliable
                             reference. Pull the daily data report for the month,
                             set your date range, and look for your storm window.
                           </p>
-                          <p className="preFade">
+                          <p>
                             <strong>Bathrooms, water, and services:</strong>
                           </p>
-                          <p className="preFade">
+                          <p>
                             The best stop for gas, bathrooms, water, and
                             supplies is the Empire EZ Mart at the intersection
                             of M22 and M72. Pit toilets are open at the North
@@ -465,10 +462,10 @@ const SleepingBearGuide = () => {
                             everything you'll need for your trip, and pack
                             everything out.
                           </p>
-                          <p className="preFade">
+                          <p>
                             <strong>Staying safe:</strong>
                           </p>
-                          <p className="preFade">
+                          <p>
                             Traveling with a partner is highly recommended.
                             Leave a route plan with a trusted person before you
                             go. Include a point in time they should be concerned
@@ -477,12 +474,12 @@ const SleepingBearGuide = () => {
                             coverage is unreliable, and conditions can change
                             quickly after a storm.
                           </p>
-                          <p className="preFade">
+                          <p>
                             While avalanches in this region are unlikely, they
                             have been observed. Both burial and being swept into
                             "terrain traps" including Lake Michigan are real
                             risks. Knowledge of avalanche hazards and rescue
-                            gear are both essential to safe backcountry skiing —{" "}
+                            gear are both essential to safe backcountry skiing.{" "}
                             <strong>if in doubt, do not go.</strong>
                           </p>
                         </div>
@@ -491,7 +488,7 @@ const SleepingBearGuide = () => {
                   </div>
                 </div>
                 <div className="dis-row g-2">
-                  <figure className="block-image-figure intrinsic">
+                  <figure>
                     <div className="overview-carousel">
                       <button
                         className="carousel-btn carousel-btn--prev"
@@ -534,16 +531,16 @@ const SleepingBearGuide = () => {
                       </div>
                     </div>
 
-                    <figcaption className="image-caption-wrapper">
+                    <figcaption>
                       <div className="image-caption">
-                        <p className="sqsrte-small preFade">
+                        <p>
                           {overviewImages[overviewIndex].caption}
                         </p>
                       </div>
                     </figcaption>
                   </figure>
                 </div>
-                <div className="block horizontalrule-block block-horizontalrule">
+                <div className="block horizontalrule-block">
                   <div className="block-content">
                     <hr />
                   </div>
@@ -551,14 +548,14 @@ const SleepingBearGuide = () => {
               </section>
             </Reveal>
             <Reveal variant="up" delay={260}>
-              <section id="trip-report" className="page-section">
-                <div className="section-border">
-                  <div className="section-background"></div>
+              <section id="trip-report">
+                <div>
+                  <div></div>
                 </div>
                 <div className="content-wrapper">
-                  <div className="content">
+                  <div>
                     <div className="row row">
-                      <div className="col col-12 span-12">
+                      <div className="col">
                         <h2 className="section-header">
                           Skiing Sleeping Bear Dunes: Shauger Hill Trip Report
                         </h2>
@@ -566,16 +563,16 @@ const SleepingBearGuide = () => {
                         {/* ── Row 1: Day 1 setup ── text left, road image right */}
                         <div className="dis-row g-2">
                           <div className="dis-col section-half">
-                            <p className="preFade">
+                            <p>
                               I spent Monday evening monitoring snowfall data
                               from the NOHRSC and the Maple City weather
                               station. For the first time all winter, storm
-                              totals were favoring Leelanau County — including
+                              totals were favoring Leelanau County, including
                               the Lakeshore. Sleeping Bear Dunes went from bare
                               ground to 28 inches of snow in less than 36 hours
                               at roughly 15% SWE.
                             </p>
-                            <p className="preFade">
+                            <p>
                               On Tuesday, I drove to work with my equipment
                               loaded in the car, hopeful the county's plows
                               could catch up. By the end of the workday, roads
@@ -584,9 +581,9 @@ const SleepingBearGuide = () => {
                               Lake Road to still be unplowed, but it was
                               well-cleared all the way to Larahr Road.
                             </p>
-                            <p className="preFade">
+                            <p>
                               I parked on the west side of the road, about 50
-                              feet south of Larahr Road — far enough to avoid
+                              feet south of Larahr Road, far enough to avoid
                               blocking any plows sent to clear the path to the
                               North Bar Lake parking lot.
                             </p>
@@ -596,9 +593,9 @@ const SleepingBearGuide = () => {
                               alt="a seasonal road covered in snow"
                               src="/images/ski-sleeping-bear/shauger-hill-road.png"
                             />
-                            <figcaption className="image-caption-wrapper">
+                            <figcaption>
                               <div className="image-caption">
-                                <p className="sqsrte-small preFade">
+                                <p>
                                   North Bar Lake Road transitions into the
                                   seasonal Shauger Hill Road just north of the
                                   parking lot. Downed trees may be present until
@@ -610,11 +607,11 @@ const SleepingBearGuide = () => {
                         </div>
 
                         {/* ── Full-width approach text ── */}
-                        <div className="block html-block block-html">
+                        <div className="block">
                           <div className="block-content">
-                            <div className="html-content">
-                              <p className="preFade">
-                                I skinned along Shauger Hill Road — closed in
+                            <div>
+                              <p>
+                                I skinned along Shauger Hill Road: closed in
                                 winter, no signs of other travel, snow depth a
                                 full two feet from the storm. Route-finding was
                                 straightforward: stick to the road and navigate
@@ -624,10 +621,10 @@ const SleepingBearGuide = () => {
                                 from the road for 0.1 miles to Pierce Stocking
                                 Scenic Drive (closed in the winter).
                               </p>
-                              <p className="preFade">
+                              <p>
                                 Another 0.75 miles and 116 vertical feet
-                                northwest along the drive — past the North Bar
-                                Lake Overlook — led me to the Sleeping Bear
+                                northwest along the drive, past the North Bar
+                                Lake Overlook, led me to the Sleeping Bear
                                 Dunes Overlook parking area. Just beyond that
                                 lies "The 450," a large, steep dune descending
                                 into Lake Michigan.
@@ -638,18 +635,18 @@ const SleepingBearGuide = () => {
 
                         {/* ── Row 2: Day 1 descent ── dune image left, text right */}
                         <div className="dis-row g-2">
-                          <figure className="block-image-figure section-half intrinsic">
-                            <div className="image-block-wrapper preSlide">
-                              <div className="image-shape-container-element has-aspect-ratio">
+                          <figure className="section-half">
+                            <div>
+                              <div className="image-shape-container-element">
                                 <img
                                   alt="a view of a snow covered sand dune"
                                   src="/images/ski-sleeping-bear/450-dune.png"
                                 />
                               </div>
                             </div>
-                            <figcaption className="image-caption-wrapper">
+                            <figcaption>
                               <div className="image-caption">
-                                <p className="sqsrte-small preFade">
+                                <p>
                                   A view of "The 450" from the lakeshore. I
                                   navigated thin snow at the bottom by
                                   traversing through patches of coverage on the
@@ -659,7 +656,7 @@ const SleepingBearGuide = () => {
                             </figcaption>
                           </figure>
                           <div className="section-half">
-                            <p className="preFade">
+                            <p>
                               Peaking over the crest of the dune toward Lake
                               Michigan, it looked viable to ski the entire pitch
                               top to bottom. The snow was firm and chalky, but
@@ -668,10 +665,10 @@ const SleepingBearGuide = () => {
                               through dry patches, but I made it to the lake
                               without removing my skis.
                             </p>
-                            <p className="preFade">
+                            <p>
                               Intending to return the next day, I hiked south to
                               North Bar Lake in just my ski boots. The sand was
-                              as firm as concrete after the storm — skinning
+                              as firm as concrete after the storm. Skinning
                               along the icy shore would have been more trouble
                               than it was worth.
                             </p>
@@ -681,7 +678,7 @@ const SleepingBearGuide = () => {
                         {/* ── Row 3: Day 2 ── text left, two stacked images right */}
                         <div className="dis-row g-2">
                           <div className="section-half">
-                            <p className="preFade">
+                            <p>
                               The next two days were streamlined by the existing
                               skin track. Twenty minutes from the car to the
                               transition point at the Overlook felt trivial
@@ -691,22 +688,22 @@ const SleepingBearGuide = () => {
                               to the ridge. I was able to transition to skins,
                               climb back to the ridge, transition back, and ski
                               to the bottom as a full circuit in just over 30
-                              minutes — suggesting that roughly 1,000 vertical
+                              minutes, suggesting that roughly 1,000 vertical
                               feet of skiing per hour is likely possible for the
                               highly motivated.
                             </p>
                           </div>
                           <div className="section-half trip-report-stacked-images">
-                            <figure className="block-image-figure intrinsic">
+                            <figure>
                               <img
                                 alt="a skier hiking uphill through a forest with a lake behind him"
                                 src="/images/ski-sleeping-bear/ascent-route.png"
                               />
-                              <figcaption className="image-caption-wrapper">
+                              <figcaption>
                                 <div className="image-caption">
-                                  <p className="sqsrte-small preFade">
+                                  <p>
                                     The gully near the southern terminus of the
-                                    dunes — a clean circuit back to the ridge.
+                                    dunes, a clean circuit back to the ridge.
                                   </p>
                                 </div>
                               </figcaption>
@@ -721,9 +718,9 @@ const SleepingBearGuide = () => {
                               alt="a skier points to a ridge with his pole"
                               src="/images/ski-sleeping-bear/gully-access.png"
                             />
-                            <figcaption className="image-caption-wrapper">
+                            <figcaption>
                               <div className="image-caption">
-                                <p className="sqsrte-small preFade">
+                                <p>
                                   The ascent gully can be easily accessed where
                                   the dune terminates about 0.25 miles south of
                                   "The 450." Take care to prevent erosion by
@@ -733,15 +730,15 @@ const SleepingBearGuide = () => {
                             </figcaption>
                           </figure>
                           <div className="section-half">
-                            <p className="preFade">
+                            <p>
                               On the third day, snow quality improved to "mashed
                               potatoes" but the last hundred feet were
                               impossible to ski without hitting sand and rocks
                               beneath. Thankfully, the rocks on Lake Michigan
-                              are well-polished — my bases received no
+                              are well-polished. My bases received no
                               significant damage.
                             </p>
-                            <p className="preFade">
+                            <p>
                               With diminishing returns on the main dune, I
                               explored an apron-shaped dune, "The Pyramid,"
                               further south that was accessible from the South
@@ -755,24 +752,24 @@ const SleepingBearGuide = () => {
                         {/* ── Row 5: Closing ── text left, stop sign glades image right */}
                         <div className="dis-row g-2">
                           <div className="section-half">
-                            <p className="preFade">
+                            <p>
                               Attempting one final lap as temperatures spiked, I
                               descended into the "Stop Sign Glades," a
                               solar-facing forest just south of the parking lot.
                               Snow quality was grippy garbage by the time I
                               dropped. The trees were tight, but there's
                               potential to pick your way along an enjoyable line
-                              after some scouting — if you catch it before the
+                              after some scouting, if you catch it before the
                               snow deteriorates.
                             </p>
-                            <p className="preFade">
+                            <p>
                               From the glades, I returned to the car along the
                               same route as the previous day. As I arrived, NPS
                               staff were running a bulldozer to clear Larahr
-                              Road to the parking lot — a good reminder not to
+                              Road to the parking lot, a good reminder not to
                               park anywhere that might block them.
                             </p>
-                            <p className="preFade">
+                            <p>
                               It was hard to tear myself away from the main dune
                               after the March 2026 storm. I have reason to
                               believe there is more potential within the
@@ -780,12 +777,12 @@ const SleepingBearGuide = () => {
                               guide will continue to evolve as other storms
                               produce conditions worth reporting.
                             </p>
-                            <p className="preFade">
+                            <p>
                               Thanks for taking the time to read. Enjoy the
                               video below if you're looking for more visual
                               detail from my trip.
                             </p>
-                            <p className="preFade">
+                            <p>
                               If you found this content helpful, please share
                               this guide with anyone you feel would value the
                               information, and consider subscribing to the{" "}
@@ -800,20 +797,20 @@ const SleepingBearGuide = () => {
                               you'll be the first to know when new guides are
                               published.
                             </p>
-                            <p className="preFade">Be safe out there.</p>
+                            <p>Be safe out there.</p>
                           </div>
                           <figure className="section-half">
-                            <div className="image-block-wrapper preSlide">
-                              <div className="image-shape-container-element has-aspect-ratio">
+                            <div>
+                              <div className="image-shape-container-element">
                                 <img
                                   alt="a south-facing view of the entrance to the Stop Sign Glades"
                                   src="/images/ski-sleeping-bear/stop-sign-glades.png"
                                 />
                               </div>
                             </div>
-                            <figcaption className="image-caption-wrapper">
+                            <figcaption>
                               <div className="image-caption">
-                                <p className="sqsrte-small preFade">
+                                <p>
                                   A south-facing view of the entrance to the
                                   "Stop Sign Glades."
                                 </p>

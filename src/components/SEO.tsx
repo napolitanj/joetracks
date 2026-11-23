@@ -7,6 +7,8 @@ type SEOProps = {
   description: string;
   canonical: string;
   image: string;
+  imageWidth?: number;
+  imageHeight?: number;
   ogType?: "website" | "article";
   robots?: string;
   jsonLd?: JsonLdObject[];
@@ -17,6 +19,8 @@ const SEO = ({
   description,
   canonical,
   image,
+  imageWidth,
+  imageHeight,
   ogType = "website",
   robots = "index,follow",
   jsonLd = [],
@@ -33,8 +37,12 @@ const SEO = ({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
       <meta property="og:image" content={image} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      {imageWidth && imageHeight && (
+        <meta property="og:image:width" content={String(imageWidth)} />
+      )}
+      {imageWidth && imageHeight && (
+        <meta property="og:image:height" content={String(imageHeight)} />
+      )}
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />

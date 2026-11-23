@@ -22,7 +22,7 @@ const KeystoneRapidsGuide = () => {
     <>
       <SEO
         title="Paddling the Keystone Rapids — A Boardman River Guide | JoeTracks"
-        description="A beginner's field guide to paddling the Keystone Rapids stretch of the Boardman River in Traverse City, Michigan — put-in and take-out info, rapids breakdown, bike shuttle route, and what to expect on the water."
+        description="A beginner's field guide to paddling the Keystone Rapids stretch of the Boardman River in Traverse City, Michigan: put-in and take-out info, rapids breakdown, bike shuttle route, and what to expect on the water."
         canonical="https://joetracks.com/boardman-river-keystone-rapids"
         image="https://joetracks.com/images/keystone-rapids/keystone-rapids-card.webp"
         ogType="article"
@@ -32,7 +32,7 @@ const KeystoneRapidsGuide = () => {
             "@type": "WebPage",
             name: "Paddling the Keystone Rapids — A Boardman River Guide",
             description:
-              "A beginner's field guide to paddling the Keystone Rapids stretch of the Boardman River in Traverse City, Michigan — put-in and take-out info, rapids breakdown, bike shuttle route, and what to expect on the water.",
+              "A beginner's field guide to paddling the Keystone Rapids stretch of the Boardman River in Traverse City, Michigan: put-in and take-out info, rapids breakdown, bike shuttle route, and what to expect on the water.",
             url: "https://joetracks.com/boardman-river-keystone-rapids",
             image:
               "https://joetracks.com/images/keystone-rapids/keystone-rapids-card.webp",
@@ -42,7 +42,7 @@ const KeystoneRapidsGuide = () => {
             "@type": "Article",
             headline: "Paddling the Keystone Rapids — A Boardman River Guide",
             description:
-              "A beginner's field guide to paddling the Keystone Rapids stretch of the Boardman River in Traverse City, Michigan — put-in and take-out info, rapids breakdown, bike shuttle route, and what to expect on the water.",
+              "A beginner's field guide to paddling the Keystone Rapids stretch of the Boardman River in Traverse City, Michigan: put-in and take-out info, rapids breakdown, bike shuttle route, and what to expect on the water.",
             image:
               "https://joetracks.com/images/keystone-rapids/keystone-rapids-card.webp",
             author: {
@@ -113,7 +113,7 @@ const KeystoneRapidsGuide = () => {
                       The Keystone Rapids are a 2.7-mile stretch of the Boardman
                       River located just ten minutes south of Traverse City,
                       Michigan. True whitewater in Michigan's Lower Peninsula is
-                      rare — but this section delivers some of the best paddling
+                      rare, but this section delivers some of the best paddling
                       in the region, with Class I-II rapids and sweeping river
                       bends through forests and flood plains along the banks of
                       a protected nature preserve.
@@ -286,7 +286,7 @@ const KeystoneRapidsGuide = () => {
                     <p>
                       The Keystone Rapids run best between 300 and 400 CFS. As
                       signs at the put-ins advise, this section is recommended
-                      for experienced paddlers only — particularly at elevated
+                      for experienced paddlers only, particularly at elevated
                       flows. Check the live gauge reading above before heading
                       out.
                     </p>
@@ -309,7 +309,7 @@ const KeystoneRapidsGuide = () => {
                 <div className="description-container">
                   <p>
                     <strong>Put-in: </strong> Although the Beitner Canoe Launch
-                    — a wooden dock on the south side of Beitner Road — is
+                    (a wooden dock on the south side of Beitner Road) is
                     typically the preferred entry point, the tunnel under the
                     road has been destroyed by recent flooding. The Keystone
                     Rapids Trailhead parking area offers an alternative ramp for
@@ -320,20 +320,20 @@ const KeystoneRapidsGuide = () => {
                     the Cass Road bridge and is clearly visible from the water.
                     The current picks up as the river bends right on approach,
                     with several obstacles to navigate. Look for rock barriers
-                    on the right — they create eddies and give you time to set
+                    on the right. They create eddies and give you time to set
                     up for the landing.
                   </p>
                   <p>
                     <strong>Reading the water: </strong>Before launching, check
                     the clearance under the Beitner Road bridge. If water levels
-                    look too close to the bridge deck, turn around — if you
+                    look too close to the bridge deck, turn around. If you
                     can't clear Beitner, you likely won't clear the Olsen Bridge
                     or the Pinhole Sweeper further downstream.
                   </p>
                   <p>
                     The rapids themselves are manageable, but the Keystone
                     stretch demands attention. The primary hazards here are not
-                    the whitewater — they are strainers, sweepers, and submerged
+                    the whitewater. They are strainers, sweepers, and submerged
                     vegetation. Several bends push current directly into fallen
                     trees, creating genuine entrapment risk. Come prepared to
                     self-rescue, and know how to wet-exit before you put in.

@@ -35,6 +35,7 @@ import BetsieRiverGuide from "./components/BetsieRiverGuide";
 import KalkaskaMoraineLoopGuide from "./components/KalkaskaMoraineLoopGuide";
 import NewsletterStickyBar from "./components/NewsletterStickyBar";
 import TrailGuideTemplate from "./components/pages/TrailGuideTemplate";
+import ExpeditionTemplate from "./components/pages/ExpeditionTemplate";
 
 function App() {
   return (
@@ -107,6 +108,7 @@ function App() {
           />
           <Route path="/coord-tool" element={<CoordTool />} />
           <Route path="/trails/:slug" element={<TrailGuideTemplate />} />
+          <Route path="/expeditions/:slug" element={<ExpeditionTemplate />} />
         </Routes>
       </main>
       <Footer />

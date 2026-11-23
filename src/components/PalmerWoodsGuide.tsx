@@ -21,7 +21,7 @@ const PalmerWoodsGuide = () => {
     <>
       <SEO
         title="Mountain Biking at Palmer Woods Forest Reserve | JoeTracks"
-        description="A guide to mountain biking the just-completed trail system at Palmer Woods Forest Reserve in Leelanau County, Michigan — 27 miles of singletrack across two trail hubs, with detailed maps, trail breakdowns, and trip-planning info."
+        description="A guide to mountain biking the just-completed trail system at Palmer Woods Forest Reserve in Leelanau County, Michigan: 27 miles of singletrack across two trail hubs, with detailed maps, trail breakdowns, and trip-planning info."
         canonical="https://joetracks.com/palmer-woods-biking"
         image="https://joetracks.com/images/palmer-woods/palmer-woods-card.webp"
         ogType="article"
@@ -31,7 +31,7 @@ const PalmerWoodsGuide = () => {
             "@type": "WebPage",
             name: "Mountain Biking at Palmer Woods Forest Reserve",
             description:
-              "A guide to mountain biking the just-completed trail system at Palmer Woods Forest Reserve in Leelanau County, Michigan — 27 miles of singletrack across two trail hubs, with detailed maps, trail breakdowns, and trip-planning info.",
+              "A guide to mountain biking the just-completed trail system at Palmer Woods Forest Reserve in Leelanau County, Michigan: 27 miles of singletrack across two trail hubs, with detailed maps, trail breakdowns, and trip-planning info.",
             url: "https://joetracks.com/palmer-woods-biking",
             image:
               "https://joetracks.com/images/palmer-woods/palmer-woods-card.webp",
@@ -41,7 +41,7 @@ const PalmerWoodsGuide = () => {
             "@type": "Article",
             headline: "Mountain Biking at Palmer Woods Forest Reserve",
             description:
-              "A guide to mountain biking the just-completed trail system at Palmer Woods Forest Reserve in Leelanau County, Michigan — 27 miles of singletrack across two trail hubs, with detailed maps, trail breakdowns, and trip-planning info.",
+              "A guide to mountain biking the just-completed trail system at Palmer Woods Forest Reserve in Leelanau County, Michigan: 27 miles of singletrack across two trail hubs, with detailed maps, trail breakdowns, and trip-planning info.",
             image:
               "https://joetracks.com/images/palmer-woods/palmer-woods-card.webp",
             author: {
@@ -157,7 +157,7 @@ const PalmerWoodsGuide = () => {
                     Lakeshore and private property border this natural area.
                     Stay on marked trails, respect trail directionality, and
                     yield appropriately to other users. Mountain biking, hiking,
-                    and skiing trails are physically separate networks — bikes
+                    and skiing trails are physically separate networks. Bikes
                     are not permitted on the hike/ski trails.
                   </em>
                 </p>
@@ -464,7 +464,7 @@ const PalmerWoodsGuide = () => {
                     </div>
                     <p>
                       A two-way trail linking the southern hubs to the Chaga
-                      Hub. Riding it south to north is the better direction —
+                      Hub. Riding it south to north is the better direction,
                       primarily downhill and stacked with rollers, fast turns,
                       and rock kickers.
                     </p>
@@ -535,7 +535,7 @@ const PalmerWoodsGuide = () => {
                     </div>
                     <p>
                       The only advanced route in Palmer Woods, Lion's Mane is
-                      strictly downhill — riders ascend via Turkey Tail to
+                      strictly downhill. Riders ascend via Turkey Tail to
                       access it. Gravity alone pulls you through a steep flow
                       trail filled with jumps and rock features up to two feet
                       in height.

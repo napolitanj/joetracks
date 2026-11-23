@@ -36,7 +36,7 @@ const GatedDownload = ({ label, description, fileUrl, formUrl }: Props) => {
       {status === "success" ? (
         <>
           <p className="gated-download__confirm">
-            You're in — check your inbox to confirm your email.
+            You're in. Check your inbox to confirm your email.
           </p>
           <a
             href={fileUrl}

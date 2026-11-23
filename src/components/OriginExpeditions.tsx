@@ -7,6 +7,7 @@ const OriginExpeditions = () => {
   return (
     <>
       <Helmet>
+        <meta name="robots" content="noindex,follow" />
         <title>Origin Expeditions (2018–2021) | JoeTracks</title>
         <meta
           name="description"
@@ -45,7 +46,7 @@ const OriginExpeditions = () => {
             From 2018 to 2021, Origin Expeditions ran backcountry programs for
             youth focused on self-discovery, leadership, and land stewardship.
             Like many small organizations, we were heavily impacted by the
-            pandemic — and after a period of dormancy, the project has now been
+            pandemic, and after a period of dormancy, the project has now been
             formally closed.
           </p>
         </section>
@@ -76,7 +77,7 @@ const OriginExpeditions = () => {
           <ul>
             <li>
               <a
-                href="https://joetracks.com/north-manitou-island-guide"
+                href="/north-manitou-island-guide"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -85,7 +86,7 @@ const OriginExpeditions = () => {
             </li>
             <li>
               <a
-                href="https://joetracks.com/ski-mount-sneffels"
+                href="/ski-mount-sneffels"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -94,7 +95,7 @@ const OriginExpeditions = () => {
             </li>
             <li>
               <a
-                href="https://joetracks.com/caltopo-guide"
+                href="/caltopo-guide"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -104,7 +105,7 @@ const OriginExpeditions = () => {
 
             <li>
               <a
-                href="https://joetracks.com/remote-forecasting-tools"
+                href="/remote-forecasting-tools"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -125,14 +126,14 @@ const OriginExpeditions = () => {
             If you’re interested in starting a wilderness program of your own
             and would like input, feedback, or support, feel free to reach out.
             I’ve added a <Link to="/contact">contact page</Link> on this site
-            for exactly that reason — I’m always happy to help others carry this
+            for exactly that reason. I’m always happy to help others carry this
             kind of work forward.
           </p>
         </section>
 
         <section>
           <p style={{ marginTop: "2rem" }}>
-            Thanks again to everyone who helped build this — in big ways and
+            Thanks again to everyone who helped build this, in big ways and
             small. The organization is offline, but the spirit of the work lives
             on.
           </p>

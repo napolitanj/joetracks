@@ -60,7 +60,7 @@ const NewsletterStickyBar = () => {
         </span>
         {status === "success" ? (
           <p className="newsletter-sticky-bar__confirm">
-            You're in — You'll get links when new guides are posted.
+            You're in. You'll get links when new guides are posted.
           </p>
         ) : (
           <form

@@ -2,6 +2,7 @@ import "../styles/Marketing.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "../components/tools/Carousel";
+import SEO from "./SEO";
 
 const Marketing = () => {
   const [fadeIn, setFadeIn] = useState(false);
@@ -28,6 +29,13 @@ const Marketing = () => {
 
   return (
     <>
+      <SEO
+        title="Marketing & SEO Work | Joe Napolitan"
+        description="Content marketing and SEO for an outdoor nonprofit: long-form guides, search strategy, and sustained organic growth."
+        canonical="https://joetracks.com/marketing"
+        robots="noindex,follow"
+        image="https://joetracks.com/images/og-image.png"
+      />
       <Link to="/portfolio">⇦ Back to Portfolio Page</Link>
       <div className={`marketing-container ${fadeIn ? "show" : ""}`}>
         <h1>Content-Driven Growth & Web Strategy</h1>
@@ -35,7 +43,7 @@ const Marketing = () => {
         <p className="intro">
           Between 2020 and 2025, I led web strategy and SEO for a small
           wilderness education nonprofit. Starting from almost no organic
-          traffic, the site grew into a trusted regional resource — reaching
+          traffic, the site grew into a trusted regional resource, reaching
           over <strong>11,000 total visits</strong> and{" "}
           <strong>15,000+ total pageviews</strong>. Articles I wrote and
           optimized ranked as <strong>featured snippets on Google</strong> and
@@ -63,7 +71,7 @@ const Marketing = () => {
               education and related niches.
             </li>
             <li>
-              Wrote detailed, long-form guides — formatted for clarity, mobile
+              Wrote detailed, long-form guides, formatted for clarity, mobile
               readability, and snippet capture.
             </li>
             <li>
@@ -73,7 +81,7 @@ const Marketing = () => {
             <li>
               Reached out to <strong>Pure Michigan</strong>, the state’s
               official tourism platform, which later began linking to our{" "}
-              <em>North Manitou Island Guide</em> — an outreach strategy that
+              <em>North Manitou Island Guide</em>, an outreach strategy that
               helped establish both brand and domain authority.
             </li>
             <li>
@@ -89,7 +97,7 @@ const Marketing = () => {
             Over five years, organic traffic increased by{" "}
             <strong>500% year-over-year</strong> at peak growth. The guides
             became consistent top performers, with readers spending{" "}
-            <strong>5–7 minutes on page</strong> — a strong indicator of value
+            <strong>5–7 minutes on page</strong>, a strong indicator of value
             and reader intent. The <em>North Manitou Island</em> and{" "}
             <em>Mount Sneffels</em> pages together accounted for over{" "}
             <strong>9,000 combined views</strong>.
@@ -120,7 +128,7 @@ const Marketing = () => {
             This project reinforced something simple: effective marketing starts
             with clarity and trust. By writing genuinely helpful content and
             building authentic backlinks, I created pages that both people and
-            search engines valued — a long-term win for visibility and impact.
+            search engines valued, a long-term win for visibility and impact.
           </p>
         </div>
         <Link to="/portfolio">⇦ Back to Portfolio Page</Link>

@@ -42,5 +42,6 @@ export const palmerWoodsGuide: TrailGuide = {
     "PLACEHOLDER — property rule 2.",
   ],
   managedBy: "PLACEHOLDER — managing organization",
+  managedByKey: "leelanauConservancy",
   lastUpdated: "2026-04-29",
 };

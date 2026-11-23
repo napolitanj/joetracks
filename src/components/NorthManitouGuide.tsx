@@ -917,7 +917,7 @@ const NorthManitouGuide = () => {
                           <li>
                             <p>
                               <a
-                                href="https://www.fleetfeet.com/s/traversecity?srsltid=AfmBOoovF2cdhLD-TbyN3tgq3JJsKGL3IRUSVzKNLCrIu66CZletJTG_"
+                                href="https://www.fleetfeet.com/s/traversecity"
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
