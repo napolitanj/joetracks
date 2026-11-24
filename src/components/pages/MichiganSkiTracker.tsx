@@ -1,69 +1,135 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "../../styles/MichiganSkiTracker.css";
-import { RESORTS } from "../../data/michiganResorts";
+import { useFavorites } from "../../hooks/useFavorites";
 import SEO from "../SEO";
 import NewsletterCTA from "../NewsletterCTA";
 
-const REGIONS = [
+const API_BASE = "https://api.joetracks.com";
+const FAVORITES_KEY = "joetracks_ski_favorites";
+
+const TABS = [
   "All Regions",
   "Northern LP",
   "Southern LP",
   "Western UP",
   "Eastern UP",
-];
+  "★ Favorites",
+] as const;
+
+type Tab = (typeof TABS)[number];
+
+type Tier =
+  "STORM" | "POWDER" | "GOOD" | "REFRESH" | "FIRM" | "THIN" | "THAW" | "RAIN";
+
+/**
+ * One resort as the API returns it.
+ *
+ * Everything past snow24h and snow48h is optional on purpose. The page has to
+ * keep working between a backend deploy and the cache refresh that follows it,
+ * when the stored payload is still the previous shape. A missing field drops
+ * its element rather than rendering "undefined".
+ */
+type Forecast = {
+  resort: { id: string; name: string; region: string };
+  snow24h: number;
+  snow48h: number;
+  tier?: Tier;
+  story?: string;
+  naturalBaseInches?: number | null;
+  past48h?: number | null;
+  links?: { nwsPage?: string };
+};
+
+type AllResponse = {
+  resorts: Record<string, Forecast>;
+  summary?: string;
+  _lastUpdated?: number | null;
+};
+
+const TIER_LABEL: Record<Tier, string> = {
+  STORM: "Storm",
+  POWDER: "Powder",
+  GOOD: "Good",
+  REFRESH: "Refresh",
+  FIRM: "Firm",
+  THIN: "Thin",
+  THAW: "Thaw",
+  RAIN: "Rain",
+};
+
+function formatInches(value: number | null | undefined): string {
+  if (value === null || value === undefined) return "—";
+  if (value <= 0) return "—";
+  return `${value}"`;
+}
 
 export default function MichiganSkiTracker() {
-  const [regionFilter, setRegionFilter] = useState("All Regions");
+  const [activeTab, setActiveTab] = useState<Tab>("All Regions");
+  const [data, setData] = useState<AllResponse | null>(null);
   const [loading, setLoading] = useState(true);
-  const [forecastById, setForecastById] = useState<Record<string, any>>({});
+  const [failed, setFailed] = useState(false);
 
-  const API_BASE = "https://api.joetracks.com";
-
-  // Apply region filter
-  const filtered =
-    regionFilter === "All Regions"
-      ? RESORTS
-      : RESORTS.filter((r) => r.region === regionFilter);
-
-  const timestamps = Object.values(forecastById)
-    .map((f: any) => f?._lastUpdated)
-    .filter(Boolean);
-
-  const lastUpdated =
-    timestamps.length > 0
-      ? new Date(Math.max(...timestamps)).toLocaleString()
-      : null;
+  const { toggleFavorite, isFavorite } = useFavorites(FAVORITES_KEY);
 
   useEffect(() => {
+    let cancelled = false;
+
     async function load() {
       setLoading(true);
+      setFailed(false);
 
-      const requests = RESORTS.map((resort) =>
-        fetch(`${API_BASE}/api/ski/forecast/${resort.id}`)
-          .then((r) => r.json())
-          .then((data) => ({ id: resort.id, data }))
-          .catch(() => ({ id: resort.id, data: { error: true } })),
-      );
+      try {
+        const response = await fetch(`${API_BASE}/api/ski/all`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
-      const results = await Promise.all(requests);
-
-      const map: Record<string, any> = {};
-      for (const item of results) {
-        map[item.id] = item.data;
+        const json: AllResponse = await response.json();
+        if (!cancelled) setData(json);
+      } catch {
+        if (!cancelled) setFailed(true);
+      } finally {
+        if (!cancelled) setLoading(false);
       }
-
-      setForecastById(map);
-      setLoading(false);
     }
 
     load();
+    return () => {
+      cancelled = true;
+    };
   }, []);
+
+  /** Sorted by what is coming, because that is the question people arrive with. */
+  const rows = useMemo(() => {
+    const all = Object.values(data?.resorts ?? {});
+
+    const filtered =
+      activeTab === "All Regions"
+        ? all
+        : activeTab === "★ Favorites"
+          ? all.filter((f) => isFavorite(f.resort.id))
+          : all.filter((f) => f.resort.region === activeTab);
+
+    return [...filtered].sort(
+      (a, b) =>
+        b.snow48h - a.snow48h ||
+        b.snow24h - a.snow24h ||
+        a.resort.name.localeCompare(b.resort.name),
+    );
+  }, [data, activeTab, isFavorite]);
+
+  const lastUpdated = data?._lastUpdated
+    ? new Date(data._lastUpdated).toLocaleString()
+    : null;
+
+  const emptyMessage =
+    activeTab === "★ Favorites"
+      ? "No favorites yet. Tap the star next to any resort to add it here."
+      : "No resorts in this region yet. Try another tab.";
 
   return (
     <>
       <SEO
         title="Michigan Ski Tracker | JoeTracks"
-        description="Live Michigan ski resort snowfall and weather tracker powered by NOAA forecasts to support better Great Lakes trip planning."
+        description="Live Michigan ski resort snowfall, snow depth and conditions tracker powered by NOAA forecasts and the NOHRSC snow analysis."
         canonical="https://joetracks.com/michigan-ski-tracker"
         image="https://joetracks.com/images/ski-tracker-preview.png"
         jsonLd={[
@@ -72,7 +138,7 @@ export default function MichiganSkiTracker() {
             "@type": "WebPage",
             name: "Michigan Ski Tracker",
             description:
-              "Live Michigan ski resort snowfall and weather tracker powered by NOAA forecasts.",
+              "Live Michigan ski resort snowfall, snow depth and conditions tracker powered by NOAA forecasts.",
             url: "https://joetracks.com/michigan-ski-tracker",
             image: "https://joetracks.com/images/ski-tracker-preview.png",
           },
@@ -89,67 +155,76 @@ export default function MichiganSkiTracker() {
             },
             url: "https://joetracks.com/michigan-ski-tracker",
             image: "https://joetracks.com/images/ski-tracker-preview.png",
-            author: {
-              "@type": "Person",
-              name: "Joe Napolitan",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "JoeTracks",
-            },
-            // TODO: replace with a dedicated 1200x630 OG image for richer social previews.
+            author: { "@type": "Person", name: "Joe Napolitan" },
+            publisher: { "@type": "Organization", name: "JoeTracks" },
           },
         ]}
       />
+
       <section className="tool-page">
         <div className="tool-hero">
           <div className="tool-hero-inner">
             <h1 className="tool-hero-title">Michigan Ski Tracker</h1>
-            <p className="tool-hero-subhead">
-              Projected 24 & 48-hour snowfall totals for every ski area in
-              Michigan, built to point skiers to the best conditions.
-            </p>
+
+            {data?.summary ? (
+              <p className="mst-summary">{data.summary}</p>
+            ) : (
+              <p className="tool-hero-subhead">
+                Snowfall, snow depth and conditions for every ski area in
+                Michigan, ranked by where the snow is actually falling.
+              </p>
+            )}
+
             <ul className="tool-cred">
               <li>
-                Powered by NOAA's point-forecast data for each resort's
-                mid-mountain coordinates (not the nearest town, base, or
-                summit).
+                Forecasts come from NOAA's point data for each resort's
+                mid-mountain coordinates, not the nearest town, base or summit.
+              </li>
+              <li>
+                Snow depth is <strong>natural snow only</strong>, modelled by
+                the NOHRSC snow analysis. It does not count snowmaking, so an
+                open resort can read lower than what you will actually ski.
               </li>
               <li>Updated twice daily.</li>
             </ul>
+
             <p className="ski-note">
-              Tap any resort to visit weather.gov and view the full NOAA
-              forecast.
+              Tap any resort to open its full NOAA forecast on weather.gov.
             </p>
+
             <p className="alert-text">
-              Check resort websites for operating status, and full forecasts for
-              variables including wind, temperature, and rain. This tool tracks
-              snowfall only.
-            </p>{" "}
+              Always check the resort's own website for operating status, hours
+              and lift openings. This tool tracks weather, not whether the lifts
+              are spinning.
+            </p>
+
             <NewsletterCTA />
           </div>
         </div>
 
         <div className="tool-hero-inner">
           <div className="mst-controls">
-            <div className="mst-controls-row">
-              <div className="mst-filter">
-                <label htmlFor="region-select">Sort by Region</label>
-                <select
-                  id="region-select"
-                  value={regionFilter}
-                  onChange={(e) => setRegionFilter(e.target.value)}
+            <div
+              className="mst-tabs"
+              role="tablist"
+              aria-label="Filter resorts"
+            >
+              {TABS.map((tab) => (
+                <button
+                  key={tab}
+                  type="button"
+                  role="tab"
+                  aria-selected={activeTab === tab}
+                  className={`mst-tab${activeTab === tab ? " mst-tab--active" : ""}`}
+                  onClick={() => setActiveTab(tab)}
                 >
-                  {REGIONS.map((r) => (
-                    <option key={r}>{r}</option>
-                  ))}
-                </select>
-              </div>
-              <div className="mst-updated">
-                {lastUpdated
-                  ? `Last updated: ${lastUpdated}`
-                  : "Last updated: —"}
-              </div>
+                  {tab}
+                </button>
+              ))}
+            </div>
+
+            <div className="mst-updated">
+              {lastUpdated ? `Updated ${lastUpdated}` : "Updated —"}
             </div>
           </div>
         </div>
@@ -158,74 +233,116 @@ export default function MichiganSkiTracker() {
           <div className="tool-results-card">
             {loading && (
               <div className="tool-loading" role="status" aria-live="polite">
-                Loading latest forecast…
+                Loading the latest forecast…
               </div>
             )}
 
-            {!loading && filtered.length === 0 && (
+            {!loading && failed && (
               <div className="tool-empty">
-                No resorts match this region yet. Try another filter.
+                The forecast is not available right now. It refreshes twice
+                daily, so try again shortly.
               </div>
             )}
 
-            {!loading && filtered.length > 0 && (
-              <div className="ski-table-container">
-                <table className="tool-table">
-                  <thead>
-                    <tr>
-                      <th>Resort</th>
-                      <th>24h Snow</th>
-                      <th>48h Snow</th>
-                    </tr>
-                  </thead>
+            {!loading && !failed && rows.length === 0 && (
+              <div className="tool-empty">{emptyMessage}</div>
+            )}
 
-                  <tbody>
-                    {filtered.map((resort) => {
-                      const fc = forecastById[resort.id];
+            {!loading && !failed && rows.length > 0 && (
+              <>
+                <div className="mst-head" aria-hidden="true">
+                  <span className="mst-head-spacer" />
+                  <span className="mst-head-resort">Resort</span>
+                  <span className="mst-head-num">24h</span>
+                  <span className="mst-head-num">48h</span>
+                </div>
 
-                      if (!fc || fc.error) {
-                        return (
-                          <tr key={resort.id}>
-                            <td className="resort-link disabled">
-                              {resort.name}
-                            </td>
-                            <td>-</td>
-                            <td>-</td>
-                          </tr>
-                        );
-                      }
+                <ul className="mst-list">
+                  {rows.map((f) => {
+                    const id = f.resort.id;
+                    const favorited = isFavorite(id);
+                    const tier = f.tier;
 
-                      return (
-                        <tr key={resort.id}>
-                          <td>
-                            <a
-                              className="resort-link"
-                              href={fc.links?.nwsPage}
-                              target="_blank"
-                              rel="noopener noreferrer"
+                    const meta = [
+                      f.resort.region,
+                      f.naturalBaseInches != null
+                        ? `${f.naturalBaseInches}" natural base`
+                        : null,
+                      f.past48h != null && f.past48h !== 0
+                        ? `${f.past48h > 0 ? "+" : "−"}${Math.abs(f.past48h)}" in 48h`
+                        : null,
+                    ]
+                      .filter(Boolean)
+                      .join(" · ");
+
+                    return (
+                      <li
+                        key={id}
+                        className={`mst-row${tier ? ` mst-row--${tier.toLowerCase()}` : ""}`}
+                      >
+                        {tier && (
+                          <span
+                            className={`mst-chip mst-chip--${tier.toLowerCase()}`}
+                          >
+                            {TIER_LABEL[tier]}
+                          </span>
+                        )}
+
+                        <div className="mst-main">
+                          <div className="mst-headline">
+                            <button
+                              type="button"
+                              className={`mst-star${favorited ? " mst-star--active" : ""}`}
+                              onClick={() => toggleFavorite(id)}
+                              aria-pressed={favorited}
+                              aria-label={
+                                favorited
+                                  ? `Remove ${f.resort.name} from favorites`
+                                  : `Add ${f.resort.name} to favorites`
+                              }
                             >
-                              {resort.name}
-                            </a>
-                          </td>
-                          <td className={fc.snow24h >= 10 ? "snow-alert" : ""}>
-                            {fc.snow24h ?? "-"}{" "}
-                            {fc.snow24h > 0 && (
-                              <span className="snow-icon">❄️</span>
-                            )}
-                          </td>
+                              {favorited ? "★" : "☆"}
+                            </button>
 
-                          <td className={fc.snow48h >= 20 ? "snow-alert" : ""}>
-                            {fc.snow48h ?? "-"}{" "}
-                            {fc.snow48h > 0 && (
-                              <span className="snow-icon">❄️</span>
+                            {f.links?.nwsPage ? (
+                              <a
+                                className="mst-resort"
+                                href={f.links.nwsPage}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {f.resort.name}
+                              </a>
+                            ) : (
+                              <span className="mst-resort">
+                                {f.resort.name}
+                              </span>
                             )}
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
+                          </div>
+
+                          <p className="mst-meta">{meta}</p>
+                          {f.story && <p className="mst-story">{f.story}</p>}
+                        </div>
+
+                        <div className="mst-numbers">
+                          <div className="mst-number">
+                            <span className="mst-number-value">
+                              {formatInches(f.snow24h)}
+                            </span>
+                            <span className="mst-number-label">24h</span>
+                          </div>
+                          <div className="mst-number">
+                            <span className="mst-number-value">
+                              {formatInches(f.snow48h)}
+                            </span>
+                            <span className="mst-number-label">48h</span>
+                          </div>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </>
             )}
           </div>
         </div>
