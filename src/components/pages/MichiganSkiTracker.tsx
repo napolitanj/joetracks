@@ -19,7 +19,14 @@ const TABS = [
 type Tab = (typeof TABS)[number];
 
 type Tier =
-  "STORM" | "POWDER" | "GOOD" | "REFRESH" | "FIRM" | "THIN" | "THAW" | "RAIN";
+  | "STORM"
+  | "POWDER"
+  | "GOOD"
+  | "REFRESH"
+  | "FIRM"
+  | "THIN"
+  | "THAW"
+  | "RAIN";
 
 /**
  * One resort as the API returns it.
@@ -35,13 +42,17 @@ type Forecast = {
   snow48h: number;
   tier?: Tier;
   story?: string;
-  naturalBaseInches?: number | null;
-  past48h?: number | null;
+  snowpackTrend?: "building" | "holding" | "losing" | null;
   links?: { nwsPage?: string };
 };
 
 type AllResponse = {
   resorts: Record<string, Forecast>;
+  /**
+   * A one-line statewide assessment. The API still produces it, but it is not
+   * rendered: it leaned on figures we no longer trust enough to publish.
+   * Bring it back once there is a source worth summarising.
+   */
   summary?: string;
   _lastUpdated?: number | null;
 };
@@ -166,37 +177,54 @@ export default function MichiganSkiTracker() {
           <div className="tool-hero-inner">
             <h1 className="tool-hero-title">Michigan Ski Tracker</h1>
 
-            {data?.summary ? (
-              <p className="mst-summary">{data.summary}</p>
-            ) : (
-              <p className="tool-hero-subhead">
-                Snowfall, snow depth and conditions for every ski area in
-                Michigan, ranked by where the snow is actually falling.
-              </p>
-            )}
-
-            <ul className="tool-cred">
-              <li>
-                Forecasts come from NOAA's point data for each resort's
-                mid-mountain coordinates, not the nearest town, base or summit.
-              </li>
-              <li>
-                Snow depth is <strong>natural snow only</strong>, modelled by
-                the NOHRSC snow analysis. It does not count snowmaking, so an
-                open resort can read lower than what you will actually ski.
-              </li>
-              <li>Updated twice daily.</li>
-            </ul>
-
-            <p className="ski-note">
-              Tap any resort to open its full NOAA forecast on weather.gov.
+            <p className="tool-hero-subhead">
+              Forecast snowfall and conditions for every ski area in Michigan,
+              ranked by where the snow is actually falling.
             </p>
 
-            <p className="alert-text">
-              Always check the resort's own website for operating status, hours
-              and lift openings. This tool tracks weather, not whether the lifts
-              are spinning.
-            </p>
+            {/*
+              Collapsed by default. Repeat visitors come here for the table,
+              not the methodology, but the limits of the data have to be
+              reachable in one click rather than not stated at all.
+            */}
+            <details className="mst-about">
+              <summary className="mst-about-summary">
+                <svg
+                  className="mst-about-icon"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 11v5" />
+                  <path d="M12 7.5v.5" />
+                </svg>
+                Accuracy and where this data comes from
+              </summary>
+
+              <ul className="mst-about-list">
+                <li>
+                  Forecasts are parsed from National Weather Service gridpoint
+                  data for each resort&rsquo;s mid-mountain coordinates, not the
+                  nearest town. These snowfall forecasts are as accurate as
+                  NOAA's instruments allow. Updated twice daily.
+                </li>
+                <li>
+                  No base depth is shown. The national snow-depth model
+                  isn&rsquo;t reliably accurate enough for a single resort, so
+                  check a resort's website for existing base depth.
+                </li>
+                <li>
+                  This tracks weather, not operations. Some resorts may be
+                  closed, check their website before committing to a trip.
+                </li>
+              </ul>
+            </details>
 
             <NewsletterCTA />
           </div>
@@ -263,17 +291,10 @@ export default function MichiganSkiTracker() {
                     const favorited = isFavorite(id);
                     const tier = f.tier;
 
-                    const meta = [
-                      f.resort.region,
-                      f.naturalBaseInches != null
-                        ? `${f.naturalBaseInches}" natural base`
-                        : null,
-                      f.past48h != null && f.past48h !== 0
-                        ? `${f.past48h > 0 ? "+" : "−"}${Math.abs(f.past48h)}" in 48h`
-                        : null,
-                    ]
-                      .filter(Boolean)
-                      .join(" · ");
+                    // Region only. No depth figure is published: the national
+                    // snow-depth model is wrong by multiples at resort scale, so
+                    // the conditions line reports direction of change instead.
+                    const meta = f.resort.region;
 
                     return (
                       <li
