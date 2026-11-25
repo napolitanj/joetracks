@@ -243,10 +243,17 @@
   border-bottom: 1px solid var(--border-color);
 }
 
-.mst-head-spacer {
+.mst-head-cond {
   display: block;
+  /* Matches the tier badge column in .mst-row so the labels line up. */
   width: 5.2rem;
+  white-space: nowrap;
   flex: 0 0 auto;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-text);
 }
 
 .mst-head-resort {
@@ -263,7 +270,10 @@
 
 .mst-head-num {
   display: block;
-  width: 3.1rem;
+  /* 3.9rem, not 3.1, to carry "Next 24h" on one line. Must stay equal to
+     .mst-number so the header sits over the figures it labels. */
+  width: 3.9rem;
+  white-space: nowrap;
   flex: 0 0 auto;
   text-align: right;
   font-size: 0.68rem;
@@ -439,12 +449,12 @@ a.mst-resort:focus-visible {
   width: auto;
   flex: 0 0 auto;
   flex-direction: row;
-  gap: 1.1rem;
+  gap: 1rem;
 }
 
 .mst-number {
   display: flex;
-  width: 3.1rem;
+  width: 3.9rem;
   flex: 0 0 auto;
   flex-direction: column;
   align-items: flex-end;
@@ -462,6 +472,7 @@ a.mst-resort:focus-visible {
    Shown again below 680px, where that heading is hidden. */
 .mst-number-label {
   display: none;
+  white-space: nowrap;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -547,5 +558,294 @@ a.mst-resort:focus-visible {
 
   .mst-controls {
     padding: 0 0.8rem;
+  }
+}
+
+/* Statewide snow map.
+ *
+ * The raster, the state outline and the resort markers all live in one SVG
+ * viewBox because the bounding box is ours. See src/data/michiganMap.ts.
+ *
+ * As everywhere in this file, the div-backed classes declare width and
+ * flex-direction explicitly to beat the global `body div` rule.
+ */
+
+.mst-map {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.95rem;
+  padding: 1.1rem 1.2rem;
+}
+
+/* The state is the point of this component, so it gets a column of its own and
+   everything else stacks beside it. The figure scales with its container
+   rather than sitting at a fixed height, which also enlarges the markers'
+   touch targets, since those scale with the SVG. */
+.mst-map-body {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+
+.mst-map-figure {
+  display: block;
+  width: auto;
+  position: relative;
+  min-width: 0;
+  /* Grows with the card up to a sensible ceiling, so a very wide window does
+     not produce an absurd map, and a narrow one still gets a usable state.
+     flex-shrink stays 0: with 1, the prose beside it stole width from the
+     state, which is the thing actually worth looking at. */
+  flex: 0 0 clamp(240px, 40%, 450px);
+}
+
+.mst-map-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mst-map-side {
+  display: flex;
+  width: auto;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.mst-map-key {
+  display: flex;
+  width: auto;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.mst-map-text {
+  display: flex;
+  width: auto;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.mst-map-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+/* Land under the raster, so the state reads as a shape even where the model
+   reports no snow at all. */
+.mst-map-fill {
+  fill: color-mix(in srgb, var(--border-color) 35%, transparent);
+}
+
+.mst-map-outline {
+  fill: none;
+  stroke: color-mix(in srgb, var(--text-color) 45%, transparent);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.mst-map-legend {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  font-size: 0.82rem;
+  color: var(--muted-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.mst-map-legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.mst-map-swatch {
+  display: inline-block;
+  width: 1.5rem;
+  height: 0.7rem;
+  border-radius: 0.15rem;
+  border: 1px solid color-mix(in srgb, var(--text-color) 15%, transparent);
+}
+
+.mst-map-note {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--muted-text);
+  max-width: 46ch;
+}
+
+.mst-map-hint {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--muted-text);
+}
+
+.mst-map-pin-hit {
+  fill: transparent;
+}
+
+.mst-map-pin {
+  cursor: pointer;
+}
+
+.mst-map-pin:focus {
+  outline: none;
+}
+
+.mst-map-pin-halo {
+  fill: var(--bg-color);
+  opacity: 0.9;
+}
+
+.mst-map-pin-dot {
+  fill: var(--accent-color);
+  transition: fill 120ms ease;
+}
+
+.mst-map-pin:hover .mst-map-pin-dot,
+.mst-map-pin--active .mst-map-pin-dot {
+  fill: #a93c3f;
+}
+
+.mst-map-pin:focus-visible .mst-map-pin-halo {
+  stroke: var(--accent-color);
+  stroke-width: 3;
+}
+
+/* Label lives outside the SVG: inside it, 11px text would need a font-size of
+   about 42 viewBox units and a long resort name would span half the state. */
+.mst-map-figure {
+  display: block;
+  width: auto;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.mst-map-label {
+  position: absolute;
+  z-index: 2;
+  transform: translate(0.75rem, -50%);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  color: var(--bg-color);
+  background: color-mix(in srgb, var(--text-color) 88%, transparent);
+  border-radius: 0.3rem;
+  pointer-events: none;
+}
+
+/* Flip to the left of the dot near the east edge so it does not overflow. */
+.mst-map-label--left {
+  transform: translate(calc(-100% - 0.75rem), -50%);
+}
+
+.mst-map-hint {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--muted-text);
+}
+
+.mst-map-side {
+  display: flex;
+  width: auto;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.mst-map-legend {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--muted-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.mst-map-legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mst-map-swatch {
+  display: inline-block;
+  width: 1.5rem;
+  height: 0.7rem;
+  border-radius: 0.15rem;
+  border: 1px solid color-mix(in srgb, var(--text-color) 15%, transparent);
+}
+
+.mst-map-note {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--muted-text);
+  max-width: 44ch;
+}
+
+/* Phone: the state goes nearly edge to edge. Bigger geography means bigger
+   touch targets, since the markers scale with the SVG. Everything else is
+   pushed below it, which is the right trade. */
+@media (max-width: 680px) {
+  .mst-map {
+    padding: 0.9rem 0.6rem 1rem;
+  }
+
+  .mst-map-body {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.9rem;
+  }
+
+  .mst-map-figure {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 100%;
+    align-self: center;
+  }
+
+  .mst-map-note {
+    max-width: none;
+  }
+}
+
+/* Three columns once the card is wide enough to carry them: state, key, prose.
+   Below this the side stays a single stacked column. */
+@media (min-width: 1000px) {
+  .mst-map-side {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.7rem;
+  }
+
+  .mst-map-key {
+    flex: 0 0 auto;
   }
 }

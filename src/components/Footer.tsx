@@ -18,7 +18,7 @@ const Footer = () => {
             />
           </Link>
           <p className="site-footer-tagline">
-            Build outdoor confidence &amp; competence.
+            Digital tools and guides for Northern Michigan and beyond.
           </p>
           <Link to="/contact" className="site-footer-contact-btn">
             Contact

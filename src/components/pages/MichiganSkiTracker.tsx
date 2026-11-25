@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import "../../styles/MichiganSkiTracker.css";
 import { useFavorites } from "../../hooks/useFavorites";
 import SEO from "../SEO";
-import NewsletterCTA from "../NewsletterCTA";
+import MichiganSnowMap from "../MichiganSnowMap";
 
 const API_BASE = "https://api.joetracks.com";
 const FAVORITES_KEY = "joetracks_ski_favorites";
@@ -19,14 +19,7 @@ const TABS = [
 type Tab = (typeof TABS)[number];
 
 type Tier =
-  | "STORM"
-  | "POWDER"
-  | "GOOD"
-  | "REFRESH"
-  | "FIRM"
-  | "THIN"
-  | "THAW"
-  | "RAIN";
+  "STORM" | "POWDER" | "GOOD" | "REFRESH" | "FIRM" | "THIN" | "THAW" | "RAIN";
 
 /**
  * One resort as the API returns it.
@@ -37,7 +30,13 @@ type Tier =
  * its element rather than rendering "undefined".
  */
 type Forecast = {
-  resort: { id: string; name: string; region: string };
+  resort: {
+    id: string;
+    name: string;
+    region: string;
+    lat: number;
+    lon: number;
+  };
   snow24h: number;
   snow48h: number;
   tier?: Tier;
@@ -127,6 +126,17 @@ export default function MichiganSkiTracker() {
     );
   }, [data, activeTab, isFavorite]);
 
+  const allResorts = useMemo(
+    () =>
+      Object.values(data?.resorts ?? {}).map((f) => ({
+        id: f.resort.id,
+        name: f.resort.name,
+        lat: f.resort.lat,
+        lon: f.resort.lon,
+      })),
+    [data],
+  );
+
   const lastUpdated = data?._lastUpdated
     ? new Date(data._lastUpdated).toLocaleString()
     : null;
@@ -212,12 +222,17 @@ export default function MichiganSkiTracker() {
                   Forecasts are parsed from National Weather Service gridpoint
                   data for each resort&rsquo;s mid-mountain coordinates, not the
                   nearest town. These snowfall forecasts are as accurate as
-                  NOAA's instruments allow. Updated twice daily.
+                  NOAA's instruments allow. Updated twice daily. Click the name
+                  of each resort to open the full NOAA forecast.
                 </li>
                 <li>
-                  No base depth is shown. The national snow-depth model
-                  isn&rsquo;t reliably accurate enough for a single resort, so
-                  check a resort's website for existing base depth.
+                  No base depth is shown. Use the map below as a starting point
+                  for determining coverage. NOAA&rsquo;s National Operational
+                  Hydrologic Remote Sensing Center models snow depth nationwide
+                  each day from satellite, aircraft and ground measurements.
+                  That resolves which part of the state is holding snow, not how
+                  much is on a single hill, so check a resort&rsquo;s website
+                  for a reported base.
                 </li>
                 <li>
                   This tracks weather, not operations. Some resorts may be
@@ -225,9 +240,11 @@ export default function MichiganSkiTracker() {
                 </li>
               </ul>
             </details>
-
-            <NewsletterCTA />
           </div>
+        </div>
+
+        <div className="tool-hero-inner">
+          {allResorts.length > 0 && <MichiganSnowMap resorts={allResorts} />}
         </div>
 
         <div className="tool-hero-inner">
@@ -279,10 +296,10 @@ export default function MichiganSkiTracker() {
             {!loading && !failed && rows.length > 0 && (
               <>
                 <div className="mst-head" aria-hidden="true">
-                  <span className="mst-head-spacer" />
+                  <span className="mst-head-cond">Status</span>
                   <span className="mst-head-resort">Resort</span>
-                  <span className="mst-head-num">24h</span>
-                  <span className="mst-head-num">48h</span>
+                  <span className="mst-head-num">Next 24h</span>
+                  <span className="mst-head-num">Next 48h</span>
                 </div>
 
                 <ul className="mst-list">
@@ -350,13 +367,13 @@ export default function MichiganSkiTracker() {
                             <span className="mst-number-value">
                               {formatInches(f.snow24h)}
                             </span>
-                            <span className="mst-number-label">24h</span>
+                            <span className="mst-number-label">Next 24h</span>
                           </div>
                           <div className="mst-number">
                             <span className="mst-number-value">
                               {formatInches(f.snow48h)}
                             </span>
-                            <span className="mst-number-label">48h</span>
+                            <span className="mst-number-label">Next 48h</span>
                           </div>
                         </div>
                       </li>
