@@ -27,3 +27,6 @@ dist-ssr
 
 # Local Claude Code settings (machine-specific)
 .claude/
+
+# Wrangler local state, created by `wrangler pages deploy`
+.wrangler/

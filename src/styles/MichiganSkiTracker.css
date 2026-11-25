@@ -664,9 +664,11 @@ a.mst-resort:focus-visible {
   padding: 0;
   list-style: none;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0.35rem 1rem;
+  /* Stacked: it sits in the narrow key column, where a wrapped row would ragged
+     itself across three lines. The phone rule below flips it back to a row. */
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0.3rem;
   font-size: 0.82rem;
   color: var(--muted-text);
   font-variant-numeric: tabular-nums;
@@ -675,7 +677,7 @@ a.mst-resort:focus-visible {
 .mst-map-legend li {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
 }
 
 .mst-map-swatch {
@@ -688,10 +690,10 @@ a.mst-resort:focus-visible {
 
 .mst-map-note {
   margin: 0;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   line-height: 1.5;
   color: var(--muted-text);
-  max-width: 46ch;
+  max-width: 44ch;
 }
 
 .mst-map-hint {
@@ -734,13 +736,6 @@ a.mst-resort:focus-visible {
 
 /* Label lives outside the SVG: inside it, 11px text would need a font-size of
    about 42 viewBox units and a long resort name would span half the state. */
-.mst-map-figure {
-  display: block;
-  width: auto;
-  position: relative;
-  flex: 0 0 auto;
-}
-
 .mst-map-label {
   position: absolute;
   z-index: 2;
@@ -759,55 +754,6 @@ a.mst-resort:focus-visible {
 /* Flip to the left of the dot near the east edge so it does not overflow. */
 .mst-map-label--left {
   transform: translate(calc(-100% - 0.75rem), -50%);
-}
-
-.mst-map-hint {
-  margin: 0;
-  font-size: 0.78rem;
-  color: var(--muted-text);
-}
-
-.mst-map-side {
-  display: flex;
-  width: auto;
-  flex: 1 1 auto;
-  min-width: 0;
-  flex-direction: column;
-  gap: 0.7rem;
-}
-
-.mst-map-legend {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  font-size: 0.82rem;
-  color: var(--muted-text);
-  font-variant-numeric: tabular-nums;
-}
-
-.mst-map-legend li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.mst-map-swatch {
-  display: inline-block;
-  width: 1.5rem;
-  height: 0.7rem;
-  border-radius: 0.15rem;
-  border: 1px solid color-mix(in srgb, var(--text-color) 15%, transparent);
-}
-
-.mst-map-note {
-  margin: 0;
-  font-size: 0.82rem;
-  line-height: 1.5;
-  color: var(--muted-text);
-  max-width: 44ch;
 }
 
 /* Phone: the state goes nearly edge to edge. Bigger geography means bigger
@@ -833,6 +779,12 @@ a.mst-resort:focus-visible {
 
   .mst-map-note {
     max-width: none;
+  }
+
+  .mst-map-legend {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.3rem 1rem;
   }
 }
 
